@@ -1,0 +1,42 @@
+{
+  "scenario_id": "knowledge_base-viewPage-T3-022",
+  "cache_key": "54357e32bef16c0b0419c29ca8fa78c4bb92d104b4b21183f6f4a10cdfb9bb8e",
+  "verifier_version": "f9d67ee8f0a3920a13240774a30ca4c818f964d7b8370f1e8a7fd1e1e38bd5c4",
+  "status": "PASS",
+  "syntax_valid": true,
+  "schema_valid": true,
+  "checks": [
+    {
+      "name": "view_page_role_clearance_or_author_floor",
+      "type": "floor",
+      "status": "PASS",
+      "elapsed_seconds": 0.015552916913293302,
+      "raw_sha256": "2d4293aa78475ed2fa97f281dc926bdc33b86c2538b97edc3ab43ae6fa02df7a"
+    },
+    {
+      "name": "view_page_limited_to_role_clearance_or_author_ceiling",
+      "type": "implies",
+      "status": "PASS",
+      "elapsed_seconds": 0.012106499983929098,
+      "raw_sha256": "232fff3bac33bd479dc7751409bb4865bf0a39d0c6be7c6fd9e1dd23cf00813c"
+    },
+    {
+      "name": "view_page_archived_disjointness",
+      "type": "implies",
+      "status": "PASS",
+      "elapsed_seconds": 0.011820000014267862,
+      "raw_sha256": "9271fbb5f165bd19a60b9421dda8b4abc29329b285a983c30827850a6ffc1973"
+    },
+    {
+      "name": "view_page_reader_non_prohibited_liveness",
+      "type": "liveness-overlap",
+      "status": "PASS",
+      "elapsed_seconds": 0.014551583910360932,
+      "raw_sha256": "2bd4f94cf41ca38c93f6e1e970017245a6e62bf4b41eae1dfd0476a092fc05dc"
+    }
+  ],
+  "semantic_check_count": 4,
+  "raw_directory": "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/verifier/54357e32bef16c0b0419c29ca8fa78c4bb92d104b4b21183f6f4a10cdfb9bb8e",
+  "confirmed_overgrant": false,
+  "confirmed_overdeny": false
+}

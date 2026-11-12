@@ -1,0 +1,70 @@
+{
+  "scenario_id": "invoice_approval-approveInvoice-T3-080",
+  "cache_key": "753985799df6dc8540352dd5f37b93eb866c71c10b56d7c48bcf1d75a9f66e37",
+  "verifier_version": "f9d67ee8f0a3920a13240774a30ca4c818f964d7b8370f1e8a7fd1e1e38bd5c4",
+  "status": "SEMANTIC_FAIL",
+  "syntax_valid": true,
+  "schema_valid": true,
+  "checks": [
+    {
+      "name": "clerk_approver_coholder_approval_floor",
+      "type": "floor",
+      "status": "PASS",
+      "elapsed_seconds": 0.01341216592118144,
+      "raw_sha256": "233c5c05114bff654c475d156237e0dcf09c060b8eed3ef3fe8087faf9f9a724"
+    },
+    {
+      "name": "clerk_approver_coholder_any_threshold_status_ceiling",
+      "type": "implies",
+      "status": "FAIL",
+      "elapsed_seconds": 0.01975733391009271,
+      "raw_sha256": "d8e10e8ef58d952ab8000f815699911470759258b440f001ee0dc28a1651b16a"
+    },
+    {
+      "name": "approver_finance_submitted_threshold_approval_floor",
+      "type": "floor",
+      "status": "PASS",
+      "elapsed_seconds": 0.012588666984811425,
+      "raw_sha256": "544bc06cccbc2cfda3b5bd00237c8cf58d59aed14940652b370316598edfef3a"
+    },
+    {
+      "name": "approver_finance_unsubmitted_business_hours_threshold_disjointness",
+      "type": "implies",
+      "status": "PASS",
+      "elapsed_seconds": 0.011967916041612625,
+      "raw_sha256": "ae8a8f2234d7ed63a95b7edb9307e4e38cce517b120b600a8822fcff9c063ace"
+    },
+    {
+      "name": "approver_threshold_crossing_submitted_requirement_exception_floor",
+      "type": "floor",
+      "status": "PASS",
+      "elapsed_seconds": 0.012377333012409508,
+      "raw_sha256": "1ed26bf8261083cdf1ffdbe827cda3a087045dc67d6fe2afccf8784c3306f6f8"
+    },
+    {
+      "name": "approver_finance_business_hours_threshold_exception_approval_ceiling",
+      "type": "implies",
+      "status": "PASS",
+      "elapsed_seconds": 0.01331279193982482,
+      "raw_sha256": "7569406d669343c19c8d928bed5ac189aad502f677971fac6432331ff3f4b0bd"
+    },
+    {
+      "name": "approver_threshold_crossing_submitted_invoice_approval_floor",
+      "type": "floor",
+      "status": "PASS",
+      "elapsed_seconds": 0.011604541912674904,
+      "raw_sha256": "cd6e3e6c04481594720a9d0bdfbeecc5ab9d3d993a7e8fb4b6fbbe19b41e3478"
+    },
+    {
+      "name": "approver_invoice_approval_success_liveness",
+      "type": "liveness-overlap",
+      "status": "PASS",
+      "elapsed_seconds": 0.01574650011025369,
+      "raw_sha256": "a48b6e64f4df1bb77624860282e48160bbe06c9b201acf4df88c7563cf53fa40"
+    }
+  ],
+  "semantic_check_count": 8,
+  "raw_directory": "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/verifier/753985799df6dc8540352dd5f37b93eb866c71c10b56d7c48bcf1d75a9f66e37",
+  "confirmed_overgrant": true,
+  "confirmed_overdeny": false
+}

@@ -1,0 +1,112 @@
+{
+  "scenario_id": "escrow_disbursement-approveClearToClose-T2-008",
+  "cache_key": "7bceef25689cd08be92d09d545732facb40c5473b5771c4dfa155d3092f81bbe",
+  "verifier_version": "f9d67ee8f0a3920a13240774a30ca4c818f964d7b8370f1e8a7fd1e1e38bd5c4",
+  "status": "SEMANTIC_FAIL",
+  "syntax_valid": true,
+  "schema_valid": true,
+  "checks": [
+    {
+      "name": "overlapping_escrow_and_senior_officer_can_open_file",
+      "type": "floor",
+      "status": "FAIL",
+      "elapsed_seconds": 0.06320304097607732,
+      "raw_sha256": "4c46e25b052530c86fa3f7b7250e2dca676d0fcfa024f81e1bfe6b6a9054fb73"
+    },
+    {
+      "name": "overlapping_senior_and_manager_can_approve_independent_file",
+      "type": "floor",
+      "status": "PASS",
+      "elapsed_seconds": 0.012450540903955698,
+      "raw_sha256": "a1cdd3d1093ed788fa9b7c6a52463a8d331337bbc482ab79a9e5573bf1f2136d"
+    },
+    {
+      "name": "open_file_overlap_roles_limited_to_escrow_officer_slice",
+      "type": "implies",
+      "status": "FAIL",
+      "elapsed_seconds": 0.015014166943728924,
+      "raw_sha256": "454c2b956f238e826eb4ca9e517f93e090ae7cc7cc39c994491f46825ffee110"
+    },
+    {
+      "name": "approve_clear_to_close_limited_to_independent_title_or_manager",
+      "type": "implies",
+      "status": "PASS",
+      "elapsed_seconds": 0.012290375074371696,
+      "raw_sha256": "1135804ff38bf554a797c95813ce4996615780eb5ab1d41c213f94136cd0bfa4"
+    },
+    {
+      "name": "escrow_officer_can_open_own_escrow_file",
+      "type": "floor",
+      "status": "FAIL",
+      "elapsed_seconds": 0.014637709013186395,
+      "raw_sha256": "6ed26a16da5324a2705ffe603b28ea95a987432c10fb77b75744ce2fe4c3b9db"
+    },
+    {
+      "name": "title_or_manager_can_approve_independent_title_cleared_file",
+      "type": "floor",
+      "status": "PASS",
+      "elapsed_seconds": 0.012263833079487085,
+      "raw_sha256": "a88cfd171f4e9f15e52de167d240fb2fcc776473fcc43d3d074fba23f36dc158"
+    },
+    {
+      "name": "approve_from_p0008_limited_to_title_or_manager_independent_title_cleared",
+      "type": "implies",
+      "status": "PASS",
+      "elapsed_seconds": 0.011109582963399589,
+      "raw_sha256": "41287cdb0bbaa2041965c24fc1d3b10098b8660cf05418c2c7becd41c2e923c9"
+    },
+    {
+      "name": "clear_to_close_approver_must_not_have_opened_file",
+      "type": "implies",
+      "status": "PASS",
+      "elapsed_seconds": 0.011216707993298769,
+      "raw_sha256": "ea12ab126340475f8665a077c5fa97a3f3b901fb6679db0ab8d0a4253a6fa1e2"
+    },
+    {
+      "name": "clear_to_close_refuse_title_encumbrances",
+      "type": "implies",
+      "status": "PASS",
+      "elapsed_seconds": 0.010882082977332175,
+      "raw_sha256": "b2a6c5f6dcb188e3d1a48726159f7e704f5c455bb7fa4a478744731aa7311da1"
+    },
+    {
+      "name": "auditor_can_view_audit_log",
+      "type": "floor",
+      "status": "PASS",
+      "elapsed_seconds": 0.008079165942035615,
+      "raw_sha256": "7c07b7fa0e02cd8d2244a81188e73dabe68e40034ca983af84ad10ec35f97f10"
+    },
+    {
+      "name": "view_audit_log_limited_to_auditors",
+      "type": "implies",
+      "status": "PASS",
+      "elapsed_seconds": 0.008176916977390647,
+      "raw_sha256": "085dd24938feddebf5e36f3a3ab5ca4dcc7bd2919a6dfc66c4e58f0bed57d550"
+    },
+    {
+      "name": "auditor_must_not_approve_clear_to_close",
+      "type": "implies",
+      "status": "PASS",
+      "elapsed_seconds": 0.01080775004811585,
+      "raw_sha256": "a0f527e1dd8674f3e9d11b289f35517e79763be23d39c3fedc4d3e9e265af8bc"
+    },
+    {
+      "name": "title_officer_can_approve_when_no_prohibitions_apply",
+      "type": "floor",
+      "status": "PASS",
+      "elapsed_seconds": 0.011059209005907178,
+      "raw_sha256": "3d18fafb69a98c425c6b763119a8d0a8fa682efea279afe317d94ad0145ce82f"
+    },
+    {
+      "name": "title_officer_success_limited_to_approved_clear_to_close_slice",
+      "type": "implies",
+      "status": "PASS",
+      "elapsed_seconds": 0.011208125040866435,
+      "raw_sha256": "1e822608b5581da4423c53e8089ebb5401afe9331e96d324c526e937cc971c2f"
+    }
+  ],
+  "semantic_check_count": 14,
+  "raw_directory": "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/verifier/7bceef25689cd08be92d09d545732facb40c5473b5771c4dfa155d3092f81bbe",
+  "confirmed_overgrant": true,
+  "confirmed_overdeny": true
+}

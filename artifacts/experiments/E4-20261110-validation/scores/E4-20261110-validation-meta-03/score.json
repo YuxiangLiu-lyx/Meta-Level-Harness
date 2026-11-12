@@ -1,0 +1,13 @@
+{
+  "scenario_id": "network_change_approval-chain2-T4-026",
+  "cache_key": "bbbfc635b358ad438daeb1952b484b9ba2195418c33f5b8e6621bbd6697a97cd",
+  "verifier_version": "f9d67ee8f0a3920a13240774a30ca4c818f964d7b8370f1e8a7fd1e1e38bd5c4",
+  "status": "SCHEMA_FAIL",
+  "syntax_valid": true,
+  "schema_valid": false,
+  "checks": [],
+  "semantic_check_count": 0,
+  "raw_directory": "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/verifier/bbbfc635b358ad438daeb1952b484b9ba2195418c33f5b8e6621bbd6697a97cd",
+  "confirmed_overgrant": false,
+  "confirmed_overdeny": false
+}

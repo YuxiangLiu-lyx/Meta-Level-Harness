@@ -1,0 +1,56 @@
+{
+  "scenario_id": "code_repository-cloneRepository-T3-001",
+  "cache_key": "b6c9ae3518a89eeed34e7b914f296fa61bd615a15a080298e42648e9fb66a747",
+  "verifier_version": "f9d67ee8f0a3920a13240774a30ca4c818f964d7b8370f1e8a7fd1e1e38bd5c4",
+  "status": "PASS",
+  "syntax_valid": true,
+  "schema_valid": true,
+  "checks": [
+    {
+      "name": "no_clone_above_clearance",
+      "type": "implies",
+      "status": "PASS",
+      "elapsed_seconds": 0.015269625000655651,
+      "raw_sha256": "f73a0356891101332a092e8bac64f1698cadf58ccfa0b1c93c82acbda12f8e16"
+    },
+    {
+      "name": "developer_confidential_regulated_active_clone_floor",
+      "type": "floor",
+      "status": "PASS",
+      "elapsed_seconds": 0.012198374955914915,
+      "raw_sha256": "911451fe8797d02b9edec1dc81b27e56f7f408ce8e41df8293aacad381f31bdb"
+    },
+    {
+      "name": "developer_confidential_regulated_active_clone_ceiling",
+      "type": "implies",
+      "status": "PASS",
+      "elapsed_seconds": 0.011200958047993481,
+      "raw_sha256": "f53f6b19d72c98f81594659f0fa0d280da400a16d56f9c2a298051a51789b591"
+    },
+    {
+      "name": "no_clone_archived_repository",
+      "type": "implies",
+      "status": "PASS",
+      "elapsed_seconds": 0.010815165936946869,
+      "raw_sha256": "0206fd541ce835828a96d65dec9300895aab063b489f8e2c4446b1d42105a581"
+    },
+    {
+      "name": "regulated_clone_requires_sufficient_clearance",
+      "type": "implies",
+      "status": "PASS",
+      "elapsed_seconds": 0.010059625026769936,
+      "raw_sha256": "634fb870d02d88a75b3d1e3ac8119bb7d7c97b3c74b5b75ed1e7c5a2c08915a9"
+    },
+    {
+      "name": "no_clone_without_regulated_data_tag",
+      "type": "implies",
+      "status": "PASS",
+      "elapsed_seconds": 0.009382082964293659,
+      "raw_sha256": "88b146e1c2ff32d5d41a05feaf97fb9b6453ba7af3039c10fb2e1a90d4387d19"
+    }
+  ],
+  "semantic_check_count": 6,
+  "raw_directory": "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/verifier/b6c9ae3518a89eeed34e7b914f296fa61bd615a15a080298e42648e9fb66a747",
+  "confirmed_overgrant": false,
+  "confirmed_overdeny": false
+}

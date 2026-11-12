@@ -1,0 +1,54 @@
+{
+  "protocol": "v1",
+  "public_instructions": "You translate natural-language access-control requirements into Cedar policies using the supplied schema. Cedar denies by default. An applicable forbid overrides every permit. Guard optional attributes with has before reading them. Preserve the schema's entity, set, and attribute types. Use only the supplied task information. Do not use tools, files, search, additional model calls, or external feedback. Produce a single final answer as a JSON object with exactly one field, policy, whose value is the complete Cedar policy text. Do not include explanations or Markdown fences.\n",
+  "manual_harness": {
+    "instruction_blocks": [
+      "Translate the access-control requirements into a complete Cedar policy set. Identify each action, eligible principal, resource type, required condition, prohibition, and exception. Use only entity types, attributes, actions, and representations supported by the schema. Implement the stated permissions and restrictions together.",
+      "Before answering, check the policy mentally for both unauthorized permissions and missing required permissions. Keep distinct action rules separate when their conditions differ. Apply exceptions only to the restriction they qualify. Return one final policy set."
+    ],
+    "input_order": [
+      "requirements",
+      "schema"
+    ],
+    "checklist": [
+      "Every required action is covered.",
+      "Role, ownership, membership, and context conditions follow the requirements.",
+      "Prohibitions and exceptions compose correctly.",
+      "Optional attribute reads are guarded and Cedar syntax is valid."
+    ]
+  },
+  "representative_inputs": [
+    {
+      "id": "iam_access-modifyResource-T3-056",
+      "requirements": "The system manages modification of cloud resources in an IAM environment.\n\nThe people involved are owners, developers, operators, and org admins. One person may hold both the owner and developer role at the same time.\n\nThe resources are cloud resources, secrets, and org units. Every cloud resource records its owner, org unit, tags, environment, and temporary grant.\n\nEach requester carries their organization membership.\n\nEach request carries source IP, whether MFA was used, and session age.\n\nOwners, developers, and operators may modify a cloud resource only when MFA was used.\n\nWhen MFA was not used, owners, developers, and operators must not modify a cloud resource.\n\nOwners, developers, and operators may modify a cloud resource outside production, or in production when it has been promoted.\n\nOwners, developers, and operators must not modify a production cloud resource that has not been promoted unless the requester belongs under that cloud resource's org unit.\n\nWhen the requester belongs under the cloud resource's org unit, the production promotion requirement does not block the modification.\n\nA request by an owner to modify a cloud resource that does not trip any prohibition above must be able to succeed.",
+      "schema": "entity Role enum [\"owner\", \"developer\", \"operator\", \"orgAdmin\"];\n\nentity Environment enum [\"production\", \"nonProduction\"];\n\nentity User {\n    roles: Set<Role>,\n    orgMembership: OrgUnit,\n};\n\nentity OrgUnit in [OrgUnit];\n\nentity CloudResource {\n    owner: User,\n    orgUnit: OrgUnit,\n    tags: Set<String>,\n    environment: Environment,\n    temporaryGrant: Bool,\n    promoted: Bool,\n};\n\nentity Secret;\n\naction modifyCloudResource appliesTo {\n    principal: [User],\n    resource: [CloudResource],\n    context: {\n        sourceIp: ipaddr,\n        mfaUsed: Bool,\n        sessionAge: duration,\n    },\n};\n"
+    },
+    {
+      "id": "document_management-editDocument-T3-006",
+      "requirements": "The system manages document editing, review, and publication across an enterprise workspace.\n\nThe people involved are authors, editors, viewers, and compliance officers, and a single person may hold both the author and editor role at the same time.\n\nThe resources are documents and workspaces; every document records its owner, its share list, its classification, whether it carries a version lock, its labels, and its status, and every workspace records its members.\n\nAn author or editor may edit a document only while it is in draft status.\n\nOnce a document has left draft status, for example because it has been published, neither an author nor an editor may edit it.\n\nAn author or editor may edit a draft document only when the requester appears on that document's share list.\n\nIf the requester does not appear on the document's share list, neither an author nor an editor may edit the document, even while it is in draft status.\n\nAn author or editor may edit a draft document only when the document carries a version lock.\n\nIf a draft document does not carry a version lock, neither an author nor an editor may edit it, even if the requester is on the share list.\n\nAn author or editor must not edit a document unless it is in draft status, carries a version lock, and lists the requester on its share list.\n\nA request by an author to edit a document that is in draft status, carries a version lock, and lists the author on its share list must be able to succeed.",
+      "schema": "entity Role enum [\"Author\", \"Editor\", \"Viewer\", \"ComplianceOfficer\"];\n\nentity User {\n    roles: Set<Role>,\n};\n\nentity Document {\n    owner: User,\n    shareList: Set<User>,\n    classification: String,\n    hasVersionLock: Bool,\n    labels: Set<String>,\n    status: String,\n};\n\nentity Workspace {\n    members: Set<User>,\n};\n\naction editDocument appliesTo {\n    principal: [User],\n    resource: [Document],\n};\n"
+    },
+    {
+      "id": "payroll-viewEmployeeRecord-T3-014",
+      "requirements": "The system manages personnel records, payroll work, and leave approvals.\n\nThe people involved are employees, managers, h r specialists, and payroll admins. One person may hold both the manager and employee role at the same time.\n\nThe resources are payroll runs, employee records, and leave requests. Every employee record records the employee, their manager, its PII level, and the department.\n\nEach requester carries a clearance, and each request carries whether it is on the corporate VPN and the current time.\n\nA manager or h r specialist may view an employee record only when their clearance dominates the record's PII level and the request is not on the corporate VPN.\n\nWhen the request is on the corporate VPN, the clearance requirement does not block the manager or h r specialist from viewing the employee record.\n\nA manager and an h r specialist must not view an employee record from outside the corporate VPN when their clearance does not dominate the record's PII level.\n\nA payroll admin may prepare a payroll run.\n\nA manager may approve a leave request.\n\nA request by a manager to view an employee record that does not trip any prohibition above must be able to succeed.",
+      "schema": "entity User {\n    roles: Set<String>,\n    clearance: Long,\n};\n\nentity EmployeeRecord {\n    employee: User,\n    manager: User,\n    piiLevel: Long,\n    department: String,\n};\n\nentity PayrollRun;\n\nentity LeaveRequest;\n\naction viewEmployeeRecord appliesTo {\n    principal: [User],\n    resource: [EmployeeRecord],\n    context: {\n        onCorporateVpn: Bool,\n        currentTime: datetime,\n    },\n};\n\naction preparePayrollRun appliesTo {\n    principal: [User],\n    resource: [PayrollRun],\n    context: {\n        onCorporateVpn: Bool,\n        currentTime: datetime,\n    },\n};\n\naction approveLeaveRequest appliesTo {\n    principal: [User],\n    resource: [LeaveRequest],\n    context: {\n        onCorporateVpn: Bool,\n        currentTime: datetime,\n    },\n};\n"
+    }
+  ],
+  "manual_design20_statistics": {
+    "completed": 20,
+    "planned": 20,
+    "passed": 10,
+    "syntax_valid": 20,
+    "schema_valid": 20,
+    "semantic_failures": 10,
+    "confirmed_overgrant": 7,
+    "confirmed_overdeny": 6,
+    "evaluation_unresolved": 0
+  },
+  "sanitized_error_notes": [
+    "IAM modification: the baseline broadened an organization-unit exception into permission for non-owner cases. Keep exception scope local and distinguish an exception to a prohibition from an independent grant.",
+    "Wire approval: the baseline added a verifier/treasury role requirement to a permission stated for any sufficiently authorized person, causing missing required permissions. Do not invent extra role restrictions.",
+    "Patent examination: the published evaluator expected the requester to be the assigned examiner, which the baseline omitted. The natural-language text does not explicitly state assignment; treat this as a possible specification/evaluator mismatch, not proof that every schema relationship should be imposed."
+  ],
+  "packet_policy": "No reference policy, verification plan, raw counterexample, or validation material is included. The same packet is supplied unchanged to every automatic design stage."
+}

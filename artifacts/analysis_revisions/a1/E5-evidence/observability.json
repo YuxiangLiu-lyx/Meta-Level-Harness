@@ -1,0 +1,13 @@
+{
+  "requested_model": "gpt-6.1-sol",
+  "effective_model": null,
+  "underlying_requests": null,
+  "temperature": null,
+  "seed": null,
+  "hard_generation_token_limit": null,
+  "truncation": null,
+  "truncation_note": "The exec event interface did not expose a definitive truncation flag. Valid JSON does not prove semantic completeness.",
+  "cached_token_accounting": "Cached input is a subset of input tokens, not additive.",
+  "failed_attempt_usage": "Unknown; never filled with zero.",
+  "runtime_background": "Built-in Codex runtime and any unobservable server context are fixed background, not fully controlled system messages."
+}

@@ -1,0 +1,93 @@
+[
+  {
+    "category": "meta_only",
+    "scenario_id": "grant_awards-chain2-T3-005",
+    "selection_rule": "first occurrence in frozen validation order",
+    "methods": {
+      "Meta": {
+        "status": "PASS",
+        "failed_checks": [],
+        "prediction_path": "artifacts/experiments/E4-20261110-validation/tasks/E4-20261110-validation-meta-13/result.json",
+        "score_path": "artifacts/experiments/E4-20261110-validation/scores/E4-20261110-validation-meta-13/score.json"
+      },
+      "Refine": {
+        "status": "SEMANTIC_FAIL",
+        "failed_checks": [
+          {
+            "name": "obligate_funds_grants_officer_different_from_approver_floor",
+            "type": "floor",
+            "status": "FAIL",
+            "elapsed_seconds": 0.013369709020480514,
+            "raw_sha256": "9fc87c4b8dd61af32bd753e94ccacce488d76952e6852e2713773caa31119f5a"
+          },
+          {
+            "name": "obligate_funds_only_grants_officer_after_approval_and_not_approver_ceiling",
+            "type": "implies",
+            "status": "FAIL",
+            "elapsed_seconds": 0.013243500026874244,
+            "raw_sha256": "5c9ac8186647158e8da8a7437b6e1c7bcb6cfe7da1b8f4f3abf078c734bbe82b"
+          }
+        ],
+        "prediction_path": "artifacts/experiments/E4-20261110-validation/tasks/E4-20261110-validation-refine-13/result.json",
+        "score_path": "artifacts/experiments/E4-20261110-validation/scores/E4-20261110-validation-refine-13/score.json"
+      }
+    }
+  },
+  {
+    "category": "refine_only",
+    "scenario_id": "kubernetes_rbac-readSecret-T3-033",
+    "selection_rule": "first occurrence in frozen validation order",
+    "methods": {
+      "Meta": {
+        "status": "SCHEMA_FAIL",
+        "failed_checks": [],
+        "prediction_path": "artifacts/experiments/E4-20261110-validation/tasks/E4-20261110-validation-meta-05/result.json",
+        "score_path": "artifacts/experiments/E4-20261110-validation/scores/E4-20261110-validation-meta-05/score.json"
+      },
+      "Refine": {
+        "status": "PASS",
+        "failed_checks": [],
+        "prediction_path": "artifacts/experiments/E4-20261110-validation/tasks/E4-20261110-validation-refine-05/result.json",
+        "score_path": "artifacts/experiments/E4-20261110-validation/scores/E4-20261110-validation-refine-05/score.json"
+      }
+    }
+  },
+  {
+    "category": "both_pass",
+    "scenario_id": "warehouse_fulfillment-pickOrder-T3-055",
+    "selection_rule": "first occurrence in frozen validation order",
+    "methods": {
+      "Meta": {
+        "status": "PASS",
+        "failed_checks": [],
+        "prediction_path": "artifacts/experiments/E4-20261110-validation/tasks/E4-20261110-validation-meta-00/result.json",
+        "score_path": "artifacts/experiments/E4-20261110-validation/scores/E4-20261110-validation-meta-00/score.json"
+      },
+      "Refine": {
+        "status": "PASS",
+        "failed_checks": [],
+        "prediction_path": "artifacts/experiments/E4-20261110-validation/tasks/E4-20261110-validation-refine-00/result.json",
+        "score_path": "artifacts/experiments/E4-20261110-validation/scores/E4-20261110-validation-refine-00/score.json"
+      }
+    }
+  },
+  {
+    "category": "both_fail",
+    "scenario_id": "network_change_approval-chain2-T4-026",
+    "selection_rule": "first occurrence in frozen validation order",
+    "methods": {
+      "Meta": {
+        "status": "SCHEMA_FAIL",
+        "failed_checks": [],
+        "prediction_path": "artifacts/experiments/E4-20261110-validation/tasks/E4-20261110-validation-meta-03/result.json",
+        "score_path": "artifacts/experiments/E4-20261110-validation/scores/E4-20261110-validation-meta-03/score.json"
+      },
+      "Refine": {
+        "status": "SCHEMA_FAIL",
+        "failed_checks": [],
+        "prediction_path": "artifacts/experiments/E4-20261110-validation/tasks/E4-20261110-validation-refine-03/result.json",
+        "score_path": "artifacts/experiments/E4-20261110-validation/scores/E4-20261110-validation-refine-03/score.json"
+      }
+    }
+  }
+]

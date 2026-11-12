@@ -1,0 +1,49 @@
+{
+  "scenario_id": "grant_awards-chain2-T3-005",
+  "cache_key": "bc19103e9e56778c17ba59f50919bd72906ddef75a60c1a921c30adb4ef05072",
+  "verifier_version": "f9d67ee8f0a3920a13240774a30ca4c818f964d7b8370f1e8a7fd1e1e38bd5c4",
+  "status": "PASS",
+  "syntax_valid": true,
+  "schema_valid": true,
+  "checks": [
+    {
+      "name": "approve_award_authorized_role_and_tier_floor",
+      "type": "floor",
+      "status": "PASS",
+      "elapsed_seconds": 0.012233167071826756,
+      "raw_sha256": "0cbe7f08a4c9cc3ae8419e994f5b9520a2f6766d3d055cf26abbf0ddf7a8c30a"
+    },
+    {
+      "name": "approve_award_only_authorized_role_and_tier_ceiling",
+      "type": "implies",
+      "status": "PASS",
+      "elapsed_seconds": 0.011820957995951176,
+      "raw_sha256": "6c3195569293d7d88bdd3b042cbc14e3e6527acd1a3748713ec1eb1926b773bf"
+    },
+    {
+      "name": "obligate_funds_grants_officer_different_from_approver_floor",
+      "type": "floor",
+      "status": "PASS",
+      "elapsed_seconds": 0.012883000075817108,
+      "raw_sha256": "0386455dbdc091db6b28f62f4296e71ec1d09098d86d274cc2f44cebd72b7968"
+    },
+    {
+      "name": "obligate_funds_only_grants_officer_after_approval_and_not_approver_ceiling",
+      "type": "implies",
+      "status": "PASS",
+      "elapsed_seconds": 0.011857416946440935,
+      "raw_sha256": "c1ccd743d93692bcee142db1ac6556c95b27abcff7aebde8044272ac492e390f"
+    },
+    {
+      "name": "obligate_funds_disjoint_from_same_approver",
+      "type": "implies",
+      "status": "PASS",
+      "elapsed_seconds": 0.013171292026527226,
+      "raw_sha256": "3e985f9dfacf5d484aa0a591f317526146de7e5ed0e23617d1cc701160fea325"
+    }
+  ],
+  "semantic_check_count": 5,
+  "raw_directory": "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/verifier/bc19103e9e56778c17ba59f50919bd72906ddef75a60c1a921c30adb4ef05072",
+  "confirmed_overgrant": false,
+  "confirmed_overdeny": false
+}

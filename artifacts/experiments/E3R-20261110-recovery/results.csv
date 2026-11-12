@@ -1,0 +1,6 @@
+stage,words,input_tokens,cached_input_tokens,output_tokens,reasoning_output_tokens,elapsed_seconds,tool_events,turns_started,turns_completed,underlying_requests
+direct,377,11114,0,702,184,27.577011823654175,0,1,1,
+meta-guidance,369,11102,0,519,51,24.408204078674316,0,1,1,
+meta-harness,371,11586,0,598,79,19.414334058761597,0,1,1,
+refine-draft,381,11114,0,815,286,28.52306079864502,0,1,1,
+refine-revision,437,11654,0,737,136,24.72219705581665,0,1,1,

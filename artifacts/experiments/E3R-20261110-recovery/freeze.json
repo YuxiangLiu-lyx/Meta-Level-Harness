@@ -1,0 +1,23 @@
+{
+  "files": {
+    "/Users/liuyuxiang/Documents/USA/599/harness_experiment/scripts/recover_construction.py": "f216694d01aa311e84ba0307e0adb2790de19d3d12fe8accf787de6b8c175ded",
+    "artifacts/design_packet.json": "f4dc079b1cfff5462d01dd8b8520ebdea85ac410d7a1474b38eed71f99d9813b",
+    "artifacts/experiments/E3-20261110-construction/tasks/meta-harness/input.json": "8a17ad65888906150f15e288fd3aea113266184a309f4ea6b56900bd4a04f72b",
+    "configs/manual.json": "5c5f32c9fad523a5563f5d69f0da1d150ec814713f6456d5736a47999bb8a92f",
+    "configs/public_instructions.txt": "e45c383a3b7c7e96ed0d95333914b04731c1be809ecc0ccd707f7527b189e952",
+    "configs/runtime.json": "139b9b669b2b31f0442fa6d2a85bf24e29c9160916495cf21d6f02f3ecdf8c36",
+    "configs/verifier.json": "e84ffbde6ad6efaea74b644ac6e3091cf0465935d1d6d52318aa0d810fac00a7",
+    "src/harness_lab/__init__.py": "8b52d6a6cf89b94359aa61a575cc703b3ec008896b820dfc6b3d56b91b863514",
+    "src/harness_lab/backend.py": "2d457de4ad259789439b3aec65cf657497b7151b250c7c5d4674ad2f2aff1573",
+    "src/harness_lab/protocol.py": "64890da920fe0673488f3255cd7cf1580bd50f87fbcff528590c8c35064cbb2e",
+    "src/harness_lab/verifier.py": "cd659ee33e94924863b52618b6df58f0152c52bb552f250d7b517846db642523"
+  },
+  "metadata": {
+    "protocol": "v1.1",
+    "recovery_of": "E3-20261110-meta-harness",
+    "maximum_recovery_attempts": 1,
+    "prompt_unchanged": true,
+    "no_new_feedback": true
+  },
+  "freeze_sha256": "130f29fd98890662f8fe6482b05291c2544fc3b9c570e73ec576b1008336cfdf"
+}

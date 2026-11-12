@@ -1,0 +1,13 @@
+{
+  "scenario_ids": [
+    "document_management-editDocument-T3-006",
+    "iam_access-modifyResource-T3-056",
+    "patent_prosecution-examineApplication-T2-005",
+    "payroll-viewEmployeeRecord-T3-014",
+    "wire_transfer-chain2-T5-008"
+  ],
+  "verifier_version": "f9d67ee8f0a3920a13240774a30ca4c818f964d7b8370f1e8a7fd1e1e38bd5c4",
+  "planned_controls": 18,
+  "model_tasks": 0,
+  "heldout_evaluated": 0
+}

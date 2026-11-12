@@ -1,0 +1,4 @@
+task_id,analyzed_status,tool_events,input_tokens,cached_input_tokens,output_tokens,reasoning_output_tokens,elapsed_seconds,raw_directory
+smoke-01,COMPLETED,0,8807,7552,5,0,4.074774980545044,/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/codex/smoke-01
+smoke-02,COMPLETED,0,8831,0,15,0,6.266412019729614,/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/codex/smoke-02
+smoke-03,COMPLETED,0,17841,0,94,11,9.19024395942688,/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/codex/smoke-03

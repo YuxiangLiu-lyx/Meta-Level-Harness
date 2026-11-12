@@ -1,0 +1,19 @@
+{
+  "verifier": {
+    "cedar": "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/dependencies/cedar-policy-cli-experimental-aarch64-apple-darwin/cedar",
+    "cvc5": "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/dependencies/cvc5-macOS-arm64-static/bin/cvc5",
+    "downloads": [
+      {
+        "url": "https://github.com/cedar-policy/cedar/releases/download/cedar-policy-cli-v4.14.1/cedar-policy-cli-experimental-aarch64-apple-darwin.tar.xz",
+        "sha256": "32970ec38cf3ef57ba069eb2f57828d6a5a79828abb3be7b7ce4e15662c31516"
+      },
+      {
+        "url": "https://github.com/cvc5/cvc5/releases/download/cvc5-1.4.2/cvc5-macOS-arm64-static.zip",
+        "sha256": "24397f7d022e755876ca836193d4c5f9c1d4326f0f6c01f7d7fc1ddd6bc5096c"
+      }
+    ],
+    "timeout_seconds": 30
+  },
+  "verifier_version": "f9d67ee8f0a3920a13240774a30ca4c818f964d7b8370f1e8a7fd1e1e38bd5c4",
+  "planned": 18
+}

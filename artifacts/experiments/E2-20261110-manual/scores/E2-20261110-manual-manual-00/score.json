@@ -1,0 +1,77 @@
+{
+  "scenario_id": "iam_access-modifyResource-T3-056",
+  "cache_key": "e21f29103ffd75b17ce260bd2acc62e620d4339fc36eccbf95b986c029ca8489",
+  "verifier_version": "f9d67ee8f0a3920a13240774a30ca4c818f964d7b8370f1e8a7fd1e1e38bd5c4",
+  "status": "SEMANTIC_FAIL",
+  "syntax_valid": true,
+  "schema_valid": true,
+  "checks": [
+    {
+      "name": "dual_role_owner_developer_modify_floor",
+      "type": "floor",
+      "status": "PASS",
+      "elapsed_seconds": 0.06255995808169246,
+      "raw_sha256": "a4671891a05b8ccf010ecba8bb66df20484ac8848a3b2db9206ee22030e58c94"
+    },
+    {
+      "name": "role_modify_environment_promotion_union_ceiling",
+      "type": "implies",
+      "status": "FAIL",
+      "elapsed_seconds": 0.015736542060039937,
+      "raw_sha256": "a4e49552be96be479d4b74d8255fda917e8692715ef85d9de9241cdb21f45884"
+    },
+    {
+      "name": "production_unpromoted_modify_org_boundary",
+      "type": "implies",
+      "status": "PASS",
+      "elapsed_seconds": 0.010055000078864396,
+      "raw_sha256": "36586e1ecc4dd724e2733955128f483a6be4fc169e0279fd957e3eaa0b3e47e2"
+    },
+    {
+      "name": "owner_org_exception_modify_floor",
+      "type": "floor",
+      "status": "PASS",
+      "elapsed_seconds": 0.013411790947429836,
+      "raw_sha256": "dd5b00ae80a78e6d65762cd586fcb133f4851d803675c375c6d1eb41df5968d6"
+    },
+    {
+      "name": "mfa_required_role_modify_disjointness",
+      "type": "implies",
+      "status": "PASS",
+      "elapsed_seconds": 0.010911166085861623,
+      "raw_sha256": "debe87cbe376879ba99ad1f69cf630e1fbf18bc4af509b42e77b7cd897bf6f5e"
+    },
+    {
+      "name": "mfa_used_owner_modify_floor",
+      "type": "floor",
+      "status": "PASS",
+      "elapsed_seconds": 0.013133708969689906,
+      "raw_sha256": "45523294dfd4155e060e91126e611d8c521a02248546f8f880e18a599d5a0a83"
+    },
+    {
+      "name": "role_modify_nonprod_or_promoted_floor",
+      "type": "floor",
+      "status": "PASS",
+      "elapsed_seconds": 0.012212791945785284,
+      "raw_sha256": "4cff51c352543088a15ed8cbe6e9316d87e28f4da6412e27fa56a6a89a119d33"
+    },
+    {
+      "name": "owner_no_prohibition_modify_floor",
+      "type": "floor",
+      "status": "PASS",
+      "elapsed_seconds": 0.013333999901078641,
+      "raw_sha256": "ab384faf7e33a071086e509b6d79e714913c10c466bee418b96dd026a39eb713"
+    },
+    {
+      "name": "multi_role_modify_compatible_union_ceiling",
+      "type": "implies",
+      "status": "FAIL",
+      "elapsed_seconds": 0.015677375020459294,
+      "raw_sha256": "77083ca693ca127e25547215d1b539373f0e0d322010db339d4ea03bdd23f757"
+    }
+  ],
+  "semantic_check_count": 9,
+  "raw_directory": "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/verifier/e21f29103ffd75b17ce260bd2acc62e620d4339fc36eccbf95b986c029ca8489",
+  "confirmed_overgrant": true,
+  "confirmed_overdeny": false
+}

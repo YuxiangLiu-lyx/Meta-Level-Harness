@@ -1,0 +1,15 @@
+{
+  "task_ids": [
+    "E3-20261110-direct",
+    "E3-20261110-meta-guidance",
+    "E3R-20261110-meta-harness-retry-1",
+    "E3-20261110-refine-draft",
+    "E3-20261110-refine-revision"
+  ],
+  "packet_sha256": "ab0c722fa4fdc9a39c500f6f9fded3d9f59736de4170703462357c3eb3919779",
+  "final_harness_hashes": {
+    "direct": "419d63f3aecf2b8a548d6583513a8577d1a66a04f2a65a295cedb7a572ce4fe5",
+    "meta": "f146f3093564f302a29350f98d8750fb3914be2a6f0a4a8b56bc774790986b3e",
+    "refine": "befddc9f9b2c0d882a884c8760346cd116ffd2a4facbc209cf79f78d63c423fb"
+  }
+}

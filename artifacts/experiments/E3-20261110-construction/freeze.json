@@ -1,0 +1,23 @@
+{
+  "files": {
+    "artifacts/design_packet.json": "f4dc079b1cfff5462d01dd8b8520ebdea85ac410d7a1474b38eed71f99d9813b",
+    "configs/manual.json": "5c5f32c9fad523a5563f5d69f0da1d150ec814713f6456d5736a47999bb8a92f",
+    "configs/public_instructions.txt": "e45c383a3b7c7e96ed0d95333914b04731c1be809ecc0ccd707f7527b189e952",
+    "configs/runtime.json": "d03a3ff5cae7c1ef5b2c3a308d407dd3d043d6e044ae7778305af70225c6e012",
+    "configs/verifier.json": "e84ffbde6ad6efaea74b644ac6e3091cf0465935d1d6d52318aa0d810fac00a7",
+    "scripts/build_harnesses.py": "00d04e9008f23f7a6b7ebeedcf12a5281d2aef4e26aadb551668e6dbc6d119a3",
+    "src/harness_lab/__init__.py": "8b52d6a6cf89b94359aa61a575cc703b3ec008896b820dfc6b3d56b91b863514",
+    "src/harness_lab/backend.py": "ac0d711d574d024a396a2a3641adaa87c8906d42ee9f7edf39dde69633c8fbee",
+    "src/harness_lab/protocol.py": "64890da920fe0673488f3255cd7cf1580bd50f87fbcff528590c8c35064cbb2e",
+    "src/harness_lab/verifier.py": "cd659ee33e94924863b52618b6df58f0152c52bb552f250d7b517846db642523"
+  },
+  "metadata": {
+    "protocol": "v1",
+    "planned_logical_stages": 5,
+    "per_stage_timeout_seconds": 180,
+    "per_stage_word_limit": 500,
+    "hypothesis": "Meta may outperform direct revision; exploratory primary comparison Meta vs Refine",
+    "no_between_stage_evaluation": true
+  },
+  "freeze_sha256": "41d2a828435ee05ce5354a7ca0eb25896f85cad0825e2b7fb9091a91efcfe5dd"
+}

@@ -1,0 +1,36 @@
+{
+  "status": "TIMEOUT",
+  "returncode": -15,
+  "turns_started": 1,
+  "turns_completed": 0,
+  "tool_events": 0,
+  "errors": [],
+  "input_tokens": null,
+  "cached_input_tokens": null,
+  "output_tokens": null,
+  "reasoning_output_tokens": null,
+  "runtime_warnings": [
+    {
+      "type": "item.completed",
+      "item": {
+        "id": "item_0",
+        "type": "error",
+        "message": "Under-development features enabled: skip_host_skill_discovery. Under-development features are incomplete and may behave unpredictably. To suppress this warning, set `suppress_unstable_features_warning = true` in /Users/liuyuxiang/.codex/config.toml."
+      }
+    }
+  ],
+  "effective_model": null,
+  "underlying_requests": null,
+  "truncated": null,
+  "task_id": "E3-20261110-meta-harness",
+  "cache_key": "b547ddc8578495d2b174961d6522205b31d8c7fa9bc304b852a773957cf236c7",
+  "elapsed_seconds": 180.02249789237976,
+  "raw_directory": "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/codex/E3-20261110-meta-harness",
+  "malformed_event_lines": 0,
+  "final_response": null,
+  "raw_sha256": {
+    "stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "events.jsonl": "101e36f21a6db492a2c6575fbe62d8a51de7fd757181da3a7f677effc9e7abcd",
+    "schema.json": "9ff768eaf8cdb000c181db88490ff030b815faf3a1201734f061883ed1905115"
+  }
+}

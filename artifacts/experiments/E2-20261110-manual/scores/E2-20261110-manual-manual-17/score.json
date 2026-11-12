@@ -1,0 +1,56 @@
+{
+  "scenario_id": "smart_building-overrideSchedule-T4-001",
+  "cache_key": "48f70c11ceb0239bba1a77f2e8fd0a059101a8c110a6653531eb68c0526073e7",
+  "verifier_version": "f9d67ee8f0a3920a13240774a30ca4c818f964d7b8370f1e8a7fd1e1e38bd5c4",
+  "status": "PASS",
+  "syntax_valid": true,
+  "schema_valid": true,
+  "checks": [
+    {
+      "name": "override_zone_schedule_unlocked_controller_floor_repair",
+      "type": "floor",
+      "status": "PASS",
+      "elapsed_seconds": 0.01413829205557704,
+      "raw_sha256": "5aff02e3686bddff5bf70f36ad2039c2e9cce0289745368bb717c9caf48a8c38"
+    },
+    {
+      "name": "override_zone_schedule_bounded_to_controller_assignment_tier",
+      "type": "implies",
+      "status": "PASS",
+      "elapsed_seconds": 0.011804083012975752,
+      "raw_sha256": "4febda607cd9be57f39d07a3e4366c945dd8c60d85551ae588fa18f582239f76"
+    },
+    {
+      "name": "override_zone_schedule_no_technician_or_tenant",
+      "type": "implies",
+      "status": "PASS",
+      "elapsed_seconds": 0.011090624961070716,
+      "raw_sha256": "faeef31df76a234dbacc23d2ba5a98c962187cf8d00ce13b23a578386bd7face"
+    },
+    {
+      "name": "override_zone_schedule_excludes_locked_zones",
+      "type": "implies",
+      "status": "PASS",
+      "elapsed_seconds": 0.010092834010720253,
+      "raw_sha256": "d54c26dcc9ddc0de9d5bc960af38f3f7e9ddf86258a1c976edc6d40ea7e67503"
+    },
+    {
+      "name": "override_zone_schedule_unlocked_assigned_controller_floor",
+      "type": "floor",
+      "status": "PASS",
+      "elapsed_seconds": 0.01192641700617969,
+      "raw_sha256": "9b6449c753027cab0ae4e4bd4495be19af8b208cbaa49748da5ee6d62c343887"
+    },
+    {
+      "name": "override_zone_schedule_unlocked_assigned_controller_ceiling",
+      "type": "implies",
+      "status": "PASS",
+      "elapsed_seconds": 0.040115416049957275,
+      "raw_sha256": "1de083a448324de75c843a73947ce4f53a571dcd5c892a840c631af0bb046204"
+    }
+  ],
+  "semantic_check_count": 6,
+  "raw_directory": "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/verifier/48f70c11ceb0239bba1a77f2e8fd0a059101a8c110a6653531eb68c0526073e7",
+  "confirmed_overgrant": false,
+  "confirmed_overdeny": false
+}

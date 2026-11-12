@@ -1,0 +1,98 @@
+{
+  "scenario_id": "shipment_dispatch-chain2-T5-037",
+  "cache_key": "d5bb28f99d3326bc12ff044587971cdbf76c3c1fcdcfd8c82ef35d98bcdc2605",
+  "verifier_version": "f9d67ee8f0a3920a13240774a30ca4c818f964d7b8370f1e8a7fd1e1e38bd5c4",
+  "status": "SEMANTIC_FAIL",
+  "syntax_valid": true,
+  "schema_valid": true,
+  "checks": [
+    {
+      "name": "confirm_delivery_by_dispatching_driver_floor",
+      "type": "floor",
+      "status": "FAIL",
+      "elapsed_seconds": 0.05515195894986391,
+      "raw_sha256": "ab861c6beee233992291a46dc3c89545323a81ce7576c3ea84ac8c02c45c558d"
+    },
+    {
+      "name": "confirm_delivery_driver_or_depot_network_exception_ceiling",
+      "type": "implies",
+      "status": "PASS",
+      "elapsed_seconds": 0.010248875012621284,
+      "raw_sha256": "309ebf2039cffe7d6bc09a904c2334690207e6179ea02cc80827f3f74a382f1c"
+    },
+    {
+      "name": "planner_driver_dispatch_from_origin_depot_network_floor",
+      "type": "floor",
+      "status": "FAIL",
+      "elapsed_seconds": 0.015245874994434416,
+      "raw_sha256": "bc977f3dc6ba0d5a35a0f5ecb98c6d2f804fd7524b0522b7310cf4993ffcd7ba"
+    },
+    {
+      "name": "planner_driver_dispatch_with_carrier_prefix_floor",
+      "type": "floor",
+      "status": "FAIL",
+      "elapsed_seconds": 0.015227959025651217,
+      "raw_sha256": "1b7470e83c3b35649c719ec0ed26fec511193e7d91112215688734fc4580ba8b"
+    },
+    {
+      "name": "dispatch_shipment_driver_union_ceiling",
+      "type": "implies",
+      "status": "FAIL",
+      "elapsed_seconds": 0.015052333008497953,
+      "raw_sha256": "fe1f5619a2293bd4942fdb747abae95172ee50b327593b8904d3111632424643"
+    },
+    {
+      "name": "delivery_receipt_confirm_driver_or_depot_network_exception_ceiling",
+      "type": "implies",
+      "status": "PASS",
+      "elapsed_seconds": 0.01072408293839544,
+      "raw_sha256": "595b8ca13d16ecd731f7a5480af66a4984db3fee01f188cc6ae5e7e8a3308768"
+    },
+    {
+      "name": "non_planner_driver_dispatch_floor",
+      "type": "floor",
+      "status": "PASS",
+      "elapsed_seconds": 0.011544750072062016,
+      "raw_sha256": "0586f91683a3dd9236e60839ad62a924dd22ff232736ffaf109a04e083789ed3"
+    },
+    {
+      "name": "dispatch_manager_as_driver_of_record_dispatch_floor",
+      "type": "floor",
+      "status": "PASS",
+      "elapsed_seconds": 0.010983541957102716,
+      "raw_sha256": "05fbfeaa603ba099abecfe7af6d3ab1e9e616ca5414796328cb5d3cbc83363fb"
+    },
+    {
+      "name": "planner_driver_dispatch_separation_disjointness",
+      "type": "implies",
+      "status": "PASS",
+      "elapsed_seconds": 0.011474625091068447,
+      "raw_sha256": "55842767d747bb14594dce7c787d46f18a7f87721b9716a6cc761d7d80b073a5"
+    },
+    {
+      "name": "carrier_prefix_dispatch_union_ceiling",
+      "type": "implies",
+      "status": "FAIL",
+      "elapsed_seconds": 0.014637208078056574,
+      "raw_sha256": "8b235fc884fdc50bf973a8d59333127db4e6282c1ab921d19d8e5f02ccf3e658"
+    },
+    {
+      "name": "confirm_delivery_depot_network_substitute_floor",
+      "type": "floor",
+      "status": "PASS",
+      "elapsed_seconds": 0.010071082971990108,
+      "raw_sha256": "7a111a6060ba84f7b37b6dfa33b3788c20b7f8a09db28868726ac43fff70c87b"
+    },
+    {
+      "name": "confirm_delivery_driver_or_depot_network_substitute_ceiling",
+      "type": "implies",
+      "status": "PASS",
+      "elapsed_seconds": 0.009809665963985026,
+      "raw_sha256": "ced025ec1f4b530297ac42777d19e7c737b02626d4727191f7ca61b5a7899edb"
+    }
+  ],
+  "semantic_check_count": 12,
+  "raw_directory": "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/verifier/d5bb28f99d3326bc12ff044587971cdbf76c3c1fcdcfd8c82ef35d98bcdc2605",
+  "confirmed_overgrant": true,
+  "confirmed_overdeny": true
+}

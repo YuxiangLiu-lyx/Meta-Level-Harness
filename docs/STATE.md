@@ -1,0 +1,23 @@
+# State
+
+## Completed
+
+The first E0-E5 research loop is IMPLEMENTED, TESTED, EXECUTED, and ANALYZED. E0 completed 3/3 diagnostics. E1 completed 18/18 controls: 5 references pass, 10 semantic mutants detected, 3 syntax/schema errors correctly classified. E2 has 20/20 final policies and 10/20 passes. E3 initial has 4/5 successful stages and one missing-response Meta timeout; E3R recovered the final Meta artifact in one same-input attempt. E4 completed all 80/80 final policies. E5 contains tables, paired cases, usage accounting, provenance, and reports. Eleven focused tests pass.
+
+## Current configuration and latest valid results
+
+Requested model gpt-6.1-sol, medium effort; effective server model unknown. Official extension Codex CLI 0.162.0-alpha.17.2, existing ChatGPT login. Cedar 4.14.1 experimental and CVC5 1.4.2. Design20/validation20 seed 20261110; published upstream commit 206962d130d2c69d5e15f8103fa0953345cc7690. Held-out preserved: 375, content opened: no, evaluated: 0.
+
+Protocol v1 development/construction evidence and v1.1 validation evidence are separately labeled. v1.1 allows at most one fresh-session retry for a timeout/recognized transport failure with no final answer, under the original user's bounded-network-retry authorization. Completed answers are never repaired or retried. The amendment preceded validation. The optional preference reply had not arrived when the amendment was made; no approval was inferred from silence. After E0-E5 delivery, the user explicitly confirmed uniform recovery of infrastructure failures with no final response, at most once, with original failures retained and the amendment disclosed. This later confirmation is recorded in docs/EXPERIMENT_LOG.md and does not change execution chronology or preregistration status.
+
+Validation: Manual 12/20, Direct 10/20, Meta 9/20, Refine 11/20. Meta-Refine: both_pass=8, meta_only=1, refine_only=3, both_fail=8, difference=-10 percentage points. All 20 pairs resolved. There were 110 actual task attempts of a 120 maximum, 108 completed attempts, 110 distinct sessions, two preserved timeouts, zero observed tool events, and zero unresolved final evaluations. The 100 final policies required 101 generation attempts; five logical design stages required six attempts; connectivity required three attempts.
+
+Canonical analysis is a2 in artifacts/experiments/E5-20261110-evidence and E4/report.md. Original a1 is retained under artifacts/analysis_revisions/a1. a2 corrects a case-summary error that called empty checks after schema failure passing; all policy scores and success counts are unchanged.
+
+## Blockers and limitations
+
+No current execution blocker. This small sample does not establish general superiority or statistical significance. Some natural-language requirements omit relationships enforced by reference plans. Runtime system context and actual internal request counts are not fully observable. Meta design and Refine validation token totals are unknown because failed attempts omitted usage; known subtotals are retained. Refine's timeout recorded 1165.7377 wall seconds despite a configured 180-second timeout; cause unknown. Do not treat measured wall latency as compute or claim strict wall-budget enforcement.
+
+## Next concrete actions
+
+No further model calls are needed for this round. Use the offline reproduction commands in README to inspect the saved evidence. Before a new round, preregister retry/timing behavior, address the timeout-clock discrepancy, adjudicate specification/plan ambiguities without changing these scores, and plan independent repeated harness constructions. Use new experiment IDs and freezes. Keep final held-out closed until development decisions are fixed. Do not overwrite any initial failed attempt, frozen snapshot, or prior analysis revision.

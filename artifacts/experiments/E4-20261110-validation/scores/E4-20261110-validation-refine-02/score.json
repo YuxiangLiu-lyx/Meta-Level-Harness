@@ -1,0 +1,63 @@
+{
+  "scenario_id": "lab_result_release-releaseResult-T4-003",
+  "cache_key": "ef64863a3a55771a57521978ecae830110d03621c49374d11e26d655e712e4fd",
+  "verifier_version": "f9d67ee8f0a3920a13240774a30ca4c818f964d7b8370f1e8a7fd1e1e38bd5c4",
+  "status": "PASS",
+  "syntax_valid": true,
+  "schema_valid": true,
+  "checks": [
+    {
+      "name": "verified_result_release_floor_for_pathologist_or_ordering_provider",
+      "type": "floor",
+      "status": "PASS",
+      "elapsed_seconds": 0.07216104108374566,
+      "raw_sha256": "04a60b6bedb4cb6b577dde975aeff235e88b9467fc916ef2b336e907e2152641"
+    },
+    {
+      "name": "release_limited_to_verified_non_self_verified_role_slices",
+      "type": "implies",
+      "status": "PASS",
+      "elapsed_seconds": 0.011555499979294837,
+      "raw_sha256": "1c43528b212e0353209975142c4d3529c582ceae2548bed065cee6c286732b8e"
+    },
+    {
+      "name": "self_verifying_releaser_disjointness",
+      "type": "implies",
+      "status": "PASS",
+      "elapsed_seconds": 0.010864958981983364,
+      "raw_sha256": "5882a7806fa1c6e25183f99ce82c48c5782791f5b9130724dd3923b2dc8f5d89"
+    },
+    {
+      "name": "restricted_critical_result_release_floor_for_ordering_provider",
+      "type": "floor",
+      "status": "PASS",
+      "elapsed_seconds": 0.011680084047839046,
+      "raw_sha256": "2b83a3a1d7918ee8a27ff122f863ded58292423bd646f8a53eb07058d9c48ef5"
+    },
+    {
+      "name": "release_limited_by_restricted_sensitivity_gate",
+      "type": "implies",
+      "status": "PASS",
+      "elapsed_seconds": 0.010968541959300637,
+      "raw_sha256": "8ee2079aeb3651b2c285b9e2ec433e7798a63fbc17848af027fc14991a4bcfa5"
+    },
+    {
+      "name": "ordering_provider_restricted_noncritical_release_disjointness",
+      "type": "implies",
+      "status": "PASS",
+      "elapsed_seconds": 0.010896915919147432,
+      "raw_sha256": "c98d6b731b6f4dd2839a136c6bbd3f9db2d036444b948dcde6422782438cb0fe"
+    },
+    {
+      "name": "pathologist_unrestricted_verified_release_liveness",
+      "type": "liveness-overlap",
+      "status": "PASS",
+      "elapsed_seconds": 0.015726417070254683,
+      "raw_sha256": "8a196745b3d734cbf051f25f004a2749a9329c0b6f9c298f72e4d515677d42df"
+    }
+  ],
+  "semantic_check_count": 7,
+  "raw_directory": "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/verifier/ef64863a3a55771a57521978ecae830110d03621c49374d11e26d655e712e4fd",
+  "confirmed_overgrant": false,
+  "confirmed_overdeny": false
+}

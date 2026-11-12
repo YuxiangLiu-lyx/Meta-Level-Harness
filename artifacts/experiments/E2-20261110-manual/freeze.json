@@ -1,0 +1,24 @@
+{
+  "files": {
+    "configs/manual.json": "5c5f32c9fad523a5563f5d69f0da1d150ec814713f6456d5736a47999bb8a92f",
+    "configs/public_instructions.txt": "e45c383a3b7c7e96ed0d95333914b04731c1be809ecc0ccd707f7527b189e952",
+    "configs/runtime.json": "d03a3ff5cae7c1ef5b2c3a308d407dd3d043d6e044ae7778305af70225c6e012",
+    "configs/verifier.json": "e84ffbde6ad6efaea74b644ac6e3091cf0465935d1d6d52318aa0d810fac00a7",
+    "data/design20.jsonl": "8950fa93f0ba23e8adb5c3dd90350b9e3d5f6c82a8eec1b35315a895dc9f35b1",
+    "data/manifest.json": "6e3207016c65c6b287f40dc0dd02e268024b652c9de69faff6b6922911deff31",
+    "data/validation20.jsonl": "60d10b08bf2b52525b9f4ca87c0be9f7e88d5e2d1d80d66315db338bf1491c22",
+    "scripts/run_policies.py": "a6b2c85d57c60f907b98b891b5f46060d2c44395e1148afa071afc4ad293970b",
+    "src/harness_lab/__init__.py": "8b52d6a6cf89b94359aa61a575cc703b3ec008896b820dfc6b3d56b91b863514",
+    "src/harness_lab/backend.py": "ac0d711d574d024a396a2a3641adaa87c8906d42ee9f7edf39dde69633c8fbee",
+    "src/harness_lab/protocol.py": "64890da920fe0673488f3255cd7cf1580bd50f87fbcff528590c8c35064cbb2e",
+    "src/harness_lab/verifier.py": "cd659ee33e94924863b52618b6df58f0152c52bb552f250d7b517846db642523"
+  },
+  "metadata": {
+    "protocol": "v1",
+    "question": "Manual design20 baseline",
+    "planned": 20,
+    "pilot": 5,
+    "reuse_pilot": true
+  },
+  "freeze_sha256": "ce8e38afdf22a3e438326b5c6e7f696e727c2d1f01f8ea98648f3310483ac243"
+}

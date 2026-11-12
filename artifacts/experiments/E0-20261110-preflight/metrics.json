@@ -1,0 +1,11 @@
+{
+  "planned_smoke_tasks": 3,
+  "completed_smoke_tasks": 3,
+  "observed_tool_events": 0,
+  "structured_outputs_passed": 2,
+  "isolation_challenges_passed": 1,
+  "design_scenarios": 20,
+  "validation_scenarios": 20,
+  "heldout_preserved": 375,
+  "heldout_evaluated": 0
+}

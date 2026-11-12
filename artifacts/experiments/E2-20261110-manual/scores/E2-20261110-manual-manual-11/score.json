@@ -1,0 +1,56 @@
+{
+  "scenario_id": "lms_course_content-viewModule-T3-034",
+  "cache_key": "c79da2958745db46cf8b6946d440d1be505a0cad0ddd13254f8fd248c6c4a055",
+  "verifier_version": "f9d67ee8f0a3920a13240774a30ca4c818f964d7b8370f1e8a7fd1e1e38bd5c4",
+  "status": "SEMANTIC_FAIL",
+  "syntax_valid": true,
+  "schema_valid": true,
+  "checks": [
+    {
+      "name": "roles_may_view_released_module_off_network_floor",
+      "type": "floor",
+      "status": "FAIL",
+      "elapsed_seconds": 0.02255558397155255,
+      "raw_sha256": "3a663c8d13533f594185a2f40a681708b621c2760737ffce335bafb7ab4e6ec0"
+    },
+    {
+      "name": "roles_may_view_draft_or_scheduled_module_on_network_floor",
+      "type": "floor",
+      "status": "PASS",
+      "elapsed_seconds": 0.016140250023454428,
+      "raw_sha256": "85f160a7eddc0755a5d93373275b1db22631ad7e2161dc3803fafa68c50ba673"
+    },
+    {
+      "name": "view_module_bounded_to_roles_status_and_network_ceiling",
+      "type": "implies",
+      "status": "PASS",
+      "elapsed_seconds": 0.014805166982114315,
+      "raw_sha256": "db0b44194cd323399d5cb45a1e1597c464787f895d8ec6031b8a9f9b996d734d"
+    },
+    {
+      "name": "no_draft_or_scheduled_module_off_network_disjointness",
+      "type": "implies",
+      "status": "PASS",
+      "elapsed_seconds": 0.011160416062921286,
+      "raw_sha256": "5cd9f096d4fb64a84637ab932fb48050be4afeffb7f4bddd358236c14c61169a"
+    },
+    {
+      "name": "instructor_of_record_may_view_non_prohibited_module_floor",
+      "type": "floor",
+      "status": "FAIL",
+      "elapsed_seconds": 0.017167750047519803,
+      "raw_sha256": "9ba2002031ddab450486a6e22a3354b0817dabfae7813f84646189ad9f143e76"
+    },
+    {
+      "name": "instructor_of_record_view_module_non_prohibited_ceiling",
+      "type": "implies",
+      "status": "PASS",
+      "elapsed_seconds": 0.014307709061540663,
+      "raw_sha256": "98719eb398c72fab696f74bb75e4f6a1b92b44f5d44a13f2e4bcf02ed01fe145"
+    }
+  ],
+  "semantic_check_count": 6,
+  "raw_directory": "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/verifier/c79da2958745db46cf8b6946d440d1be505a0cad0ddd13254f8fd248c6c4a055",
+  "confirmed_overgrant": false,
+  "confirmed_overdeny": true
+}

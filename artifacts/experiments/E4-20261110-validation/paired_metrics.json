@@ -1,0 +1,13 @@
+{
+  "both_pass": 8,
+  "meta_only": 1,
+  "refine_only": 3,
+  "both_fail": 8,
+  "difference_percentage_points": -10.0,
+  "planned_pairs": 20,
+  "resolved_pairs": 20,
+  "unresolved_or_violating_pairs": 0,
+  "meta_successes": 9,
+  "refine_successes": 11,
+  "planned_denominator_difference_pp": -10.0
+}

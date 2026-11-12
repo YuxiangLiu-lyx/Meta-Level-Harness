@@ -1,0 +1,112 @@
+{
+  "failed_scenarios": [
+    {
+      "scenario_id": "iam_access-modifyResource-T3-056",
+      "status": "SEMANTIC_FAIL",
+      "overgrant": true,
+      "overdeny": false,
+      "failed_check_names": [
+        "role_modify_environment_promotion_union_ceiling",
+        "multi_role_modify_compatible_union_ceiling"
+      ]
+    },
+    {
+      "scenario_id": "wire_transfer-chain2-T5-008",
+      "status": "SEMANTIC_FAIL",
+      "overgrant": false,
+      "overdeny": true,
+      "failed_check_names": [
+        "person_authority_approval_floor"
+      ]
+    },
+    {
+      "scenario_id": "patent_prosecution-examineApplication-T2-005",
+      "status": "SEMANTIC_FAIL",
+      "overgrant": true,
+      "overdeny": false,
+      "failed_check_names": [
+        "examine_limited_to_assigned_examiner_mfa_noninventor"
+      ]
+    },
+    {
+      "scenario_id": "grid_switching_orders-executeSwitching-T3-027",
+      "status": "SEMANTIC_FAIL",
+      "overgrant": false,
+      "overdeny": true,
+      "failed_check_names": [
+        "execute_switching_authorized_window_floor",
+        "execute_switching_non_control_room_operator_floor"
+      ]
+    },
+    {
+      "scenario_id": "contract_lifecycle-chain3-T5-001",
+      "status": "SEMANTIC_FAIL",
+      "overgrant": true,
+      "overdeny": false,
+      "failed_check_names": [
+        "review_only_draft_conflicted_assigned_reviewer_ceiling",
+        "workflow_review_only_draft_conflicted_assigned_reviewer_ceiling"
+      ]
+    },
+    {
+      "scenario_id": "escrow_disbursement-approveClearToClose-T2-008",
+      "status": "SEMANTIC_FAIL",
+      "overgrant": true,
+      "overdeny": true,
+      "failed_check_names": [
+        "overlapping_escrow_and_senior_officer_can_open_file",
+        "open_file_overlap_roles_limited_to_escrow_officer_slice",
+        "escrow_officer_can_open_own_escrow_file"
+      ]
+    },
+    {
+      "scenario_id": "lms_course_content-viewModule-T3-034",
+      "status": "SEMANTIC_FAIL",
+      "overgrant": false,
+      "overdeny": true,
+      "failed_check_names": [
+        "roles_may_view_released_module_off_network_floor",
+        "instructor_of_record_may_view_non_prohibited_module_floor"
+      ]
+    },
+    {
+      "scenario_id": "invoice_approval-approveInvoice-T3-080",
+      "status": "SEMANTIC_FAIL",
+      "overgrant": true,
+      "overdeny": false,
+      "failed_check_names": [
+        "clerk_approver_coholder_any_threshold_status_ceiling"
+      ]
+    },
+    {
+      "scenario_id": "shipment_dispatch-chain2-T5-037",
+      "status": "SEMANTIC_FAIL",
+      "overgrant": true,
+      "overdeny": true,
+      "failed_check_names": [
+        "confirm_delivery_by_dispatching_driver_floor",
+        "planner_driver_dispatch_from_origin_depot_network_floor",
+        "planner_driver_dispatch_with_carrier_prefix_floor",
+        "dispatch_shipment_driver_union_ceiling",
+        "carrier_prefix_dispatch_union_ceiling"
+      ]
+    },
+    {
+      "scenario_id": "lease_execution-reviewLease-T5-011",
+      "status": "SEMANTIC_FAIL",
+      "overgrant": true,
+      "overdeny": true,
+      "failed_check_names": [
+        "broker_non_drafter_may_review_lease",
+        "broker_listing_agent_may_review_large_premises_lease",
+        "review_lease_only_broker_high_value_independent_unless_large_or_court_order",
+        "smaller_lease_drafter_review_disjoint",
+        "review_lease_only_broker_independent_unless_large_or_court_order",
+        "draft_lease_only_leasing_agent_drafted_state",
+        "high_value_small_no_court_listing_agent_review_disjoint",
+        "broker_listing_agent_may_review_court_order_lease"
+      ]
+    }
+  ],
+  "notes": "Overgrant and overdeny categories overlap. Check names and references are for evaluator-side analysis only; the common design packet uses sanitized explanations."
+}

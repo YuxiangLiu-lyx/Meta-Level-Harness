@@ -1,0 +1,10 @@
+{
+  "tasks": [
+    "smoke-01",
+    "smoke-02",
+    "smoke-03"
+  ],
+  "data_manifest_path": "data/manifest.json",
+  "data_manifest_sha256": "6e3207016c65c6b287f40dc0dd02e268024b652c9de69faff6b6922911deff31",
+  "performance_excluded": true
+}

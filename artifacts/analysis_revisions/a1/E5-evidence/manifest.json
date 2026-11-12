@@ -1,0 +1,20 @@
+{
+  "files": {
+    "artifacts/experiments/E5-20261110-evidence/case_analysis.md": "1e88174b4c8768989cfa3bd73874a401e9eb2c63a8cee5417b42cdf86b547b35",
+    "artifacts/experiments/E5-20261110-evidence/cases.json": "9689a48a3a2d22dd747608f880b2ffd8759b7313c730cfb6fe46674a6c15b352",
+    "artifacts/experiments/E5-20261110-evidence/config.json": "736a0b47beab74ce3c1645c89f7aaa85b6f36c864b9b8daf39f9996e7d51f4c4",
+    "artifacts/experiments/E5-20261110-evidence/construction_usage.csv": "c4b36d987f38189c1b9e4926db486f49398918e8c971d732eb90b84cc485408a",
+    "artifacts/experiments/E5-20261110-evidence/dataset.csv": "891e4e06df96feebc912a456e2994d017ef6bf471983c64a4e60985f7fc8c599",
+    "artifacts/experiments/E5-20261110-evidence/environment.csv": "2cb0d9c8791d59521b6e049af449b2be4ea7d41a707279983f075568e8df49a3",
+    "artifacts/experiments/E5-20261110-evidence/events.jsonl": "4eaf78a946cce806f60278146e9c194ed2154905685ad0c5f2d179aaa8c92056",
+    "artifacts/experiments/E5-20261110-evidence/meta_refine_pairs.csv": "166b3741aedbd2db84200014708a46c6aa7601d730346a010585038198e1309d",
+    "artifacts/experiments/E5-20261110-evidence/metrics.json": "9447d7a8e48d89ae8d6fa58a26389ae0a692cb025251709b2542cc506755106d",
+    "artifacts/experiments/E5-20261110-evidence/observability.json": "0055ee95d3dab1ac3df93a9db2c90f6e07864d83a6e7c8b823e6e005f9b9efbf",
+    "artifacts/experiments/E5-20261110-evidence/paired_metrics.json": "011c37e155d4046971dfffe814c4ca3f61b3ac4d45f1d4574e8860eef926d114",
+    "artifacts/experiments/E5-20261110-evidence/performance.csv": "c5616318bf79d9667298c8d826538343dd7cb6b68e0204e56a21c98973c6aac9",
+    "artifacts/experiments/E5-20261110-evidence/report.md": "a8223389e2a517a8ffe9639e95eed16df0c92b8018e37dd6497c1228af336805",
+    "artifacts/experiments/E5-20261110-evidence/task_accounting.csv": "32fad2f00466639b1172df34817e8e378a832f692ec52b1bf02fa9dd086e6538",
+    "artifacts/experiments/E5-20261110-evidence/verifier_sanity.csv": "d2726d284cb99d0abdf142a0701a724f44bac624f014cbca647ece1973486235"
+  },
+  "source_e4_summary_sha256": "71107561fcba5a409c65e998966f01e77003c289253d23dafdd489c081bf74e8"
+}

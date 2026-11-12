@@ -1,0 +1,12 @@
+{
+  "source_experiments": [
+    "E0-20261110-preflight",
+    "E1-20261110-sanity",
+    "E2-20261110-manual",
+    "E3-20261110-construction",
+    "E3R-20261110-recovery",
+    "E4-20261110-validation"
+  ],
+  "analysis_only": true,
+  "model_calls": 0
+}

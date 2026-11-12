@@ -1,0 +1,13 @@
+{
+  "scenario_id": "document_management-editDocument-T3-006",
+  "cache_key": "de4c47b5057d31c9bcc834f5ed28e17e558e06a068a04a5b3bc2863af3f21870",
+  "verifier_version": "f9d67ee8f0a3920a13240774a30ca4c818f964d7b8370f1e8a7fd1e1e38bd5c4",
+  "status": "SYNTAX_FAIL",
+  "syntax_valid": false,
+  "schema_valid": false,
+  "checks": [],
+  "semantic_check_count": 0,
+  "raw_directory": "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/verifier/de4c47b5057d31c9bcc834f5ed28e17e558e06a068a04a5b3bc2863af3f21870",
+  "confirmed_overgrant": false,
+  "confirmed_overdeny": false
+}

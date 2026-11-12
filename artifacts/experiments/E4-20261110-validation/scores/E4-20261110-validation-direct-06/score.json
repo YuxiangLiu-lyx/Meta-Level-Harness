@@ -1,0 +1,70 @@
+{
+  "scenario_id": "inpatient_records-viewRecord-T3-082",
+  "cache_key": "438a05be584e90e2e62f2346b866cbeb9ce63059cddce513e264aeaa57c4311d",
+  "verifier_version": "f9d67ee8f0a3920a13240774a30ca4c818f964d7b8370f1e8a7fd1e1e38bd5c4",
+  "status": "SEMANTIC_FAIL",
+  "syntax_valid": true,
+  "schema_valid": true,
+  "checks": [
+    {
+      "name": "overlapping_physician_pharmacists_may_view_with_clearance",
+      "type": "floor",
+      "status": "FAIL",
+      "elapsed_seconds": 0.018751999945379794,
+      "raw_sha256": "8560b866480cf4fa073868ea6917ea71061b32addcef5f5b9ce3ab799cbac17c"
+    },
+    {
+      "name": "clinical_view_limited_to_roles_and_sealed_clearance",
+      "type": "implies",
+      "status": "PASS",
+      "elapsed_seconds": 0.012947624898515642,
+      "raw_sha256": "ab4337abe072061cfb29ba1a8bcda167945ffc8696a03c00af0f72efb25c5600"
+    },
+    {
+      "name": "clinical_roles_may_view_with_sufficient_clearance",
+      "type": "floor",
+      "status": "FAIL",
+      "elapsed_seconds": 0.014422541949898005,
+      "raw_sha256": "2dd3a3d8e32f033d5d18fa08b17072f5255427f0120de09d2a7c929259162abc"
+    },
+    {
+      "name": "clinical_view_limited_to_roles_and_unsealed_or_cleared",
+      "type": "implies",
+      "status": "PASS",
+      "elapsed_seconds": 0.010745708015747368,
+      "raw_sha256": "7e1cdde62a47a741523a1b2817024e0f1ba077771ae92d83fd8be393e08cbea0"
+    },
+    {
+      "name": "sealed_medical_records_disallow_insufficient_clearance",
+      "type": "implies",
+      "status": "PASS",
+      "elapsed_seconds": 0.010124500025995076,
+      "raw_sha256": "aa796ea6cd96777b2495830bfd8aa9ea6fad576e08e5ca382dff7395ff79a34b"
+    },
+    {
+      "name": "clinical_roles_may_view_unsealed_without_clearance",
+      "type": "floor",
+      "status": "FAIL",
+      "elapsed_seconds": 0.01271108293440193,
+      "raw_sha256": "4f9a379616f424dbabf8df27d82cc84cec825a182d518ba332c8dc50234e1f88"
+    },
+    {
+      "name": "clinical_view_bound_sealed_clearance_or_unsealed",
+      "type": "implies",
+      "status": "PASS",
+      "elapsed_seconds": 0.010111042065545917,
+      "raw_sha256": "5020a199d25366a958b461135f123b1069de5642c28db6c83a2d2862bdc9828d"
+    },
+    {
+      "name": "attending_physician_view_must_remain_possible",
+      "type": "liveness-overlap",
+      "status": "PASS",
+      "elapsed_seconds": 0.011832165997475386,
+      "raw_sha256": "5329df56fe0208e179bf6d9807f603a657fa0b3b1b0ca08c7dcf1b207dc87ae8"
+    }
+  ],
+  "semantic_check_count": 8,
+  "raw_directory": "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/verifier/438a05be584e90e2e62f2346b866cbeb9ce63059cddce513e264aeaa57c4311d",
+  "confirmed_overgrant": false,
+  "confirmed_overdeny": true
+}

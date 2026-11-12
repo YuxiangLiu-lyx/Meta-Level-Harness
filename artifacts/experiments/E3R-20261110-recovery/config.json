@@ -1,0 +1,56 @@
+{
+  "runtime": {
+    "protocol": "v1.1",
+    "binary": "/Users/liuyuxiang/.vscode/extensions/openai.chatgpt-26.1007.21434-darwin-arm64/bin/macos-aarch64/codex",
+    "requested_model": "gpt-6.1-sol",
+    "reasoning_effort": "medium",
+    "task_timeout_seconds": 180,
+    "max_logical_tasks": 120,
+    "wrapper_retries": 0,
+    "raw_root": "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw",
+    "overrides": [
+      "model_provider=\"openai\"",
+      "forced_login_method=\"chatgpt\"",
+      "model_reasoning_effort=\"medium\"",
+      "approval_policy=\"never\"",
+      "project_doc_max_bytes=0",
+      "web_search=\"disabled\"",
+      "skills.bundled.enabled=false",
+      "skills.include_instructions=false",
+      "mcp_servers={}"
+    ],
+    "disabled_features": [
+      "shell_tool",
+      "unified_exec",
+      "apps",
+      "plugins",
+      "remote_plugin",
+      "hooks",
+      "memories",
+      "multi_agent",
+      "multi_agent_v2",
+      "browser_use",
+      "browser_use_external",
+      "computer_use",
+      "image_generation",
+      "view_image",
+      "goals",
+      "sleep_tool",
+      "skill_search",
+      "skill_mcp_dependency_install",
+      "shell_snapshot",
+      "tool_suggest",
+      "workspace_dependencies",
+      "unbounded_connection_retries",
+      "daemon_auto_start"
+    ],
+    "enabled_features": [
+      "skip_host_skill_discovery"
+    ],
+    "infrastructure_retry_limit": 1
+  },
+  "original_attempt": "E3-20261110-meta-harness",
+  "input_sha256": "af91a3dace23885d1c0e9ee9405062ec95019d734abf34f7e0256a2a557a8533",
+  "original_timeout_seconds": 180,
+  "disclosed_amendment": "v1.1"
+}

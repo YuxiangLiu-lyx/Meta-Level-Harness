@@ -1,0 +1,70 @@
+{
+  "scenario_id": "payroll-viewEmployeeRecord-T3-014",
+  "cache_key": "4687c8b2f2cd1a680166205a4245588c56c541b2f89a48778ee18e5be06d2126",
+  "verifier_version": "f9d67ee8f0a3920a13240774a30ca4c818f964d7b8370f1e8a7fd1e1e38bd5c4",
+  "status": "SEMANTIC_FAIL",
+  "syntax_valid": true,
+  "schema_valid": true,
+  "checks": [
+    {
+      "name": "payroll_admin_prepare_payroll_run_floor",
+      "type": "floor",
+      "status": "FAIL",
+      "elapsed_seconds": 0.01095441693905741,
+      "raw_sha256": "dbccdfd6fa51638f0b9c41ba0f214c731a25dada92327cf0a45ac9f224acbc29"
+    },
+    {
+      "name": "prepare_payroll_run_only_payroll_admin_ceiling",
+      "type": "implies",
+      "status": "PASS",
+      "elapsed_seconds": 0.00748795794788748,
+      "raw_sha256": "79eeec069aead23490fc274c1856513289dea16ca349a1b759a2e4837af54343"
+    },
+    {
+      "name": "manager_approve_leave_request_floor",
+      "type": "floor",
+      "status": "FAIL",
+      "elapsed_seconds": 0.011266416986472905,
+      "raw_sha256": "c27efdc3f4019e451847ad65c37e5bc10c3da01e20d10cd92353d245fde67474"
+    },
+    {
+      "name": "approve_leave_request_only_manager_ceiling",
+      "type": "implies",
+      "status": "PASS",
+      "elapsed_seconds": 0.007519333972595632,
+      "raw_sha256": "cc6cf31c0e10085516edb864ab95329ebda0046c0cd8cdc2fdf4d85e0a015ae1"
+    },
+    {
+      "name": "manager_or_hr_view_employee_record_non_vpn_clearance_floor",
+      "type": "floor",
+      "status": "FAIL",
+      "elapsed_seconds": 0.013241125037893653,
+      "raw_sha256": "31ba64d341007678824ce026b16cf176067cc987755e5ef7704b7f3b516105d8"
+    },
+    {
+      "name": "manager_or_hr_view_employee_record_vpn_floor",
+      "type": "floor",
+      "status": "FAIL",
+      "elapsed_seconds": 0.012652499950490892,
+      "raw_sha256": "ce60b2aa1e89b62b3e398cab8f9ff78bbf07e4f372f787feafedeccb4923f616"
+    },
+    {
+      "name": "view_employee_record_manager_hr_vpn_or_clearance_ceiling",
+      "type": "implies",
+      "status": "PASS",
+      "elapsed_seconds": 0.007681000046432018,
+      "raw_sha256": "6dd2c3681cbfc91e8ba6e8850b0b237403e8d02ca4f40dd68dedd55cf83c457b"
+    },
+    {
+      "name": "manager_view_employee_record_success_liveness",
+      "type": "liveness-overlap",
+      "status": "FAIL",
+      "elapsed_seconds": 0.00712199998088181,
+      "raw_sha256": "643306822bca533acdac6eb8dd3ba0c9b6e3aa270329bbc3d1867b96002d3617"
+    }
+  ],
+  "semantic_check_count": 8,
+  "raw_directory": "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/verifier/4687c8b2f2cd1a680166205a4245588c56c541b2f89a48778ee18e5be06d2126",
+  "confirmed_overgrant": false,
+  "confirmed_overdeny": true
+}

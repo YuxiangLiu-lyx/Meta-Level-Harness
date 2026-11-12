@@ -1,0 +1,5 @@
+method,logical_stages,actual_attempts,successful_attempts,infrastructure_failures,elapsed_seconds,input_tokens,known_input_tokens_subtotal,cached_input_tokens,known_cached_input_tokens_subtotal,output_tokens,known_output_tokens_subtotal,reasoning_output_tokens,known_reasoning_output_tokens_subtotal
+Manual,0,0,0,0,0,0,0,0,0,0,0,0,0
+Direct,1,1,1,0,27.577011823654175,11114,11114,0,0,702,702,184,184
+Meta,2,3,2,1,223.84503602981567,,22688,,0,,1117,,130
+Refine,2,2,2,0,53.24525785446167,22768,22768,0,0,1552,1552,422,422

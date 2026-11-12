@@ -1,0 +1,56 @@
+{
+  "scenario_id": "lms_course_content-enterGrade-T2-013",
+  "cache_key": "f53ed6b148dfa3300b381571e3979dcdd3c42d41a66d0f8aed74aff948fbcb85",
+  "verifier_version": "f9d67ee8f0a3920a13240774a30ca4c818f964d7b8370f1e8a7fd1e1e38bd5c4",
+  "status": "PASS",
+  "syntax_valid": true,
+  "schema_valid": true,
+  "checks": [
+    {
+      "name": "enter_grade_draft_instructor_or_ta_floor",
+      "type": "floor",
+      "status": "PASS",
+      "elapsed_seconds": 0.012386832968331873,
+      "raw_sha256": "fb3501cae5fd1207946fb0a243ab827dba01c2529a9d186dd8e54c69e870f3c5"
+    },
+    {
+      "name": "enter_grade_only_draft_instructor_or_ta_ceiling",
+      "type": "implies",
+      "status": "PASS",
+      "elapsed_seconds": 0.011526457965373993,
+      "raw_sha256": "99e9af0817622d57d67ce80f8890e269cf8c9620371ccc7b5ad1079c0134be5f"
+    },
+    {
+      "name": "enter_grade_p0012_draft_instructor_or_ta_ceiling",
+      "type": "implies",
+      "status": "PASS",
+      "elapsed_seconds": 0.010965583031065762,
+      "raw_sha256": "9992c5335f0a91bc1f06dfd1548749b6af23a4472c8005b1ce0de86a3d8dd99c"
+    },
+    {
+      "name": "enter_grade_actual_instructor_of_record_draft_floor",
+      "type": "floor",
+      "status": "PASS",
+      "elapsed_seconds": 0.010638208943419158,
+      "raw_sha256": "1e8d7e7ec90cf3fb6ca28ac1eda66a0b604fc962adc9f2988aad548abaf99b10"
+    },
+    {
+      "name": "enter_grade_p0013_approved_action_boundary_ceiling",
+      "type": "implies",
+      "status": "PASS",
+      "elapsed_seconds": 0.009618457988835871,
+      "raw_sha256": "7128a789e3da8f36fd586dbe249b0b94e114d78e7bcf8b358a591e3f93dbf143"
+    },
+    {
+      "name": "enter_grade_instructor_of_record_draft_liveness",
+      "type": "liveness-overlap",
+      "status": "PASS",
+      "elapsed_seconds": 0.011634916998445988,
+      "raw_sha256": "9c326ef9259e27c7fe184b93c62427519995eb92cd09083e71ea9beff1516a9f"
+    }
+  ],
+  "semantic_check_count": 6,
+  "raw_directory": "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/verifier/f53ed6b148dfa3300b381571e3979dcdd3c42d41a66d0f8aed74aff948fbcb85",
+  "confirmed_overgrant": false,
+  "confirmed_overdeny": false
+}

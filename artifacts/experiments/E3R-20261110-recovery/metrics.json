@@ -1,0 +1,15 @@
+{
+  "recovery_attempts": 1,
+  "recovery_pass": 1,
+  "logical_design_stages": 5,
+  "total_design_attempts": 6,
+  "valid_final_harnesses": 3,
+  "original_infrastructure_failures": 1,
+  "meta_total_input_tokens": null,
+  "meta_total_output_tokens": null,
+  "word_counts": {
+    "Direct": 377,
+    "Meta": 371,
+    "Refine": 437
+  }
+}

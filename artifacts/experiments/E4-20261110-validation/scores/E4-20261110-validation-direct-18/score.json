@@ -1,0 +1,98 @@
+{
+  "scenario_id": "ad_campaigns-chain2-T6-015",
+  "cache_key": "355b3552b9c8b0f388e1f30cb8ee1ca6f30d834928600ce5e6dde2854a0b1662",
+  "verifier_version": "f9d67ee8f0a3920a13240774a30ca4c818f964d7b8370f1e8a7fd1e1e38bd5c4",
+  "status": "SEMANTIC_FAIL",
+  "syntax_valid": true,
+  "schema_valid": true,
+  "checks": [
+    {
+      "name": "preparer_may_approve_budget_at_or_below_threshold_safe_arithmetic",
+      "type": "floor",
+      "status": "PASS",
+      "elapsed_seconds": 0.2793047920567915,
+      "raw_sha256": "86007342b3cfb5acc8747705f24cfa75ebc670a7a606b768db600e1a81845761"
+    },
+    {
+      "name": "preparer_over_threshold_budget_approval_excluded_safe_arithmetic",
+      "type": "implies",
+      "status": "PASS",
+      "elapsed_seconds": 0.337118708062917,
+      "raw_sha256": "c0eff4791f28b6d2be7ab95ac7413f63907585ecf163304c36556d1f9764dda0"
+    },
+    {
+      "name": "owning_advertiser_may_launch_campaign",
+      "type": "floor",
+      "status": "PASS",
+      "elapsed_seconds": 0.01106808299664408,
+      "raw_sha256": "ce1998599e56b8daaf0511f313afbfc1fae2266bde4f7df509f1cb14f03d510c"
+    },
+    {
+      "name": "launch_campaign_only_by_owning_advertiser",
+      "type": "implies",
+      "status": "FAIL",
+      "elapsed_seconds": 0.013745417003519833,
+      "raw_sha256": "bb167892e62606c21839dcee911a42ecfa091b0177880d82f15dac7e60a50ee5"
+    },
+    {
+      "name": "non_owning_manager_or_director_launch_excluded",
+      "type": "implies",
+      "status": "PASS",
+      "elapsed_seconds": 0.00996858300641179,
+      "raw_sha256": "dfafcf4860b57baea6c6fb762bfdb01f67d0b254a2056c39f93475ecee6ac07c"
+    },
+    {
+      "name": "non_preparing_director_with_mfa_may_approve_budget",
+      "type": "floor",
+      "status": "PASS",
+      "elapsed_seconds": 0.011012708069756627,
+      "raw_sha256": "b620696142cf253b3d13a28147340169374f9b28dc389bc47e639795756a04a5"
+    },
+    {
+      "name": "owning_advertiser_may_launch_budget_approved_campaign_with_required_risk_label",
+      "type": "floor",
+      "status": "PASS",
+      "elapsed_seconds": 0.00931345799472183,
+      "raw_sha256": "81d29d82b2e28dcd31de3273bd5bd8cd0210328f7fa9dbfe19cafc02e72607f4"
+    },
+    {
+      "name": "approve_budget_only_for_approved_workflow_slices",
+      "type": "implies",
+      "status": "FAIL",
+      "elapsed_seconds": 0.03257579205092043,
+      "raw_sha256": "a4a2ef129e69e8354b1da405415c7c7fd6ced4f31fa224b9749b903fb33d5b6e"
+    },
+    {
+      "name": "launch_campaign_workflow_safety_boundary",
+      "type": "implies",
+      "status": "FAIL",
+      "elapsed_seconds": 0.012889208039268851,
+      "raw_sha256": "b7170a4e3063f1e7efcdc93eb45a4890441857526407dd318d75904c80f9def6"
+    },
+    {
+      "name": "approve_budget_without_mfa_excluded",
+      "type": "implies",
+      "status": "PASS",
+      "elapsed_seconds": 0.00942916702479124,
+      "raw_sha256": "204769a61c117ec10ff68b55103f1cbf1d4c6ff3f8372f16b4e419e4d8248b66"
+    },
+    {
+      "name": "launch_without_budget_approval_excluded",
+      "type": "implies",
+      "status": "PASS",
+      "elapsed_seconds": 0.008644624962471426,
+      "raw_sha256": "bf4dc2c6f2f53bfe7670cd141a7b07959207f993252e01b2b0dbdf6c98b13581"
+    },
+    {
+      "name": "launch_without_required_risk_label_excluded",
+      "type": "implies",
+      "status": "PASS",
+      "elapsed_seconds": 0.009103667107410729,
+      "raw_sha256": "f6b95090a7768147391937e0ecdcb0eecd442dcdfe191bf95112022b4afe10e9"
+    }
+  ],
+  "semantic_check_count": 12,
+  "raw_directory": "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/verifier/355b3552b9c8b0f388e1f30cb8ee1ca6f30d834928600ce5e6dde2854a0b1662",
+  "confirmed_overgrant": true,
+  "confirmed_overdeny": false
+}

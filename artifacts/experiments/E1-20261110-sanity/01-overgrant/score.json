@@ -1,0 +1,70 @@
+{
+  "scenario_id": "document_management-editDocument-T3-006",
+  "cache_key": "e9b229becf8a8f456e7be22d8f047d617a09fc93c3237f072fda079bd5f6f1fc",
+  "verifier_version": "f9d67ee8f0a3920a13240774a30ca4c818f964d7b8370f1e8a7fd1e1e38bd5c4",
+  "status": "SEMANTIC_FAIL",
+  "syntax_valid": true,
+  "schema_valid": true,
+  "checks": [
+    {
+      "name": "edit_locked_draft_shared_author_editor_repaired_floor",
+      "type": "floor",
+      "status": "PASS",
+      "elapsed_seconds": 0.01010858395602554,
+      "raw_sha256": "a5a25481852e3a77b319a0db2594cd4b082292d215cb2ea7c3b078528662b2f4"
+    },
+    {
+      "name": "edit_document_bounded_to_draft_shared_author_editor",
+      "type": "implies",
+      "status": "PASS",
+      "elapsed_seconds": 0.00719137501437217,
+      "raw_sha256": "2178685dbba845f3a39b52f401cbb71a70d2aa2876ebbae587886d4908c6e915"
+    },
+    {
+      "name": "no_edit_after_left_draft",
+      "type": "implies",
+      "status": "PASS",
+      "elapsed_seconds": 0.011053583933971822,
+      "raw_sha256": "3d4dde41b4ab920fb4bd3e111563842a7b61ab4797f22959653136a47bb96a92"
+    },
+    {
+      "name": "no_edit_when_not_on_share_list",
+      "type": "implies",
+      "status": "PASS",
+      "elapsed_seconds": 0.010664750006981194,
+      "raw_sha256": "8d2f28bf0b11b6c09afe6243972042ff9a756903ddbdd35b7541d00156e16a19"
+    },
+    {
+      "name": "no_edit_without_version_lock",
+      "type": "implies",
+      "status": "FAIL",
+      "elapsed_seconds": 0.01270674995612353,
+      "raw_sha256": "fb252c479371414a4979199004edc81d0595b5e89dca56e757603c219bbba454"
+    },
+    {
+      "name": "edit_locked_draft_shared_author_editor_floor",
+      "type": "floor",
+      "status": "PASS",
+      "elapsed_seconds": 0.010148290893994272,
+      "raw_sha256": "d4ca69da216ff1f943ed23f8bf5826765c9774cdf2f0ed459764420cc8d820f8"
+    },
+    {
+      "name": "edit_document_bounded_to_locked_draft_shared_author_editor",
+      "type": "implies",
+      "status": "FAIL",
+      "elapsed_seconds": 0.011570791946724057,
+      "raw_sha256": "c6ab40a5b48d399ac0d94a8852fe8604cb92c3305717fb8670d7a7236ff005a3"
+    },
+    {
+      "name": "edit_author_success_bounded_to_locked_draft_share_list",
+      "type": "implies",
+      "status": "FAIL",
+      "elapsed_seconds": 0.012044999981299043,
+      "raw_sha256": "0775f968d38da11a073688830c763dbbc48a8cce4b5e8c87a1a0b0e9bd4db777"
+    }
+  ],
+  "semantic_check_count": 8,
+  "raw_directory": "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/verifier/e9b229becf8a8f456e7be22d8f047d617a09fc93c3237f072fda079bd5f6f1fc",
+  "confirmed_overgrant": true,
+  "confirmed_overdeny": false
+}

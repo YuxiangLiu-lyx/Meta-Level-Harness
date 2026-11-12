@@ -1,0 +1,20 @@
+{
+  "ledger_tasks": 110,
+  "budget": 120,
+  "design_count": 20,
+  "validation_count": 20,
+  "heldout_count": 375,
+  "heldout_evaluated": 0,
+  "completed_non_smoke_attempts": 105,
+  "timeouts": 2,
+  "tool_events": 0,
+  "issues": [],
+  "client_date": "2026-11-10",
+  "timezone": "America/New_York",
+  "focused_tests_passed": 11,
+  "saved_score_generation_consistency": "80/80",
+  "frozen_snapshots_match": 4,
+  "analysis_version": "a2",
+  "policy_outputs_changed_by_analysis_correction": 0,
+  "model_calls_for_final_analysis": 0
+}

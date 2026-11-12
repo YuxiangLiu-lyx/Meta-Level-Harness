@@ -1,0 +1,35 @@
+{
+  "files": {
+    "artifacts/harnesses/direct.json": "419d63f3aecf2b8a548d6583513a8577d1a66a04f2a65a295cedb7a572ce4fe5",
+    "artifacts/harnesses/meta.json": "f146f3093564f302a29350f98d8750fb3914be2a6f0a4a8b56bc774790986b3e",
+    "artifacts/harnesses/refine.json": "befddc9f9b2c0d882a884c8760346cd116ffd2a4facbc209cf79f78d63c423fb",
+    "configs/manual.json": "5c5f32c9fad523a5563f5d69f0da1d150ec814713f6456d5736a47999bb8a92f",
+    "configs/public_instructions.txt": "e45c383a3b7c7e96ed0d95333914b04731c1be809ecc0ccd707f7527b189e952",
+    "configs/runtime.json": "139b9b669b2b31f0442fa6d2a85bf24e29c9160916495cf21d6f02f3ecdf8c36",
+    "configs/verifier.json": "e84ffbde6ad6efaea74b644ac6e3091cf0465935d1d6d52318aa0d810fac00a7",
+    "data/design20.jsonl": "8950fa93f0ba23e8adb5c3dd90350b9e3d5f6c82a8eec1b35315a895dc9f35b1",
+    "data/manifest.json": "6e3207016c65c6b287f40dc0dd02e268024b652c9de69faff6b6922911deff31",
+    "data/validation20.jsonl": "60d10b08bf2b52525b9f4ca87c0be9f7e88d5e2d1d80d66315db338bf1491c22",
+    "scripts/run_policies.py": "fb8465a872bbf617259bdcc4c885e9b94b93791ae7c3f792380cb124ad8f47a3",
+    "src/harness_lab/__init__.py": "8b52d6a6cf89b94359aa61a575cc703b3ec008896b820dfc6b3d56b91b863514",
+    "src/harness_lab/backend.py": "2d457de4ad259789439b3aec65cf657497b7151b250c7c5d4674ad2f2aff1573",
+    "src/harness_lab/protocol.py": "64890da920fe0673488f3255cd7cf1580bd50f87fbcff528590c8c35064cbb2e",
+    "src/harness_lab/verifier.py": "cd659ee33e94924863b52618b6df58f0152c52bb552f250d7b517846db642523"
+  },
+  "metadata": {
+    "protocol": "v1.1",
+    "planned_policy_generations": 80,
+    "methods": [
+      "Manual",
+      "Direct",
+      "Meta",
+      "Refine"
+    ],
+    "primary_comparison": "Meta vs Refine",
+    "directional_exploratory_hypothesis": "Meta > Refine",
+    "scenario_order": "frozen validation20 manifest order",
+    "method_order": "rotate the fixed method list by scenario index",
+    "no_final_test": true
+  },
+  "freeze_sha256": "447e8c6361aa8b892488116f537c9afe3011166783ef48d90282f6861a73fad7"
+}

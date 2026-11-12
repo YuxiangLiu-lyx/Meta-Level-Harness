@@ -1,0 +1,37 @@
+{
+  "status": "COMPLETED",
+  "returncode": 0,
+  "turns_started": 1,
+  "turns_completed": 1,
+  "tool_events": 0,
+  "errors": [],
+  "input_tokens": 9655,
+  "cached_input_tokens": 0,
+  "output_tokens": 148,
+  "reasoning_output_tokens": 42,
+  "runtime_warnings": [
+    {
+      "type": "item.completed",
+      "item": {
+        "id": "item_0",
+        "type": "error",
+        "message": "Under-development features enabled: skip_host_skill_discovery. Under-development features are incomplete and may behave unpredictably. To suppress this warning, set `suppress_unstable_features_warning = true` in /Users/liuyuxiang/.codex/config.toml."
+      }
+    }
+  ],
+  "effective_model": null,
+  "underlying_requests": null,
+  "truncated": null,
+  "task_id": "E4-20261110-validation-manual-09",
+  "cache_key": "23169faf2280e3b5f3ba69e0575a997aa3f00ca822ff6a38aa3a43739373ec3b",
+  "elapsed_seconds": 7.002088785171509,
+  "raw_directory": "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/codex/E4-20261110-validation-manual-09",
+  "malformed_event_lines": 0,
+  "final_response": "{\"policy\":\"permit (\\n    principal is User,\\n    action == Action::\\\"signArtifact\\\",\\n    resource is Artifact\\n)\\nwhen {\\n    principal.roles.contains(Role::\\\"committer\\\") &&\\n    resource.builtBy == principal &&\\n    resource.buildSucceeded &&\\n    resource.status == \\\"built\\\" &&\\n    resource.buildTags.contains(\\\"production-release\\\") &&\\n    context.sourceNetworkIsCorporateVpn\\n};\"}",
+  "raw_sha256": {
+    "final.txt": "b397dacd0b5369ed421325a81d903490022e8d4cb291434386661c6a5dfe5c8d",
+    "stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "events.jsonl": "d5599a4c9d4468d2158ba2e43efdd931376069394afdbd555159eabd697a6c04",
+    "schema.json": "789054a4b0cda04d99b22fd17820b0656a4adf0e70cf17c14b8d37f59560b43a"
+  }
+}

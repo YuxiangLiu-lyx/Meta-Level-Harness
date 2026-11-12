@@ -1,0 +1,12 @@
+{
+  "stages_checked": 5,
+  "identical_packet": true,
+  "identical_model_tools_and_per_attempt_budget": true,
+  "protocol_amendment": "v1.1 disclosed one-attempt infrastructure recovery",
+  "initial_failed_attempts": 1,
+  "fresh_sessions": true,
+  "previous_artifact_allowlist_verified": true,
+  "no_between_stage_evaluation": true,
+  "static_final_harnesses_reviewed": true,
+  "equal_stages_not_equal_compute": true
+}

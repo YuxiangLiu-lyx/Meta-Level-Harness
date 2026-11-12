@@ -1,0 +1,98 @@
+{
+  "scenario_id": "wire_transfer-chain2-T5-008",
+  "cache_key": "4526baeffb222b6f19660d286b137b6b980acd9e6a694f83574c43ea3daaafa0",
+  "verifier_version": "f9d67ee8f0a3920a13240774a30ca4c818f964d7b8370f1e8a7fd1e1e38bd5c4",
+  "status": "SEMANTIC_FAIL",
+  "syntax_valid": true,
+  "schema_valid": true,
+  "checks": [
+    {
+      "name": "verifier_authority_approval_floor",
+      "type": "floor",
+      "status": "PASS",
+      "elapsed_seconds": 0.019889499992132187,
+      "raw_sha256": "a56f33e18c4084076319e6ba01053d1096214de6b07c87a1672a6c8c099f48e7"
+    },
+    {
+      "name": "verifier_authority_approval_ceiling",
+      "type": "implies",
+      "status": "PASS",
+      "elapsed_seconds": 0.01237687491811812,
+      "raw_sha256": "0361976865b2a9053e89a2534b76f4c3a2f53cb6300227e4454e9a09133a3780"
+    },
+    {
+      "name": "treasury_allowlisted_release_floor",
+      "type": "floor",
+      "status": "PASS",
+      "elapsed_seconds": 0.011423957999795675,
+      "raw_sha256": "8fd8d176ed59d36a5d1930904e641a33e4d1f095b1afaeb0f9e2e2fa73672ace"
+    },
+    {
+      "name": "treasury_authority_approval_ceiling",
+      "type": "implies",
+      "status": "PASS",
+      "elapsed_seconds": 0.01100412500090897,
+      "raw_sha256": "001372041ef010087afaaa8e213d7549bf2c0adaab92da5ca597454aa27587ba"
+    },
+    {
+      "name": "treasury_allowlisted_release_ceiling",
+      "type": "implies",
+      "status": "PASS",
+      "elapsed_seconds": 0.012165624997578561,
+      "raw_sha256": "c2dac0b4e22b047eb348fd12c46ea51ce1e7c6d6c29dc38e2b68d10de540997a"
+    },
+    {
+      "name": "person_authority_approval_floor",
+      "type": "floor",
+      "status": "FAIL",
+      "elapsed_seconds": 0.014447082998231053,
+      "raw_sha256": "9c664539941431dc10ad39ad12922cdd5a0fcfe35bac95b1cf64da9c66ad7204"
+    },
+    {
+      "name": "person_authority_approval_ceiling",
+      "type": "implies",
+      "status": "PASS",
+      "elapsed_seconds": 0.011345041915774345,
+      "raw_sha256": "33ae348e5dcf6ee1a8c2a14a843bd609d7f8f22b5e515acbf4182926ebb0d4a0"
+    },
+    {
+      "name": "approval_threshold_disjointness",
+      "type": "implies",
+      "status": "PASS",
+      "elapsed_seconds": 0.011152124963700771,
+      "raw_sha256": "e44bb453f267744565f84c577c9977ef3dea28b0190ba1ea968e7191435fe9e0"
+    },
+    {
+      "name": "unverified_wire_release_disjointness",
+      "type": "implies",
+      "status": "PASS",
+      "elapsed_seconds": 0.01133033400401473,
+      "raw_sha256": "89c513ddc788146f607664d5b0cfdf5b3264ff2e216438badaca739b8491f5ec"
+    },
+    {
+      "name": "non_allowlisted_beneficiary_release_disjointness",
+      "type": "implies",
+      "status": "PASS",
+      "elapsed_seconds": 0.011337042087689042,
+      "raw_sha256": "ec486dc877fadd268b74f7474ba3feb57d5623112da7fae9d0172ae78c803ac4"
+    },
+    {
+      "name": "money_threshold_release_disjointness",
+      "type": "implies",
+      "status": "PASS",
+      "elapsed_seconds": 0.011882332968525589,
+      "raw_sha256": "4751653c7e098503aac85152a35adb256b71ac883bc28ea9b774467c3a6b5332"
+    },
+    {
+      "name": "verifier_workflow_approval_ceiling",
+      "type": "implies",
+      "status": "PASS",
+      "elapsed_seconds": 0.010981916915625334,
+      "raw_sha256": "c4da1fae609a66d11fb4002930eef2412b5c42a7f3f2161bc4680b85c1faf5eb"
+    }
+  ],
+  "semantic_check_count": 12,
+  "raw_directory": "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/verifier/4526baeffb222b6f19660d286b137b6b980acd9e6a694f83574c43ea3daaafa0",
+  "confirmed_overgrant": false,
+  "confirmed_overdeny": true
+}

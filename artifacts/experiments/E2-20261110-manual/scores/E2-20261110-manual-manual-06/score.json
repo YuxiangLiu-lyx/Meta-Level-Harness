@@ -1,0 +1,56 @@
+{
+  "scenario_id": "pharmacy_dispensing-verifyPrescription-T3-020",
+  "cache_key": "947115dfb1c9d0a3372efd27011adf1b505d96f2f09488c29d3af5b89a88d09d",
+  "verifier_version": "f9d67ee8f0a3920a13240774a30ca4c818f964d7b8370f1e8a7fd1e1e38bd5c4",
+  "status": "PASS",
+  "syntax_valid": true,
+  "schema_valid": true,
+  "checks": [
+    {
+      "name": "dual_staff_pic_may_verify_received_prescription",
+      "type": "floor",
+      "status": "PASS",
+      "elapsed_seconds": 0.018531874986365438,
+      "raw_sha256": "2a170d09b28821164b260d65ddf2cb108969136072f44cd64ad5b740a7407d7f"
+    },
+    {
+      "name": "verify_prescription_staff_or_pic_bounded_by_stage_or_exception",
+      "type": "implies",
+      "status": "PASS",
+      "elapsed_seconds": 0.01501841691788286,
+      "raw_sha256": "33cf73ef66aee2b4bc6699afdcb29c462a7e323de797c1fe4db94e64361c7a9a"
+    },
+    {
+      "name": "staff_or_pic_may_verify_received_no_exception_prescription",
+      "type": "floor",
+      "status": "PASS",
+      "elapsed_seconds": 0.012468083063140512,
+      "raw_sha256": "0299f814084cf0606e2729433b791cee16cd0df6d9309f6d6504d56ddeb49bfb"
+    },
+    {
+      "name": "staff_or_pic_exception_may_verify_outside_received",
+      "type": "floor",
+      "status": "PASS",
+      "elapsed_seconds": 0.011315834010019898,
+      "raw_sha256": "23289324cdab1262841631af68d225d59f50bb714b73407266032d383735c59b"
+    },
+    {
+      "name": "staff_or_pic_threshold_may_verify_outside_received",
+      "type": "floor",
+      "status": "PASS",
+      "elapsed_seconds": 0.011070125037804246,
+      "raw_sha256": "79c6efb975c088878c274267cd0097be62c95e56835e1fdb25f517223c284f5e"
+    },
+    {
+      "name": "staff_pharmacist_verify_no_prohibition_liveness",
+      "type": "liveness-overlap",
+      "status": "PASS",
+      "elapsed_seconds": 0.012867667013779283,
+      "raw_sha256": "1ce7135b562fb1b07287b91d936c1101c88f3e29a60d634c89865ed3bf0bd7fb"
+    }
+  ],
+  "semantic_check_count": 6,
+  "raw_directory": "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/verifier/947115dfb1c9d0a3372efd27011adf1b505d96f2f09488c29d3af5b89a88d09d",
+  "confirmed_overgrant": false,
+  "confirmed_overdeny": false
+}

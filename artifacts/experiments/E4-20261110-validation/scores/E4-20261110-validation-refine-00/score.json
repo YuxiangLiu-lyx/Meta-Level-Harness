@@ -1,0 +1,49 @@
+{
+  "scenario_id": "warehouse_fulfillment-pickOrder-T3-055",
+  "cache_key": "4d85ce755cd6738f0ab595c31bb0ad76ba30c4b899ae5c8b15e6412e1c28f4be",
+  "verifier_version": "f9d67ee8f0a3920a13240774a30ca4c818f964d7b8370f1e8a7fd1e1e38bd5c4",
+  "status": "PASS",
+  "syntax_valid": true,
+  "schema_valid": true,
+  "checks": [
+    {
+      "name": "badged_picker_or_forklift_may_pick_non_self_order",
+      "type": "floor",
+      "status": "PASS",
+      "elapsed_seconds": 0.061129042063839734,
+      "raw_sha256": "49c97ed8501f259dafe563d6f4d39a9fb0d9aef3a608dacd6b56dfccf6a01589"
+    },
+    {
+      "name": "pick_order_ceiling_badged_roles_self_bulk_bridge",
+      "type": "implies",
+      "status": "PASS",
+      "elapsed_seconds": 0.012441499973647296,
+      "raw_sha256": "1dcd066e0c739692af82fffc56649e7cc753c41248216e88517b3b5f38fe34c3"
+    },
+    {
+      "name": "unbadged_worker_must_not_pick_order",
+      "type": "implies",
+      "status": "PASS",
+      "elapsed_seconds": 0.009411417064256966,
+      "raw_sha256": "2d5857f3db80ff4e3a9201abe9411766cb39a24260a5bab839fc86147a81200b"
+    },
+    {
+      "name": "badged_picker_must_be_able_to_pick_allowed_order",
+      "type": "floor",
+      "status": "PASS",
+      "elapsed_seconds": 0.010479666059836745,
+      "raw_sha256": "07ec2f283f5a7576bcd48103eef8d86350915b4e9739156dddcd5e8897188988"
+    },
+    {
+      "name": "picker_success_path_ceiling_badged_roles_self_bulk",
+      "type": "implies",
+      "status": "PASS",
+      "elapsed_seconds": 0.011108207982033491,
+      "raw_sha256": "acb1501d6b2e590a3f33bc9d6bb0d0c7ca6df554475e8ca116f48a0beda90464"
+    }
+  ],
+  "semantic_check_count": 5,
+  "raw_directory": "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/verifier/4d85ce755cd6738f0ab595c31bb0ad76ba30c4b899ae5c8b15e6412e1c28f4be",
+  "confirmed_overgrant": false,
+  "confirmed_overdeny": false
+}

@@ -1,0 +1,49 @@
+{
+  "scenario_id": "expense_reimbursement-disburseReimbursement-T2-012",
+  "cache_key": "44c8dbae35105892f2382a946fa9d9248f1e4c65e79a6f202418384bb53eccd1",
+  "verifier_version": "f9d67ee8f0a3920a13240774a30ca4c818f964d7b8370f1e8a7fd1e1e38bd5c4",
+  "status": "PASS",
+  "syntax_valid": true,
+  "schema_valid": true,
+  "checks": [
+    {
+      "name": "controller_disburse_approved_report_business_hours_floor",
+      "type": "floor",
+      "status": "PASS",
+      "elapsed_seconds": 0.020317833055742085,
+      "raw_sha256": "21c59f4cebc9d615c60ce230a32729bfaa39a40326a6e94ddbce0a3e76cb7029"
+    },
+    {
+      "name": "controller_disburse_business_hours_only_approved_ceiling",
+      "type": "implies",
+      "status": "PASS",
+      "elapsed_seconds": 0.011858082958497107,
+      "raw_sha256": "3f64ef38692070ef57d2a2dad89ed9c62dc4b36ab9547773dcb0fe749f85f8c8"
+    },
+    {
+      "name": "no_unapproved_report_disbursement_business_hours",
+      "type": "implies",
+      "status": "PASS",
+      "elapsed_seconds": 0.008939249906688929,
+      "raw_sha256": "24fb00f0b5c95d35d1d98d4b5ea1e129ac4b4b42037c081bfc4278a33f7eaf91"
+    },
+    {
+      "name": "controller_disburse_no_prohibition_floor",
+      "type": "floor",
+      "status": "PASS",
+      "elapsed_seconds": 0.007599959033541381,
+      "raw_sha256": "e334a58fd31eebeb3638beb17004b1bd8a477637437fa4d99b889aff49b76d7e"
+    },
+    {
+      "name": "controller_disburse_no_prohibition_ceiling",
+      "type": "implies",
+      "status": "PASS",
+      "elapsed_seconds": 0.00792316603474319,
+      "raw_sha256": "e32fe403e59e3bf36a97536c789ccd91ab98790c4df1fccadcc9bfc269cfdebe"
+    }
+  ],
+  "semantic_check_count": 5,
+  "raw_directory": "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/verifier/44c8dbae35105892f2382a946fa9d9248f1e4c65e79a6f202418384bb53eccd1",
+  "confirmed_overgrant": false,
+  "confirmed_overdeny": false
+}

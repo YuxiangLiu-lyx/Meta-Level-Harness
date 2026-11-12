@@ -1,0 +1,70 @@
+{
+  "scenario_id": "smart_building-approveCommission-T3-018",
+  "cache_key": "4e4d5a51bbdc539333cb74166e529d8ca164b103495a15327a08b7eb9bc6b4f8",
+  "verifier_version": "f9d67ee8f0a3920a13240774a30ca4c818f964d7b8370f1e8a7fd1e1e38bd5c4",
+  "status": "PASS",
+  "syntax_valid": true,
+  "schema_valid": true,
+  "checks": [
+    {
+      "name": "dual_role_facility_manager_approval_window_floor",
+      "type": "floor",
+      "status": "PASS",
+      "elapsed_seconds": 0.014702291926369071,
+      "raw_sha256": "e039b4a04a881e99adef59b683440a6f3d947f456765cb6be8ed006097d643c4"
+    },
+    {
+      "name": "dual_role_facility_manager_approval_ceiling",
+      "type": "implies",
+      "status": "PASS",
+      "elapsed_seconds": 0.01170749997254461,
+      "raw_sha256": "2574a7afce1bf647863c4b9ffc3f454e4fb961412339a94cae5b2ec188cc523f"
+    },
+    {
+      "name": "facility_manager_approval_not_requested_disjointness",
+      "type": "implies",
+      "status": "PASS",
+      "elapsed_seconds": 0.010463917045854032,
+      "raw_sha256": "4f4025b4e543c0a8d9350c1b9a2eaa402c164a191cbfe140e4d8054621e0db73"
+    },
+    {
+      "name": "facility_manager_approval_onsite_window_floor",
+      "type": "floor",
+      "status": "PASS",
+      "elapsed_seconds": 0.01014149992261082,
+      "raw_sha256": "18b598349e4e51bdddf0d1ba648b351039650becaac52c3907b15efd699a7af2"
+    },
+    {
+      "name": "facility_manager_approval_offsite_network_disjointness",
+      "type": "implies",
+      "status": "PASS",
+      "elapsed_seconds": 0.009892750065773726,
+      "raw_sha256": "643c92b89dad8ff34e1730236ef1a53e500f6ebd82314a72bcead7d450e27643"
+    },
+    {
+      "name": "facility_manager_approval_outside_window_disjointness",
+      "type": "implies",
+      "status": "PASS",
+      "elapsed_seconds": 0.009548333007842302,
+      "raw_sha256": "6c5607b791811c1616a891eb810f19eb9ec23ad029797f3cdefa6ab0ae1ad252"
+    },
+    {
+      "name": "facility_manager_no_prohibition_approval_ceiling",
+      "type": "implies",
+      "status": "PASS",
+      "elapsed_seconds": 0.009650042047724128,
+      "raw_sha256": "19c1983340a94ba174b1cf18c32558a5c17c92fd96462c414ffed33d6f22eee3"
+    },
+    {
+      "name": "facility_manager_approval_success_liveness",
+      "type": "liveness-overlap",
+      "status": "PASS",
+      "elapsed_seconds": 0.01427550008520484,
+      "raw_sha256": "9da8fe5993d6d8f15301a6a13ec4b79490ef4a5413b49192fde012ae6c16a1b4"
+    }
+  ],
+  "semantic_check_count": 8,
+  "raw_directory": "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/verifier/4e4d5a51bbdc539333cb74166e529d8ca164b103495a15327a08b7eb9bc6b4f8",
+  "confirmed_overgrant": false,
+  "confirmed_overdeny": false
+}

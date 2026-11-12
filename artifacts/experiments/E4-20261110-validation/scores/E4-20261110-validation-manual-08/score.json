@@ -1,0 +1,56 @@
+{
+  "scenario_id": "lms_course_content-enterGrade-T2-013",
+  "cache_key": "659c124cc59f4c016e74218459d4123c96d09dface677ad31dddd55f70f54698",
+  "verifier_version": "f9d67ee8f0a3920a13240774a30ca4c818f964d7b8370f1e8a7fd1e1e38bd5c4",
+  "status": "PASS",
+  "syntax_valid": true,
+  "schema_valid": true,
+  "checks": [
+    {
+      "name": "enter_grade_draft_instructor_or_ta_floor",
+      "type": "floor",
+      "status": "PASS",
+      "elapsed_seconds": 0.015924999956041574,
+      "raw_sha256": "666dfcc0fc62c44882a8f526b980be05f142e0e96c4d0fdbfc4dcfb4aa16d2f1"
+    },
+    {
+      "name": "enter_grade_only_draft_instructor_or_ta_ceiling",
+      "type": "implies",
+      "status": "PASS",
+      "elapsed_seconds": 0.012915957951918244,
+      "raw_sha256": "c0e46c88a56c3e20f787cf9c351ff384e18adcc4ca6f64db46cd2d7af73a0df8"
+    },
+    {
+      "name": "enter_grade_p0012_draft_instructor_or_ta_ceiling",
+      "type": "implies",
+      "status": "PASS",
+      "elapsed_seconds": 0.012589332996867597,
+      "raw_sha256": "a38fc9379ff80a53b5935d6d8f4066588622c9e68364f2382f272de5d1d4eb1f"
+    },
+    {
+      "name": "enter_grade_actual_instructor_of_record_draft_floor",
+      "type": "floor",
+      "status": "PASS",
+      "elapsed_seconds": 0.011855790973640978,
+      "raw_sha256": "b4ff8a7beb276e0b79539af3068324a6b7f4c6b3b003772f6831a9d10d1cc2e8"
+    },
+    {
+      "name": "enter_grade_p0013_approved_action_boundary_ceiling",
+      "type": "implies",
+      "status": "PASS",
+      "elapsed_seconds": 0.010656040976755321,
+      "raw_sha256": "36fba2bc698fd640ee1be6bc8ca21a6b8b8d2a2bebb6d78440179401a29ae7ca"
+    },
+    {
+      "name": "enter_grade_instructor_of_record_draft_liveness",
+      "type": "liveness-overlap",
+      "status": "PASS",
+      "elapsed_seconds": 0.01625066704582423,
+      "raw_sha256": "fc9333f36cc5fa8f18f5f1e91dcf27b20dea4ff17cb66045b52af5b36a37d2bf"
+    }
+  ],
+  "semantic_check_count": 6,
+  "raw_directory": "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/verifier/659c124cc59f4c016e74218459d4123c96d09dface677ad31dddd55f70f54698",
+  "confirmed_overgrant": false,
+  "confirmed_overdeny": false
+}

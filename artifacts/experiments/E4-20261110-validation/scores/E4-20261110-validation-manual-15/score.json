@@ -1,0 +1,133 @@
+{
+  "scenario_id": "work_order_signoff-signoffWorkOrder-T3-047",
+  "cache_key": "1f460468d1f79be3ee94cc4ac1479cd2ea4b8be7dc4c7027451d90b7b25a94b5",
+  "verifier_version": "f9d67ee8f0a3920a13240774a30ca4c818f964d7b8370f1e8a7fd1e1e38bd5c4",
+  "status": "SEMANTIC_FAIL",
+  "syntax_valid": true,
+  "schema_valid": true,
+  "checks": [
+    {
+      "name": "operator_inspector_overlap_signoff_floor",
+      "type": "floor",
+      "status": "FAIL",
+      "elapsed_seconds": 0.06903625000268221,
+      "raw_sha256": "5120fa088993a2a62658eb265c9285341f26cefb0189468bced88dda7b99d910"
+    },
+    {
+      "name": "inspector_quality_manager_overlap_signoff_floor",
+      "type": "floor",
+      "status": "FAIL",
+      "elapsed_seconds": 0.014904666924849153,
+      "raw_sha256": "88c0ab82bec221a207720db4715debe7858cab7b1536301b989262057e16ea0b"
+    },
+    {
+      "name": "inspector_or_quality_manager_signoff_part_code_union_ceiling",
+      "type": "implies",
+      "status": "PASS",
+      "elapsed_seconds": 0.00984866707585752,
+      "raw_sha256": "664ca7513232e278bf97ab9dbd37c767138d4034e3c9d14c52c8be7b32a1e320"
+    },
+    {
+      "name": "operator_create_own_work_order_floor",
+      "type": "floor",
+      "status": "PASS",
+      "elapsed_seconds": 0.008932083961553872,
+      "raw_sha256": "a2cdefc34780826de9431b2595fc3a4779eabacda0f398dc03924f09412d4fc0"
+    },
+    {
+      "name": "operator_create_own_work_order_ceiling",
+      "type": "implies",
+      "status": "FAIL",
+      "elapsed_seconds": 0.010512499953620136,
+      "raw_sha256": "eba20100c2522559be7389cd3cae6155e7c92cc478819bdbda4a6b8fff7a3775"
+    },
+    {
+      "name": "operator_start_own_work_order_floor",
+      "type": "floor",
+      "status": "PASS",
+      "elapsed_seconds": 0.00945687503553927,
+      "raw_sha256": "3d631668399b424cf3af9f9a9a5a2678f420c69c44e0c981858dc54b76cf006f"
+    },
+    {
+      "name": "operator_start_own_work_order_ceiling",
+      "type": "implies",
+      "status": "FAIL",
+      "elapsed_seconds": 0.010182707919739187,
+      "raw_sha256": "5994ba62eae3ccccd5b0b824b08a8b55248bae2c47b413a3bc7a08d10ad161f3"
+    },
+    {
+      "name": "inspector_or_quality_manager_in_progress_signoff_floor",
+      "type": "floor",
+      "status": "FAIL",
+      "elapsed_seconds": 0.013789958087727427,
+      "raw_sha256": "b1ffb7fc4e0630500270170ce6f1bb4f6a1caaf82bdd5a592427f3eb09dbff08"
+    },
+    {
+      "name": "signoff_only_in_progress_disjointness",
+      "type": "implies",
+      "status": "PASS",
+      "elapsed_seconds": 0.008836833061650395,
+      "raw_sha256": "deb9e66fae32fb2310cfc3b49b234856d2602afe85e084963a040c8287fcdf44"
+    },
+    {
+      "name": "signoff_part_code_condition_disjointness",
+      "type": "implies",
+      "status": "PASS",
+      "elapsed_seconds": 0.009604166029021144,
+      "raw_sha256": "0278308a04352b378d85974c8874311aa5857d5f40bcec4ec6d11282cb0f3848"
+    },
+    {
+      "name": "signoff_defect_count_threshold_disjointness",
+      "type": "implies",
+      "status": "FAIL",
+      "elapsed_seconds": 0.014185749925673008,
+      "raw_sha256": "149adbd41b3cc1f458f861a630e30bfce1d5813af7b7a00c4ee3b826722b4912"
+    },
+    {
+      "name": "production_supervisor_release_signed_off_floor",
+      "type": "floor",
+      "status": "PASS",
+      "elapsed_seconds": 0.0075244170147925615,
+      "raw_sha256": "b51659d834d47ca287018b2193a4abf4485de41003fc74fd1e7438d77ec3c65f"
+    },
+    {
+      "name": "production_supervisor_release_signed_off_ceiling",
+      "type": "implies",
+      "status": "PASS",
+      "elapsed_seconds": 0.006459750002250075,
+      "raw_sha256": "3f157da8d92fd403acd54673fb5b9b65c95b66710dd89970a89f4315c4a92fc2"
+    },
+    {
+      "name": "auditor_view_quality_log_floor",
+      "type": "floor",
+      "status": "PASS",
+      "elapsed_seconds": 0.006923625012859702,
+      "raw_sha256": "5d24c3d79f32c1062df1a278c132fc2d3458e0e30cf312857e6f5eb1b980ea3e"
+    },
+    {
+      "name": "auditor_view_quality_log_ceiling",
+      "type": "implies",
+      "status": "PASS",
+      "elapsed_seconds": 0.006898541934788227,
+      "raw_sha256": "00cd111c4d75dc06b7ee67c9efca0ffadd34260c289dc6d14b9d74763cbe8793"
+    },
+    {
+      "name": "inspector_acceptable_signoff_floor",
+      "type": "floor",
+      "status": "FAIL",
+      "elapsed_seconds": 0.014182040933519602,
+      "raw_sha256": "bccc9307a48a3fb96e0c554378e093ee98a11658c054925aa9b4c12d78074228"
+    },
+    {
+      "name": "inspector_acceptable_signoff_liveness",
+      "type": "liveness-overlap",
+      "status": "PASS",
+      "elapsed_seconds": 0.014387542032636702,
+      "raw_sha256": "9e5ac5ad596c375a9a28959ed23a3c449a0a383bb50678f09b2e66bcb2d4a5a5"
+    }
+  ],
+  "semantic_check_count": 17,
+  "raw_directory": "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/verifier/1f460468d1f79be3ee94cc4ac1479cd2ea4b8be7dc4c7027451d90b7b25a94b5",
+  "confirmed_overgrant": true,
+  "confirmed_overdeny": true
+}

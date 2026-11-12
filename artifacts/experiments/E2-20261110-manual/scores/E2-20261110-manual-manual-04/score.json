@@ -1,0 +1,42 @@
+{
+  "scenario_id": "patent_prosecution-examineApplication-T2-005",
+  "cache_key": "a941fffa3f639b6b8a7a2aa7f6fd79fd8648a2c3cd9a8bb56287c32713dbd597",
+  "verifier_version": "f9d67ee8f0a3920a13240774a30ca4c818f964d7b8370f1e8a7fd1e1e38bd5c4",
+  "status": "SEMANTIC_FAIL",
+  "syntax_valid": true,
+  "schema_valid": true,
+  "checks": [
+    {
+      "name": "assigned_examiner_mfa_noninventor_examine_floor",
+      "type": "floor",
+      "status": "PASS",
+      "elapsed_seconds": 0.13487025001086295,
+      "raw_sha256": "6aef308314b54247d6a18812d98ce4670ff2d58b20f81db88843e7f87dbd51c4"
+    },
+    {
+      "name": "examine_limited_to_assigned_examiner_mfa_noninventor",
+      "type": "implies",
+      "status": "FAIL",
+      "elapsed_seconds": 0.028432999970391393,
+      "raw_sha256": "c52edbf49bcd899819ca5102cdccded9e684100505c1b8f85ee60a28eb1d118a"
+    },
+    {
+      "name": "inventor_examiner_recusal_disjointness",
+      "type": "implies",
+      "status": "PASS",
+      "elapsed_seconds": 0.01728070806711912,
+      "raw_sha256": "44b63a03cc48df194eeaa6e0ed9501d1dee2ea2cbff8c1ecac22be85f22d809a"
+    },
+    {
+      "name": "examiner_examine_application_liveness",
+      "type": "liveness-overlap",
+      "status": "PASS",
+      "elapsed_seconds": 0.031082000001333654,
+      "raw_sha256": "62093d4599eedab64b5712cfeae98372cbfb8ba7f0ffae92175abc012b862dd4"
+    }
+  ],
+  "semantic_check_count": 4,
+  "raw_directory": "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/verifier/a941fffa3f639b6b8a7a2aa7f6fd79fd8648a2c3cd9a8bb56287c32713dbd597",
+  "confirmed_overgrant": true,
+  "confirmed_overdeny": false
+}

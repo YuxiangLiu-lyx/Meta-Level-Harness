@@ -1,0 +1,63 @@
+{
+  "scenario_id": "cicd_pipeline-signArtifact-T4-003",
+  "cache_key": "393124525b30ac23934d3141eba442ba7fac4fc03fd42a54c7d4cd3d08f2d611",
+  "verifier_version": "f9d67ee8f0a3920a13240774a30ca4c818f964d7b8370f1e8a7fd1e1e38bd5c4",
+  "status": "PASS",
+  "syntax_valid": true,
+  "schema_valid": true,
+  "checks": [
+    {
+      "name": "committer_builder_production_release_vpn_sign_floor_repaired",
+      "type": "floor",
+      "status": "PASS",
+      "elapsed_seconds": 0.018266582977958024,
+      "raw_sha256": "8892e86117623e706c35e2288aa0d4a52a6dfe7c14f83bec72d885cd94875529"
+    },
+    {
+      "name": "sign_artifact_only_builder_ceiling",
+      "type": "implies",
+      "status": "PASS",
+      "elapsed_seconds": 0.012936208979226649,
+      "raw_sha256": "6b3b030ea4c6aaad18fce97ee72c7fcb600c79300c6b842b4ac6d3ba5698e0ed"
+    },
+    {
+      "name": "sign_artifact_requires_successful_built_status_ceiling",
+      "type": "implies",
+      "status": "PASS",
+      "elapsed_seconds": 0.011832832940854132,
+      "raw_sha256": "bf455c9a0e309d611e17b67c63598329667961aa348ffaac764692e0347b99a5"
+    },
+    {
+      "name": "non_builder_must_not_sign_disjointness",
+      "type": "implies",
+      "status": "PASS",
+      "elapsed_seconds": 0.011071624932810664,
+      "raw_sha256": "d163c186dabb672bd95a76af81eef6b38cc9fee8429ece9c495b4bfc3fae8575"
+    },
+    {
+      "name": "sign_artifact_requires_production_release_tag_ceiling",
+      "type": "implies",
+      "status": "PASS",
+      "elapsed_seconds": 0.011249625007621944,
+      "raw_sha256": "2ce78601356b61028e093831d47529428f4b46fef4cbe85ff3c5f486f0df4d03"
+    },
+    {
+      "name": "sign_artifact_requires_corporate_vpn_ceiling",
+      "type": "implies",
+      "status": "PASS",
+      "elapsed_seconds": 0.01091204199474305,
+      "raw_sha256": "2c4b19c59dd23a83e4bb446c801510ebc5a0ecfd2381242d5b205d640bcb3021"
+    },
+    {
+      "name": "sign_artifact_requires_committer_role_ceiling",
+      "type": "implies",
+      "status": "PASS",
+      "elapsed_seconds": 0.009905542014166713,
+      "raw_sha256": "7f92936fa457fa9d94ea584791d0ac73869d35299d620c451747e63b7c8ab547"
+    }
+  ],
+  "semantic_check_count": 7,
+  "raw_directory": "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/verifier/393124525b30ac23934d3141eba442ba7fac4fc03fd42a54c7d4cd3d08f2d611",
+  "confirmed_overgrant": false,
+  "confirmed_overdeny": false
+}

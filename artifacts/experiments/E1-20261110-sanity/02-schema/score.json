@@ -1,0 +1,13 @@
+{
+  "scenario_id": "payroll-viewEmployeeRecord-T3-014",
+  "cache_key": "c6c6d9a321f02c8404a1757c5a647ef9125921ecd63d6894440372b29e235c30",
+  "verifier_version": "f9d67ee8f0a3920a13240774a30ca4c818f964d7b8370f1e8a7fd1e1e38bd5c4",
+  "status": "SCHEMA_FAIL",
+  "syntax_valid": true,
+  "schema_valid": false,
+  "checks": [],
+  "semantic_check_count": 0,
+  "raw_directory": "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/verifier/c6c6d9a321f02c8404a1757c5a647ef9125921ecd63d6894440372b29e235c30",
+  "confirmed_overgrant": false,
+  "confirmed_overdeny": false
+}

@@ -1,0 +1,49 @@
+{
+  "scenario_id": "student_records-viewRecord-T3-048",
+  "cache_key": "78d31076c451676cdd05c1aecef5b9d6c87d6482f449024f6d130c917c5d063c",
+  "verifier_version": "f9d67ee8f0a3920a13240774a30ca4c818f964d7b8370f1e8a7fd1e1e38bd5c4",
+  "status": "PASS",
+  "syntax_valid": true,
+  "schema_valid": true,
+  "checks": [
+    {
+      "name": "no_view_withdrawn_blocked_student_records",
+      "type": "implies",
+      "status": "PASS",
+      "elapsed_seconds": 0.01286195800639689,
+      "raw_sha256": "84240307448f29bcc111ebf1d25930d704b60171c3095ee5b74be1b187e9bb13"
+    },
+    {
+      "name": "registrar_can_view_withdrawn_blocked_student_records",
+      "type": "floor",
+      "status": "PASS",
+      "elapsed_seconds": 0.009496957994997501,
+      "raw_sha256": "3f573203c8c993f61968077d138b832afd89784155a495e02f2a4233a7fa4ed3"
+    },
+    {
+      "name": "withdrawn_blocked_student_record_viewing_ceiling",
+      "type": "implies",
+      "status": "PASS",
+      "elapsed_seconds": 0.008283708011731505,
+      "raw_sha256": "e08cd220597de188d9817b5d2c949718ed17842aba12a4101b1692f53bc578ac"
+    },
+    {
+      "name": "instructor_can_view_student_record_without_withdrawn_block_prohibition",
+      "type": "floor",
+      "status": "PASS",
+      "elapsed_seconds": 0.0076356250792741776,
+      "raw_sha256": "42eafebcfb08201b0b2c7bb805dac94a885ead18d90126259f9bade0c0efdec8"
+    },
+    {
+      "name": "instructor_student_record_viewing_nonprohibited_ceiling",
+      "type": "implies",
+      "status": "PASS",
+      "elapsed_seconds": 0.0064999168971553445,
+      "raw_sha256": "fed4311c4f421f94731120f3c4bc9a098664218b9de0cebab27fa1f08d2947cb"
+    }
+  ],
+  "semantic_check_count": 5,
+  "raw_directory": "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/verifier/78d31076c451676cdd05c1aecef5b9d6c87d6482f449024f6d130c917c5d063c",
+  "confirmed_overgrant": false,
+  "confirmed_overdeny": false
+}

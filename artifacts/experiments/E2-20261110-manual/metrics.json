@@ -1,0 +1,23 @@
+{
+  "Manual": {
+    "method": "Manual",
+    "completed": 20,
+    "planned": 20,
+    "passed": 10,
+    "success_rate": 0.5,
+    "syntax_valid": 20,
+    "schema_valid": 20,
+    "semantic_failures": 10,
+    "evaluation_unresolved": 0,
+    "protocol_violations": 0,
+    "infrastructure_failures": 0,
+    "confirmed_overgrant": 7,
+    "confirmed_overdeny": 6,
+    "tool_events": 0,
+    "input_tokens": 193921,
+    "cached_input_tokens": 0,
+    "output_tokens": 7408,
+    "reasoning_output_tokens": 3462,
+    "elapsed_seconds": 248.0772089958191
+  }
+}

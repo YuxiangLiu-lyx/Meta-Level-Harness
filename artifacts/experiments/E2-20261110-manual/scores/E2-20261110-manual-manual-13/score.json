@@ -1,0 +1,70 @@
+{
+  "scenario_id": "kubernetes_rbac-revokeToken-T2-001",
+  "cache_key": "1d83d7e7ff9eca6b1289db84a3251a96b1e6970c46a218624e47ae29e5851af2",
+  "verifier_version": "f9d67ee8f0a3920a13240774a30ca4c818f964d7b8370f1e8a7fd1e1e38bd5c4",
+  "status": "PASS",
+  "syntax_valid": true,
+  "schema_valid": true,
+  "checks": [
+    {
+      "name": "cluster_operator_issuer_team_member_can_revoke_token",
+      "type": "floor",
+      "status": "PASS",
+      "elapsed_seconds": 0.05298229097388685,
+      "raw_sha256": "ee1482be4bae2bff5cc25bf364ec2f05e09a902403ccb2822700845d5deb2967"
+    },
+    {
+      "name": "revoke_token_only_by_cluster_operator_issuer",
+      "type": "implies",
+      "status": "PASS",
+      "elapsed_seconds": 0.01022149994969368,
+      "raw_sha256": "984e42e001ece9c947f54873b7fcb39e8f906f2040f716389a6d0cd7d444fd93"
+    },
+    {
+      "name": "revoke_token_requires_bound_namespace_team_membership",
+      "type": "implies",
+      "status": "PASS",
+      "elapsed_seconds": 0.011334459064528346,
+      "raw_sha256": "eabcdcc81c306152d9d665cbab8adc25ae7a8ee61b48582dfe6ec9736417425a"
+    },
+    {
+      "name": "workload_packet_revoke_token_within_issuer_team_boundary",
+      "type": "implies",
+      "status": "PASS",
+      "elapsed_seconds": 0.013302208040840924,
+      "raw_sha256": "2f088f9dcc7054ae1cf01d08a1410e942a284af82bf5ec8512d47b0de5fa4aac"
+    },
+    {
+      "name": "namespace_secret_packet_revoke_token_within_issuer_team_boundary",
+      "type": "implies",
+      "status": "PASS",
+      "elapsed_seconds": 0.011008957982994616,
+      "raw_sha256": "1e6538117fe368e06ee79bc4731f3bac9e3abfa3553e27cdbcdba20e10862395"
+    },
+    {
+      "name": "service_account_token_packet_revoke_within_issuer_team_boundary",
+      "type": "implies",
+      "status": "PASS",
+      "elapsed_seconds": 0.010389000060968101,
+      "raw_sha256": "fd9dc025e587b7889cecb3b349ff772937b5ae082f0f556ecf8b195d94893609"
+    },
+    {
+      "name": "requester_packet_revoke_within_issuer_team_boundary",
+      "type": "implies",
+      "status": "PASS",
+      "elapsed_seconds": 0.009895041002891958,
+      "raw_sha256": "b18f8bde2a79ab78cd3454bee905f94d5b3987b926b9e2f03fbf834ed9a77c0e"
+    },
+    {
+      "name": "cluster_operator_issuer_team_member_revoke_liveness",
+      "type": "liveness-overlap",
+      "status": "PASS",
+      "elapsed_seconds": 0.013073417008854449,
+      "raw_sha256": "67e12cbe1fdbb0fb35f9255b0694450f087aa0c8149754c45adf810c787f8b40"
+    }
+  ],
+  "semantic_check_count": 8,
+  "raw_directory": "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/verifier/1d83d7e7ff9eca6b1289db84a3251a96b1e6970c46a218624e47ae29e5851af2",
+  "confirmed_overgrant": false,
+  "confirmed_overdeny": false
+}

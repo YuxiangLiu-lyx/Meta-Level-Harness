@@ -1,0 +1,112 @@
+{
+  "scenario_id": "lease_execution-reviewLease-T5-011",
+  "cache_key": "eb24c66fa41b70c00d706b7c3935975fe80b200a3380ba6f4befe4ed220b021a",
+  "verifier_version": "f9d67ee8f0a3920a13240774a30ca4c818f964d7b8370f1e8a7fd1e1e38bd5c4",
+  "status": "SEMANTIC_FAIL",
+  "syntax_valid": true,
+  "schema_valid": true,
+  "checks": [
+    {
+      "name": "broker_non_drafter_may_review_lease",
+      "type": "floor",
+      "status": "FAIL",
+      "elapsed_seconds": 0.016792374895885587,
+      "raw_sha256": "cf92411227ff12f96df1899a63a44b341bb9a8c374cb5c3280dc1258b6a178b8"
+    },
+    {
+      "name": "broker_listing_agent_may_review_large_premises_lease",
+      "type": "floor",
+      "status": "FAIL",
+      "elapsed_seconds": 0.014838958973996341,
+      "raw_sha256": "115c20d13bfe5f30102ce1aa040cfc38d729bde6fa62f5be365009a40281a27d"
+    },
+    {
+      "name": "review_lease_only_broker_high_value_independent_unless_large_or_court_order",
+      "type": "implies",
+      "status": "FAIL",
+      "elapsed_seconds": 0.01683954196050763,
+      "raw_sha256": "5508d5242eba34e63a3cb18616cc842488251405157054abb250ae45199816fa"
+    },
+    {
+      "name": "smaller_lease_drafter_review_disjoint",
+      "type": "implies",
+      "status": "FAIL",
+      "elapsed_seconds": 0.017026999965310097,
+      "raw_sha256": "e7323e8055d688e4e622d15418e0e80ab9319d8d99cdca2617a3bf42d0f12210"
+    },
+    {
+      "name": "non_broker_review_disjoint",
+      "type": "implies",
+      "status": "PASS",
+      "elapsed_seconds": 0.01123291696421802,
+      "raw_sha256": "8c609e53af9f2b85dce8855f3e1d3e4d3611a5b8305f35b72e2d2c0085f3e440"
+    },
+    {
+      "name": "broker_drafter_may_review_low_value_lease",
+      "type": "floor",
+      "status": "PASS",
+      "elapsed_seconds": 0.011107667000032961,
+      "raw_sha256": "23f152990acc0673e20d305f9d5371c07400db2749954629af0c8b24ca6a5272"
+    },
+    {
+      "name": "review_lease_only_broker_independent_unless_large_or_court_order",
+      "type": "implies",
+      "status": "FAIL",
+      "elapsed_seconds": 0.01569829205982387,
+      "raw_sha256": "db94ba003b7d794000d0b9a4c26d03fc6d74ef68851047850f99361394664f59"
+    },
+    {
+      "name": "leasing_agent_may_draft_lease",
+      "type": "floor",
+      "status": "PASS",
+      "elapsed_seconds": 0.01027891703415662,
+      "raw_sha256": "ef83c3d98cdf20728b86dd9b1b4302888fcfa921b9f6c146119e4824a9872547"
+    },
+    {
+      "name": "draft_lease_only_leasing_agent_drafted_state",
+      "type": "implies",
+      "status": "FAIL",
+      "elapsed_seconds": 0.017036624951288104,
+      "raw_sha256": "4d01303f98ba415931449f4a48e4d4868e788cbb2d8d8f8f579aa2e33cfff865"
+    },
+    {
+      "name": "auditor_may_view_audit_log",
+      "type": "floor",
+      "status": "PASS",
+      "elapsed_seconds": 0.008072583004832268,
+      "raw_sha256": "7bc68232b7bd695ce48fd9639f4fb5869cff19d3f0d28257d46a42d4deac1014"
+    },
+    {
+      "name": "view_audit_log_only_auditor",
+      "type": "implies",
+      "status": "PASS",
+      "elapsed_seconds": 0.007490915944799781,
+      "raw_sha256": "95b05c8d2e0e70c7fecca3fc46b377fedacec148a02a21a8bfe601f28b92bf4c"
+    },
+    {
+      "name": "high_value_small_no_court_listing_agent_review_disjoint",
+      "type": "implies",
+      "status": "FAIL",
+      "elapsed_seconds": 0.015102957957424223,
+      "raw_sha256": "6afaeb2b9398ef4ebcf6c7d7a991de2b542ff68391cec8a68e3486c205805d47"
+    },
+    {
+      "name": "broker_listing_agent_may_review_court_order_lease",
+      "type": "floor",
+      "status": "FAIL",
+      "elapsed_seconds": 0.015398084069602191,
+      "raw_sha256": "5d2c565c9d23b8e42c51405427c7115bf234cd5d869fe2f7284e16907878fea0"
+    },
+    {
+      "name": "high_value_independent_broker_review_liveness",
+      "type": "liveness-overlap",
+      "status": "PASS",
+      "elapsed_seconds": 0.012358500040136278,
+      "raw_sha256": "45fb9f4106ac81c36e002423e07a3d0119b9c5a2f4d581fb091c3da7c40e385d"
+    }
+  ],
+  "semantic_check_count": 14,
+  "raw_directory": "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/verifier/eb24c66fa41b70c00d706b7c3935975fe80b200a3380ba6f4befe4ed220b021a",
+  "confirmed_overgrant": true,
+  "confirmed_overdeny": true
+}
