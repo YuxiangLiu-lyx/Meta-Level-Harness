@@ -1,0 +1,27 @@
+{
+  "command": [
+    "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/dependencies/cedar-policy-cli-experimental-aarch64-apple-darwin/cedar",
+    "symcc",
+    "--cvc5-path",
+    "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/dependencies/cvc5-macOS-arm64-static/bin/cvc5",
+    "--principal-type",
+    "Requester",
+    "--action",
+    "Action::\"readTelemetry\"",
+    "--resource-type",
+    "TelemetryRecord",
+    "--schema",
+    "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/selected_scenarios/scenarios/iot_fleet-readTelemetry-T3-012/schema.cedarschema",
+    "--counterexample",
+    "implies",
+    "--policies1",
+    "/var/folders/f4/3c2p11sd22b76640b44tvyv80000gn/T/cedar-score-75vhbijy/candidate.cedar",
+    "--policies2",
+    "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/selected_scenarios/scenarios/iot_fleet-readTelemetry-T3-012/references/read_telemetry_outside_site_group_disjoint.cedar"
+  ],
+  "returncode": 0,
+  "stdout": "\u2717 Policy set 1 implies policy set 2: DOES NOT HOLD\n  Counterexample found:\nprincipal: Requester::\"\", action: Action::\"readTelemetry\", resource: TelemetryRecord::\"\"\ncontext: {}\nentities: [\n  Action::\"readTelemetry\",\n  Requester::\"A\" {\n    clearance: -1,\n    groups: [],\n    roles: [Role::\"Operator\"],\n  },\n  Role::\"Operator\",\n  Role::\"FleetAdmin\",\n  Role::\"Technician\",\n  TelemetryRecord::\"\" {\n    device: Device::\"\",\n    sensitivity: -1,\n  },\n  Device::\"\" {\n    firmwareTags: [],\n    maintenanceMode: true,\n    owner: Requester::\"A\",\n    siteGroup: SiteGroup::\"\",\n    status: \"\",\n  },\n  Role::\"ServiceAccount\",\n  SiteGroup::\"\",\n  Requester::\"\" in [SiteGroup::\"\"] {\n    clearance: -1,\n    groups: [],\n    roles: [Role::\"Operator\"],\n  },\n]\n",
+  "stderr": "",
+  "elapsed_seconds": 0.014618208049796522,
+  "timeout": false
+}

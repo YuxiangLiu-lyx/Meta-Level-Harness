@@ -1,0 +1,4 @@
+split,scenarios,families,structural_signatures,published_origins,purpose,content_opened
+design20,20,20,20,"{""rl"": 3, ""sft"": 17}",shared development evidence,yes
+validation20,20,20,20,"{""sft"": 19, ""rl"": 1}",four-method paired validation,yes
+published held-out,375,not inspected,not inspected,heldout,future final evaluation,no

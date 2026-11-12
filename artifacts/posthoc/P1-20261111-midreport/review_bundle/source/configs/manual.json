@@ -1,0 +1,13 @@
+{
+  "instruction_blocks": [
+    "Translate the access-control requirements into a complete Cedar policy set. Identify each action, eligible principal, resource type, required condition, prohibition, and exception. Use only entity types, attributes, actions, and representations supported by the schema. Implement the stated permissions and restrictions together.",
+    "Before answering, check the policy mentally for both unauthorized permissions and missing required permissions. Keep distinct action rules separate when their conditions differ. Apply exceptions only to the restriction they qualify. Return one final policy set."
+  ],
+  "input_order": ["requirements", "schema"],
+  "checklist": [
+    "Every required action is covered.",
+    "Role, ownership, membership, and context conditions follow the requirements.",
+    "Prohibitions and exceptions compose correctly.",
+    "Optional attribute reads are guarded and Cedar syntax is valid."
+  ]
+}

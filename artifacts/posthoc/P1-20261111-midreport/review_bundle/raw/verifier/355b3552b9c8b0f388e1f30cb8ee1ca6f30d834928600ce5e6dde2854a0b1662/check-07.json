@@ -1,0 +1,27 @@
+{
+  "command": [
+    "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/dependencies/cedar-policy-cli-experimental-aarch64-apple-darwin/cedar",
+    "symcc",
+    "--cvc5-path",
+    "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/dependencies/cvc5-macOS-arm64-static/bin/cvc5",
+    "--principal-type",
+    "User",
+    "--action",
+    "Action::\"approveBudget\"",
+    "--resource-type",
+    "Campaign",
+    "--schema",
+    "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/selected_scenarios/scenarios/ad_campaigns-chain2-T6-015/schema.cedarschema",
+    "--counterexample",
+    "implies",
+    "--policies1",
+    "/var/folders/f4/3c2p11sd22b76640b44tvyv80000gn/T/cedar-score-k8crujaz/candidate.cedar",
+    "--policies2",
+    "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/selected_scenarios/scenarios/ad_campaigns-chain2-T6-015/references/approve_budget_only_for_approved_workflow_slices.cedar"
+  ],
+  "returncode": 0,
+  "stdout": "\u2717 Policy set 1 implies policy set 2: DOES NOT HOLD\n  Counterexample found:\nprincipal: User::\"\", action: Action::\"approveBudget\", resource: Campaign::\"\"\ncontext: {budgetContingencyThreshold: -6916966077687660511, currentTime: datetime(\"1970-01-01\").offset(duration(\"-1ms\")), emergencyLaunchDeclared: true, mfaUsed: true, trustedDevice: true}\nentities: [\n  Role::\"CampaignDirector\",\n  User::\"A\" {\n    roles: [Role::\"AccountManager\"],\n  },\n  Role::\"Advertiser\",\n  User::\"\" {\n    roles: [Role::\"AccountManager\"],\n  },\n  Campaign::\"\" {\n    advertiser: User::\"A\",\n    budget: -2305280059260272640,\n    budgetTier: \"\",\n    contingency: -6917529027641081823,\n    preparedBy: User::\"\",\n    riskLabels: [],\n    scheduledStart: datetime(\"1970-01-01\").offset(duration(\"-1ms\")),\n    status: CampaignStatus::\"BudgetApproved\",\n  },\n  CampaignStatus::\"BudgetApproved\",\n  Action::\"approveBudget\",\n  CampaignStatus::\"Launched\",\n  CampaignStatus::\"Draft\",\n  Role::\"AccountManager\",\n  Action::\"launchCampaign\",\n  Role::\"BrandSafetyReviewer\",\n]\n",
+  "stderr": "",
+  "elapsed_seconds": 0.03257579205092043,
+  "timeout": false
+}

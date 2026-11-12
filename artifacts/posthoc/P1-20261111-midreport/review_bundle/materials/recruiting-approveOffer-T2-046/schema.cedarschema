@@ -1,0 +1,43 @@
+entity Role enum ["recruiter", "hiringManager", "interviewer", "coordinator"];
+
+entity Person {
+    roles: Set<Role>,
+    piiClearance: Long,
+};
+
+entity Candidate;
+
+entity Application {
+    candidate: Candidate,
+    referrer?: Person,
+    hiringTeam: Set<Person>,
+    reqCode: String,
+    piiSensitivity: Long,
+    status: String,
+};
+
+entity InterviewFeedback {
+    application: Application,
+    interviewer: Person,
+    candidate: Candidate,
+    status: String,
+};
+
+entity Offer {
+    application: Application,
+    extender: Person,
+    compensation: decimal,
+    signingBonus: decimal,
+    status: String,
+};
+
+action approveOffer appliesTo {
+    principal: [Person],
+    resource: [Offer],
+    context: {
+        isFromCorporateNetwork: Bool,
+        currentTime: datetime,
+        hasExecutiveApproval: Bool,
+        isWithinPermittedWindow: Bool,
+    },
+};

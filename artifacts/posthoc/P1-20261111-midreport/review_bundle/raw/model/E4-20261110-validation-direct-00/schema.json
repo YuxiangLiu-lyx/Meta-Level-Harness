@@ -1,0 +1,12 @@
+{
+  "type": "object",
+  "properties": {
+    "policy": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "policy"
+  ],
+  "additionalProperties": false
+}

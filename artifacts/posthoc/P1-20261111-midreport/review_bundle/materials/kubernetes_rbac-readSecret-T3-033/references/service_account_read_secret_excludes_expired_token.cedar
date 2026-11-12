@@ -1,0 +1,1 @@
+permit (principal is ServiceAccount, action == Action::"readNamespaceSecret", resource is NamespaceSecret) when { !(context.serviceAccountToken.expiresAt <= context.currentTime) };

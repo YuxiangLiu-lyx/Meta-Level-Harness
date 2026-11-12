@@ -1,0 +1,1 @@
+{"policy":"permit (\n    principal is User,\n    action == Action::\"editDocument\",\n    resource is Document\n)\nwhen {\n    (principal.roles.contains(Role::\"Author\") || principal.roles.contains(Role::\"Editor\")) &&\n    resource.status == \"draft\" &&\n    resource.hasVersionLock &&\n    resource.shareList.contains(principal)\n};"}

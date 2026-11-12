@@ -1,0 +1,5 @@
+method,scenarios,pass,success_rate,syntax_failure,schema_type_failure,semantic_failure,output_invalid,unresolved_or_protocol_failure,confirmed_overgrant,confirmed_overdeny
+Manual,20,12,0.6,0,0,8,0,0,8,4
+Direct,20,10,0.5,0,2,8,0,0,7,6
+Meta,20,9,0.45,0,4,7,0,0,6,6
+Refine,20,11,0.55,0,1,8,0,0,7,7

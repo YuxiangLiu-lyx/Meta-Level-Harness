@@ -1,0 +1,1 @@
+permit (principal is User, action == Action::"readNamespaceSecret", resource is NamespaceSecret) when { (resource has ownerUser) && resource.ownerUser == principal && principal.clearance >= resource.sensitivity && context.serviceAccountToken.expiresAt > context.currentTime };

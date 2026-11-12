@@ -1,0 +1,49 @@
+entity Deployer {
+    user: User,
+};
+
+entity Maintainer {
+    user: User,
+};
+
+entity ClusterOperator;
+
+entity User in [Deployer, Maintainer, ClusterOperator] {
+    clearance: Long,
+    grantedScope: String,
+    groupMembership: Set<String>,
+};
+
+entity ServiceAccount {
+    clearance: Long,
+    grantedScope: String,
+    groupMembership: Set<String>,
+};
+
+entity Namespace;
+
+entity Workload;
+
+entity NamespaceSecret {
+    namespace: Namespace,
+    ownerUser?: User,
+    ownerServiceAccount?: ServiceAccount,
+    sensitivity: Long,
+    status: String,
+};
+
+entity ServiceAccountToken {
+    expiresAt: datetime,
+};
+
+action readNamespaceSecret appliesTo {
+    principal: [User, ServiceAccount],
+    resource: [NamespaceSecret],
+    context: {
+        sourceIp: ipaddr,
+        currentTime: datetime,
+        emergencyChange: Bool,
+        mfaUsed: Bool,
+        serviceAccountToken: ServiceAccountToken,
+    },
+};

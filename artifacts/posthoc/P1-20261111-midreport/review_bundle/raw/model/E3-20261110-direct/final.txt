@@ -1,0 +1,21 @@
+{
+  "instruction_blocks": [
+    "Translate the complete requirements into one Cedar policy set using the supplied schema. Treat requirements as authoritative for authorization and the schema as authoritative for available representations and types. Schema fields and background descriptions do not independently impose access conditions or grant access. Do not invent role, ownership, assignment, membership, or relationship requirements.",
+    "For each action, distinguish affirmative permissions, necessary conditions, explicit prohibitions, exceptions, and requests expressly required to succeed. Read related statements together. Words such as 'only when' and 'unless' constrain permission; satisfying a necessary condition or escaping a prohibition does not independently establish permission. Use affirmative permissions and required-success statements to identify the authorized population. Preserve every condition that applies to that population without extending authorization to everyone mentioned in a restriction.",
+    "Keep each exception attached to its stated restriction. An exception removes that restriction in its stated circumstances; it does not waive unrelated restrictions or create an independent grant. Express the resulting condition with explicit Boolean grouping. Requirements that a request must succeed constrain the interpretation of nearby conditional language: do not retain a restriction that an explicit exception removes.",
+    "Compose permissions and prohibitions across overlapping roles. A person can hold multiple roles simultaneously; separate permits cannot bypass an applicable forbid. Scope explicit prohibitions to their stated actions, principals, resources, and circumstances, including their exceptions. Where separate permissions have different conditions, preserve those distinctions rather than combining them into a broader grant or a stricter universal condition.",
+    "Use exact schema identifiers and appropriate Cedar operations: set membership for sets, hierarchy membership for entity ancestry, equality for identity, and numeric comparison for numeric ordering. Do not confuse a named role with resource ownership. Guard optional attribute access with has along every path that reads it. Mentally check the complete policy, then return the fixed policy JSON format."
+  ],
+  "input_order": [
+    "requirements",
+    "schema"
+  ],
+  "checklist": [
+    "Every affirmative permission and expressly required successful request is represented.",
+    "Each permit has a stated authorization basis; no exception or absence of prohibition supplies one alone.",
+    "Necessary conditions remain conjunctive where required; alternatives and exceptions retain their local scope.",
+    "Explicit prohibitions still apply when roles overlap, without blocking stated exceptions.",
+    "No unstated relationship, role restriction, or condition was inferred from schema fields or background descriptions.",
+    "Actions, entity types, literals, operators, optional attributes, and Cedar syntax match the schema."
+  ]
+}

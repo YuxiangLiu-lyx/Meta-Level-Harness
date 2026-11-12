@@ -1,0 +1,70 @@
+{
+  "scenario_id": "iot_fleet-sendCommand-T3-029",
+  "cache_key": "29d7af378677dc829d271a0face462b124b70f27f366d432da8d36463b555810",
+  "verifier_version": "f9d67ee8f0a3920a13240774a30ca4c818f964d7b8370f1e8a7fd1e1e38bd5c4",
+  "status": "PASS",
+  "syntax_valid": true,
+  "schema_valid": true,
+  "checks": [
+    {
+      "name": "dual_operator_technician_can_send_command_in_window_to_active_device",
+      "type": "floor",
+      "status": "PASS",
+      "elapsed_seconds": 0.06119629193563014,
+      "raw_sha256": "68006241664f879b7d483b8782636d216e5df65dea70d26505c3cbd6777761dc"
+    },
+    {
+      "name": "send_command_roles_window_active_or_owned_in_window_ceiling",
+      "type": "implies",
+      "status": "PASS",
+      "elapsed_seconds": 0.012124832952395082,
+      "raw_sha256": "671f296392061e8d633c3a42dd2fed06bf5c2f21c06126a6921223cdf25fbf21"
+    },
+    {
+      "name": "device_owner_roles_can_send_command_in_window_to_non_active_device",
+      "type": "floor",
+      "status": "PASS",
+      "elapsed_seconds": 0.011774500017054379,
+      "raw_sha256": "af39cf4b75ba849f2fb46da678ca66093976bcac175af62654d3dfe82ad03548"
+    },
+    {
+      "name": "send_command_status_owner_window_union_ceiling",
+      "type": "implies",
+      "status": "PASS",
+      "elapsed_seconds": 0.010126790963113308,
+      "raw_sha256": "67216840d1b4df0729884dd895f22a7660018b554506c72cd73427e7ec5d8ee9"
+    },
+    {
+      "name": "roles_can_send_command_in_window_to_active_device",
+      "type": "floor",
+      "status": "PASS",
+      "elapsed_seconds": 0.010249290964566171,
+      "raw_sha256": "9957e3a916e3db02529bf8841eb73f1b7b8d17c5c31f5a9e319a0d53e7b34651"
+    },
+    {
+      "name": "p0009_send_command_active_device_union_ceiling",
+      "type": "implies",
+      "status": "PASS",
+      "elapsed_seconds": 0.010396333993412554,
+      "raw_sha256": "c63f45e002d8b7c42635c859f58e61eaaffc1d1d83c9a43b964d849a251f7ef6"
+    },
+    {
+      "name": "non_owner_roles_cannot_send_to_provisioned_or_decommissioned_device",
+      "type": "implies",
+      "status": "PASS",
+      "elapsed_seconds": 0.010409957962110639,
+      "raw_sha256": "0203f4ffdc55c5d674f7e08de1dadf810f62528ff5cce0b2fc1c590c722766e9"
+    },
+    {
+      "name": "operator_send_command_non_prohibited_request_liveness",
+      "type": "liveness-overlap",
+      "status": "PASS",
+      "elapsed_seconds": 0.017676624935120344,
+      "raw_sha256": "ae6d74471d0a73ab63a31264764424d8cb9ce3e51842e55bd81022c5f6169a04"
+    }
+  ],
+  "semantic_check_count": 8,
+  "raw_directory": "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/verifier/29d7af378677dc829d271a0face462b124b70f27f366d432da8d36463b555810",
+  "confirmed_overgrant": false,
+  "confirmed_overdeny": false
+}

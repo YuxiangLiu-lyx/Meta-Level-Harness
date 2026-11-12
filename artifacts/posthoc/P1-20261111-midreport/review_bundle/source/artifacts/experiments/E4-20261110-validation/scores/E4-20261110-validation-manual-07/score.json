@@ -1,0 +1,63 @@
+{
+  "scenario_id": "invoice_approval-chain2-T3-007",
+  "cache_key": "98a4b957350466d8b754e81abed2401fef3e8fc3aff4416305602bbeb30e2050",
+  "verifier_version": "f9d67ee8f0a3920a13240774a30ca4c818f964d7b8370f1e8a7fd1e1e38bd5c4",
+  "status": "PASS",
+  "syntax_valid": true,
+  "schema_valid": true,
+  "checks": [
+    {
+      "name": "finance_manager_may_issue_emergency_self_approved_payment",
+      "type": "floor",
+      "status": "PASS",
+      "elapsed_seconds": 0.017844041110947728,
+      "raw_sha256": "7d0cba66619546cb25cf2e85e9d830069f4909a21b1a563636dea2c0aeb5ebe8"
+    },
+    {
+      "name": "issue_payment_limited_to_finance_manager_approved_invoice_split_or_emergency",
+      "type": "implies",
+      "status": "PASS",
+      "elapsed_seconds": 0.014830167056061327,
+      "raw_sha256": "7c41d75b45f29f095777692495a81398cd6dd61c052c0a5ed62ea917223c78f1"
+    },
+    {
+      "name": "no_self_approved_payment_without_emergency",
+      "type": "implies",
+      "status": "PASS",
+      "elapsed_seconds": 0.013770124991424382,
+      "raw_sha256": "75f02941a6019c61f6ab2cbb533d710036e774ed0d89186760f63aaf19e72137"
+    },
+    {
+      "name": "approver_or_finance_manager_may_approve_submitted_invoice",
+      "type": "floor",
+      "status": "PASS",
+      "elapsed_seconds": 0.008187875035218894,
+      "raw_sha256": "1ad0b3944392cf36efdc799346b02ba6238b0687220957ea9a2c6c89474735a4"
+    },
+    {
+      "name": "approve_invoice_limited_to_approver_or_finance_manager_submitted_invoice",
+      "type": "implies",
+      "status": "PASS",
+      "elapsed_seconds": 0.010221583070233464,
+      "raw_sha256": "c2bc2fb3f792566a895f1bd40cf397a76ffdf084acf2914c4cea3ad920c4b982"
+    },
+    {
+      "name": "no_approval_of_unsubmitted_invoice",
+      "type": "implies",
+      "status": "PASS",
+      "elapsed_seconds": 0.010926667018793523,
+      "raw_sha256": "fbb624e935366d4d9f1cabbbba600c1374989cf358059cb5cadf3fcb4c1ad133"
+    },
+    {
+      "name": "finance_manager_may_issue_non_emergency_split_payment",
+      "type": "floor",
+      "status": "PASS",
+      "elapsed_seconds": 0.012045584036968648,
+      "raw_sha256": "344cfa94ac43fbe60b7f07d71f0039f42723258d1c5caa68dd9358f4ed6e03bb"
+    }
+  ],
+  "semantic_check_count": 7,
+  "raw_directory": "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/verifier/98a4b957350466d8b754e81abed2401fef3e8fc3aff4416305602bbeb30e2050",
+  "confirmed_overgrant": false,
+  "confirmed_overdeny": false
+}

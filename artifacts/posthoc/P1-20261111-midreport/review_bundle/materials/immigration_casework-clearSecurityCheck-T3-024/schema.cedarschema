@@ -1,0 +1,47 @@
+entity Person {
+    roles: Set<Role>,
+    clearance: String,
+    recusedCases: Set<Case>,
+};
+
+entity Role enum ["AdjudicationOfficer", "SupervisoryOfficer", "BackgroundInvestigator", "RecordsClerk"];
+
+entity Applicant;
+
+entity Team;
+
+entity FieldOffice;
+
+entity Case {
+    applicant: Applicant,
+    assignedOfficer: Person,
+    caseTeam: Team,
+    fieldOffice: FieldOffice,
+    status: String,
+};
+
+entity SecurityCheck {
+    case: Case,
+    investigator: Person,
+    status: String,
+    permittedWindowStart: datetime,
+    permittedWindowEnd: datetime,
+};
+
+entity ApplicantRecord {
+    applicant: Applicant,
+    assignedOfficer: Person,
+    needToKnowTeam: Team,
+    dataSensitivity: String,
+    status: String,
+};
+
+action clearSecurityCheck appliesTo {
+    principal: [Person],
+    resource: [SecurityCheck],
+    context: {
+        onGovernmentNetwork: Bool,
+        currentTime: datetime,
+        supervisorApprovalPresent: Bool,
+    },
+};

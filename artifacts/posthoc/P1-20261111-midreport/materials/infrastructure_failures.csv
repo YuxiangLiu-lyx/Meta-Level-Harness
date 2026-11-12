@@ -1,0 +1,3 @@
+attempt_id,stage,configured_seconds,observed_wall_seconds,response_present,usage,recovery
+E3-20261110-meta-harness,construction,180,180.02249789237976,False,UNKNOWN,one same-input fresh-session retry
+E4-20261110-validation-refine-17,validation_policy,180,1165.7377498149872,False,UNKNOWN,one same-input fresh-session retry

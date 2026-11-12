@@ -1,0 +1,41 @@
+entity Role enum ["operator", "technician", "fleetAdmin", "serviceAccount"];
+
+entity DeviceStatus enum ["active", "provisioned", "decommissioned"];
+
+entity User {
+    roles: Set<Role>,
+};
+
+entity ServiceAccount;
+
+entity SiteGroup;
+
+entity MaintenanceWindow {
+    startTime: datetime,
+    endTime: datetime,
+    permitted: Bool,
+};
+
+entity Device {
+    owner: User,
+    siteGroup: SiteGroup,
+    firmwareTags: Set<String>,
+    maintenanceMode: Bool,
+    status: DeviceStatus,
+};
+
+entity Telemetry;
+
+entity Command {
+    targetDevice: Device,
+};
+
+action sendCommand appliesTo {
+    principal: [User],
+    resource: [Command],
+    context: {
+        sourceIp: ipaddr,
+        currentTime: datetime,
+        maintenanceWindow: MaintenanceWindow,
+    },
+};

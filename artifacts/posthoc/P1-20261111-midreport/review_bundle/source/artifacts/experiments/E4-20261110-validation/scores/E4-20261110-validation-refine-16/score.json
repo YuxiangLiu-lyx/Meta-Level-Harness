@@ -1,0 +1,49 @@
+{
+  "scenario_id": "immigration_casework-clearSecurityCheck-T3-024",
+  "cache_key": "774e290071dc5afa0b9a635f05b81697aeb9ed886f8352eb95b1211e937af79c",
+  "verifier_version": "f9d67ee8f0a3920a13240774a30ca4c818f964d7b8370f1e8a7fd1e1e38bd5c4",
+  "status": "PASS",
+  "syntax_valid": true,
+  "schema_valid": true,
+  "checks": [
+    {
+      "name": "investigator_or_supervisor_clear_security_check_in_window_floor",
+      "type": "floor",
+      "status": "PASS",
+      "elapsed_seconds": 0.07210062490776181,
+      "raw_sha256": "d7cb73cbc1545566ded4a224093d99201dfbdc68e927bc1f6c483fe66b35bf6b"
+    },
+    {
+      "name": "clear_security_check_limited_to_authorized_roles_and_window",
+      "type": "implies",
+      "status": "PASS",
+      "elapsed_seconds": 0.016792292008176446,
+      "raw_sha256": "c425bc0ecd27c841d772737f22fc3473d22268c02528c679817ff353cf8b17ba"
+    },
+    {
+      "name": "clear_security_check_outside_window_disjointness",
+      "type": "implies",
+      "status": "PASS",
+      "elapsed_seconds": 0.01135741698089987,
+      "raw_sha256": "6af4ecd9360c2cbea0f6c51d38002690b18199e479c7bfc52326c6a36a1b3e43"
+    },
+    {
+      "name": "background_investigator_non_pending_clear_disjointness",
+      "type": "implies",
+      "status": "PASS",
+      "elapsed_seconds": 0.011197958025150001,
+      "raw_sha256": "44a5c2d85f4ddd1cf2fee92567d72e1346a1536056ac75f159145ffd63c21042"
+    },
+    {
+      "name": "background_investigator_pending_clear_security_check_liveness",
+      "type": "liveness-overlap",
+      "status": "PASS",
+      "elapsed_seconds": 0.025605832925066352,
+      "raw_sha256": "04f2a017262815454a992a605a7e79210c5f5f43b8dbdd9648531db78f189dc0"
+    }
+  ],
+  "semantic_check_count": 5,
+  "raw_directory": "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/verifier/774e290071dc5afa0b9a635f05b81697aeb9ed886f8352eb95b1211e937af79c",
+  "confirmed_overgrant": false,
+  "confirmed_overdeny": false
+}

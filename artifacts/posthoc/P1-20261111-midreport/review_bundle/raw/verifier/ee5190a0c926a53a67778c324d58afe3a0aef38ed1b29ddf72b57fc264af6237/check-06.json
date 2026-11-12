@@ -1,0 +1,27 @@
+{
+  "command": [
+    "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/dependencies/cedar-policy-cli-experimental-aarch64-apple-darwin/cedar",
+    "symcc",
+    "--cvc5-path",
+    "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/dependencies/cvc5-macOS-arm64-static/bin/cvc5",
+    "--principal-type",
+    "User",
+    "--action",
+    "Action::\"mergePullRequest\"",
+    "--resource-type",
+    "PullRequest",
+    "--schema",
+    "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/selected_scenarios/scenarios/code_repository-chain2-T4-014/schema.cedarschema",
+    "--counterexample",
+    "implies",
+    "--policies1",
+    "/var/folders/f4/3c2p11sd22b76640b44tvyv80000gn/T/cedar-score-nypa5qbb/candidate.cedar",
+    "--policies2",
+    "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/selected_scenarios/scenarios/code_repository-chain2-T4-014/references/merge_requires_maintainer_reviewed_non_authored_pull_request.cedar"
+  ],
+  "returncode": 0,
+  "stdout": "\u2717 Policy set 1 implies policy set 2: DOES NOT HOLD\n  Counterexample found:\nprincipal: User::\"\", action: Action::\"mergePullRequest\", resource: PullRequest::\"\"\ncontext: {}\nentities: [\n  Role::\"SecurityLead\",\n  Action::\"reviewPullRequest\",\n  Team::\"\",\n  User::\"\" {\n    roles: [Role::\"Reviewer\"],\n  },\n  Repository::\"\" {\n    defaultBranchProtected: false,\n    owner: User::\"\",\n    sensitivity: \"\",\n    status: \"\",\n    team: Team::\"\",\n    topics: [],\n  },\n  User::\"A\" {\n    roles: [Role::\"Reviewer\"],\n  },\n  Action::\"mergePullRequest\",\n  Role::\"Maintainer\",\n  Role::\"Developer\",\n  Branch::\"\" {\n    name: \"\",\n    protected: false,\n  },\n  PullRequest::\"\" {\n    approvalCount: -1,\n    approvedBy: [],\n    author: User::\"A\",\n    designatedRole: Role::\"SecurityLead\",\n    linesChanged: -1,\n    repository: Repository::\"\",\n    securityReviewRequired: true,\n    status: \"\",\n    targetBranch: Branch::\"\",\n  },\n  Role::\"Reviewer\",\n]\n",
+  "stderr": "",
+  "elapsed_seconds": 0.011744542047381401,
+  "timeout": false
+}

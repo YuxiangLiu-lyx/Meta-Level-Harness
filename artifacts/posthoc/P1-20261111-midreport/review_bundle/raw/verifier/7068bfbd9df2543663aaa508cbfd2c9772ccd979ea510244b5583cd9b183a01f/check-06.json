@@ -1,0 +1,27 @@
+{
+  "command": [
+    "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/dependencies/cedar-policy-cli-experimental-aarch64-apple-darwin/cedar",
+    "symcc",
+    "--cvc5-path",
+    "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/dependencies/cvc5-macOS-arm64-static/bin/cvc5",
+    "--principal-type",
+    "User",
+    "--action",
+    "Action::\"approveDeployment\"",
+    "--resource-type",
+    "Deployment",
+    "--schema",
+    "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/selected_scenarios/scenarios/cicd_pipeline-approveDeployment-T3-037/schema.cedarschema",
+    "--counterexample",
+    "disjoint",
+    "--policies1",
+    "/var/folders/f4/3c2p11sd22b76640b44tvyv80000gn/T/cedar-score-_8f4ozw1/candidate.cedar",
+    "--policies2",
+    "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/selected_scenarios/scenarios/cicd_pipeline-approveDeployment-T3-037/references/safe_approver_approval_request_remains_possible.cedar"
+  ],
+  "returncode": 0,
+  "stdout": "\u2717 Policy sets are disjoint: DOES NOT HOLD\n  Counterexample found:\nprincipal: User::\"\", action: Action::\"approveDeployment\", resource: Deployment::\"\"\ncontext: {currentTime: datetime(\"1970-01-01\").offset(duration(\"-1ms\")), emergencyChange: true, extraScrutinyThreshold: -1, sourceIp: ip(\"0.0.0.0/0\")}\nentities: [\n  Action::\"approveDeployment\",\n  User::\"\" {\n    deployTier: \"\",\n    isApprover: true,\n    isCommitter: true,\n    isReleaseManager: true,\n    isSre: true,\n  },\n  User::\"A\" {\n    deployTier: \"\",\n    isApprover: true,\n    isCommitter: true,\n    isReleaseManager: true,\n    isSre: true,\n  },\n  Artifact::\"\" {\n    buildTags: [],\n    builtBy: User::\"\",\n    isSigned: false,\n    status: \"\",\n  },\n  User::\"B\" {\n    deployTier: \"\",\n    isApprover: true,\n    isCommitter: true,\n    isReleaseManager: true,\n    isSre: true,\n  },\n  Deployment::\"\" {\n    approver: User::\"B\",\n    artifact: Artifact::\"\",\n    changeRisk: -1,\n    committer: User::\"A\",\n    status: \"A\",\n    submittedForReview: true,\n    targetEnvironment: \"B\",\n  },\n]\n",
+  "stderr": "",
+  "elapsed_seconds": 0.012693291064351797,
+  "timeout": false
+}

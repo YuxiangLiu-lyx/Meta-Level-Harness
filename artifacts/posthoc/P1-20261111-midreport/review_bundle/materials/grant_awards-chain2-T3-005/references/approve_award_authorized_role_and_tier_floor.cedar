@@ -1,0 +1,1 @@
+permit (principal, action == Action::"approveAward", resource) when { principal is User && resource is Award && (principal.roles.contains(Role::"ProgramOfficer") || principal.roles.contains(Role::"GrantsOfficer")) && principal.approvalAuthority >= resource.application.fundingTier };

@@ -1,0 +1,27 @@
+{
+  "command": [
+    "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/dependencies/cedar-policy-cli-experimental-aarch64-apple-darwin/cedar",
+    "symcc",
+    "--cvc5-path",
+    "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/dependencies/cvc5-macOS-arm64-static/bin/cvc5",
+    "--principal-type",
+    "Pathologist",
+    "--action",
+    "Action::\"releaseLabResult\"",
+    "--resource-type",
+    "LabResult",
+    "--schema",
+    "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/selected_scenarios/scenarios/lab_result_release-releaseResult-T4-003/schema.cedarschema",
+    "--counterexample",
+    "disjoint",
+    "--policies1",
+    "/var/folders/f4/3c2p11sd22b76640b44tvyv80000gn/T/cedar-score-gxpc7umr/candidate.cedar",
+    "--policies2",
+    "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/selected_scenarios/scenarios/lab_result_release-releaseResult-T4-003/references/pathologist_unrestricted_verified_release_liveness.cedar"
+  ],
+  "returncode": 0,
+  "stdout": "\u2717 Policy sets are disjoint: DOES NOT HOLD\n  Counterexample found:\nprincipal: Pathologist::\"\", action: Action::\"releaseLabResult\", resource: LabResult::\"\"\ncontext: {coverageAuthorized: false, currentTime: datetime(\"1970-01-01\").offset(duration(\"0ms\")), emergencyRelease: false, mfaUsed: false, onHospitalNetwork: false}\nentities: [\n  User::\"\",\n  OrderingProvider::\"\" {\n    user: User::\"\",\n  },\n  LabResult::\"\" {\n    criticalValueFlag: true,\n    isVerified: true,\n    orderingProvider: OrderingProvider::\"\",\n    patient: Patient::\"\",\n    sensitivityLevel: \"\",\n    status: \"A\",\n  },\n  Pathologist::\"\" {\n    user: User::\"\",\n  },\n  Action::\"releaseLabResult\",\n  Patient::\"\",\n]\n",
+  "stderr": "",
+  "elapsed_seconds": 0.015726417070254683,
+  "timeout": false
+}

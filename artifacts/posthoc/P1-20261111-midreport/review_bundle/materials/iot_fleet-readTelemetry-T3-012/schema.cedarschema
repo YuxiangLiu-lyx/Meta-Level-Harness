@@ -1,0 +1,29 @@
+entity Role enum ["Operator", "Technician", "FleetAdmin", "ServiceAccount"];
+
+entity SiteGroup in [SiteGroup];
+
+entity Requester in [SiteGroup] {
+    roles: Set<Role>,
+    clearance: Long,
+    groups: Set<SiteGroup>,
+};
+
+entity Device {
+    owner: Requester,
+    siteGroup: SiteGroup,
+    firmwareTags: Set<String>,
+    maintenanceMode: Bool,
+    status: String,
+};
+
+entity TelemetryRecord {
+    device: Device,
+    sensitivity: Long,
+};
+
+entity Command;
+
+action readTelemetry appliesTo {
+    principal: [Requester],
+    resource: [TelemetryRecord],
+};

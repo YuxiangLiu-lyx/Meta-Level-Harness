@@ -1,0 +1,26 @@
+{
+  "status": "PROTOCOL_VIOLATION",
+  "returncode": 0,
+  "turns_started": 1,
+  "turns_completed": 1,
+  "tool_events": 1,
+  "errors": [],
+  "input_tokens": 8807,
+  "cached_input_tokens": 7552,
+  "output_tokens": 5,
+  "reasoning_output_tokens": 0,
+  "effective_model": null,
+  "underlying_requests": null,
+  "truncated": null,
+  "task_id": "smoke-01",
+  "cache_key": "04e66fdae028cfafe35f96f1bd33d395e0bd67d36709e260a31e0df094c494ee",
+  "elapsed_seconds": 4.074774980545044,
+  "raw_directory": "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/codex/smoke-01",
+  "malformed_event_lines": 0,
+  "final_response": "CONNECTED",
+  "raw_sha256": {
+    "final.txt": "1f914c4386c0676ee418458a20c91d9db7c5cd18e88324b4908fdf27ec91dcc5",
+    "stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "events.jsonl": "6fc0f4861e4d1841357e79420033acdde2366994be4cb90bf4bb66ec211fc091"
+  }
+}

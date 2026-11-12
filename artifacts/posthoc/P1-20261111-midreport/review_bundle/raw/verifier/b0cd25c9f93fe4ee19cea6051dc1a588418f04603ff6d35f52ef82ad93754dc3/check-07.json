@@ -1,0 +1,27 @@
+{
+  "command": [
+    "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/dependencies/cedar-policy-cli-experimental-aarch64-apple-darwin/cedar",
+    "symcc",
+    "--cvc5-path",
+    "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/dependencies/cvc5-macOS-arm64-static/bin/cvc5",
+    "--principal-type",
+    "User",
+    "--action",
+    "Action::\"approveBudget\"",
+    "--resource-type",
+    "Campaign",
+    "--schema",
+    "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/selected_scenarios/scenarios/ad_campaigns-chain2-T6-015/schema.cedarschema",
+    "--counterexample",
+    "implies",
+    "--policies1",
+    "/var/folders/f4/3c2p11sd22b76640b44tvyv80000gn/T/cedar-score-hpzvllu5/candidate.cedar",
+    "--policies2",
+    "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/selected_scenarios/scenarios/ad_campaigns-chain2-T6-015/references/approve_budget_only_for_approved_workflow_slices.cedar"
+  ],
+  "returncode": 0,
+  "stdout": "\u2717 Policy set 1 implies policy set 2: DOES NOT HOLD\n  Counterexample found:\nprincipal: User::\"\", action: Action::\"approveBudget\", resource: Campaign::\"\"\ncontext: {budgetContingencyThreshold: 9223372036854775807, currentTime: datetime(\"1970-01-01\").offset(duration(\"-1ms\")), emergencyLaunchDeclared: true, mfaUsed: true, trustedDevice: true}\nentities: [\n  Action::\"launchCampaign\",\n  Role::\"Advertiser\",\n  Role::\"CampaignDirector\",\n  CampaignStatus::\"Launched\",\n  Role::\"BrandSafetyReviewer\",\n  Action::\"approveBudget\",\n  CampaignStatus::\"BudgetApproved\",\n  CampaignStatus::\"Draft\",\n  User::\"\" {\n    roles: [Role::\"AccountManager\", Role::\"CampaignDirector\"],\n  },\n  Campaign::\"\" {\n    advertiser: User::\"A\",\n    budget: 9223372036854775807,\n    budgetTier: \"\",\n    contingency: 9223372036854775807,\n    preparedBy: User::\"\",\n    riskLabels: [],\n    scheduledStart: datetime(\"1970-01-01\").offset(duration(\"-1ms\")),\n    status: CampaignStatus::\"BudgetApproved\",\n  },\n  User::\"A\" {\n    roles: [Role::\"AccountManager\", Role::\"CampaignDirector\"],\n  },\n  Role::\"AccountManager\",\n]\n",
+  "stderr": "",
+  "elapsed_seconds": 0.4776592080015689,
+  "timeout": false
+}

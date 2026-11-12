@@ -1,0 +1,305 @@
+[
+  {
+    "scenario_id": "kubernetes_rbac-readSecret-T3-033",
+    "pair_category": "refine_only",
+    "methods": {
+      "Meta": {
+        "status": "SCHEMA_FAIL",
+        "final_response": "raw/model/E4-20261110-validation-meta-05/final.txt",
+        "final_sha256": "7eb6052c9d57466272445b6d281973ab70c59ba7080864d83a78c468e446b083",
+        "score": "source/artifacts/experiments/E4-20261110-validation/scores/E4-20261110-validation-meta-05/score.json",
+        "validator": "raw/verifier/adbf462a9db777577286c8300ea420096a9c4eeaf0f229d09147c5c6fe2e381c/validate.json",
+        "checks": []
+      },
+      "Refine": {
+        "status": "PASS",
+        "final_response": "raw/model/E4-20261110-validation-refine-05/final.txt",
+        "final_sha256": "4146410382ecfb2d0734721eec7154affe373b2b0db76ab78b7efdcd017ac17c",
+        "score": "source/artifacts/experiments/E4-20261110-validation/scores/E4-20261110-validation-refine-05/score.json",
+        "validator": "raw/verifier/b0fb9a00b1e45bde716b6fe72325a02c86f3b2b9ac97be29cb813e13eb7b56f3/validate.json",
+        "checks": [
+          {
+            "name": "owned_secret_clearance_read_floor",
+            "type": "floor",
+            "status": "PASS",
+            "raw_path": "raw/verifier/b0fb9a00b1e45bde716b6fe72325a02c86f3b2b9ac97be29cb813e13eb7b56f3/check-00.json",
+            "original_sha256": "d41ee3702b85d080bbf8259a89c2755243badd4d0f5bdd9dffcb40d0ce805f4e"
+          },
+          {
+            "name": "read_secret_requires_sufficient_clearance",
+            "type": "implies",
+            "status": "PASS",
+            "raw_path": "raw/verifier/b0fb9a00b1e45bde716b6fe72325a02c86f3b2b9ac97be29cb813e13eb7b56f3/check-01.json",
+            "original_sha256": "ec710a48e121a35e4224f45a0f4576254f7f49ef1e7c4fe9e07b93d3473926cc"
+          },
+          {
+            "name": "read_secret_excludes_non_owners",
+            "type": "implies",
+            "status": "PASS",
+            "raw_path": "raw/verifier/b0fb9a00b1e45bde716b6fe72325a02c86f3b2b9ac97be29cb813e13eb7b56f3/check-02.json",
+            "original_sha256": "3be5a5d1e208d5352569f7f09ba837d1107494b2dfce31593630f66219a8492f"
+          },
+          {
+            "name": "read_secret_excludes_expired_token",
+            "type": "implies",
+            "status": "PASS",
+            "raw_path": "raw/verifier/b0fb9a00b1e45bde716b6fe72325a02c86f3b2b9ac97be29cb813e13eb7b56f3/check-03.json",
+            "original_sha256": "22e1802e9b4bb896bd712b730986f02ade6bc2762bd9a9691c2e90555478a7d1"
+          },
+          {
+            "name": "owned_secret_unexpired_token_read_floor",
+            "type": "floor",
+            "status": "PASS",
+            "raw_path": "raw/verifier/b0fb9a00b1e45bde716b6fe72325a02c86f3b2b9ac97be29cb813e13eb7b56f3/check-04.json",
+            "original_sha256": "ec08f5e6302238f3093ebd06f946075a5c5d24b844db2c65dd569f058a78bc01"
+          },
+          {
+            "name": "service_account_read_secret_excludes_expired_token",
+            "type": "implies",
+            "status": "PASS",
+            "raw_path": "raw/verifier/b0fb9a00b1e45bde716b6fe72325a02c86f3b2b9ac97be29cb813e13eb7b56f3/check-05.json",
+            "original_sha256": "778fef30d01ffccaa8ac8452d2044fb7c3e7f0b694b994527e223c442c779a5c"
+          },
+          {
+            "name": "deployer_read_namespace_secret_liveness",
+            "type": "liveness-overlap",
+            "status": "PASS",
+            "raw_path": "raw/verifier/b0fb9a00b1e45bde716b6fe72325a02c86f3b2b9ac97be29cb813e13eb7b56f3/check-06.json",
+            "original_sha256": "4f77ae8f3ece429577bd3ed3e5002ce5115425afd928a4e90566b477d3ec320a"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "scenario_id": "grant_awards-chain2-T3-005",
+    "pair_category": "meta_only",
+    "methods": {
+      "Meta": {
+        "status": "PASS",
+        "final_response": "raw/model/E4-20261110-validation-meta-13/final.txt",
+        "final_sha256": "40f9b05d7c485717ba0b1c46c24ad08a206272d3caa38a4f4af5341f70a0c59a",
+        "score": "source/artifacts/experiments/E4-20261110-validation/scores/E4-20261110-validation-meta-13/score.json",
+        "validator": "raw/verifier/3f7594a4a4161f76647862a625170dc6fcc0f35fbdadaf7b1dd44ac9a97d8c19/validate.json",
+        "checks": [
+          {
+            "name": "approve_award_authorized_role_and_tier_floor",
+            "type": "floor",
+            "status": "PASS",
+            "raw_path": "raw/verifier/3f7594a4a4161f76647862a625170dc6fcc0f35fbdadaf7b1dd44ac9a97d8c19/check-00.json",
+            "original_sha256": "dba62c513f7a4ab64594fbd1178aa5b50a6454ce46e5ce5caf21dd70603d9e8b"
+          },
+          {
+            "name": "approve_award_only_authorized_role_and_tier_ceiling",
+            "type": "implies",
+            "status": "PASS",
+            "raw_path": "raw/verifier/3f7594a4a4161f76647862a625170dc6fcc0f35fbdadaf7b1dd44ac9a97d8c19/check-01.json",
+            "original_sha256": "70b10d9f8870213600ffd09da095d9a0b610bdbcc0af2fbb099726642fb84953"
+          },
+          {
+            "name": "obligate_funds_grants_officer_different_from_approver_floor",
+            "type": "floor",
+            "status": "PASS",
+            "raw_path": "raw/verifier/3f7594a4a4161f76647862a625170dc6fcc0f35fbdadaf7b1dd44ac9a97d8c19/check-02.json",
+            "original_sha256": "ea0eb259806f1d89f1a4efe79a35646b67e10d2052255293093e1718f2547948"
+          },
+          {
+            "name": "obligate_funds_only_grants_officer_after_approval_and_not_approver_ceiling",
+            "type": "implies",
+            "status": "PASS",
+            "raw_path": "raw/verifier/3f7594a4a4161f76647862a625170dc6fcc0f35fbdadaf7b1dd44ac9a97d8c19/check-03.json",
+            "original_sha256": "6288ab27bbec0bf5b6b1ca77dc1c9414ff2317dc4855771cd9dab35bdfeb1d1b"
+          },
+          {
+            "name": "obligate_funds_disjoint_from_same_approver",
+            "type": "implies",
+            "status": "PASS",
+            "raw_path": "raw/verifier/3f7594a4a4161f76647862a625170dc6fcc0f35fbdadaf7b1dd44ac9a97d8c19/check-04.json",
+            "original_sha256": "39f329e5ebe850044d5b64061193a27524e2a84dcfe57d8a1485b2ee1b527e25"
+          }
+        ]
+      },
+      "Refine": {
+        "status": "SEMANTIC_FAIL",
+        "final_response": "raw/model/E4-20261110-validation-refine-13/final.txt",
+        "final_sha256": "e24434175f871e83ea5df57306630dc24ab3824ae74c91ecdd2b2ceeded560fc",
+        "score": "source/artifacts/experiments/E4-20261110-validation/scores/E4-20261110-validation-refine-13/score.json",
+        "validator": "raw/verifier/421f31b9ff4dfab22a8f26c4299fccf8f527eca23efe06cc1ba3b0d33c78c8a2/validate.json",
+        "checks": [
+          {
+            "name": "approve_award_authorized_role_and_tier_floor",
+            "type": "floor",
+            "status": "PASS",
+            "raw_path": "raw/verifier/421f31b9ff4dfab22a8f26c4299fccf8f527eca23efe06cc1ba3b0d33c78c8a2/check-00.json",
+            "original_sha256": "06f63b32eca6ee7591e4f53404e44dcfb0f14ee1d09ff4831bada70d9cfaa4e9"
+          },
+          {
+            "name": "approve_award_only_authorized_role_and_tier_ceiling",
+            "type": "implies",
+            "status": "PASS",
+            "raw_path": "raw/verifier/421f31b9ff4dfab22a8f26c4299fccf8f527eca23efe06cc1ba3b0d33c78c8a2/check-01.json",
+            "original_sha256": "d88030fb179bfb2277499da7c6cf423d105974b32bfe9e5986347a8c44b064b9"
+          },
+          {
+            "name": "obligate_funds_grants_officer_different_from_approver_floor",
+            "type": "floor",
+            "status": "FAIL",
+            "raw_path": "raw/verifier/421f31b9ff4dfab22a8f26c4299fccf8f527eca23efe06cc1ba3b0d33c78c8a2/check-02.json",
+            "original_sha256": "9fc87c4b8dd61af32bd753e94ccacce488d76952e6852e2713773caa31119f5a"
+          },
+          {
+            "name": "obligate_funds_only_grants_officer_after_approval_and_not_approver_ceiling",
+            "type": "implies",
+            "status": "FAIL",
+            "raw_path": "raw/verifier/421f31b9ff4dfab22a8f26c4299fccf8f527eca23efe06cc1ba3b0d33c78c8a2/check-03.json",
+            "original_sha256": "5c9ac8186647158e8da8a7437b6e1c7bcb6cfe7da1b8f4f3abf078c734bbe82b"
+          },
+          {
+            "name": "obligate_funds_disjoint_from_same_approver",
+            "type": "implies",
+            "status": "PASS",
+            "raw_path": "raw/verifier/421f31b9ff4dfab22a8f26c4299fccf8f527eca23efe06cc1ba3b0d33c78c8a2/check-04.json",
+            "original_sha256": "d60e49f17106f6b38fa0b9029d9c2ce1170ef227eeaa2708e45249c5a7d817a1"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "scenario_id": "iot_fleet-sendCommand-T3-029",
+    "pair_category": "refine_only",
+    "methods": {
+      "Meta": {
+        "status": "SCHEMA_FAIL",
+        "final_response": "raw/model/E4-20261110-validation-meta-14/final.txt",
+        "final_sha256": "dba3aa7d63be5e2076f6bcc8510e5187151dd7d86bff37b6b202a13ea4911d61",
+        "score": "source/artifacts/experiments/E4-20261110-validation/scores/E4-20261110-validation-meta-14/score.json",
+        "validator": "raw/verifier/9721148253c1ccf026f8986e5a739f8bc3ab78d1b21e196ef6e9c202d654b722/validate.json",
+        "checks": []
+      },
+      "Refine": {
+        "status": "PASS",
+        "final_response": "raw/model/E4-20261110-validation-refine-14/final.txt",
+        "final_sha256": "e3bf0e78aa39a455d85f60e5289506846090cedd6209a5f9dbf6150c5ada8af8",
+        "score": "source/artifacts/experiments/E4-20261110-validation/scores/E4-20261110-validation-refine-14/score.json",
+        "validator": "raw/verifier/29d7af378677dc829d271a0face462b124b70f27f366d432da8d36463b555810/validate.json",
+        "checks": [
+          {
+            "name": "dual_operator_technician_can_send_command_in_window_to_active_device",
+            "type": "floor",
+            "status": "PASS",
+            "raw_path": "raw/verifier/29d7af378677dc829d271a0face462b124b70f27f366d432da8d36463b555810/check-00.json",
+            "original_sha256": "68006241664f879b7d483b8782636d216e5df65dea70d26505c3cbd6777761dc"
+          },
+          {
+            "name": "send_command_roles_window_active_or_owned_in_window_ceiling",
+            "type": "implies",
+            "status": "PASS",
+            "raw_path": "raw/verifier/29d7af378677dc829d271a0face462b124b70f27f366d432da8d36463b555810/check-01.json",
+            "original_sha256": "671f296392061e8d633c3a42dd2fed06bf5c2f21c06126a6921223cdf25fbf21"
+          },
+          {
+            "name": "device_owner_roles_can_send_command_in_window_to_non_active_device",
+            "type": "floor",
+            "status": "PASS",
+            "raw_path": "raw/verifier/29d7af378677dc829d271a0face462b124b70f27f366d432da8d36463b555810/check-02.json",
+            "original_sha256": "af39cf4b75ba849f2fb46da678ca66093976bcac175af62654d3dfe82ad03548"
+          },
+          {
+            "name": "send_command_status_owner_window_union_ceiling",
+            "type": "implies",
+            "status": "PASS",
+            "raw_path": "raw/verifier/29d7af378677dc829d271a0face462b124b70f27f366d432da8d36463b555810/check-03.json",
+            "original_sha256": "67216840d1b4df0729884dd895f22a7660018b554506c72cd73427e7ec5d8ee9"
+          },
+          {
+            "name": "roles_can_send_command_in_window_to_active_device",
+            "type": "floor",
+            "status": "PASS",
+            "raw_path": "raw/verifier/29d7af378677dc829d271a0face462b124b70f27f366d432da8d36463b555810/check-04.json",
+            "original_sha256": "9957e3a916e3db02529bf8841eb73f1b7b8d17c5c31f5a9e319a0d53e7b34651"
+          },
+          {
+            "name": "p0009_send_command_active_device_union_ceiling",
+            "type": "implies",
+            "status": "PASS",
+            "raw_path": "raw/verifier/29d7af378677dc829d271a0face462b124b70f27f366d432da8d36463b555810/check-05.json",
+            "original_sha256": "c63f45e002d8b7c42635c859f58e61eaaffc1d1d83c9a43b964d849a251f7ef6"
+          },
+          {
+            "name": "non_owner_roles_cannot_send_to_provisioned_or_decommissioned_device",
+            "type": "implies",
+            "status": "PASS",
+            "raw_path": "raw/verifier/29d7af378677dc829d271a0face462b124b70f27f366d432da8d36463b555810/check-06.json",
+            "original_sha256": "0203f4ffdc55c5d674f7e08de1dadf810f62528ff5cce0b2fc1c590c722766e9"
+          },
+          {
+            "name": "operator_send_command_non_prohibited_request_liveness",
+            "type": "liveness-overlap",
+            "status": "PASS",
+            "raw_path": "raw/verifier/29d7af378677dc829d271a0face462b124b70f27f366d432da8d36463b555810/check-07.json",
+            "original_sha256": "ae6d74471d0a73ab63a31264764424d8cb9ce3e51842e55bd81022c5f6169a04"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "scenario_id": "immigration_casework-clearSecurityCheck-T3-024",
+    "pair_category": "refine_only",
+    "methods": {
+      "Meta": {
+        "status": "SCHEMA_FAIL",
+        "final_response": "raw/model/E4-20261110-validation-meta-16/final.txt",
+        "final_sha256": "902d190a4bdb710c0a7d0c23115d8b8e1992bbd5525df6c873fb103ff5721272",
+        "score": "source/artifacts/experiments/E4-20261110-validation/scores/E4-20261110-validation-meta-16/score.json",
+        "validator": "raw/verifier/fb7bba924712f641d5b459f1ac3bafb74101ba8eeb604bb9a4df2b2b9b389637/validate.json",
+        "checks": []
+      },
+      "Refine": {
+        "status": "PASS",
+        "final_response": "raw/model/E4-20261110-validation-refine-16/final.txt",
+        "final_sha256": "aeb593fab529972a2c529456ffe05abc29df01ceccb94ddb3683fd4f6393246b",
+        "score": "source/artifacts/experiments/E4-20261110-validation/scores/E4-20261110-validation-refine-16/score.json",
+        "validator": "raw/verifier/774e290071dc5afa0b9a635f05b81697aeb9ed886f8352eb95b1211e937af79c/validate.json",
+        "checks": [
+          {
+            "name": "investigator_or_supervisor_clear_security_check_in_window_floor",
+            "type": "floor",
+            "status": "PASS",
+            "raw_path": "raw/verifier/774e290071dc5afa0b9a635f05b81697aeb9ed886f8352eb95b1211e937af79c/check-00.json",
+            "original_sha256": "d7cb73cbc1545566ded4a224093d99201dfbdc68e927bc1f6c483fe66b35bf6b"
+          },
+          {
+            "name": "clear_security_check_limited_to_authorized_roles_and_window",
+            "type": "implies",
+            "status": "PASS",
+            "raw_path": "raw/verifier/774e290071dc5afa0b9a635f05b81697aeb9ed886f8352eb95b1211e937af79c/check-01.json",
+            "original_sha256": "c425bc0ecd27c841d772737f22fc3473d22268c02528c679817ff353cf8b17ba"
+          },
+          {
+            "name": "clear_security_check_outside_window_disjointness",
+            "type": "implies",
+            "status": "PASS",
+            "raw_path": "raw/verifier/774e290071dc5afa0b9a635f05b81697aeb9ed886f8352eb95b1211e937af79c/check-02.json",
+            "original_sha256": "6af4ecd9360c2cbea0f6c51d38002690b18199e479c7bfc52326c6a36a1b3e43"
+          },
+          {
+            "name": "background_investigator_non_pending_clear_disjointness",
+            "type": "implies",
+            "status": "PASS",
+            "raw_path": "raw/verifier/774e290071dc5afa0b9a635f05b81697aeb9ed886f8352eb95b1211e937af79c/check-03.json",
+            "original_sha256": "44a5c2d85f4ddd1cf2fee92567d72e1346a1536056ac75f159145ffd63c21042"
+          },
+          {
+            "name": "background_investigator_pending_clear_security_check_liveness",
+            "type": "liveness-overlap",
+            "status": "PASS",
+            "raw_path": "raw/verifier/774e290071dc5afa0b9a635f05b81697aeb9ed886f8352eb95b1211e937af79c/check-04.json",
+            "original_sha256": "04f2a017262815454a992a605a7e79210c5f5f43b8dbdd9648531db78f189dc0"
+          }
+        ]
+      }
+    }
+  }
+]

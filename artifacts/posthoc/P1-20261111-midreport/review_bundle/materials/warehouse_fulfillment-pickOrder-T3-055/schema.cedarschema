@@ -1,0 +1,51 @@
+entity Picker {
+    user: User,
+};
+
+entity ForkliftOperator {
+    user: User,
+};
+
+entity ZoneSupervisor {
+    user: User,
+};
+
+entity WarehouseManager {
+    user: User,
+};
+
+entity SecurityOfficer {
+    user: User,
+};
+
+entity User in [Picker, ForkliftOperator, ZoneSupervisor, WarehouseManager, SecurityOfficer];
+
+entity Zone {
+    zoneCode: String,
+    sensitivity: String,
+    zoneGroup: String,
+    isLocked: Bool,
+    operationalStatus: String,
+};
+
+entity Order {
+    requestedBy: User,
+    picker: User,
+    items: Set<String>,
+    itemCount: Long,
+    pickListCode: String,
+    status: String,
+    destinationZone: Zone,
+    releaseTime: datetime,
+    crossesBulkPickThreshold: Bool,
+};
+
+action pickOrder appliesTo {
+    principal: [User, Picker, ForkliftOperator],
+    resource: [Order],
+    context: {
+        currentTime: datetime,
+        hasBadgedInOnSiteForShift: Bool,
+        emergencyDeclared: Bool,
+    },
+};

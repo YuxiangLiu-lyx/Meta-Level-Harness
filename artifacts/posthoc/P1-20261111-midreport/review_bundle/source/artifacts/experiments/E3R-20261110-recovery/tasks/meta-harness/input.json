@@ -1,0 +1,87 @@
+{
+  "task_id": "E3R-20261110-meta-harness-retry-1",
+  "prompt": "{\n  \"study\": \"Construct one reusable task harness for translating natural-language requirements and a Cedar schema into Cedar policies under a fixed Codex runtime.\",\n  \"constraints\": [\n    \"Use English only. Do not use tools, files, search, extra model calls, or external feedback.\",\n    \"Final harness JSON has only instruction_blocks (array of static strings), input_order (requirements and schema, each exactly once), and checklist (array of static strings).\",\n    \"The complete requirements and schema will be inserted without edits. Do not include input placeholders or copies in the static instructions.\",\n    \"Editable instruction_blocks plus checklist must total at most 500 whitespace-delimited words. They may describe mental checks but may not specify execution, retrieval, candidate evaluation, extra model calls, or repair loops.\",\n    \"The common public instructions and final policy-output format are fixed and cannot be changed.\",\n    \"Produce a general reusable harness, not solutions to individual development examples. No candidate execution or new feedback is available between design stages.\"\n  ],\n  \"design_packet\": {\n    \"protocol\": \"v1\",\n    \"public_instructions\": \"You translate natural-language access-control requirements into Cedar policies using the supplied schema. Cedar denies by default. An applicable forbid overrides every permit. Guard optional attributes with has before reading them. Preserve the schema's entity, set, and attribute types. Use only the supplied task information. Do not use tools, files, search, additional model calls, or external feedback. Produce a single final answer as a JSON object with exactly one field, policy, whose value is the complete Cedar policy text. Do not include explanations or Markdown fences.\\n\",\n    \"manual_harness\": {\n      \"instruction_blocks\": [\n        \"Translate the access-control requirements into a complete Cedar policy set. Identify each action, eligible principal, resource type, required condition, prohibition, and exception. Use only entity types, attributes, actions, and representations supported by the schema. Implement the stated permissions and restrictions together.\",\n        \"Before answering, check the policy mentally for both unauthorized permissions and missing required permissions. Keep distinct action rules separate when their conditions differ. Apply exceptions only to the restriction they qualify. Return one final policy set.\"\n      ],\n      \"input_order\": [\n        \"requirements\",\n        \"schema\"\n      ],\n      \"checklist\": [\n        \"Every required action is covered.\",\n        \"Role, ownership, membership, and context conditions follow the requirements.\",\n        \"Prohibitions and exceptions compose correctly.\",\n        \"Optional attribute reads are guarded and Cedar syntax is valid.\"\n      ]\n    },\n    \"representative_inputs\": [\n      {\n        \"id\": \"iam_access-modifyResource-T3-056\",\n        \"requirements\": \"The system manages modification of cloud resources in an IAM environment.\\n\\nThe people involved are owners, developers, operators, and org admins. One person may hold both the owner and developer role at the same time.\\n\\nThe resources are cloud resources, secrets, and org units. Every cloud resource records its owner, org unit, tags, environment, and temporary grant.\\n\\nEach requester carries their organization membership.\\n\\nEach request carries source IP, whether MFA was used, and session age.\\n\\nOwners, developers, and operators may modify a cloud resource only when MFA was used.\\n\\nWhen MFA was not used, owners, developers, and operators must not modify a cloud resource.\\n\\nOwners, developers, and operators may modify a cloud resource outside production, or in production when it has been promoted.\\n\\nOwners, developers, and operators must not modify a production cloud resource that has not been promoted unless the requester belongs under that cloud resource's org unit.\\n\\nWhen the requester belongs under the cloud resource's org unit, the production promotion requirement does not block the modification.\\n\\nA request by an owner to modify a cloud resource that does not trip any prohibition above must be able to succeed.\",\n        \"schema\": \"entity Role enum [\\\"owner\\\", \\\"developer\\\", \\\"operator\\\", \\\"orgAdmin\\\"];\\n\\nentity Environment enum [\\\"production\\\", \\\"nonProduction\\\"];\\n\\nentity User {\\n    roles: Set<Role>,\\n    orgMembership: OrgUnit,\\n};\\n\\nentity OrgUnit in [OrgUnit];\\n\\nentity CloudResource {\\n    owner: User,\\n    orgUnit: OrgUnit,\\n    tags: Set<String>,\\n    environment: Environment,\\n    temporaryGrant: Bool,\\n    promoted: Bool,\\n};\\n\\nentity Secret;\\n\\naction modifyCloudResource appliesTo {\\n    principal: [User],\\n    resource: [CloudResource],\\n    context: {\\n        sourceIp: ipaddr,\\n        mfaUsed: Bool,\\n        sessionAge: duration,\\n    },\\n};\\n\"\n      },\n      {\n        \"id\": \"document_management-editDocument-T3-006\",\n        \"requirements\": \"The system manages document editing, review, and publication across an enterprise workspace.\\n\\nThe people involved are authors, editors, viewers, and compliance officers, and a single person may hold both the author and editor role at the same time.\\n\\nThe resources are documents and workspaces; every document records its owner, its share list, its classification, whether it carries a version lock, its labels, and its status, and every workspace records its members.\\n\\nAn author or editor may edit a document only while it is in draft status.\\n\\nOnce a document has left draft status, for example because it has been published, neither an author nor an editor may edit it.\\n\\nAn author or editor may edit a draft document only when the requester appears on that document's share list.\\n\\nIf the requester does not appear on the document's share list, neither an author nor an editor may edit the document, even while it is in draft status.\\n\\nAn author or editor may edit a draft document only when the document carries a version lock.\\n\\nIf a draft document does not carry a version lock, neither an author nor an editor may edit it, even if the requester is on the share list.\\n\\nAn author or editor must not edit a document unless it is in draft status, carries a version lock, and lists the requester on its share list.\\n\\nA request by an author to edit a document that is in draft status, carries a version lock, and lists the author on its share list must be able to succeed.\",\n        \"schema\": \"entity Role enum [\\\"Author\\\", \\\"Editor\\\", \\\"Viewer\\\", \\\"ComplianceOfficer\\\"];\\n\\nentity User {\\n    roles: Set<Role>,\\n};\\n\\nentity Document {\\n    owner: User,\\n    shareList: Set<User>,\\n    classification: String,\\n    hasVersionLock: Bool,\\n    labels: Set<String>,\\n    status: String,\\n};\\n\\nentity Workspace {\\n    members: Set<User>,\\n};\\n\\naction editDocument appliesTo {\\n    principal: [User],\\n    resource: [Document],\\n};\\n\"\n      },\n      {\n        \"id\": \"payroll-viewEmployeeRecord-T3-014\",\n        \"requirements\": \"The system manages personnel records, payroll work, and leave approvals.\\n\\nThe people involved are employees, managers, h r specialists, and payroll admins. One person may hold both the manager and employee role at the same time.\\n\\nThe resources are payroll runs, employee records, and leave requests. Every employee record records the employee, their manager, its PII level, and the department.\\n\\nEach requester carries a clearance, and each request carries whether it is on the corporate VPN and the current time.\\n\\nA manager or h r specialist may view an employee record only when their clearance dominates the record's PII level and the request is not on the corporate VPN.\\n\\nWhen the request is on the corporate VPN, the clearance requirement does not block the manager or h r specialist from viewing the employee record.\\n\\nA manager and an h r specialist must not view an employee record from outside the corporate VPN when their clearance does not dominate the record's PII level.\\n\\nA payroll admin may prepare a payroll run.\\n\\nA manager may approve a leave request.\\n\\nA request by a manager to view an employee record that does not trip any prohibition above must be able to succeed.\",\n        \"schema\": \"entity User {\\n    roles: Set<String>,\\n    clearance: Long,\\n};\\n\\nentity EmployeeRecord {\\n    employee: User,\\n    manager: User,\\n    piiLevel: Long,\\n    department: String,\\n};\\n\\nentity PayrollRun;\\n\\nentity LeaveRequest;\\n\\naction viewEmployeeRecord appliesTo {\\n    principal: [User],\\n    resource: [EmployeeRecord],\\n    context: {\\n        onCorporateVpn: Bool,\\n        currentTime: datetime,\\n    },\\n};\\n\\naction preparePayrollRun appliesTo {\\n    principal: [User],\\n    resource: [PayrollRun],\\n    context: {\\n        onCorporateVpn: Bool,\\n        currentTime: datetime,\\n    },\\n};\\n\\naction approveLeaveRequest appliesTo {\\n    principal: [User],\\n    resource: [LeaveRequest],\\n    context: {\\n        onCorporateVpn: Bool,\\n        currentTime: datetime,\\n    },\\n};\\n\"\n      }\n    ],\n    \"manual_design20_statistics\": {\n      \"completed\": 20,\n      \"planned\": 20,\n      \"passed\": 10,\n      \"syntax_valid\": 20,\n      \"schema_valid\": 20,\n      \"semantic_failures\": 10,\n      \"confirmed_overgrant\": 7,\n      \"confirmed_overdeny\": 6,\n      \"evaluation_unresolved\": 0\n    },\n    \"sanitized_error_notes\": [\n      \"IAM modification: the baseline broadened an organization-unit exception into permission for non-owner cases. Keep exception scope local and distinguish an exception to a prohibition from an independent grant.\",\n      \"Wire approval: the baseline added a verifier/treasury role requirement to a permission stated for any sufficiently authorized person, causing missing required permissions. Do not invent extra role restrictions.\",\n      \"Patent examination: the published evaluator expected the requester to be the assigned examiner, which the baseline omitted. The natural-language text does not explicitly state assignment; treat this as a possible specification/evaluator mismatch, not proof that every schema relationship should be imposed.\"\n    ],\n    \"packet_policy\": \"No reference policy, verification plan, raw counterexample, or validation material is included. The same packet is supplied unchanged to every automatic design stage.\"\n  },\n  \"stage_instruction\": \"Generate the final reusable harness using the common design packet and the explicitly supplied design guidance. Return only the required harness JSON.\",\n  \"allowed_previous_artifact\": {\n    \"guidance\": \"Design the harness around semantic precision. The reported results suggest that permission boundaries and exception scope deserve more attention than additional syntax reminders. Keep the static instructions concise and reserve the checklist for distinct failure modes.\\n\\nDistinguish affirmative grants, necessary conditions, explicit prohibitions, and exceptions. \\u201cMay only when\\u201d establishes a prerequisite; it does not automatically grant access to everyone satisfying that prerequisite. An exception removes the particular restriction it qualifies and does not independently create permission. Conversely, an explicit statement that a qualifying request must succeed establishes a positive permission obligation that default denial alone cannot satisfy.\\n\\nPreserve the scope of every rule: its action, principal population, resource population, and conditions. When multiple roles can coexist, their permissions and restrictions must compose without assuming that the roles are mutually exclusive. Avoid expanding a narrow grant merely because a broader group appears in a restriction or exception.\\n\\nInterpret related statements together. A specific exception can qualify an earlier general condition without eliminating unrelated requirements. Preserve conjunctions within a permission and alternatives between independently sufficient permission paths. Keep different actions separate when their eligibility or conditions differ.\\n\\nUse the schema to determine valid representations and types, not to invent authorization requirements. The existence of an owner, assignee, manager, membership, or clearance attribute does not by itself make that relationship mandatory. Likewise, do not add a role prerequisite to a permission stated for any person meeting its explicit conditions. Treat possible specification/evaluator mismatches as uncertainty rather than a reason to generalize an unstated restriction.\\n\\nChoose policy structure to match the requirements. Conditional permits can express bounded grants; explicit forbids can express restrictions that must override overlapping grants. Additional forbids increase the risk of blocking required permissions, while overly broad permits increase the risk of unintended access. Any forbid must preserve its stated population and exceptions.\\n\\nUse the checklist for mental consistency checks: required permissions remain reachable, grants have textual support, exceptions remain local, overlapping roles compose correctly, and schema types and optional attributes are respected. Avoid execution instructions, candidate comparison, retrieval, or repair loops. Do not embed development examples or scenario-specific rules. Keep the two complete inputs intact, include each exactly once, and leave the fixed public instructions and output format unchanged.\"\n  }\n}",
+  "runtime": {
+    "protocol": "v1.1",
+    "binary": "/Users/liuyuxiang/.vscode/extensions/openai.chatgpt-26.1007.21434-darwin-arm64/bin/macos-aarch64/codex",
+    "requested_model": "gpt-6.1-sol",
+    "reasoning_effort": "medium",
+    "task_timeout_seconds": 180,
+    "max_logical_tasks": 120,
+    "wrapper_retries": 0,
+    "raw_root": "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw",
+    "overrides": [
+      "model_provider=\"openai\"",
+      "forced_login_method=\"chatgpt\"",
+      "model_reasoning_effort=\"medium\"",
+      "approval_policy=\"never\"",
+      "project_doc_max_bytes=0",
+      "web_search=\"disabled\"",
+      "skills.bundled.enabled=false",
+      "skills.include_instructions=false",
+      "mcp_servers={}"
+    ],
+    "disabled_features": [
+      "shell_tool",
+      "unified_exec",
+      "apps",
+      "plugins",
+      "remote_plugin",
+      "hooks",
+      "memories",
+      "multi_agent",
+      "multi_agent_v2",
+      "browser_use",
+      "browser_use_external",
+      "computer_use",
+      "image_generation",
+      "view_image",
+      "goals",
+      "sleep_tool",
+      "skill_search",
+      "skill_mcp_dependency_install",
+      "shell_snapshot",
+      "tool_suggest",
+      "workspace_dependencies",
+      "unbounded_connection_retries",
+      "daemon_auto_start"
+    ],
+    "enabled_features": [
+      "skip_host_skill_discovery"
+    ],
+    "infrastructure_retry_limit": 1
+  },
+  "output_schema": {
+    "type": "object",
+    "properties": {
+      "instruction_blocks": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "input_order": {
+        "type": "array",
+        "items": {
+          "type": "string",
+          "enum": [
+            "requirements",
+            "schema"
+          ]
+        }
+      },
+      "checklist": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    },
+    "required": [
+      "instruction_blocks",
+      "input_order",
+      "checklist"
+    ],
+    "additionalProperties": false
+  }
+}

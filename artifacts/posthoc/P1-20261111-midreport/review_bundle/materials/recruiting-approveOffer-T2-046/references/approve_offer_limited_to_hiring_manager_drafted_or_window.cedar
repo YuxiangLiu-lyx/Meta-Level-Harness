@@ -1,0 +1,1 @@
+permit (principal, action == Action::"approveOffer", resource) when { principal is Person && resource is Offer && Role::"hiringManager" in principal.roles && (resource.status == "drafted" || context.isWithinPermittedWindow) };

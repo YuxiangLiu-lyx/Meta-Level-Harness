@@ -1,0 +1,37 @@
+{
+  "status": "COMPLETED",
+  "returncode": 0,
+  "turns_started": 1,
+  "turns_completed": 1,
+  "tool_events": 0,
+  "errors": [],
+  "input_tokens": 8831,
+  "cached_input_tokens": 0,
+  "output_tokens": 15,
+  "reasoning_output_tokens": 0,
+  "runtime_warnings": [
+    {
+      "type": "item.completed",
+      "item": {
+        "id": "item_0",
+        "type": "error",
+        "message": "Under-development features enabled: skip_host_skill_discovery. Under-development features are incomplete and may behave unpredictably. To suppress this warning, set `suppress_unstable_features_warning = true` in /Users/liuyuxiang/.codex/config.toml."
+      }
+    }
+  ],
+  "effective_model": null,
+  "underlying_requests": null,
+  "truncated": null,
+  "task_id": "smoke-02",
+  "cache_key": "f4b40d533ba0c082a840b6c37dc1734ffe6c4d40f76c2cd52929848fab802c36",
+  "elapsed_seconds": 6.266412019729614,
+  "raw_directory": "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/codex/smoke-02",
+  "malformed_event_lines": 0,
+  "final_response": "{\"answer\":\"READY\"}",
+  "raw_sha256": {
+    "final.txt": "4ca7835459b9e386fc78ecc1cfd37c10034dec6302a9a1c756c0b7fcbd1d87b1",
+    "stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "events.jsonl": "b7e678170c3c59111790d1abaced6cf0b5fd8ba6fc71cf0b473acfc51d743962",
+    "schema.json": "9e3afa3811a1e241af40a70c086b2f7990c271e8b13c3a68376f4e6505098647"
+  }
+}

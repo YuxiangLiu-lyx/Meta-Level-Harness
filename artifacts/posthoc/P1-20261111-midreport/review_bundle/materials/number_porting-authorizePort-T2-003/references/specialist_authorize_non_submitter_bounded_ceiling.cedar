@@ -1,0 +1,1 @@
+permit (principal, action == Action::"authorizePortRequest", resource) when { principal is User && resource is PortRequest && principal.isPortingSpecialist && (resource.initiatedBy != principal || (resource.initiatedBy == principal && resource.includesFlaggedOrHighValueLine)) };

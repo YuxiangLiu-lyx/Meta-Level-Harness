@@ -1,0 +1,27 @@
+{
+  "command": [
+    "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/dependencies/cedar-policy-cli-experimental-aarch64-apple-darwin/cedar",
+    "symcc",
+    "--cvc5-path",
+    "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/dependencies/cvc5-macOS-arm64-static/bin/cvc5",
+    "--principal-type",
+    "Person",
+    "--action",
+    "Action::\"signOffWorkOrder\"",
+    "--resource-type",
+    "WorkOrder",
+    "--schema",
+    "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/selected_scenarios/scenarios/work_order_signoff-signoffWorkOrder-T3-047/schema.cedarschema",
+    "--counterexample",
+    "implies",
+    "--policies1",
+    "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/selected_scenarios/scenarios/work_order_signoff-signoffWorkOrder-T3-047/references/inspector_or_quality_manager_in_progress_signoff_floor.cedar",
+    "--policies2",
+    "/var/folders/f4/3c2p11sd22b76640b44tvyv80000gn/T/cedar-score-4n2h3z46/candidate.cedar"
+  ],
+  "returncode": 0,
+  "stdout": "\u2717 Policy set 1 implies policy set 2: DOES NOT HOLD\n  Counterexample found:\nprincipal: Person::\"\", action: Action::\"signOffWorkOrder\", resource: WorkOrder::\"\"\ncontext: {acceptanceThreshold: -1, currentTime: datetime(\"1970-01-01\").offset(duration(\"-1ms\")), deviationAuthorized: true, fromPlantNetwork: true, hasControlledPartPrefix: true, partCodeMatches: true}\nentities: [\n  Role::\"inspector\",\n  WorkOrder::\"\" {\n    acceptanceThreshold: 9223372036854775807,\n    creationTime: datetime(\"1970-01-01\").offset(duration(\"-1ms\")),\n    defectCount: 9223372036854775807,\n    holdFlag: true,\n    inspector: Person::\"A\",\n    operator: Person::\"B\",\n    partCode: \"\",\n    partCodeAcceptable: true,\n    station: \"A\",\n    status: WorkOrderStatus::\"inProgress\",\n  },\n  Action::\"releaseToProduction\",\n  WorkOrderStatus::\"inProgress\",\n  Role::\"operator\",\n  Role::\"productionSupervisor\",\n  Role::\"auditor\",\n  Action::\"createWorkOrder\",\n  Person::\"A\" {\n    roles: [Role::\"qualityManager\"],\n  },\n  WorkOrderStatus::\"signedOff\",\n  Role::\"qualityManager\",\n  Person::\"\" {\n    roles: [Role::\"qualityManager\"],\n  },\n  Person::\"B\" {\n    roles: [Role::\"qualityManager\"],\n  },\n  WorkOrderStatus::\"released\",\n  Action::\"signOffWorkOrder\",\n  Action::\"startWork\",\n  Action::\"viewQualityLog\",\n  WorkOrderStatus::\"created\",\n]\n",
+  "stderr": "",
+  "elapsed_seconds": 0.016151416930370033,
+  "timeout": false
+}

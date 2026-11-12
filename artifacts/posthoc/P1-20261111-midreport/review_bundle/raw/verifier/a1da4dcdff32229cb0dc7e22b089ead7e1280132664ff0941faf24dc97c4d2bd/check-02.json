@@ -1,0 +1,27 @@
+{
+  "command": [
+    "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/dependencies/cedar-policy-cli-experimental-aarch64-apple-darwin/cedar",
+    "symcc",
+    "--cvc5-path",
+    "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/dependencies/cvc5-macOS-arm64-static/bin/cvc5",
+    "--principal-type",
+    "User",
+    "--action",
+    "Action::\"cloneRepository\"",
+    "--resource-type",
+    "Repository",
+    "--schema",
+    "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/selected_scenarios/scenarios/code_repository-cloneRepository-T3-001/schema.cedarschema",
+    "--counterexample",
+    "implies",
+    "--policies1",
+    "/var/folders/f4/3c2p11sd22b76640b44tvyv80000gn/T/cedar-score-cq3inw6u/candidate.cedar",
+    "--policies2",
+    "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/selected_scenarios/scenarios/code_repository-cloneRepository-T3-001/references/developer_confidential_regulated_active_clone_ceiling.cedar"
+  ],
+  "returncode": 0,
+  "stdout": "\u2717 Policy set 1 implies policy set 2: DOES NOT HOLD\n  Counterexample found:\nprincipal: User::\"\", action: Action::\"cloneRepository\", resource: Repository::\"\"\ncontext: {}\nentities: [\n  User::\"A\" {\n    clearanceLevel: ClearanceLevel::\"public\",\n    roles: [Role::\"developer\", Role::\"maintainer\", Role::\"reviewer\", Role::\"securityLead\"],\n  },\n  Team::\"\",\n  RepositoryLifecycleStatus::\"active\",\n  Role::\"developer\",\n  Action::\"cloneRepository\",\n  Branch::\"\" {\n    name: \"\",\n    protected: false,\n  },\n  ClearanceLevel::\"confidential\",\n  User::\"\" {\n    clearanceLevel: ClearanceLevel::\"public\",\n    roles: [Role::\"developer\", Role::\"maintainer\", Role::\"reviewer\", Role::\"securityLead\"],\n  },\n  RepositoryLifecycleStatus::\"archived\",\n  Role::\"reviewer\",\n  Role::\"maintainer\",\n  ClearanceLevel::\"public\",\n  Repository::\"\" {\n    defaultBranchProtected: true,\n    lifecycleStatus: RepositoryLifecycleStatus::\"active\",\n    owner: User::\"A\",\n    sensitivityClassification: ClearanceLevel::\"public\",\n    team: Team::\"\",\n    topicTags: [\"regulated-data\"],\n  },\n  ClearanceLevel::\"restricted\",\n  Role::\"securityLead\",\n  ClearanceLevel::\"internal\",\n]\n",
+  "stderr": "",
+  "elapsed_seconds": 0.014253250090405345,
+  "timeout": false
+}

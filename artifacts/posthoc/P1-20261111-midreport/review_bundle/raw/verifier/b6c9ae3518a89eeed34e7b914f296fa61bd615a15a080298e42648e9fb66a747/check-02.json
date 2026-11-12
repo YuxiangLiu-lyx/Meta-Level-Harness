@@ -1,0 +1,27 @@
+{
+  "command": [
+    "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/dependencies/cedar-policy-cli-experimental-aarch64-apple-darwin/cedar",
+    "symcc",
+    "--cvc5-path",
+    "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/dependencies/cvc5-macOS-arm64-static/bin/cvc5",
+    "--principal-type",
+    "User",
+    "--action",
+    "Action::\"cloneRepository\"",
+    "--resource-type",
+    "Repository",
+    "--schema",
+    "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/selected_scenarios/scenarios/code_repository-cloneRepository-T3-001/schema.cedarschema",
+    "--counterexample",
+    "implies",
+    "--policies1",
+    "/var/folders/f4/3c2p11sd22b76640b44tvyv80000gn/T/cedar-score-iw8kmmjp/candidate.cedar",
+    "--policies2",
+    "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/selected_scenarios/scenarios/code_repository-cloneRepository-T3-001/references/developer_confidential_regulated_active_clone_ceiling.cedar"
+  ],
+  "returncode": 0,
+  "stdout": "\u2713 Policy set 1 implies policy set 2: VERIFIED\n",
+  "stderr": "",
+  "elapsed_seconds": 0.011200958047993481,
+  "timeout": false
+}

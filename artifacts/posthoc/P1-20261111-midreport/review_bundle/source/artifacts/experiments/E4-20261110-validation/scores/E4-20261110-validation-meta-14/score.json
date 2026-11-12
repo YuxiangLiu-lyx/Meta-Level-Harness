@@ -1,0 +1,13 @@
+{
+  "scenario_id": "iot_fleet-sendCommand-T3-029",
+  "cache_key": "9721148253c1ccf026f8986e5a739f8bc3ab78d1b21e196ef6e9c202d654b722",
+  "verifier_version": "f9d67ee8f0a3920a13240774a30ca4c818f964d7b8370f1e8a7fd1e1e38bd5c4",
+  "status": "SCHEMA_FAIL",
+  "syntax_valid": true,
+  "schema_valid": false,
+  "checks": [],
+  "semantic_check_count": 0,
+  "raw_directory": "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/verifier/9721148253c1ccf026f8986e5a739f8bc3ab78d1b21e196ef6e9c202d654b722",
+  "confirmed_overgrant": false,
+  "confirmed_overdeny": false
+}

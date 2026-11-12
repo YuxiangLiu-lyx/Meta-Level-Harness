@@ -1,0 +1,27 @@
+{
+  "command": [
+    "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/dependencies/cedar-policy-cli-experimental-aarch64-apple-darwin/cedar",
+    "symcc",
+    "--cvc5-path",
+    "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/dependencies/cvc5-macOS-arm64-static/bin/cvc5",
+    "--principal-type",
+    "User",
+    "--action",
+    "Action::\"sendCommand\"",
+    "--resource-type",
+    "Command",
+    "--schema",
+    "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/selected_scenarios/scenarios/iot_fleet-sendCommand-T3-029/schema.cedarschema",
+    "--counterexample",
+    "disjoint",
+    "--policies1",
+    "/var/folders/f4/3c2p11sd22b76640b44tvyv80000gn/T/cedar-score-78cqm8ju/candidate.cedar",
+    "--policies2",
+    "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/selected_scenarios/scenarios/iot_fleet-sendCommand-T3-029/references/operator_send_command_non_prohibited_request_liveness.cedar"
+  ],
+  "returncode": 0,
+  "stdout": "\u2717 Policy sets are disjoint: DOES NOT HOLD\n  Counterexample found:\nprincipal: User::\"\", action: Action::\"sendCommand\", resource: Command::\"\"\ncontext: {currentTime: datetime(\"1970-01-01\").offset(duration(\"-1ms\")), maintenanceWindow: MaintenanceWindow::\"\", sourceIp: ip(\"0000:0000:0000:0000:0000:0000:0000:0000/0\")}\nentities: [\n  Device::\"\" {\n    firmwareTags: [],\n    maintenanceMode: true,\n    owner: User::\"A\",\n    siteGroup: SiteGroup::\"\",\n    status: DeviceStatus::\"active\",\n  },\n  Action::\"sendCommand\",\n  DeviceStatus::\"active\",\n  MaintenanceWindow::\"\" {\n    endTime: datetime(\"1970-01-01\").offset(duration(\"-1ms\")),\n    permitted: true,\n    startTime: datetime(\"1970-01-01\").offset(duration(\"-1ms\")),\n  },\n  Role::\"operator\",\n  Role::\"serviceAccount\",\n  Role::\"technician\",\n  User::\"\" {\n    roles: [Role::\"operator\"],\n  },\n  User::\"A\" {\n    roles: [Role::\"operator\"],\n  },\n  Command::\"\" {\n    targetDevice: Device::\"\",\n  },\n  DeviceStatus::\"provisioned\",\n  SiteGroup::\"\",\n  Role::\"fleetAdmin\",\n  DeviceStatus::\"decommissioned\",\n]\n",
+  "stderr": "",
+  "elapsed_seconds": 0.016267333063296974,
+  "timeout": false
+}

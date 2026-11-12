@@ -1,0 +1,1 @@
+permit (principal, action == Action::"readNamespaceSecret", resource is NamespaceSecret) when { ((principal is User) && principal.clearance >= resource.sensitivity) || ((principal is ServiceAccount) && principal.clearance >= resource.sensitivity) };

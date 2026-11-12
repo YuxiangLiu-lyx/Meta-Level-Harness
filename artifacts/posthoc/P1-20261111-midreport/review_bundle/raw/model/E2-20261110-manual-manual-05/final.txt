@@ -1,0 +1,1 @@
+{"policy":"permit (\n    principal is Controller,\n    action == Action::\"disburseReimbursement\",\n    resource is Reimbursement\n);\n\nforbid (\n    principal is Controller,\n    action == Action::\"disburseReimbursement\",\n    resource is Reimbursement\n)\nwhen {\n    context.businessHours && resource.expenseReport.status != \"approved\"\n};"}

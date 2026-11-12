@@ -1,0 +1,1 @@
+permit (principal is User, action == Action::"implementChange", resource is ChangeRequest) when { !(!resource.isEmergency && context.currentTime < resource.maintenanceWindowStart) };

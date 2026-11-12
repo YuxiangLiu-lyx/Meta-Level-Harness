@@ -1,0 +1,27 @@
+{
+  "command": [
+    "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/dependencies/cedar-policy-cli-experimental-aarch64-apple-darwin/cedar",
+    "symcc",
+    "--cvc5-path",
+    "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/dependencies/cvc5-macOS-arm64-static/bin/cvc5",
+    "--principal-type",
+    "User",
+    "--action",
+    "Action::\"launchCampaign\"",
+    "--resource-type",
+    "Campaign",
+    "--schema",
+    "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/selected_scenarios/scenarios/ad_campaigns-chain2-T6-015/schema.cedarschema",
+    "--counterexample",
+    "implies",
+    "--policies1",
+    "/var/folders/f4/3c2p11sd22b76640b44tvyv80000gn/T/cedar-score-k8crujaz/candidate.cedar",
+    "--policies2",
+    "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/selected_scenarios/scenarios/ad_campaigns-chain2-T6-015/references/launch_campaign_only_by_owning_advertiser.cedar"
+  ],
+  "returncode": 0,
+  "stdout": "\u2717 Policy set 1 implies policy set 2: DOES NOT HOLD\n  Counterexample found:\nprincipal: User::\"\", action: Action::\"launchCampaign\", resource: Campaign::\"\"\ncontext: {currentTime: datetime(\"1970-01-01\").offset(duration(\"-1ms\")), emergencyLaunchDeclared: true, mfaUsed: true, requiredRiskLabel: \"\", trustedDevice: true}\nentities: [\n  CampaignStatus::\"Draft\",\n  CampaignStatus::\"Launched\",\n  User::\"A\" {\n    roles: [],\n  },\n  CampaignStatus::\"BudgetApproved\",\n  Role::\"AccountManager\",\n  User::\"\" {\n    roles: [],\n  },\n  Action::\"approveBudget\",\n  Role::\"Advertiser\",\n  Role::\"BrandSafetyReviewer\",\n  Campaign::\"\" {\n    advertiser: User::\"\",\n    budget: -1,\n    budgetTier: \"A\",\n    contingency: -1,\n    preparedBy: User::\"A\",\n    riskLabels: [\"\"],\n    scheduledStart: datetime(\"1970-01-01\").offset(duration(\"-1ms\")),\n    status: CampaignStatus::\"BudgetApproved\",\n  },\n  Action::\"launchCampaign\",\n  Role::\"CampaignDirector\",\n]\n",
+  "stderr": "",
+  "elapsed_seconds": 0.013745417003519833,
+  "timeout": false
+}

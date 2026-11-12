@@ -1,0 +1,15 @@
+{
+  "command": [
+    "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/dependencies/cedar-policy-cli-experimental-aarch64-apple-darwin/cedar",
+    "validate",
+    "--schema",
+    "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/selected_scenarios/scenarios/network_change_approval-chain2-T4-026/schema.cedarschema",
+    "--policies",
+    "/var/folders/f4/3c2p11sd22b76640b44tvyv80000gn/T/cedar-score-si5x5c12/candidate.cedar"
+  ],
+  "returncode": 3,
+  "stdout": "  \u00d7 policy set validation failed\n  \u2570\u2500\u25b6 for policy `policy2`, unexpected type: expected decimal but saw datetime\n    \u256d\u2500[37:6]\n 36 \u2502     (resource.isEmergency ||\n 37 \u2502      context.currentTime.greaterThanOrEqual(resource.maintenanceWindowStart))\n    \u00b7      \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\n 38 \u2502 };\n    \u2570\u2500\u2500\u2500\u2500\n\nError: \n  \u00d7 for policy `policy2`, unexpected type: expected decimal but saw datetime\n    \u256d\u2500[37:45]\n 36 \u2502     (resource.isEmergency ||\n 37 \u2502      context.currentTime.greaterThanOrEqual(resource.maintenanceWindowStart))\n    \u00b7                                             \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\n 38 \u2502 };\n    \u2570\u2500\u2500\u2500\u2500\n\n",
+  "stderr": "",
+  "elapsed_seconds": 0.013650624896399677,
+  "timeout": false
+}

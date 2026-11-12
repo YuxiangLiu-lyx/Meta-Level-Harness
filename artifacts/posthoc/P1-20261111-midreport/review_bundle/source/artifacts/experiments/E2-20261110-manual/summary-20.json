@@ -1,0 +1,2221 @@
+{
+  "completed": 20,
+  "counts": {
+    "SEMANTIC_FAIL": 10,
+    "PASS": 10
+  },
+  "records": [
+    {
+      "task_id": "E2-20261110-manual-manual-00",
+      "scenario_id": "iam_access-modifyResource-T3-056",
+      "method": "Manual",
+      "generation": {
+        "status": "COMPLETED",
+        "returncode": 0,
+        "turns_started": 1,
+        "turns_completed": 1,
+        "tool_events": 0,
+        "errors": [],
+        "input_tokens": 9560,
+        "cached_input_tokens": 0,
+        "output_tokens": 373,
+        "reasoning_output_tokens": 142,
+        "runtime_warnings": [
+          {
+            "type": "item.completed",
+            "item": {
+              "id": "item_0",
+              "type": "error",
+              "message": "Under-development features enabled: skip_host_skill_discovery. Under-development features are incomplete and may behave unpredictably. To suppress this warning, set `suppress_unstable_features_warning = true` in /Users/liuyuxiang/.codex/config.toml."
+            }
+          }
+        ],
+        "effective_model": null,
+        "underlying_requests": null,
+        "truncated": null,
+        "task_id": "E2-20261110-manual-manual-00",
+        "cache_key": "c7ee554ae56c63e8f46d9ffd894534fba5474dff40978b17ba236b9ea972f256",
+        "elapsed_seconds": 11.292837858200073,
+        "raw_directory": "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/codex/E2-20261110-manual-manual-00",
+        "malformed_event_lines": 0,
+        "final_response": "{\"policy\":\"permit (\\n    principal is User,\\n    action == Action::\\\"modifyCloudResource\\\",\\n    resource is CloudResource\\n)\\nwhen {\\n    principal.roles.containsAny([Role::\\\"owner\\\", Role::\\\"developer\\\", Role::\\\"operator\\\"])\\n};\\n\\nforbid (\\n    principal is User,\\n    action == Action::\\\"modifyCloudResource\\\",\\n    resource is CloudResource\\n)\\nwhen {\\n    principal.roles.containsAny([Role::\\\"owner\\\", Role::\\\"developer\\\", Role::\\\"operator\\\"]) &&\\n    !context.mfaUsed\\n};\\n\\nforbid (\\n    principal is User,\\n    action == Action::\\\"modifyCloudResource\\\",\\n    resource is CloudResource\\n)\\nwhen {\\n    principal.roles.containsAny([Role::\\\"owner\\\", Role::\\\"developer\\\", Role::\\\"operator\\\"]) &&\\n    resource.environment == Environment::\\\"production\\\" &&\\n    !resource.promoted &&\\n    !(principal.orgMembership in resource.orgUnit)\\n};\"}",
+        "raw_sha256": {
+          "final.txt": "4b1294ed3d39dd2c0890916853e51ebc02edf615802a230f8736089d8775e161",
+          "stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "events.jsonl": "c30df850928993b17cefb1fae8c8e8914fdeeaf7770b55926e718c1ac93553cc",
+          "schema.json": "789054a4b0cda04d99b22fd17820b0656a4adf0e70cf17c14b8d37f59560b43a"
+        }
+      },
+      "score": {
+        "scenario_id": "iam_access-modifyResource-T3-056",
+        "cache_key": "e21f29103ffd75b17ce260bd2acc62e620d4339fc36eccbf95b986c029ca8489",
+        "verifier_version": "f9d67ee8f0a3920a13240774a30ca4c818f964d7b8370f1e8a7fd1e1e38bd5c4",
+        "status": "SEMANTIC_FAIL",
+        "syntax_valid": true,
+        "schema_valid": true,
+        "checks": [
+          {
+            "name": "dual_role_owner_developer_modify_floor",
+            "type": "floor",
+            "status": "PASS",
+            "elapsed_seconds": 0.06255995808169246,
+            "raw_sha256": "a4671891a05b8ccf010ecba8bb66df20484ac8848a3b2db9206ee22030e58c94"
+          },
+          {
+            "name": "role_modify_environment_promotion_union_ceiling",
+            "type": "implies",
+            "status": "FAIL",
+            "elapsed_seconds": 0.015736542060039937,
+            "raw_sha256": "a4e49552be96be479d4b74d8255fda917e8692715ef85d9de9241cdb21f45884"
+          },
+          {
+            "name": "production_unpromoted_modify_org_boundary",
+            "type": "implies",
+            "status": "PASS",
+            "elapsed_seconds": 0.010055000078864396,
+            "raw_sha256": "36586e1ecc4dd724e2733955128f483a6be4fc169e0279fd957e3eaa0b3e47e2"
+          },
+          {
+            "name": "owner_org_exception_modify_floor",
+            "type": "floor",
+            "status": "PASS",
+            "elapsed_seconds": 0.013411790947429836,
+            "raw_sha256": "dd5b00ae80a78e6d65762cd586fcb133f4851d803675c375c6d1eb41df5968d6"
+          },
+          {
+            "name": "mfa_required_role_modify_disjointness",
+            "type": "implies",
+            "status": "PASS",
+            "elapsed_seconds": 0.010911166085861623,
+            "raw_sha256": "debe87cbe376879ba99ad1f69cf630e1fbf18bc4af509b42e77b7cd897bf6f5e"
+          },
+          {
+            "name": "mfa_used_owner_modify_floor",
+            "type": "floor",
+            "status": "PASS",
+            "elapsed_seconds": 0.013133708969689906,
+            "raw_sha256": "45523294dfd4155e060e91126e611d8c521a02248546f8f880e18a599d5a0a83"
+          },
+          {
+            "name": "role_modify_nonprod_or_promoted_floor",
+            "type": "floor",
+            "status": "PASS",
+            "elapsed_seconds": 0.012212791945785284,
+            "raw_sha256": "4cff51c352543088a15ed8cbe6e9316d87e28f4da6412e27fa56a6a89a119d33"
+          },
+          {
+            "name": "owner_no_prohibition_modify_floor",
+            "type": "floor",
+            "status": "PASS",
+            "elapsed_seconds": 0.013333999901078641,
+            "raw_sha256": "ab384faf7e33a071086e509b6d79e714913c10c466bee418b96dd026a39eb713"
+          },
+          {
+            "name": "multi_role_modify_compatible_union_ceiling",
+            "type": "implies",
+            "status": "FAIL",
+            "elapsed_seconds": 0.015677375020459294,
+            "raw_sha256": "77083ca693ca127e25547215d1b539373f0e0d322010db339d4ea03bdd23f757"
+          }
+        ],
+        "semantic_check_count": 9,
+        "raw_directory": "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/verifier/e21f29103ffd75b17ce260bd2acc62e620d4339fc36eccbf95b986c029ca8489",
+        "confirmed_overgrant": true,
+        "confirmed_overdeny": false
+      }
+    },
+    {
+      "task_id": "E2-20261110-manual-manual-01",
+      "scenario_id": "document_management-editDocument-T3-006",
+      "method": "Manual",
+      "generation": {
+        "status": "COMPLETED",
+        "returncode": 0,
+        "turns_started": 1,
+        "turns_completed": 1,
+        "tool_events": 0,
+        "errors": [],
+        "input_tokens": 9574,
+        "cached_input_tokens": 0,
+        "output_tokens": 143,
+        "reasoning_output_tokens": 47,
+        "runtime_warnings": [
+          {
+            "type": "item.completed",
+            "item": {
+              "id": "item_0",
+              "type": "error",
+              "message": "Under-development features enabled: skip_host_skill_discovery. Under-development features are incomplete and may behave unpredictably. To suppress this warning, set `suppress_unstable_features_warning = true` in /Users/liuyuxiang/.codex/config.toml."
+            }
+          }
+        ],
+        "effective_model": null,
+        "underlying_requests": null,
+        "truncated": null,
+        "task_id": "E2-20261110-manual-manual-01",
+        "cache_key": "d13b2245a77fb651c23a504ee40c941c29e1be50d126b6d97e9072d0befc285c",
+        "elapsed_seconds": 6.175569295883179,
+        "raw_directory": "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/codex/E2-20261110-manual-manual-01",
+        "malformed_event_lines": 0,
+        "final_response": "{\"policy\":\"permit (\\n    principal is User,\\n    action == Action::\\\"editDocument\\\",\\n    resource is Document\\n)\\nwhen {\\n    (principal.roles.contains(Role::\\\"Author\\\") || principal.roles.contains(Role::\\\"Editor\\\")) &&\\n    resource.status == \\\"draft\\\" &&\\n    resource.hasVersionLock &&\\n    resource.shareList.contains(principal)\\n};\"}",
+        "raw_sha256": {
+          "final.txt": "be4213285e40a611239f7e2078db0333d0a8698e556e1d278006fdc1c9cf66d0",
+          "stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "events.jsonl": "c9b69e5becb8d13522edade7928c42cea10a08948e1a8279fbfb9bd2af3dcca3",
+          "schema.json": "789054a4b0cda04d99b22fd17820b0656a4adf0e70cf17c14b8d37f59560b43a"
+        }
+      },
+      "score": {
+        "scenario_id": "document_management-editDocument-T3-006",
+        "cache_key": "1122dabf4451aa3539328c7085ef9fed803b583c59a879c065326988d69caa5d",
+        "verifier_version": "f9d67ee8f0a3920a13240774a30ca4c818f964d7b8370f1e8a7fd1e1e38bd5c4",
+        "status": "PASS",
+        "syntax_valid": true,
+        "schema_valid": true,
+        "checks": [
+          {
+            "name": "edit_locked_draft_shared_author_editor_repaired_floor",
+            "type": "floor",
+            "status": "PASS",
+            "elapsed_seconds": 0.020285166916437447,
+            "raw_sha256": "6602fa209a7959556095a5a837be353e06e940eec82e79980769b74d731da90d"
+          },
+          {
+            "name": "edit_document_bounded_to_draft_shared_author_editor",
+            "type": "implies",
+            "status": "PASS",
+            "elapsed_seconds": 0.015506208059377968,
+            "raw_sha256": "a6f1c9b2b13a90c138f42fe07cfbf3f4e548a998ede17815005579d8f9703917"
+          },
+          {
+            "name": "no_edit_after_left_draft",
+            "type": "implies",
+            "status": "PASS",
+            "elapsed_seconds": 0.013750334037467837,
+            "raw_sha256": "6edd2aeba872d5e3422f37ec313dee692f2bcfa4d7ad867a98e0634452f57d46"
+          },
+          {
+            "name": "no_edit_when_not_on_share_list",
+            "type": "implies",
+            "status": "PASS",
+            "elapsed_seconds": 0.010480624972842634,
+            "raw_sha256": "f875347b357bd2308db3d2370643f48416ab844f2fd2615793f145ce19f9b2d5"
+          },
+          {
+            "name": "no_edit_without_version_lock",
+            "type": "implies",
+            "status": "PASS",
+            "elapsed_seconds": 0.010371292009949684,
+            "raw_sha256": "d2951e405e400960b5b68020f88228f753edb476d6a7ba2b0f5ade22ffdffa78"
+          },
+          {
+            "name": "edit_locked_draft_shared_author_editor_floor",
+            "type": "floor",
+            "status": "PASS",
+            "elapsed_seconds": 0.010284833027981222,
+            "raw_sha256": "fd6616d7a5f3abe403b05f4d4863a81a2d081d92f6b7933078ae136082155bfe"
+          },
+          {
+            "name": "edit_document_bounded_to_locked_draft_shared_author_editor",
+            "type": "implies",
+            "status": "PASS",
+            "elapsed_seconds": 0.007052082917653024,
+            "raw_sha256": "6a826b3cba534859bc56c4c4b62cac305a08c81e6af655460bee9889a6fc7a0e"
+          },
+          {
+            "name": "edit_author_success_bounded_to_locked_draft_share_list",
+            "type": "implies",
+            "status": "PASS",
+            "elapsed_seconds": 0.006151292007416487,
+            "raw_sha256": "f202d6f80848c84514999b3b319d0ecb4c5d27725835a1ad753e75c2341cf87a"
+          }
+        ],
+        "semantic_check_count": 8,
+        "raw_directory": "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/verifier/1122dabf4451aa3539328c7085ef9fed803b583c59a879c065326988d69caa5d",
+        "confirmed_overgrant": false,
+        "confirmed_overdeny": false
+      }
+    },
+    {
+      "task_id": "E2-20261110-manual-manual-02",
+      "scenario_id": "payroll-viewEmployeeRecord-T3-014",
+      "method": "Manual",
+      "generation": {
+        "status": "COMPLETED",
+        "returncode": 0,
+        "turns_started": 1,
+        "turns_completed": 1,
+        "tool_events": 0,
+        "errors": [],
+        "input_tokens": 9605,
+        "cached_input_tokens": 0,
+        "output_tokens": 327,
+        "reasoning_output_tokens": 75,
+        "runtime_warnings": [
+          {
+            "type": "item.completed",
+            "item": {
+              "id": "item_0",
+              "type": "error",
+              "message": "Under-development features enabled: skip_host_skill_discovery. Under-development features are incomplete and may behave unpredictably. To suppress this warning, set `suppress_unstable_features_warning = true` in /Users/liuyuxiang/.codex/config.toml."
+            }
+          }
+        ],
+        "effective_model": null,
+        "underlying_requests": null,
+        "truncated": null,
+        "task_id": "E2-20261110-manual-manual-02",
+        "cache_key": "14b42406888aae88ceb9dedeb27f99ca6b5cfd18b77cafe6d0b038d14ed53ed1",
+        "elapsed_seconds": 10.065897941589355,
+        "raw_directory": "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/codex/E2-20261110-manual-manual-02",
+        "malformed_event_lines": 0,
+        "final_response": "{\"policy\":\"permit (\\n    principal is User,\\n    action == Action::\\\"viewEmployeeRecord\\\",\\n    resource is EmployeeRecord\\n)\\nwhen {\\n    (principal.roles.contains(\\\"manager\\\") || principal.roles.contains(\\\"hr_specialist\\\")) &&\\n    (context.onCorporateVpn || principal.clearance >= resource.piiLevel)\\n};\\n\\nforbid (\\n    principal is User,\\n    action == Action::\\\"viewEmployeeRecord\\\",\\n    resource is EmployeeRecord\\n)\\nwhen {\\n    (principal.roles.contains(\\\"manager\\\") || principal.roles.contains(\\\"hr_specialist\\\")) &&\\n    !context.onCorporateVpn &&\\n    principal.clearance < resource.piiLevel\\n};\\n\\npermit (\\n    principal is User,\\n    action == Action::\\\"preparePayrollRun\\\",\\n    resource is PayrollRun\\n)\\nwhen {\\n    principal.roles.contains(\\\"payroll_admin\\\")\\n};\\n\\npermit (\\n    principal is User,\\n    action == Action::\\\"approveLeaveRequest\\\",\\n    resource is LeaveRequest\\n)\\nwhen {\\n    principal.roles.contains(\\\"manager\\\")\\n};\"}",
+        "raw_sha256": {
+          "final.txt": "3ff60a9e3c33fb418cfe5b6cc43b26d06d3e9cf43aa3e1452598def1bd9a8d9b",
+          "stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "events.jsonl": "90fc2ede30b4a23758994ff40eb24ec6b632445be737d484ccf0c560c961847f",
+          "schema.json": "789054a4b0cda04d99b22fd17820b0656a4adf0e70cf17c14b8d37f59560b43a"
+        }
+      },
+      "score": {
+        "scenario_id": "payroll-viewEmployeeRecord-T3-014",
+        "cache_key": "6a18ac56cb9488b3306fde05cadadb8952a8a471417f47fcfb307f176e79027a",
+        "verifier_version": "f9d67ee8f0a3920a13240774a30ca4c818f964d7b8370f1e8a7fd1e1e38bd5c4",
+        "status": "PASS",
+        "syntax_valid": true,
+        "schema_valid": true,
+        "checks": [
+          {
+            "name": "payroll_admin_prepare_payroll_run_floor",
+            "type": "floor",
+            "status": "PASS",
+            "elapsed_seconds": 0.011894249939359725,
+            "raw_sha256": "a90cb394a241334309142123ac34295c4fd0f9ef45220ccf95d8b91d247c56de"
+          },
+          {
+            "name": "prepare_payroll_run_only_payroll_admin_ceiling",
+            "type": "implies",
+            "status": "PASS",
+            "elapsed_seconds": 0.010696540935896337,
+            "raw_sha256": "a1109ae00d46cbc91228b1f60bfaa5cc9212b98f4a06e5aac79d7899f95d08d0"
+          },
+          {
+            "name": "manager_approve_leave_request_floor",
+            "type": "floor",
+            "status": "PASS",
+            "elapsed_seconds": 0.010030417004600167,
+            "raw_sha256": "25b98189f01fcf9d6b849b251ddd00aa95f72e83225d04cf6f5a11971d495985"
+          },
+          {
+            "name": "approve_leave_request_only_manager_ceiling",
+            "type": "implies",
+            "status": "PASS",
+            "elapsed_seconds": 0.008040625019930303,
+            "raw_sha256": "e4d9c9269df6b4435bcb9c208b481da58307beca0fb0200b80ed09e149626e0d"
+          },
+          {
+            "name": "manager_or_hr_view_employee_record_non_vpn_clearance_floor",
+            "type": "floor",
+            "status": "PASS",
+            "elapsed_seconds": 0.011322083068080246,
+            "raw_sha256": "28a9d3e3d9da574225f15097e6462584f1d51734f7003908e99dbb7fb815e8f6"
+          },
+          {
+            "name": "manager_or_hr_view_employee_record_vpn_floor",
+            "type": "floor",
+            "status": "PASS",
+            "elapsed_seconds": 0.011401625000871718,
+            "raw_sha256": "e95a19fe836b8b0d393d513cc5aeb820f83c560c84c1e514d29bc8f732220c48"
+          },
+          {
+            "name": "view_employee_record_manager_hr_vpn_or_clearance_ceiling",
+            "type": "implies",
+            "status": "PASS",
+            "elapsed_seconds": 0.010974291944876313,
+            "raw_sha256": "7160c9a29ccb814023d5b1ed62e74796f89633f85999f637af8ee316803b8c7d"
+          },
+          {
+            "name": "manager_view_employee_record_success_liveness",
+            "type": "liveness-overlap",
+            "status": "PASS",
+            "elapsed_seconds": 0.015033749979920685,
+            "raw_sha256": "36248ccdc574e1bba994a3f89fc03b4dfa7201211cdb2846fe7572af23c49137"
+          }
+        ],
+        "semantic_check_count": 8,
+        "raw_directory": "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/verifier/6a18ac56cb9488b3306fde05cadadb8952a8a471417f47fcfb307f176e79027a",
+        "confirmed_overgrant": false,
+        "confirmed_overdeny": false
+      }
+    },
+    {
+      "task_id": "E2-20261110-manual-manual-03",
+      "scenario_id": "wire_transfer-chain2-T5-008",
+      "method": "Manual",
+      "generation": {
+        "status": "COMPLETED",
+        "returncode": 0,
+        "turns_started": 1,
+        "turns_completed": 1,
+        "tool_events": 0,
+        "errors": [],
+        "input_tokens": 9950,
+        "cached_input_tokens": 0,
+        "output_tokens": 430,
+        "reasoning_output_tokens": 269,
+        "runtime_warnings": [
+          {
+            "type": "item.completed",
+            "item": {
+              "id": "item_0",
+              "type": "error",
+              "message": "Under-development features enabled: skip_host_skill_discovery. Under-development features are incomplete and may behave unpredictably. To suppress this warning, set `suppress_unstable_features_warning = true` in /Users/liuyuxiang/.codex/config.toml."
+            }
+          }
+        ],
+        "effective_model": null,
+        "underlying_requests": null,
+        "truncated": null,
+        "task_id": "E2-20261110-manual-manual-03",
+        "cache_key": "42a228b01bdd5c63867768b8a31d54ae234c9ddcf39e2ae5e8b0b98f7ef631a1",
+        "elapsed_seconds": 14.262947082519531,
+        "raw_directory": "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/codex/E2-20261110-manual-manual-03",
+        "malformed_event_lines": 0,
+        "final_response": "{\"policy\":\"permit (\\n    principal is Person,\\n    action == Action::\\\"approveWire\\\",\\n    resource is WireTransfer\\n)\\nwhen {\\n    principal.isVerifier &&\\n    principal.authorityTier >= resource.amountTier &&\\n    resource.amountPlusFeeExceedsApprovalThreshold\\n};\\n\\npermit (\\n    principal is Person,\\n    action == Action::\\\"releaseWire\\\",\\n    resource is WireTransfer\\n)\\nwhen {\\n    principal.isTreasuryOfficer &&\\n    resource.status == \\\"Approved\\\" &&\\n    resource has verifiedBy &&\\n    resource.account.allowedBeneficiaries.contains(resource.beneficiary) &&\\n    resource.amountExceedsMoneyThreshold\\n};\"}",
+        "raw_sha256": {
+          "final.txt": "abd6dfd38f4de0faf81c474ac7a847d36f7e24c9442b6db7a5c50d7b196234d6",
+          "stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "events.jsonl": "6f1fbbcabda22bd732229a5424ea32425c4b907e8cbb590d72b516aed6bd5a20",
+          "schema.json": "789054a4b0cda04d99b22fd17820b0656a4adf0e70cf17c14b8d37f59560b43a"
+        }
+      },
+      "score": {
+        "scenario_id": "wire_transfer-chain2-T5-008",
+        "cache_key": "4526baeffb222b6f19660d286b137b6b980acd9e6a694f83574c43ea3daaafa0",
+        "verifier_version": "f9d67ee8f0a3920a13240774a30ca4c818f964d7b8370f1e8a7fd1e1e38bd5c4",
+        "status": "SEMANTIC_FAIL",
+        "syntax_valid": true,
+        "schema_valid": true,
+        "checks": [
+          {
+            "name": "verifier_authority_approval_floor",
+            "type": "floor",
+            "status": "PASS",
+            "elapsed_seconds": 0.019889499992132187,
+            "raw_sha256": "a56f33e18c4084076319e6ba01053d1096214de6b07c87a1672a6c8c099f48e7"
+          },
+          {
+            "name": "verifier_authority_approval_ceiling",
+            "type": "implies",
+            "status": "PASS",
+            "elapsed_seconds": 0.01237687491811812,
+            "raw_sha256": "0361976865b2a9053e89a2534b76f4c3a2f53cb6300227e4454e9a09133a3780"
+          },
+          {
+            "name": "treasury_allowlisted_release_floor",
+            "type": "floor",
+            "status": "PASS",
+            "elapsed_seconds": 0.011423957999795675,
+            "raw_sha256": "8fd8d176ed59d36a5d1930904e641a33e4d1f095b1afaeb0f9e2e2fa73672ace"
+          },
+          {
+            "name": "treasury_authority_approval_ceiling",
+            "type": "implies",
+            "status": "PASS",
+            "elapsed_seconds": 0.01100412500090897,
+            "raw_sha256": "001372041ef010087afaaa8e213d7549bf2c0adaab92da5ca597454aa27587ba"
+          },
+          {
+            "name": "treasury_allowlisted_release_ceiling",
+            "type": "implies",
+            "status": "PASS",
+            "elapsed_seconds": 0.012165624997578561,
+            "raw_sha256": "c2dac0b4e22b047eb348fd12c46ea51ce1e7c6d6c29dc38e2b68d10de540997a"
+          },
+          {
+            "name": "person_authority_approval_floor",
+            "type": "floor",
+            "status": "FAIL",
+            "elapsed_seconds": 0.014447082998231053,
+            "raw_sha256": "9c664539941431dc10ad39ad12922cdd5a0fcfe35bac95b1cf64da9c66ad7204"
+          },
+          {
+            "name": "person_authority_approval_ceiling",
+            "type": "implies",
+            "status": "PASS",
+            "elapsed_seconds": 0.011345041915774345,
+            "raw_sha256": "33ae348e5dcf6ee1a8c2a14a843bd609d7f8f22b5e515acbf4182926ebb0d4a0"
+          },
+          {
+            "name": "approval_threshold_disjointness",
+            "type": "implies",
+            "status": "PASS",
+            "elapsed_seconds": 0.011152124963700771,
+            "raw_sha256": "e44bb453f267744565f84c577c9977ef3dea28b0190ba1ea968e7191435fe9e0"
+          },
+          {
+            "name": "unverified_wire_release_disjointness",
+            "type": "implies",
+            "status": "PASS",
+            "elapsed_seconds": 0.01133033400401473,
+            "raw_sha256": "89c513ddc788146f607664d5b0cfdf5b3264ff2e216438badaca739b8491f5ec"
+          },
+          {
+            "name": "non_allowlisted_beneficiary_release_disjointness",
+            "type": "implies",
+            "status": "PASS",
+            "elapsed_seconds": 0.011337042087689042,
+            "raw_sha256": "ec486dc877fadd268b74f7474ba3feb57d5623112da7fae9d0172ae78c803ac4"
+          },
+          {
+            "name": "money_threshold_release_disjointness",
+            "type": "implies",
+            "status": "PASS",
+            "elapsed_seconds": 0.011882332968525589,
+            "raw_sha256": "4751653c7e098503aac85152a35adb256b71ac883bc28ea9b774467c3a6b5332"
+          },
+          {
+            "name": "verifier_workflow_approval_ceiling",
+            "type": "implies",
+            "status": "PASS",
+            "elapsed_seconds": 0.010981916915625334,
+            "raw_sha256": "c4da1fae609a66d11fb4002930eef2412b5c42a7f3f2161bc4680b85c1faf5eb"
+          }
+        ],
+        "semantic_check_count": 12,
+        "raw_directory": "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/verifier/4526baeffb222b6f19660d286b137b6b980acd9e6a694f83574c43ea3daaafa0",
+        "confirmed_overgrant": false,
+        "confirmed_overdeny": true
+      }
+    },
+    {
+      "task_id": "E2-20261110-manual-manual-04",
+      "scenario_id": "patent_prosecution-examineApplication-T2-005",
+      "method": "Manual",
+      "generation": {
+        "status": "COMPLETED",
+        "returncode": 0,
+        "turns_started": 1,
+        "turns_completed": 1,
+        "tool_events": 0,
+        "errors": [],
+        "input_tokens": 9557,
+        "cached_input_tokens": 0,
+        "output_tokens": 265,
+        "reasoning_output_tokens": 72,
+        "runtime_warnings": [
+          {
+            "type": "item.completed",
+            "item": {
+              "id": "item_0",
+              "type": "error",
+              "message": "Under-development features enabled: skip_host_skill_discovery. Under-development features are incomplete and may behave unpredictably. To suppress this warning, set `suppress_unstable_features_warning = true` in /Users/liuyuxiang/.codex/config.toml."
+            }
+          }
+        ],
+        "effective_model": null,
+        "underlying_requests": null,
+        "truncated": null,
+        "task_id": "E2-20261110-manual-manual-04",
+        "cache_key": "d6ecd5114254e8542adf34b49da6602b27bf929ae51b3ebb0d5ac0e3d19da13d",
+        "elapsed_seconds": 12.078304767608643,
+        "raw_directory": "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/codex/E2-20261110-manual-manual-04",
+        "malformed_event_lines": 0,
+        "final_response": "{\"policy\":\"permit (\\n    principal is Person,\\n    action == Action::\\\"examinePatentApplication\\\",\\n    resource is PatentApplication\\n)\\nwhen {\\n    principal.roles.contains(Role::\\\"examiner\\\") &&\\n    context.mfaUsed &&\\n    principal != resource.inventor\\n};\\n\\nforbid (\\n    principal is Person,\\n    action == Action::\\\"examinePatentApplication\\\",\\n    resource is PatentApplication\\n)\\nwhen {\\n    principal.roles.contains(Role::\\\"examiner\\\") &&\\n    !context.mfaUsed\\n};\\n\\nforbid (\\n    principal is Person,\\n    action == Action::\\\"examinePatentApplication\\\",\\n    resource is PatentApplication\\n)\\nwhen {\\n    principal.roles.contains(Role::\\\"examiner\\\") &&\\n    principal == resource.inventor\\n};\"}",
+        "raw_sha256": {
+          "final.txt": "c092d06afc7fe8021ddb5b6adc3edf2f74a8fdcb66f1c58601459e16fe8a9c7e",
+          "stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "events.jsonl": "3629b760acce501682882f2393dd45784c9141e213680f852e185995012ad365",
+          "schema.json": "789054a4b0cda04d99b22fd17820b0656a4adf0e70cf17c14b8d37f59560b43a"
+        }
+      },
+      "score": {
+        "scenario_id": "patent_prosecution-examineApplication-T2-005",
+        "cache_key": "a941fffa3f639b6b8a7a2aa7f6fd79fd8648a2c3cd9a8bb56287c32713dbd597",
+        "verifier_version": "f9d67ee8f0a3920a13240774a30ca4c818f964d7b8370f1e8a7fd1e1e38bd5c4",
+        "status": "SEMANTIC_FAIL",
+        "syntax_valid": true,
+        "schema_valid": true,
+        "checks": [
+          {
+            "name": "assigned_examiner_mfa_noninventor_examine_floor",
+            "type": "floor",
+            "status": "PASS",
+            "elapsed_seconds": 0.13487025001086295,
+            "raw_sha256": "6aef308314b54247d6a18812d98ce4670ff2d58b20f81db88843e7f87dbd51c4"
+          },
+          {
+            "name": "examine_limited_to_assigned_examiner_mfa_noninventor",
+            "type": "implies",
+            "status": "FAIL",
+            "elapsed_seconds": 0.028432999970391393,
+            "raw_sha256": "c52edbf49bcd899819ca5102cdccded9e684100505c1b8f85ee60a28eb1d118a"
+          },
+          {
+            "name": "inventor_examiner_recusal_disjointness",
+            "type": "implies",
+            "status": "PASS",
+            "elapsed_seconds": 0.01728070806711912,
+            "raw_sha256": "44b63a03cc48df194eeaa6e0ed9501d1dee2ea2cbff8c1ecac22be85f22d809a"
+          },
+          {
+            "name": "examiner_examine_application_liveness",
+            "type": "liveness-overlap",
+            "status": "PASS",
+            "elapsed_seconds": 0.031082000001333654,
+            "raw_sha256": "62093d4599eedab64b5712cfeae98372cbfb8ba7f0ffae92175abc012b862dd4"
+          }
+        ],
+        "semantic_check_count": 4,
+        "raw_directory": "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/verifier/a941fffa3f639b6b8a7a2aa7f6fd79fd8648a2c3cd9a8bb56287c32713dbd597",
+        "confirmed_overgrant": true,
+        "confirmed_overdeny": false
+      }
+    },
+    {
+      "task_id": "E2-20261110-manual-manual-05",
+      "scenario_id": "expense_reimbursement-disburseReimbursement-T2-012",
+      "method": "Manual",
+      "generation": {
+        "status": "COMPLETED",
+        "returncode": 0,
+        "turns_started": 1,
+        "turns_completed": 1,
+        "tool_events": 0,
+        "errors": [],
+        "input_tokens": 9617,
+        "cached_input_tokens": 0,
+        "output_tokens": 132,
+        "reasoning_output_tokens": 35,
+        "runtime_warnings": [
+          {
+            "type": "item.completed",
+            "item": {
+              "id": "item_0",
+              "type": "error",
+              "message": "Under-development features enabled: skip_host_skill_discovery. Under-development features are incomplete and may behave unpredictably. To suppress this warning, set `suppress_unstable_features_warning = true` in /Users/liuyuxiang/.codex/config.toml."
+            }
+          }
+        ],
+        "effective_model": null,
+        "underlying_requests": null,
+        "truncated": null,
+        "task_id": "E2-20261110-manual-manual-05",
+        "cache_key": "e06492e2c808752369622474c7ac00bfa1e9e2195a4d01dd0ef39cca176b571b",
+        "elapsed_seconds": 6.423529148101807,
+        "raw_directory": "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/codex/E2-20261110-manual-manual-05",
+        "malformed_event_lines": 0,
+        "final_response": "{\"policy\":\"permit (\\n    principal is Controller,\\n    action == Action::\\\"disburseReimbursement\\\",\\n    resource is Reimbursement\\n);\\n\\nforbid (\\n    principal is Controller,\\n    action == Action::\\\"disburseReimbursement\\\",\\n    resource is Reimbursement\\n)\\nwhen {\\n    context.businessHours && resource.expenseReport.status != \\\"approved\\\"\\n};\"}",
+        "raw_sha256": {
+          "final.txt": "a7e6587c1d2eead63ce26bf4db1a269aa15853ae67e4f6736f03db9fadfbd1c6",
+          "stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "events.jsonl": "59c939eed1bd6cea608fba39fc23954fdd8b80d37edf4769a356ec2ac181292c",
+          "schema.json": "789054a4b0cda04d99b22fd17820b0656a4adf0e70cf17c14b8d37f59560b43a"
+        }
+      },
+      "score": {
+        "scenario_id": "expense_reimbursement-disburseReimbursement-T2-012",
+        "cache_key": "44c8dbae35105892f2382a946fa9d9248f1e4c65e79a6f202418384bb53eccd1",
+        "verifier_version": "f9d67ee8f0a3920a13240774a30ca4c818f964d7b8370f1e8a7fd1e1e38bd5c4",
+        "status": "PASS",
+        "syntax_valid": true,
+        "schema_valid": true,
+        "checks": [
+          {
+            "name": "controller_disburse_approved_report_business_hours_floor",
+            "type": "floor",
+            "status": "PASS",
+            "elapsed_seconds": 0.020317833055742085,
+            "raw_sha256": "21c59f4cebc9d615c60ce230a32729bfaa39a40326a6e94ddbce0a3e76cb7029"
+          },
+          {
+            "name": "controller_disburse_business_hours_only_approved_ceiling",
+            "type": "implies",
+            "status": "PASS",
+            "elapsed_seconds": 0.011858082958497107,
+            "raw_sha256": "3f64ef38692070ef57d2a2dad89ed9c62dc4b36ab9547773dcb0fe749f85f8c8"
+          },
+          {
+            "name": "no_unapproved_report_disbursement_business_hours",
+            "type": "implies",
+            "status": "PASS",
+            "elapsed_seconds": 0.008939249906688929,
+            "raw_sha256": "24fb00f0b5c95d35d1d98d4b5ea1e129ac4b4b42037c081bfc4278a33f7eaf91"
+          },
+          {
+            "name": "controller_disburse_no_prohibition_floor",
+            "type": "floor",
+            "status": "PASS",
+            "elapsed_seconds": 0.007599959033541381,
+            "raw_sha256": "e334a58fd31eebeb3638beb17004b1bd8a477637437fa4d99b889aff49b76d7e"
+          },
+          {
+            "name": "controller_disburse_no_prohibition_ceiling",
+            "type": "implies",
+            "status": "PASS",
+            "elapsed_seconds": 0.00792316603474319,
+            "raw_sha256": "e32fe403e59e3bf36a97536c789ccd91ab98790c4df1fccadcc9bfc269cfdebe"
+          }
+        ],
+        "semantic_check_count": 5,
+        "raw_directory": "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/verifier/44c8dbae35105892f2382a946fa9d9248f1e4c65e79a6f202418384bb53eccd1",
+        "confirmed_overgrant": false,
+        "confirmed_overdeny": false
+      }
+    },
+    {
+      "task_id": "E2-20261110-manual-manual-06",
+      "scenario_id": "pharmacy_dispensing-verifyPrescription-T3-020",
+      "method": "Manual",
+      "generation": {
+        "status": "COMPLETED",
+        "returncode": 0,
+        "turns_started": 1,
+        "turns_completed": 1,
+        "tool_events": 0,
+        "errors": [],
+        "input_tokens": 9630,
+        "cached_input_tokens": 0,
+        "output_tokens": 282,
+        "reasoning_output_tokens": 63,
+        "runtime_warnings": [
+          {
+            "type": "item.completed",
+            "item": {
+              "id": "item_0",
+              "type": "error",
+              "message": "Under-development features enabled: skip_host_skill_discovery. Under-development features are incomplete and may behave unpredictably. To suppress this warning, set `suppress_unstable_features_warning = true` in /Users/liuyuxiang/.codex/config.toml."
+            }
+          }
+        ],
+        "effective_model": null,
+        "underlying_requests": null,
+        "truncated": null,
+        "task_id": "E2-20261110-manual-manual-06",
+        "cache_key": "ce56df69ad09c156a40529c701569b856fdaedd7ebb491126e49c8038ff864cc",
+        "elapsed_seconds": 9.657317876815796,
+        "raw_directory": "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/codex/E2-20261110-manual-manual-06",
+        "malformed_event_lines": 0,
+        "final_response": "{\"policy\":\"permit (\\n    principal is User,\\n    action == Action::\\\"verifyPrescription\\\",\\n    resource is Prescription\\n)\\nwhen {\\n    (principal.roles.contains(Role::\\\"StaffPharmacist\\\") ||\\n     principal.roles.contains(Role::\\\"PharmacistInCharge\\\")) &&\\n    (resource.status == PrescriptionStatus::\\\"Received\\\" ||\\n     principal.roles.contains(Role::\\\"Exception\\\") ||\\n     context.refillsRemainingCrossesThreshold)\\n};\\n\\nforbid (\\n    principal is User,\\n    action == Action::\\\"verifyPrescription\\\",\\n    resource is Prescription\\n)\\nwhen {\\n    (principal.roles.contains(Role::\\\"StaffPharmacist\\\") ||\\n     principal.roles.contains(Role::\\\"PharmacistInCharge\\\")) &&\\n    resource.status == PrescriptionStatus::\\\"OutsideReceived\\\" &&\\n    !principal.roles.contains(Role::\\\"Exception\\\") &&\\n    !context.refillsRemainingCrossesThreshold\\n};\"}",
+        "raw_sha256": {
+          "final.txt": "513de918ca18ef563b40e241c3c854a55f5e6db7502127845b563b2bc9f345b4",
+          "stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "events.jsonl": "964a345b768282f2d7633e30e4b16d56cf0f4be2b714ede898eeba6cd6910982",
+          "schema.json": "789054a4b0cda04d99b22fd17820b0656a4adf0e70cf17c14b8d37f59560b43a"
+        }
+      },
+      "score": {
+        "scenario_id": "pharmacy_dispensing-verifyPrescription-T3-020",
+        "cache_key": "947115dfb1c9d0a3372efd27011adf1b505d96f2f09488c29d3af5b89a88d09d",
+        "verifier_version": "f9d67ee8f0a3920a13240774a30ca4c818f964d7b8370f1e8a7fd1e1e38bd5c4",
+        "status": "PASS",
+        "syntax_valid": true,
+        "schema_valid": true,
+        "checks": [
+          {
+            "name": "dual_staff_pic_may_verify_received_prescription",
+            "type": "floor",
+            "status": "PASS",
+            "elapsed_seconds": 0.018531874986365438,
+            "raw_sha256": "2a170d09b28821164b260d65ddf2cb108969136072f44cd64ad5b740a7407d7f"
+          },
+          {
+            "name": "verify_prescription_staff_or_pic_bounded_by_stage_or_exception",
+            "type": "implies",
+            "status": "PASS",
+            "elapsed_seconds": 0.01501841691788286,
+            "raw_sha256": "33cf73ef66aee2b4bc6699afdcb29c462a7e323de797c1fe4db94e64361c7a9a"
+          },
+          {
+            "name": "staff_or_pic_may_verify_received_no_exception_prescription",
+            "type": "floor",
+            "status": "PASS",
+            "elapsed_seconds": 0.012468083063140512,
+            "raw_sha256": "0299f814084cf0606e2729433b791cee16cd0df6d9309f6d6504d56ddeb49bfb"
+          },
+          {
+            "name": "staff_or_pic_exception_may_verify_outside_received",
+            "type": "floor",
+            "status": "PASS",
+            "elapsed_seconds": 0.011315834010019898,
+            "raw_sha256": "23289324cdab1262841631af68d225d59f50bb714b73407266032d383735c59b"
+          },
+          {
+            "name": "staff_or_pic_threshold_may_verify_outside_received",
+            "type": "floor",
+            "status": "PASS",
+            "elapsed_seconds": 0.011070125037804246,
+            "raw_sha256": "79c6efb975c088878c274267cd0097be62c95e56835e1fdb25f517223c284f5e"
+          },
+          {
+            "name": "staff_pharmacist_verify_no_prohibition_liveness",
+            "type": "liveness-overlap",
+            "status": "PASS",
+            "elapsed_seconds": 0.012867667013779283,
+            "raw_sha256": "1ce7135b562fb1b07287b91d936c1101c88f3e29a60d634c89865ed3bf0bd7fb"
+          }
+        ],
+        "semantic_check_count": 6,
+        "raw_directory": "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/verifier/947115dfb1c9d0a3372efd27011adf1b505d96f2f09488c29d3af5b89a88d09d",
+        "confirmed_overgrant": false,
+        "confirmed_overdeny": false
+      }
+    },
+    {
+      "task_id": "E2-20261110-manual-manual-07",
+      "scenario_id": "grid_switching_orders-executeSwitching-T3-027",
+      "method": "Manual",
+      "generation": {
+        "status": "COMPLETED",
+        "returncode": 0,
+        "turns_started": 1,
+        "turns_completed": 1,
+        "tool_events": 0,
+        "errors": [],
+        "input_tokens": 9672,
+        "cached_input_tokens": 0,
+        "output_tokens": 644,
+        "reasoning_output_tokens": 490,
+        "runtime_warnings": [
+          {
+            "type": "item.completed",
+            "item": {
+              "id": "item_0",
+              "type": "error",
+              "message": "Under-development features enabled: skip_host_skill_discovery. Under-development features are incomplete and may behave unpredictably. To suppress this warning, set `suppress_unstable_features_warning = true` in /Users/liuyuxiang/.codex/config.toml."
+            }
+          }
+        ],
+        "effective_model": null,
+        "underlying_requests": null,
+        "truncated": null,
+        "task_id": "E2-20261110-manual-manual-07",
+        "cache_key": "e432b18cd27053f9ed916e74a4effa14dd18875e26bd8e0e254629937e77529c",
+        "elapsed_seconds": 25.19871997833252,
+        "raw_directory": "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/codex/E2-20261110-manual-manual-07",
+        "malformed_event_lines": 0,
+        "final_response": "{\"policy\":\"permit (\\n    principal is Person,\\n    action == Action::\\\"executeSwitching\\\",\\n    resource is SwitchingOrder\\n)\\nwhen {\\n    (principal.roles.contains(Role::\\\"Operator\\\") ||\\n     principal.roles.contains(Role::\\\"ControlRoomOperator\\\")) &&\\n    resource.status == SwitchingOrderStatus::\\\"Authorized\\\" &&\\n    context.currentTime.durationSince(resource.scheduledStart).toMilliseconds() >= 0 &&\\n    resource.scheduledEnd.durationSince(context.currentTime).toMilliseconds() >= 0 &&\\n    (!resource.requiresControlRoomHandling ||\\n     principal.roles.contains(Role::\\\"ControlRoomOperator\\\"))\\n};\"}",
+        "raw_sha256": {
+          "final.txt": "d6c6100f1ca50b34b98e8d849657ef28d3f8e279f6358a740da82d9ffa7b4170",
+          "stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "events.jsonl": "326bb487cba6ca813978dc925fc71aea8633de8eb097c2ea438329a369830531",
+          "schema.json": "789054a4b0cda04d99b22fd17820b0656a4adf0e70cf17c14b8d37f59560b43a"
+        }
+      },
+      "score": {
+        "scenario_id": "grid_switching_orders-executeSwitching-T3-027",
+        "cache_key": "31b249be72d935640e2517329228ef922839adcb9d2fa83ca354428d2775366b",
+        "verifier_version": "f9d67ee8f0a3920a13240774a30ca4c818f964d7b8370f1e8a7fd1e1e38bd5c4",
+        "status": "SEMANTIC_FAIL",
+        "syntax_valid": true,
+        "schema_valid": true,
+        "checks": [
+          {
+            "name": "execute_switching_authorized_window_floor",
+            "type": "floor",
+            "status": "FAIL",
+            "elapsed_seconds": 0.027769749984145164,
+            "raw_sha256": "11cb5b109fdeebaa3a94f16face4e9f0c7db6dc33e7f534a40a1e36c5cd78d42"
+          },
+          {
+            "name": "execute_switching_authorized_window_role_ceiling",
+            "type": "implies",
+            "status": "PASS",
+            "elapsed_seconds": 0.03924874996300787,
+            "raw_sha256": "9cfda0bccca208c7be2ad52d6f9f2d75beb3866f563d84bea2108a7e3afbfd05"
+          },
+          {
+            "name": "execute_switching_unauthorized_order_disjoint",
+            "type": "implies",
+            "status": "PASS",
+            "elapsed_seconds": 0.012211333028972149,
+            "raw_sha256": "371797a7de360af46a1018eb25c5d4f738dd18b316a5b4f48de99a41512aa1c0"
+          },
+          {
+            "name": "execute_switching_outside_window_disjoint",
+            "type": "implies",
+            "status": "PASS",
+            "elapsed_seconds": 0.03564754198305309,
+            "raw_sha256": "7cd9e45e9376642dbba9c4d547d6132af60855e63278d7169179baa7e3dc87a9"
+          },
+          {
+            "name": "execute_switching_control_room_threshold_disjoint",
+            "type": "implies",
+            "status": "PASS",
+            "elapsed_seconds": 0.012725208071060479,
+            "raw_sha256": "45293d264c11bdcae251fe13bf0630ff3e2022edccfd353c522a63108794c72c"
+          },
+          {
+            "name": "execute_switching_non_control_room_operator_floor",
+            "type": "floor",
+            "status": "FAIL",
+            "elapsed_seconds": 0.02347441704478115,
+            "raw_sha256": "99896b5f9177ddb1c015bfdc043bf00f430855a33739e63cdc700a087e0c7057"
+          },
+          {
+            "name": "execute_switching_operator_threshold_disjoint",
+            "type": "implies",
+            "status": "PASS",
+            "elapsed_seconds": 0.01271166605874896,
+            "raw_sha256": "eff32e1d068067873fc426055423464b949e0db53316dd5477c86303cdccaa20"
+          },
+          {
+            "name": "execute_switching_operator_safe_request_liveness",
+            "type": "liveness-overlap",
+            "status": "PASS",
+            "elapsed_seconds": 0.024739167070947587,
+            "raw_sha256": "38bf4110f681be4f09cddb4079c2f2abb6cde0bf9a686073c2c9846cdaa5c57c"
+          }
+        ],
+        "semantic_check_count": 8,
+        "raw_directory": "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/verifier/31b249be72d935640e2517329228ef922839adcb9d2fa83ca354428d2775366b",
+        "confirmed_overgrant": false,
+        "confirmed_overdeny": true
+      }
+    },
+    {
+      "task_id": "E2-20261110-manual-manual-08",
+      "scenario_id": "contract_lifecycle-chain3-T5-001",
+      "method": "Manual",
+      "generation": {
+        "status": "COMPLETED",
+        "returncode": 0,
+        "turns_started": 1,
+        "turns_completed": 1,
+        "tool_events": 0,
+        "errors": [],
+        "input_tokens": 9960,
+        "cached_input_tokens": 0,
+        "output_tokens": 653,
+        "reasoning_output_tokens": 242,
+        "runtime_warnings": [
+          {
+            "type": "item.completed",
+            "item": {
+              "id": "item_0",
+              "type": "error",
+              "message": "Under-development features enabled: skip_host_skill_discovery. Under-development features are incomplete and may behave unpredictably. To suppress this warning, set `suppress_unstable_features_warning = true` in /Users/liuyuxiang/.codex/config.toml."
+            }
+          }
+        ],
+        "effective_model": null,
+        "underlying_requests": null,
+        "truncated": null,
+        "task_id": "E2-20261110-manual-manual-08",
+        "cache_key": "0124ece0adf6db531dcd7f825b64eec737c755f987d08b58940d06350c729d50",
+        "elapsed_seconds": 16.478883981704712,
+        "raw_directory": "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/codex/E2-20261110-manual-manual-08",
+        "malformed_event_lines": 0,
+        "final_response": "{\"policy\":\"permit (\\n    principal is Person,\\n    action == Action::\\\"reviewContract\\\",\\n    resource is Contract\\n)\\nwhen {\\n    principal.roles.contains(Role::\\\"Reviewer\\\") &&\\n    resource.status == ContractStatus::\\\"Draft\\\" &&\\n    principal.conflictedCounterparties.contains(resource.counterparty)\\n};\\n\\nforbid (\\n    principal is Person,\\n    action == Action::\\\"reviewContract\\\",\\n    resource is Contract\\n)\\nwhen {\\n    resource.status != ContractStatus::\\\"Draft\\\" ||\\n    !principal.conflictedCounterparties.contains(resource.counterparty)\\n};\\n\\npermit (\\n    principal is Person,\\n    action == Action::\\\"signContract\\\",\\n    resource is Signature\\n)\\nwhen {\\n    principal.roles.contains(Role::\\\"Signatory\\\") &&\\n    resource.signer == principal &&\\n    resource.contract.status == ContractStatus::\\\"Reviewed\\\" &&\\n    principal.delegatedAuthorityTier >= resource.contract.requiredAuthorityTier &&\\n    principal.conflictedCounterparties.contains(resource.contract.counterparty)\\n};\\n\\nforbid (\\n    principal is Person,\\n    action == Action::\\\"signContract\\\",\\n    resource is Signature\\n)\\nwhen {\\n    principal.delegatedAuthorityTier < resource.contract.requiredAuthorityTier ||\\n    !principal.conflictedCounterparties.contains(resource.contract.counterparty)\\n};\\n\\npermit (\\n    principal is Person,\\n    action == Action::\\\"executeContract\\\",\\n    resource is Contract\\n)\\nwhen {\\n    principal.roles.contains(Role::\\\"ContractAdministrator\\\") &&\\n    resource.status == ContractStatus::\\\"Signed\\\"\\n};\\n\\nforbid (\\n    principal is Person,\\n    action == Action::\\\"executeContract\\\",\\n    resource is Contract\\n)\\nwhen {\\n    resource.status != ContractStatus::\\\"Signed\\\"\\n};\"}",
+        "raw_sha256": {
+          "final.txt": "763370e8f2121b5a8a53ef75b35b58dae84acc1d12f79c120dea90cea25f4a5c",
+          "stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "events.jsonl": "2bdb303be08ca8d7c96f3a2934debe1695cc944eb641a4aba564bfe1b09bc410",
+          "schema.json": "789054a4b0cda04d99b22fd17820b0656a4adf0e70cf17c14b8d37f59560b43a"
+        }
+      },
+      "score": {
+        "scenario_id": "contract_lifecycle-chain3-T5-001",
+        "cache_key": "ff500b3d4ff5a4738069196accb970043e98b4027df36fd0334a13ebbfdf25ed",
+        "verifier_version": "f9d67ee8f0a3920a13240774a30ca4c818f964d7b8370f1e8a7fd1e1e38bd5c4",
+        "status": "SEMANTIC_FAIL",
+        "syntax_valid": true,
+        "schema_valid": true,
+        "checks": [
+          {
+            "name": "review_draft_conflicted_reviewer_floor",
+            "type": "floor",
+            "status": "PASS",
+            "elapsed_seconds": 0.011091166990809143,
+            "raw_sha256": "ff121030cb416849d1c3b3dd0e050ae58c6ebbfd6d96a7f5de34f2941315609d"
+          },
+          {
+            "name": "review_only_draft_conflicted_assigned_reviewer_ceiling",
+            "type": "implies",
+            "status": "FAIL",
+            "elapsed_seconds": 0.012472249916754663,
+            "raw_sha256": "b3b418d5e91151b3ed5694dc65d2b6c84278a1709571a96d8a719ec18f077dd8"
+          },
+          {
+            "name": "sign_reviewed_conflicted_authorized_signatory_floor",
+            "type": "floor",
+            "status": "PASS",
+            "elapsed_seconds": 0.010451375041157007,
+            "raw_sha256": "9fe5947dc02f5eaef60786f0cfa3573e1f3f1ec0b0924ed9d4f7a18335bd7383"
+          },
+          {
+            "name": "sign_only_reviewed_conflicted_authorized_signatory_ceiling",
+            "type": "implies",
+            "status": "PASS",
+            "elapsed_seconds": 0.010280124959535897,
+            "raw_sha256": "9c2e277c24476eb102572a90be3035dd2dd216d4fd7bb2a7ce17afbaed9d9331"
+          },
+          {
+            "name": "execute_signed_contract_admin_floor",
+            "type": "floor",
+            "status": "PASS",
+            "elapsed_seconds": 0.010124416905455291,
+            "raw_sha256": "d8bd712edcb2b1799f5d613697d7592d112bbfe8fc6eda6776e14023f297a838"
+          },
+          {
+            "name": "execute_only_signed_contract_admin_ceiling",
+            "type": "implies",
+            "status": "PASS",
+            "elapsed_seconds": 0.010068875038996339,
+            "raw_sha256": "82184f1b9963b6295ce8ac6feca322ac884f387d176bed80f73b4df3e6a566f0"
+          },
+          {
+            "name": "workflow_review_only_draft_conflicted_assigned_reviewer_ceiling",
+            "type": "implies",
+            "status": "FAIL",
+            "elapsed_seconds": 0.011624834034591913,
+            "raw_sha256": "bac9b3e30efe84e8419fc8a019175dfffc33cb57e19015291e96a36ad17f1632"
+          }
+        ],
+        "semantic_check_count": 7,
+        "raw_directory": "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/verifier/ff500b3d4ff5a4738069196accb970043e98b4027df36fd0334a13ebbfdf25ed",
+        "confirmed_overgrant": true,
+        "confirmed_overdeny": false
+      }
+    },
+    {
+      "task_id": "E2-20261110-manual-manual-09",
+      "scenario_id": "classified_documents-readDocument-T3-009",
+      "method": "Manual",
+      "generation": {
+        "status": "COMPLETED",
+        "returncode": 0,
+        "turns_started": 1,
+        "turns_completed": 1,
+        "tool_events": 0,
+        "errors": [],
+        "input_tokens": 9502,
+        "cached_input_tokens": 0,
+        "output_tokens": 271,
+        "reasoning_output_tokens": 88,
+        "runtime_warnings": [
+          {
+            "type": "item.completed",
+            "item": {
+              "id": "item_0",
+              "type": "error",
+              "message": "Under-development features enabled: skip_host_skill_discovery. Under-development features are incomplete and may behave unpredictably. To suppress this warning, set `suppress_unstable_features_warning = true` in /Users/liuyuxiang/.codex/config.toml."
+            }
+          }
+        ],
+        "effective_model": null,
+        "underlying_requests": null,
+        "truncated": null,
+        "task_id": "E2-20261110-manual-manual-09",
+        "cache_key": "6f509e722ac7fd60709bc83da78a62cce3b39a6ccaf72e60fbe5b8b14b205882",
+        "elapsed_seconds": 11.799794912338257,
+        "raw_directory": "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/codex/E2-20261110-manual-manual-09",
+        "malformed_event_lines": 0,
+        "final_response": "{\"policy\":\"permit (\\n    principal is User,\\n    action == Action::\\\"readDocument\\\",\\n    resource is Document\\n)\\nwhen {\\n    principal.isAnalyst || principal.isOfficer\\n};\\n\\nforbid (\\n    principal is User,\\n    action == Action::\\\"readDocument\\\",\\n    resource is Document\\n)\\nwhen {\\n    (principal.isAnalyst || principal.isOfficer) &&\\n    !context.fromIntranet\\n};\\n\\nforbid (\\n    principal is User,\\n    action == Action::\\\"readDocument\\\",\\n    resource is Document\\n)\\nwhen {\\n    (principal.isAnalyst || principal.isOfficer) &&\\n    resource.compartments.contains(context.relevantCompartment) &&\\n    principal.clearance < resource.classification\\n};\"}",
+        "raw_sha256": {
+          "final.txt": "b8df76a15d5b086ac5ffcba4ef5312b05d62bd370657ac635276e9ef747d5022",
+          "stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "events.jsonl": "bd4718f01214108d3a672f120f6e2252c5a48f4591a38297c5d9e86a6d05d145",
+          "schema.json": "789054a4b0cda04d99b22fd17820b0656a4adf0e70cf17c14b8d37f59560b43a"
+        }
+      },
+      "score": {
+        "scenario_id": "classified_documents-readDocument-T3-009",
+        "cache_key": "ba5f8ec59eadc81a4b4f99ee7b0305dbef6a3309435f4c63bbcd9c237f29aa92",
+        "verifier_version": "f9d67ee8f0a3920a13240774a30ca4c818f964d7b8370f1e8a7fd1e1e38bd5c4",
+        "status": "PASS",
+        "syntax_valid": true,
+        "schema_valid": true,
+        "checks": [
+          {
+            "name": "analyst_officer_read_document_allowed_slice",
+            "type": "floor",
+            "status": "PASS",
+            "elapsed_seconds": 0.011623707949183881,
+            "raw_sha256": "6ed938f1b268c8c0e8f90a86d2ed66d181263eb4567b5121054c552ba537d23a"
+          },
+          {
+            "name": "read_document_bounded_to_authorized_intranet_clearance_slice",
+            "type": "implies",
+            "status": "PASS",
+            "elapsed_seconds": 0.010836917092092335,
+            "raw_sha256": "7a206b23a7ba0aa6365301cc033024714dd6d983e5d13f99f35954bf4504bd68"
+          },
+          {
+            "name": "read_document_no_compartment_label_bounded_slice",
+            "type": "implies",
+            "status": "PASS",
+            "elapsed_seconds": 0.010592875070869923,
+            "raw_sha256": "c44620de3c682aa5565f6008f8adf3e25a16e25a48756ca9655ad5d30f92dcea"
+          },
+          {
+            "name": "analyst_read_document_authorized_slice_liveness",
+            "type": "liveness-overlap",
+            "status": "PASS",
+            "elapsed_seconds": 0.014575332985259593,
+            "raw_sha256": "252f2b19003cc3fbed8c80f1f05166b10774a82915237ae155765ff3f3cbf208"
+          }
+        ],
+        "semantic_check_count": 4,
+        "raw_directory": "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/verifier/ba5f8ec59eadc81a4b4f99ee7b0305dbef6a3309435f4c63bbcd9c237f29aa92",
+        "confirmed_overgrant": false,
+        "confirmed_overdeny": false
+      }
+    },
+    {
+      "task_id": "E2-20261110-manual-manual-10",
+      "scenario_id": "escrow_disbursement-approveClearToClose-T2-008",
+      "method": "Manual",
+      "generation": {
+        "status": "COMPLETED",
+        "returncode": 0,
+        "turns_started": 1,
+        "turns_completed": 1,
+        "tool_events": 0,
+        "errors": [],
+        "input_tokens": 9900,
+        "cached_input_tokens": 0,
+        "output_tokens": 415,
+        "reasoning_output_tokens": 141,
+        "runtime_warnings": [
+          {
+            "type": "item.completed",
+            "item": {
+              "id": "item_0",
+              "type": "error",
+              "message": "Under-development features enabled: skip_host_skill_discovery. Under-development features are incomplete and may behave unpredictably. To suppress this warning, set `suppress_unstable_features_warning = true` in /Users/liuyuxiang/.codex/config.toml."
+            }
+          }
+        ],
+        "effective_model": null,
+        "underlying_requests": null,
+        "truncated": null,
+        "task_id": "E2-20261110-manual-manual-10",
+        "cache_key": "3eebb31f0cf7b3215273756fee8912834792aac1b2f3000238f841d7a1eeeec0",
+        "elapsed_seconds": 12.289756774902344,
+        "raw_directory": "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/codex/E2-20261110-manual-manual-10",
+        "malformed_event_lines": 0,
+        "final_response": "{\"policy\":\"permit (\\n    principal is Person,\\n    action == Action::\\\"openEscrowFile\\\",\\n    resource is EscrowFile\\n) when {\\n    principal.isEscrowOfficer\\n};\\n\\npermit (\\n    principal is Person,\\n    action == Action::\\\"approveClearToClose\\\",\\n    resource is EscrowFile\\n) when {\\n    principal.isTitleOfficer || principal.isEscrowManager\\n};\\n\\npermit (\\n    principal is Person,\\n    action == Action::\\\"viewAuditLog\\\",\\n    resource is AuditLog\\n) when {\\n    principal.isAuditor\\n};\\n\\nforbid (\\n    principal is Person,\\n    action == Action::\\\"approveClearToClose\\\",\\n    resource is EscrowFile\\n) when {\\n    resource.openedBy == principal\\n};\\n\\nforbid (\\n    principal is Person,\\n    action == Action::\\\"approveClearToClose\\\",\\n    resource is EscrowFile\\n) when {\\n    !resource.titleCleared\\n};\\n\\nforbid (\\n    principal is Person,\\n    action,\\n    resource\\n) when {\\n    principal.isAuditor && action != Action::\\\"viewAuditLog\\\"\\n};\"}",
+        "raw_sha256": {
+          "final.txt": "3cde6bd635ea242c7541a0a8e7b5c713715f14a14269cd11ec92daf9ad30e5e6",
+          "stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "events.jsonl": "1b8882b565d085bfb9e27e753b92971dc3665063ad8cd1d493af0d054ed0d88a",
+          "schema.json": "789054a4b0cda04d99b22fd17820b0656a4adf0e70cf17c14b8d37f59560b43a"
+        }
+      },
+      "score": {
+        "scenario_id": "escrow_disbursement-approveClearToClose-T2-008",
+        "cache_key": "7bceef25689cd08be92d09d545732facb40c5473b5771c4dfa155d3092f81bbe",
+        "verifier_version": "f9d67ee8f0a3920a13240774a30ca4c818f964d7b8370f1e8a7fd1e1e38bd5c4",
+        "status": "SEMANTIC_FAIL",
+        "syntax_valid": true,
+        "schema_valid": true,
+        "checks": [
+          {
+            "name": "overlapping_escrow_and_senior_officer_can_open_file",
+            "type": "floor",
+            "status": "FAIL",
+            "elapsed_seconds": 0.06320304097607732,
+            "raw_sha256": "4c46e25b052530c86fa3f7b7250e2dca676d0fcfa024f81e1bfe6b6a9054fb73"
+          },
+          {
+            "name": "overlapping_senior_and_manager_can_approve_independent_file",
+            "type": "floor",
+            "status": "PASS",
+            "elapsed_seconds": 0.012450540903955698,
+            "raw_sha256": "a1cdd3d1093ed788fa9b7c6a52463a8d331337bbc482ab79a9e5573bf1f2136d"
+          },
+          {
+            "name": "open_file_overlap_roles_limited_to_escrow_officer_slice",
+            "type": "implies",
+            "status": "FAIL",
+            "elapsed_seconds": 0.015014166943728924,
+            "raw_sha256": "454c2b956f238e826eb4ca9e517f93e090ae7cc7cc39c994491f46825ffee110"
+          },
+          {
+            "name": "approve_clear_to_close_limited_to_independent_title_or_manager",
+            "type": "implies",
+            "status": "PASS",
+            "elapsed_seconds": 0.012290375074371696,
+            "raw_sha256": "1135804ff38bf554a797c95813ce4996615780eb5ab1d41c213f94136cd0bfa4"
+          },
+          {
+            "name": "escrow_officer_can_open_own_escrow_file",
+            "type": "floor",
+            "status": "FAIL",
+            "elapsed_seconds": 0.014637709013186395,
+            "raw_sha256": "6ed26a16da5324a2705ffe603b28ea95a987432c10fb77b75744ce2fe4c3b9db"
+          },
+          {
+            "name": "title_or_manager_can_approve_independent_title_cleared_file",
+            "type": "floor",
+            "status": "PASS",
+            "elapsed_seconds": 0.012263833079487085,
+            "raw_sha256": "a88cfd171f4e9f15e52de167d240fb2fcc776473fcc43d3d074fba23f36dc158"
+          },
+          {
+            "name": "approve_from_p0008_limited_to_title_or_manager_independent_title_cleared",
+            "type": "implies",
+            "status": "PASS",
+            "elapsed_seconds": 0.011109582963399589,
+            "raw_sha256": "41287cdb0bbaa2041965c24fc1d3b10098b8660cf05418c2c7becd41c2e923c9"
+          },
+          {
+            "name": "clear_to_close_approver_must_not_have_opened_file",
+            "type": "implies",
+            "status": "PASS",
+            "elapsed_seconds": 0.011216707993298769,
+            "raw_sha256": "ea12ab126340475f8665a077c5fa97a3f3b901fb6679db0ab8d0a4253a6fa1e2"
+          },
+          {
+            "name": "clear_to_close_refuse_title_encumbrances",
+            "type": "implies",
+            "status": "PASS",
+            "elapsed_seconds": 0.010882082977332175,
+            "raw_sha256": "b2a6c5f6dcb188e3d1a48726159f7e704f5c455bb7fa4a478744731aa7311da1"
+          },
+          {
+            "name": "auditor_can_view_audit_log",
+            "type": "floor",
+            "status": "PASS",
+            "elapsed_seconds": 0.008079165942035615,
+            "raw_sha256": "7c07b7fa0e02cd8d2244a81188e73dabe68e40034ca983af84ad10ec35f97f10"
+          },
+          {
+            "name": "view_audit_log_limited_to_auditors",
+            "type": "implies",
+            "status": "PASS",
+            "elapsed_seconds": 0.008176916977390647,
+            "raw_sha256": "085dd24938feddebf5e36f3a3ab5ca4dcc7bd2919a6dfc66c4e58f0bed57d550"
+          },
+          {
+            "name": "auditor_must_not_approve_clear_to_close",
+            "type": "implies",
+            "status": "PASS",
+            "elapsed_seconds": 0.01080775004811585,
+            "raw_sha256": "a0f527e1dd8674f3e9d11b289f35517e79763be23d39c3fedc4d3e9e265af8bc"
+          },
+          {
+            "name": "title_officer_can_approve_when_no_prohibitions_apply",
+            "type": "floor",
+            "status": "PASS",
+            "elapsed_seconds": 0.011059209005907178,
+            "raw_sha256": "3d18fafb69a98c425c6b763119a8d0a8fa682efea279afe317d94ad0145ce82f"
+          },
+          {
+            "name": "title_officer_success_limited_to_approved_clear_to_close_slice",
+            "type": "implies",
+            "status": "PASS",
+            "elapsed_seconds": 0.011208125040866435,
+            "raw_sha256": "1e822608b5581da4423c53e8089ebb5401afe9331e96d324c526e937cc971c2f"
+          }
+        ],
+        "semantic_check_count": 14,
+        "raw_directory": "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/verifier/7bceef25689cd08be92d09d545732facb40c5473b5771c4dfa155d3092f81bbe",
+        "confirmed_overgrant": true,
+        "confirmed_overdeny": true
+      }
+    },
+    {
+      "task_id": "E2-20261110-manual-manual-11",
+      "scenario_id": "lms_course_content-viewModule-T3-034",
+      "method": "Manual",
+      "generation": {
+        "status": "COMPLETED",
+        "returncode": 0,
+        "turns_started": 1,
+        "turns_completed": 1,
+        "tool_events": 0,
+        "errors": [],
+        "input_tokens": 9595,
+        "cached_input_tokens": 0,
+        "output_tokens": 362,
+        "reasoning_output_tokens": 185,
+        "runtime_warnings": [
+          {
+            "type": "item.completed",
+            "item": {
+              "id": "item_0",
+              "type": "error",
+              "message": "Under-development features enabled: skip_host_skill_discovery. Under-development features are incomplete and may behave unpredictably. To suppress this warning, set `suppress_unstable_features_warning = true` in /Users/liuyuxiang/.codex/config.toml."
+            }
+          }
+        ],
+        "effective_model": null,
+        "underlying_requests": null,
+        "truncated": null,
+        "task_id": "E2-20261110-manual-manual-11",
+        "cache_key": "8f477a4d41c6ad17959d610ede6ac8aa0e04f7fc0a6da861975875d7186dad79",
+        "elapsed_seconds": 11.742297887802124,
+        "raw_directory": "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/codex/E2-20261110-manual-manual-11",
+        "malformed_event_lines": 0,
+        "final_response": "{\"policy\":\"permit (\\n    principal is User,\\n    action == Action::\\\"viewModule\\\",\\n    resource is Module\\n)\\nwhen {\\n    principal.roles.containsAny([\\n        Role::\\\"instructorOfRecord\\\",\\n        Role::\\\"teachingAssistant\\\",\\n        Role::\\\"learner\\\",\\n        Role::\\\"coordinator\\\"\\n    ])\\n};\\n\\nforbid (\\n    principal is User,\\n    action == Action::\\\"viewModule\\\",\\n    resource is Module\\n)\\nwhen {\\n    !context.fromInstitutionNetwork &&\\n    (\\n        context.currentTime < resource.releaseTime ||\\n        resource.status == ModuleStatus::\\\"draft\\\" ||\\n        resource.status == ModuleStatus::\\\"scheduled\\\"\\n    )\\n};\"}",
+        "raw_sha256": {
+          "final.txt": "6c1c961c86a2ebe2919c20117035511fcaefcee339d20fd459b61f47435b366e",
+          "stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "events.jsonl": "1af022f66dc2d7c5e2d9b6b76b440eca2400f8ea1b53d79da5f3f2b0fe1e905d",
+          "schema.json": "789054a4b0cda04d99b22fd17820b0656a4adf0e70cf17c14b8d37f59560b43a"
+        }
+      },
+      "score": {
+        "scenario_id": "lms_course_content-viewModule-T3-034",
+        "cache_key": "c79da2958745db46cf8b6946d440d1be505a0cad0ddd13254f8fd248c6c4a055",
+        "verifier_version": "f9d67ee8f0a3920a13240774a30ca4c818f964d7b8370f1e8a7fd1e1e38bd5c4",
+        "status": "SEMANTIC_FAIL",
+        "syntax_valid": true,
+        "schema_valid": true,
+        "checks": [
+          {
+            "name": "roles_may_view_released_module_off_network_floor",
+            "type": "floor",
+            "status": "FAIL",
+            "elapsed_seconds": 0.02255558397155255,
+            "raw_sha256": "3a663c8d13533f594185a2f40a681708b621c2760737ffce335bafb7ab4e6ec0"
+          },
+          {
+            "name": "roles_may_view_draft_or_scheduled_module_on_network_floor",
+            "type": "floor",
+            "status": "PASS",
+            "elapsed_seconds": 0.016140250023454428,
+            "raw_sha256": "85f160a7eddc0755a5d93373275b1db22631ad7e2161dc3803fafa68c50ba673"
+          },
+          {
+            "name": "view_module_bounded_to_roles_status_and_network_ceiling",
+            "type": "implies",
+            "status": "PASS",
+            "elapsed_seconds": 0.014805166982114315,
+            "raw_sha256": "db0b44194cd323399d5cb45a1e1597c464787f895d8ec6031b8a9f9b996d734d"
+          },
+          {
+            "name": "no_draft_or_scheduled_module_off_network_disjointness",
+            "type": "implies",
+            "status": "PASS",
+            "elapsed_seconds": 0.011160416062921286,
+            "raw_sha256": "5cd9f096d4fb64a84637ab932fb48050be4afeffb7f4bddd358236c14c61169a"
+          },
+          {
+            "name": "instructor_of_record_may_view_non_prohibited_module_floor",
+            "type": "floor",
+            "status": "FAIL",
+            "elapsed_seconds": 0.017167750047519803,
+            "raw_sha256": "9ba2002031ddab450486a6e22a3354b0817dabfae7813f84646189ad9f143e76"
+          },
+          {
+            "name": "instructor_of_record_view_module_non_prohibited_ceiling",
+            "type": "implies",
+            "status": "PASS",
+            "elapsed_seconds": 0.014307709061540663,
+            "raw_sha256": "98719eb398c72fab696f74bb75e4f6a1b92b44f5d44a13f2e4bcf02ed01fe145"
+          }
+        ],
+        "semantic_check_count": 6,
+        "raw_directory": "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/verifier/c79da2958745db46cf8b6946d440d1be505a0cad0ddd13254f8fd248c6c4a055",
+        "confirmed_overgrant": false,
+        "confirmed_overdeny": true
+      }
+    },
+    {
+      "task_id": "E2-20261110-manual-manual-12",
+      "scenario_id": "student_records-viewRecord-T3-048",
+      "method": "Manual",
+      "generation": {
+        "status": "COMPLETED",
+        "returncode": 0,
+        "turns_started": 1,
+        "turns_completed": 1,
+        "tool_events": 0,
+        "errors": [],
+        "input_tokens": 9567,
+        "cached_input_tokens": 0,
+        "output_tokens": 274,
+        "reasoning_output_tokens": 106,
+        "runtime_warnings": [
+          {
+            "type": "item.completed",
+            "item": {
+              "id": "item_0",
+              "type": "error",
+              "message": "Under-development features enabled: skip_host_skill_discovery. Under-development features are incomplete and may behave unpredictably. To suppress this warning, set `suppress_unstable_features_warning = true` in /Users/liuyuxiang/.codex/config.toml."
+            }
+          }
+        ],
+        "effective_model": null,
+        "underlying_requests": null,
+        "truncated": null,
+        "task_id": "E2-20261110-manual-manual-12",
+        "cache_key": "4dae1b494a5ba796f7a5fa8fecfeb3d3f074307d14617ae8b038e4b262cfae10",
+        "elapsed_seconds": 9.622009038925171,
+        "raw_directory": "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/codex/E2-20261110-manual-manual-12",
+        "malformed_event_lines": 0,
+        "final_response": "{\"policy\":\"permit (\\n    principal is Instructor,\\n    action == Action::\\\"viewStudentRecord\\\",\\n    resource is StudentRecord\\n);\\n\\npermit (\\n    principal is Registrar,\\n    action == Action::\\\"viewStudentRecord\\\",\\n    resource is StudentRecord\\n)\\nwhen {\\n    resource.status == \\\"withdrawn\\\" &&\\n    resource.ferpaDirectoryInformationBlock\\n};\\n\\nforbid (\\n    principal,\\n    action == Action::\\\"viewStudentRecord\\\",\\n    resource is StudentRecord\\n)\\nwhen {\\n    (principal is Instructor || principal is Student || principal is Parent) &&\\n    resource.status == \\\"withdrawn\\\" &&\\n    resource.ferpaDirectoryInformationBlock\\n};\"}",
+        "raw_sha256": {
+          "final.txt": "29769221147b8aa04986306df84b09dbddd82ac1c23728bec323b7747afd131f",
+          "stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "events.jsonl": "b41d31110f4fd2ad57a5d6b58e1e3d5b5fa409bdd1f7f58b1a818de738990e2b",
+          "schema.json": "789054a4b0cda04d99b22fd17820b0656a4adf0e70cf17c14b8d37f59560b43a"
+        }
+      },
+      "score": {
+        "scenario_id": "student_records-viewRecord-T3-048",
+        "cache_key": "78d31076c451676cdd05c1aecef5b9d6c87d6482f449024f6d130c917c5d063c",
+        "verifier_version": "f9d67ee8f0a3920a13240774a30ca4c818f964d7b8370f1e8a7fd1e1e38bd5c4",
+        "status": "PASS",
+        "syntax_valid": true,
+        "schema_valid": true,
+        "checks": [
+          {
+            "name": "no_view_withdrawn_blocked_student_records",
+            "type": "implies",
+            "status": "PASS",
+            "elapsed_seconds": 0.01286195800639689,
+            "raw_sha256": "84240307448f29bcc111ebf1d25930d704b60171c3095ee5b74be1b187e9bb13"
+          },
+          {
+            "name": "registrar_can_view_withdrawn_blocked_student_records",
+            "type": "floor",
+            "status": "PASS",
+            "elapsed_seconds": 0.009496957994997501,
+            "raw_sha256": "3f573203c8c993f61968077d138b832afd89784155a495e02f2a4233a7fa4ed3"
+          },
+          {
+            "name": "withdrawn_blocked_student_record_viewing_ceiling",
+            "type": "implies",
+            "status": "PASS",
+            "elapsed_seconds": 0.008283708011731505,
+            "raw_sha256": "e08cd220597de188d9817b5d2c949718ed17842aba12a4101b1692f53bc578ac"
+          },
+          {
+            "name": "instructor_can_view_student_record_without_withdrawn_block_prohibition",
+            "type": "floor",
+            "status": "PASS",
+            "elapsed_seconds": 0.0076356250792741776,
+            "raw_sha256": "42eafebcfb08201b0b2c7bb805dac94a885ead18d90126259f9bade0c0efdec8"
+          },
+          {
+            "name": "instructor_student_record_viewing_nonprohibited_ceiling",
+            "type": "implies",
+            "status": "PASS",
+            "elapsed_seconds": 0.0064999168971553445,
+            "raw_sha256": "fed4311c4f421f94731120f3c4bc9a098664218b9de0cebab27fa1f08d2947cb"
+          }
+        ],
+        "semantic_check_count": 5,
+        "raw_directory": "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/verifier/78d31076c451676cdd05c1aecef5b9d6c87d6482f449024f6d130c917c5d063c",
+        "confirmed_overgrant": false,
+        "confirmed_overdeny": false
+      }
+    },
+    {
+      "task_id": "E2-20261110-manual-manual-13",
+      "scenario_id": "kubernetes_rbac-revokeToken-T2-001",
+      "method": "Manual",
+      "generation": {
+        "status": "COMPLETED",
+        "returncode": 0,
+        "turns_started": 1,
+        "turns_completed": 1,
+        "tool_events": 0,
+        "errors": [],
+        "input_tokens": 9791,
+        "cached_input_tokens": 0,
+        "output_tokens": 234,
+        "reasoning_output_tokens": 148,
+        "runtime_warnings": [
+          {
+            "type": "item.completed",
+            "item": {
+              "id": "item_0",
+              "type": "error",
+              "message": "Under-development features enabled: skip_host_skill_discovery. Under-development features are incomplete and may behave unpredictably. To suppress this warning, set `suppress_unstable_features_warning = true` in /Users/liuyuxiang/.codex/config.toml."
+            }
+          }
+        ],
+        "effective_model": null,
+        "underlying_requests": null,
+        "truncated": null,
+        "task_id": "E2-20261110-manual-manual-13",
+        "cache_key": "ab9eba964b7ef1cb74510bbce42370c5de8b87822f933aa81f5837a8f466a548",
+        "elapsed_seconds": 9.58317494392395,
+        "raw_directory": "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/codex/E2-20261110-manual-manual-13",
+        "malformed_event_lines": 0,
+        "final_response": "{\"policy\":\"permit (\\n    principal is Requester,\\n    action == Action::\\\"revokeServiceAccountToken\\\",\\n    resource is ServiceAccountToken\\n)\\nwhen {\\n    principal.roles.contains(Role::\\\"clusterOperator\\\") &&\\n    principal.teamGroups.contains(resource.boundNamespace.teamGroup) &&\\n    principal == resource.issuer\\n};\"}",
+        "raw_sha256": {
+          "final.txt": "c96b0d849f1c6fe7dd5ce1606f33f07224d8421ef39128d644876ea6fae87314",
+          "stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "events.jsonl": "edbb4c06a0b8d62d6da05886bc1ea37beb038586e2d19cebf563777060ad4d34",
+          "schema.json": "789054a4b0cda04d99b22fd17820b0656a4adf0e70cf17c14b8d37f59560b43a"
+        }
+      },
+      "score": {
+        "scenario_id": "kubernetes_rbac-revokeToken-T2-001",
+        "cache_key": "1d83d7e7ff9eca6b1289db84a3251a96b1e6970c46a218624e47ae29e5851af2",
+        "verifier_version": "f9d67ee8f0a3920a13240774a30ca4c818f964d7b8370f1e8a7fd1e1e38bd5c4",
+        "status": "PASS",
+        "syntax_valid": true,
+        "schema_valid": true,
+        "checks": [
+          {
+            "name": "cluster_operator_issuer_team_member_can_revoke_token",
+            "type": "floor",
+            "status": "PASS",
+            "elapsed_seconds": 0.05298229097388685,
+            "raw_sha256": "ee1482be4bae2bff5cc25bf364ec2f05e09a902403ccb2822700845d5deb2967"
+          },
+          {
+            "name": "revoke_token_only_by_cluster_operator_issuer",
+            "type": "implies",
+            "status": "PASS",
+            "elapsed_seconds": 0.01022149994969368,
+            "raw_sha256": "984e42e001ece9c947f54873b7fcb39e8f906f2040f716389a6d0cd7d444fd93"
+          },
+          {
+            "name": "revoke_token_requires_bound_namespace_team_membership",
+            "type": "implies",
+            "status": "PASS",
+            "elapsed_seconds": 0.011334459064528346,
+            "raw_sha256": "eabcdcc81c306152d9d665cbab8adc25ae7a8ee61b48582dfe6ec9736417425a"
+          },
+          {
+            "name": "workload_packet_revoke_token_within_issuer_team_boundary",
+            "type": "implies",
+            "status": "PASS",
+            "elapsed_seconds": 0.013302208040840924,
+            "raw_sha256": "2f088f9dcc7054ae1cf01d08a1410e942a284af82bf5ec8512d47b0de5fa4aac"
+          },
+          {
+            "name": "namespace_secret_packet_revoke_token_within_issuer_team_boundary",
+            "type": "implies",
+            "status": "PASS",
+            "elapsed_seconds": 0.011008957982994616,
+            "raw_sha256": "1e6538117fe368e06ee79bc4731f3bac9e3abfa3553e27cdbcdba20e10862395"
+          },
+          {
+            "name": "service_account_token_packet_revoke_within_issuer_team_boundary",
+            "type": "implies",
+            "status": "PASS",
+            "elapsed_seconds": 0.010389000060968101,
+            "raw_sha256": "fd9dc025e587b7889cecb3b349ff772937b5ae082f0f556ecf8b195d94893609"
+          },
+          {
+            "name": "requester_packet_revoke_within_issuer_team_boundary",
+            "type": "implies",
+            "status": "PASS",
+            "elapsed_seconds": 0.009895041002891958,
+            "raw_sha256": "b18f8bde2a79ab78cd3454bee905f94d5b3987b926b9e2f03fbf834ed9a77c0e"
+          },
+          {
+            "name": "cluster_operator_issuer_team_member_revoke_liveness",
+            "type": "liveness-overlap",
+            "status": "PASS",
+            "elapsed_seconds": 0.013073417008854449,
+            "raw_sha256": "67e12cbe1fdbb0fb35f9255b0694450f087aa0c8149754c45adf810c787f8b40"
+          }
+        ],
+        "semantic_check_count": 8,
+        "raw_directory": "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/verifier/1d83d7e7ff9eca6b1289db84a3251a96b1e6970c46a218624e47ae29e5851af2",
+        "confirmed_overgrant": false,
+        "confirmed_overdeny": false
+      }
+    },
+    {
+      "task_id": "E2-20261110-manual-manual-14",
+      "scenario_id": "smart_building-approveCommission-T3-018",
+      "method": "Manual",
+      "generation": {
+        "status": "COMPLETED",
+        "returncode": 0,
+        "turns_started": 1,
+        "turns_completed": 1,
+        "tool_events": 0,
+        "errors": [],
+        "input_tokens": 9605,
+        "cached_input_tokens": 0,
+        "output_tokens": 320,
+        "reasoning_output_tokens": 95,
+        "runtime_warnings": [
+          {
+            "type": "item.completed",
+            "item": {
+              "id": "item_0",
+              "type": "error",
+              "message": "Under-development features enabled: skip_host_skill_discovery. Under-development features are incomplete and may behave unpredictably. To suppress this warning, set `suppress_unstable_features_warning = true` in /Users/liuyuxiang/.codex/config.toml."
+            }
+          }
+        ],
+        "effective_model": null,
+        "underlying_requests": null,
+        "truncated": null,
+        "task_id": "E2-20261110-manual-manual-14",
+        "cache_key": "cd709b3cab629941763e3980889e30bb1d0eb0e448b20df702a01c6bc1a5f009",
+        "elapsed_seconds": 10.318596839904785,
+        "raw_directory": "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/codex/E2-20261110-manual-manual-14",
+        "malformed_event_lines": 0,
+        "final_response": "{\"policy\":\"permit (\\n    principal is User,\\n    action == Action::\\\"approveCommissionRequest\\\",\\n    resource is CommissionRequest\\n)\\nwhen {\\n    principal.roles.contains(\\\"facility_manager\\\")\\n};\\n\\nforbid (\\n    principal is User,\\n    action == Action::\\\"approveCommissionRequest\\\",\\n    resource is CommissionRequest\\n)\\nwhen {\\n    principal.roles.contains(\\\"facility_manager\\\") &&\\n    resource.status != \\\"requested\\\"\\n};\\n\\nforbid (\\n    principal is User,\\n    action == Action::\\\"approveCommissionRequest\\\",\\n    resource is CommissionRequest\\n)\\nwhen {\\n    principal.roles.contains(\\\"facility_manager\\\") &&\\n    !context.fromOnSiteBuildingNetwork\\n};\\n\\nforbid (\\n    principal is User,\\n    action == Action::\\\"approveCommissionRequest\\\",\\n    resource is CommissionRequest\\n)\\nwhen {\\n    principal.roles.contains(\\\"facility_manager\\\") &&\\n    !context.withinPermittedWindow\\n};\"}",
+        "raw_sha256": {
+          "final.txt": "e032d38d51b2b8d5341477f67b3f6e7327f8f6840fac52a594cf8574420754b7",
+          "stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "events.jsonl": "8fb04c42c26bebab002096f58133e95344469b181fbd20514175f50f335c2d6e",
+          "schema.json": "789054a4b0cda04d99b22fd17820b0656a4adf0e70cf17c14b8d37f59560b43a"
+        }
+      },
+      "score": {
+        "scenario_id": "smart_building-approveCommission-T3-018",
+        "cache_key": "4e4d5a51bbdc539333cb74166e529d8ca164b103495a15327a08b7eb9bc6b4f8",
+        "verifier_version": "f9d67ee8f0a3920a13240774a30ca4c818f964d7b8370f1e8a7fd1e1e38bd5c4",
+        "status": "PASS",
+        "syntax_valid": true,
+        "schema_valid": true,
+        "checks": [
+          {
+            "name": "dual_role_facility_manager_approval_window_floor",
+            "type": "floor",
+            "status": "PASS",
+            "elapsed_seconds": 0.014702291926369071,
+            "raw_sha256": "e039b4a04a881e99adef59b683440a6f3d947f456765cb6be8ed006097d643c4"
+          },
+          {
+            "name": "dual_role_facility_manager_approval_ceiling",
+            "type": "implies",
+            "status": "PASS",
+            "elapsed_seconds": 0.01170749997254461,
+            "raw_sha256": "2574a7afce1bf647863c4b9ffc3f454e4fb961412339a94cae5b2ec188cc523f"
+          },
+          {
+            "name": "facility_manager_approval_not_requested_disjointness",
+            "type": "implies",
+            "status": "PASS",
+            "elapsed_seconds": 0.010463917045854032,
+            "raw_sha256": "4f4025b4e543c0a8d9350c1b9a2eaa402c164a191cbfe140e4d8054621e0db73"
+          },
+          {
+            "name": "facility_manager_approval_onsite_window_floor",
+            "type": "floor",
+            "status": "PASS",
+            "elapsed_seconds": 0.01014149992261082,
+            "raw_sha256": "18b598349e4e51bdddf0d1ba648b351039650becaac52c3907b15efd699a7af2"
+          },
+          {
+            "name": "facility_manager_approval_offsite_network_disjointness",
+            "type": "implies",
+            "status": "PASS",
+            "elapsed_seconds": 0.009892750065773726,
+            "raw_sha256": "643c92b89dad8ff34e1730236ef1a53e500f6ebd82314a72bcead7d450e27643"
+          },
+          {
+            "name": "facility_manager_approval_outside_window_disjointness",
+            "type": "implies",
+            "status": "PASS",
+            "elapsed_seconds": 0.009548333007842302,
+            "raw_sha256": "6c5607b791811c1616a891eb810f19eb9ec23ad029797f3cdefa6ab0ae1ad252"
+          },
+          {
+            "name": "facility_manager_no_prohibition_approval_ceiling",
+            "type": "implies",
+            "status": "PASS",
+            "elapsed_seconds": 0.009650042047724128,
+            "raw_sha256": "19c1983340a94ba174b1cf18c32558a5c17c92fd96462c414ffed33d6f22eee3"
+          },
+          {
+            "name": "facility_manager_approval_success_liveness",
+            "type": "liveness-overlap",
+            "status": "PASS",
+            "elapsed_seconds": 0.01427550008520484,
+            "raw_sha256": "9da8fe5993d6d8f15301a6a13ec4b79490ef4a5413b49192fde012ae6c16a1b4"
+          }
+        ],
+        "semantic_check_count": 8,
+        "raw_directory": "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/verifier/4e4d5a51bbdc539333cb74166e529d8ca164b103495a15327a08b7eb9bc6b4f8",
+        "confirmed_overgrant": false,
+        "confirmed_overdeny": false
+      }
+    },
+    {
+      "task_id": "E2-20261110-manual-manual-15",
+      "scenario_id": "invoice_approval-approveInvoice-T3-080",
+      "method": "Manual",
+      "generation": {
+        "status": "COMPLETED",
+        "returncode": 0,
+        "turns_started": 1,
+        "turns_completed": 1,
+        "tool_events": 0,
+        "errors": [],
+        "input_tokens": 9587,
+        "cached_input_tokens": 0,
+        "output_tokens": 234,
+        "reasoning_output_tokens": 69,
+        "runtime_warnings": [
+          {
+            "type": "item.completed",
+            "item": {
+              "id": "item_0",
+              "type": "error",
+              "message": "Under-development features enabled: skip_host_skill_discovery. Under-development features are incomplete and may behave unpredictably. To suppress this warning, set `suppress_unstable_features_warning = true` in /Users/liuyuxiang/.codex/config.toml."
+            }
+          }
+        ],
+        "effective_model": null,
+        "underlying_requests": null,
+        "truncated": null,
+        "task_id": "E2-20261110-manual-manual-15",
+        "cache_key": "df891f09cb23b2234e3bef198fbe9379464b7e2835949e666f2c69075bbbf56c",
+        "elapsed_seconds": 8.718936920166016,
+        "raw_directory": "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/codex/E2-20261110-manual-manual-15",
+        "malformed_event_lines": 0,
+        "final_response": "{\"policy\":\"permit (\\n    principal is User,\\n    action == Action::\\\"approveInvoice\\\",\\n    resource is Invoice\\n)\\nwhen {\\n    principal.roles.contains(Role::\\\"Approver\\\") ||\\n    principal.roles.contains(Role::\\\"FinanceManager\\\")\\n};\\n\\nforbid (\\n    principal is User,\\n    action == Action::\\\"approveInvoice\\\",\\n    resource is Invoice\\n)\\nwhen {\\n    (principal.roles.contains(Role::\\\"Approver\\\") ||\\n     principal.roles.contains(Role::\\\"FinanceManager\\\")) &&\\n    context.isBusinessHours &&\\n    !resource.lineItemCountCrossesThreshold &&\\n    resource.status == InvoiceStatus::\\\"Unsubmitted\\\"\\n};\"}",
+        "raw_sha256": {
+          "final.txt": "a2ab81368d9077c21f14b4b32ee1db4064017dc249c639f5c8be2d13e849492b",
+          "stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "events.jsonl": "4213fa59e67741d3368f427e532465cc8ba1fa20cd2fa8f364cdf650fe7cefb2",
+          "schema.json": "789054a4b0cda04d99b22fd17820b0656a4adf0e70cf17c14b8d37f59560b43a"
+        }
+      },
+      "score": {
+        "scenario_id": "invoice_approval-approveInvoice-T3-080",
+        "cache_key": "753985799df6dc8540352dd5f37b93eb866c71c10b56d7c48bcf1d75a9f66e37",
+        "verifier_version": "f9d67ee8f0a3920a13240774a30ca4c818f964d7b8370f1e8a7fd1e1e38bd5c4",
+        "status": "SEMANTIC_FAIL",
+        "syntax_valid": true,
+        "schema_valid": true,
+        "checks": [
+          {
+            "name": "clerk_approver_coholder_approval_floor",
+            "type": "floor",
+            "status": "PASS",
+            "elapsed_seconds": 0.01341216592118144,
+            "raw_sha256": "233c5c05114bff654c475d156237e0dcf09c060b8eed3ef3fe8087faf9f9a724"
+          },
+          {
+            "name": "clerk_approver_coholder_any_threshold_status_ceiling",
+            "type": "implies",
+            "status": "FAIL",
+            "elapsed_seconds": 0.01975733391009271,
+            "raw_sha256": "d8e10e8ef58d952ab8000f815699911470759258b440f001ee0dc28a1651b16a"
+          },
+          {
+            "name": "approver_finance_submitted_threshold_approval_floor",
+            "type": "floor",
+            "status": "PASS",
+            "elapsed_seconds": 0.012588666984811425,
+            "raw_sha256": "544bc06cccbc2cfda3b5bd00237c8cf58d59aed14940652b370316598edfef3a"
+          },
+          {
+            "name": "approver_finance_unsubmitted_business_hours_threshold_disjointness",
+            "type": "implies",
+            "status": "PASS",
+            "elapsed_seconds": 0.011967916041612625,
+            "raw_sha256": "ae8a8f2234d7ed63a95b7edb9307e4e38cce517b120b600a8822fcff9c063ace"
+          },
+          {
+            "name": "approver_threshold_crossing_submitted_requirement_exception_floor",
+            "type": "floor",
+            "status": "PASS",
+            "elapsed_seconds": 0.012377333012409508,
+            "raw_sha256": "1ed26bf8261083cdf1ffdbe827cda3a087045dc67d6fe2afccf8784c3306f6f8"
+          },
+          {
+            "name": "approver_finance_business_hours_threshold_exception_approval_ceiling",
+            "type": "implies",
+            "status": "PASS",
+            "elapsed_seconds": 0.01331279193982482,
+            "raw_sha256": "7569406d669343c19c8d928bed5ac189aad502f677971fac6432331ff3f4b0bd"
+          },
+          {
+            "name": "approver_threshold_crossing_submitted_invoice_approval_floor",
+            "type": "floor",
+            "status": "PASS",
+            "elapsed_seconds": 0.011604541912674904,
+            "raw_sha256": "cd6e3e6c04481594720a9d0bdfbeecc5ab9d3d993a7e8fb4b6fbbe19b41e3478"
+          },
+          {
+            "name": "approver_invoice_approval_success_liveness",
+            "type": "liveness-overlap",
+            "status": "PASS",
+            "elapsed_seconds": 0.01574650011025369,
+            "raw_sha256": "a48b6e64f4df1bb77624860282e48160bbe06c9b201acf4df88c7563cf53fa40"
+          }
+        ],
+        "semantic_check_count": 8,
+        "raw_directory": "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/verifier/753985799df6dc8540352dd5f37b93eb866c71c10b56d7c48bcf1d75a9f66e37",
+        "confirmed_overgrant": true,
+        "confirmed_overdeny": false
+      }
+    },
+    {
+      "task_id": "E2-20261110-manual-manual-16",
+      "scenario_id": "shipment_dispatch-chain2-T5-037",
+      "method": "Manual",
+      "generation": {
+        "status": "COMPLETED",
+        "returncode": 0,
+        "turns_started": 1,
+        "turns_completed": 1,
+        "tool_events": 0,
+        "errors": [],
+        "input_tokens": 9827,
+        "cached_input_tokens": 0,
+        "output_tokens": 900,
+        "reasoning_output_tokens": 620,
+        "runtime_warnings": [
+          {
+            "type": "item.completed",
+            "item": {
+              "id": "item_0",
+              "type": "error",
+              "message": "Under-development features enabled: skip_host_skill_discovery. Under-development features are incomplete and may behave unpredictably. To suppress this warning, set `suppress_unstable_features_warning = true` in /Users/liuyuxiang/.codex/config.toml."
+            }
+          }
+        ],
+        "effective_model": null,
+        "underlying_requests": null,
+        "truncated": null,
+        "task_id": "E2-20261110-manual-manual-16",
+        "cache_key": "8481fa0fe0c2ccbea960ab0704bb9fea8d7208f97ca5a4c485653e88bddd6e5a",
+        "elapsed_seconds": 23.944275379180908,
+        "raw_directory": "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/codex/E2-20261110-manual-manual-16",
+        "malformed_event_lines": 0,
+        "final_response": "{\"policy\":\"permit (\\n    principal is User,\\n    action == Action::\\\"dispatchShipment\\\",\\n    resource is Shipment\\n)\\nwhen {\\n    principal.roles.contains(Role::\\\"Driver\\\") ||\\n    principal.roles.contains(Role::\\\"DispatchManager\\\")\\n};\\n\\nforbid (\\n    principal is User,\\n    action == Action::\\\"dispatchShipment\\\",\\n    resource is Shipment\\n)\\nwhen {\\n    principal == resource.planner &&\\n    principal == resource.driverOfRecord\\n}\\nunless {\\n    (context.fromDepotNetwork &&\\n     context has requestDepot &&\\n     context.requestDepot == resource.originDepot) ||\\n    context.trackingCodeCarriesAssignedCarrierPrefix\\n};\\n\\npermit (\\n    principal is User,\\n    action == Action::\\\"confirmDelivery\\\",\\n    resource is DeliveryReceipt\\n)\\nwhen {\\n    principal.roles.contains(Role::\\\"Driver\\\") ||\\n    principal.roles.contains(Role::\\\"DepotSupervisor\\\")\\n};\\n\\nforbid (\\n    principal is User,\\n    action == Action::\\\"confirmDelivery\\\",\\n    resource is DeliveryReceipt\\n)\\nwhen {\\n    principal != resource.shipment.driverOfRecord\\n}\\nunless {\\n    context.fromDepotNetwork\\n};\"}",
+        "raw_sha256": {
+          "final.txt": "1a488ae172c423b47cedaa56b26c52286116a5a069d93a48b37675fe67d1dec8",
+          "stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "events.jsonl": "71aee068765b2ab13def90fa496eace4669103fd9a98545ae71042ea0761c926",
+          "schema.json": "789054a4b0cda04d99b22fd17820b0656a4adf0e70cf17c14b8d37f59560b43a"
+        }
+      },
+      "score": {
+        "scenario_id": "shipment_dispatch-chain2-T5-037",
+        "cache_key": "d5bb28f99d3326bc12ff044587971cdbf76c3c1fcdcfd8c82ef35d98bcdc2605",
+        "verifier_version": "f9d67ee8f0a3920a13240774a30ca4c818f964d7b8370f1e8a7fd1e1e38bd5c4",
+        "status": "SEMANTIC_FAIL",
+        "syntax_valid": true,
+        "schema_valid": true,
+        "checks": [
+          {
+            "name": "confirm_delivery_by_dispatching_driver_floor",
+            "type": "floor",
+            "status": "FAIL",
+            "elapsed_seconds": 0.05515195894986391,
+            "raw_sha256": "ab861c6beee233992291a46dc3c89545323a81ce7576c3ea84ac8c02c45c558d"
+          },
+          {
+            "name": "confirm_delivery_driver_or_depot_network_exception_ceiling",
+            "type": "implies",
+            "status": "PASS",
+            "elapsed_seconds": 0.010248875012621284,
+            "raw_sha256": "309ebf2039cffe7d6bc09a904c2334690207e6179ea02cc80827f3f74a382f1c"
+          },
+          {
+            "name": "planner_driver_dispatch_from_origin_depot_network_floor",
+            "type": "floor",
+            "status": "FAIL",
+            "elapsed_seconds": 0.015245874994434416,
+            "raw_sha256": "bc977f3dc6ba0d5a35a0f5ecb98c6d2f804fd7524b0522b7310cf4993ffcd7ba"
+          },
+          {
+            "name": "planner_driver_dispatch_with_carrier_prefix_floor",
+            "type": "floor",
+            "status": "FAIL",
+            "elapsed_seconds": 0.015227959025651217,
+            "raw_sha256": "1b7470e83c3b35649c719ec0ed26fec511193e7d91112215688734fc4580ba8b"
+          },
+          {
+            "name": "dispatch_shipment_driver_union_ceiling",
+            "type": "implies",
+            "status": "FAIL",
+            "elapsed_seconds": 0.015052333008497953,
+            "raw_sha256": "fe1f5619a2293bd4942fdb747abae95172ee50b327593b8904d3111632424643"
+          },
+          {
+            "name": "delivery_receipt_confirm_driver_or_depot_network_exception_ceiling",
+            "type": "implies",
+            "status": "PASS",
+            "elapsed_seconds": 0.01072408293839544,
+            "raw_sha256": "595b8ca13d16ecd731f7a5480af66a4984db3fee01f188cc6ae5e7e8a3308768"
+          },
+          {
+            "name": "non_planner_driver_dispatch_floor",
+            "type": "floor",
+            "status": "PASS",
+            "elapsed_seconds": 0.011544750072062016,
+            "raw_sha256": "0586f91683a3dd9236e60839ad62a924dd22ff232736ffaf109a04e083789ed3"
+          },
+          {
+            "name": "dispatch_manager_as_driver_of_record_dispatch_floor",
+            "type": "floor",
+            "status": "PASS",
+            "elapsed_seconds": 0.010983541957102716,
+            "raw_sha256": "05fbfeaa603ba099abecfe7af6d3ab1e9e616ca5414796328cb5d3cbc83363fb"
+          },
+          {
+            "name": "planner_driver_dispatch_separation_disjointness",
+            "type": "implies",
+            "status": "PASS",
+            "elapsed_seconds": 0.011474625091068447,
+            "raw_sha256": "55842767d747bb14594dce7c787d46f18a7f87721b9716a6cc761d7d80b073a5"
+          },
+          {
+            "name": "carrier_prefix_dispatch_union_ceiling",
+            "type": "implies",
+            "status": "FAIL",
+            "elapsed_seconds": 0.014637208078056574,
+            "raw_sha256": "8b235fc884fdc50bf973a8d59333127db4e6282c1ab921d19d8e5f02ccf3e658"
+          },
+          {
+            "name": "confirm_delivery_depot_network_substitute_floor",
+            "type": "floor",
+            "status": "PASS",
+            "elapsed_seconds": 0.010071082971990108,
+            "raw_sha256": "7a111a6060ba84f7b37b6dfa33b3788c20b7f8a09db28868726ac43fff70c87b"
+          },
+          {
+            "name": "confirm_delivery_driver_or_depot_network_substitute_ceiling",
+            "type": "implies",
+            "status": "PASS",
+            "elapsed_seconds": 0.009809665963985026,
+            "raw_sha256": "ced025ec1f4b530297ac42777d19e7c737b02626d4727191f7ca61b5a7899edb"
+          }
+        ],
+        "semantic_check_count": 12,
+        "raw_directory": "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/verifier/d5bb28f99d3326bc12ff044587971cdbf76c3c1fcdcfd8c82ef35d98bcdc2605",
+        "confirmed_overgrant": true,
+        "confirmed_overdeny": true
+      }
+    },
+    {
+      "task_id": "E2-20261110-manual-manual-17",
+      "scenario_id": "smart_building-overrideSchedule-T4-001",
+      "method": "Manual",
+      "generation": {
+        "status": "COMPLETED",
+        "returncode": 0,
+        "turns_started": 1,
+        "turns_completed": 1,
+        "tool_events": 0,
+        "errors": [],
+        "input_tokens": 9733,
+        "cached_input_tokens": 0,
+        "output_tokens": 216,
+        "reasoning_output_tokens": 65,
+        "runtime_warnings": [
+          {
+            "type": "item.completed",
+            "item": {
+              "id": "item_0",
+              "type": "error",
+              "message": "Under-development features enabled: skip_host_skill_discovery. Under-development features are incomplete and may behave unpredictably. To suppress this warning, set `suppress_unstable_features_warning = true` in /Users/liuyuxiang/.codex/config.toml."
+            }
+          }
+        ],
+        "effective_model": null,
+        "underlying_requests": null,
+        "truncated": null,
+        "task_id": "E2-20261110-manual-manual-17",
+        "cache_key": "3051829e919a023a64449049158962f372fe0b793710b123a7b8459efff99807",
+        "elapsed_seconds": 8.7779541015625,
+        "raw_directory": "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/codex/E2-20261110-manual-manual-17",
+        "malformed_event_lines": 0,
+        "final_response": "{\"policy\":\"permit (\\n    principal is User,\\n    action == Action::\\\"overrideZoneSchedule\\\",\\n    resource is Zone\\n)\\nwhen {\\n    principal.roles.contains(Role::\\\"zoneController\\\") &&\\n    resource.assignedController == principal &&\\n    principal.controlTier >= resource.criticalityLevel &&\\n    resource.status != \\\"locked\\\"\\n};\\n\\nforbid (\\n    principal is User,\\n    action == Action::\\\"overrideZoneSchedule\\\",\\n    resource is Zone\\n)\\nwhen {\\n    principal.roles.contains(Role::\\\"maintenanceTechnician\\\") ||\\n    principal.roles.contains(Role::\\\"tenant\\\")\\n};\"}",
+        "raw_sha256": {
+          "final.txt": "552089cbc53946a33814729ca0cccec67dc2c15fa2d11b05d8360711496ab2c1",
+          "stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "events.jsonl": "62982227d1f383f34d53917f574fa1916d1db33ece846fe9055ed8e9ca34e46c",
+          "schema.json": "789054a4b0cda04d99b22fd17820b0656a4adf0e70cf17c14b8d37f59560b43a"
+        }
+      },
+      "score": {
+        "scenario_id": "smart_building-overrideSchedule-T4-001",
+        "cache_key": "48f70c11ceb0239bba1a77f2e8fd0a059101a8c110a6653531eb68c0526073e7",
+        "verifier_version": "f9d67ee8f0a3920a13240774a30ca4c818f964d7b8370f1e8a7fd1e1e38bd5c4",
+        "status": "PASS",
+        "syntax_valid": true,
+        "schema_valid": true,
+        "checks": [
+          {
+            "name": "override_zone_schedule_unlocked_controller_floor_repair",
+            "type": "floor",
+            "status": "PASS",
+            "elapsed_seconds": 0.01413829205557704,
+            "raw_sha256": "5aff02e3686bddff5bf70f36ad2039c2e9cce0289745368bb717c9caf48a8c38"
+          },
+          {
+            "name": "override_zone_schedule_bounded_to_controller_assignment_tier",
+            "type": "implies",
+            "status": "PASS",
+            "elapsed_seconds": 0.011804083012975752,
+            "raw_sha256": "4febda607cd9be57f39d07a3e4366c945dd8c60d85551ae588fa18f582239f76"
+          },
+          {
+            "name": "override_zone_schedule_no_technician_or_tenant",
+            "type": "implies",
+            "status": "PASS",
+            "elapsed_seconds": 0.011090624961070716,
+            "raw_sha256": "faeef31df76a234dbacc23d2ba5a98c962187cf8d00ce13b23a578386bd7face"
+          },
+          {
+            "name": "override_zone_schedule_excludes_locked_zones",
+            "type": "implies",
+            "status": "PASS",
+            "elapsed_seconds": 0.010092834010720253,
+            "raw_sha256": "d54c26dcc9ddc0de9d5bc960af38f3f7e9ddf86258a1c976edc6d40ea7e67503"
+          },
+          {
+            "name": "override_zone_schedule_unlocked_assigned_controller_floor",
+            "type": "floor",
+            "status": "PASS",
+            "elapsed_seconds": 0.01192641700617969,
+            "raw_sha256": "9b6449c753027cab0ae4e4bd4495be19af8b208cbaa49748da5ee6d62c343887"
+          },
+          {
+            "name": "override_zone_schedule_unlocked_assigned_controller_ceiling",
+            "type": "implies",
+            "status": "PASS",
+            "elapsed_seconds": 0.040115416049957275,
+            "raw_sha256": "1de083a448324de75c843a73947ce4f53a571dcd5c892a840c631af0bb046204"
+          }
+        ],
+        "semantic_check_count": 6,
+        "raw_directory": "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/verifier/48f70c11ceb0239bba1a77f2e8fd0a059101a8c110a6653531eb68c0526073e7",
+        "confirmed_overgrant": false,
+        "confirmed_overdeny": false
+      }
+    },
+    {
+      "task_id": "E2-20261110-manual-manual-18",
+      "scenario_id": "lease_execution-reviewLease-T5-011",
+      "method": "Manual",
+      "generation": {
+        "status": "COMPLETED",
+        "returncode": 0,
+        "turns_started": 1,
+        "turns_completed": 1,
+        "tool_events": 0,
+        "errors": [],
+        "input_tokens": 10150,
+        "cached_input_tokens": 0,
+        "output_tokens": 667,
+        "reasoning_output_tokens": 413,
+        "runtime_warnings": [
+          {
+            "type": "item.completed",
+            "item": {
+              "id": "item_0",
+              "type": "error",
+              "message": "Under-development features enabled: skip_host_skill_discovery. Under-development features are incomplete and may behave unpredictably. To suppress this warning, set `suppress_unstable_features_warning = true` in /Users/liuyuxiang/.codex/config.toml."
+            }
+          }
+        ],
+        "effective_model": null,
+        "underlying_requests": null,
+        "truncated": null,
+        "task_id": "E2-20261110-manual-manual-18",
+        "cache_key": "b35619b99884f58caac35eb81c044ae01f64c7f72026472e474322d92e8de4dc",
+        "elapsed_seconds": 20.222540140151978,
+        "raw_directory": "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/codex/E2-20261110-manual-manual-18",
+        "malformed_event_lines": 0,
+        "final_response": "{\"policy\":\"permit (\\n    principal is User,\\n    action == Action::\\\"draftLease\\\",\\n    resource is Lease\\n)\\nwhen {\\n    principal.holdsLeasingAgentRole\\n};\\n\\npermit (\\n    principal is User,\\n    action == Action::\\\"viewAuditLog\\\",\\n    resource is AuditLog\\n)\\nwhen {\\n    principal.holdsAuditorRole\\n};\\n\\npermit (\\n    principal is User,\\n    action == Action::\\\"reviewLease\\\",\\n    resource is Lease\\n)\\nwhen {\\n    principal.holdsBrokerRole\\n};\\n\\nforbid (\\n    principal is User,\\n    action == Action::\\\"reviewLease\\\",\\n    resource is Lease\\n)\\nwhen {\\n    !principal.holdsBrokerRole\\n};\\n\\nforbid (\\n    principal is User,\\n    action == Action::\\\"reviewLease\\\",\\n    resource is Lease\\n)\\nwhen {\\n    resource.isHighValue &&\\n    principal == resource.listingAgent &&\\n    resource.squareFootage <= context.largePremisesThreshold &&\\n    !context.courtOrderDeclared\\n};\"}",
+        "raw_sha256": {
+          "final.txt": "99755e4acdbe337cd965d9cbacf0fcad8c70b9389e6579f0a94598c9b98bafac",
+          "stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "events.jsonl": "c7f09067fb07faa19162cda517bf074926a179727787935949fcebc2968eaf91",
+          "schema.json": "789054a4b0cda04d99b22fd17820b0656a4adf0e70cf17c14b8d37f59560b43a"
+        }
+      },
+      "score": {
+        "scenario_id": "lease_execution-reviewLease-T5-011",
+        "cache_key": "eb24c66fa41b70c00d706b7c3935975fe80b200a3380ba6f4befe4ed220b021a",
+        "verifier_version": "f9d67ee8f0a3920a13240774a30ca4c818f964d7b8370f1e8a7fd1e1e38bd5c4",
+        "status": "SEMANTIC_FAIL",
+        "syntax_valid": true,
+        "schema_valid": true,
+        "checks": [
+          {
+            "name": "broker_non_drafter_may_review_lease",
+            "type": "floor",
+            "status": "FAIL",
+            "elapsed_seconds": 0.016792374895885587,
+            "raw_sha256": "cf92411227ff12f96df1899a63a44b341bb9a8c374cb5c3280dc1258b6a178b8"
+          },
+          {
+            "name": "broker_listing_agent_may_review_large_premises_lease",
+            "type": "floor",
+            "status": "FAIL",
+            "elapsed_seconds": 0.014838958973996341,
+            "raw_sha256": "115c20d13bfe5f30102ce1aa040cfc38d729bde6fa62f5be365009a40281a27d"
+          },
+          {
+            "name": "review_lease_only_broker_high_value_independent_unless_large_or_court_order",
+            "type": "implies",
+            "status": "FAIL",
+            "elapsed_seconds": 0.01683954196050763,
+            "raw_sha256": "5508d5242eba34e63a3cb18616cc842488251405157054abb250ae45199816fa"
+          },
+          {
+            "name": "smaller_lease_drafter_review_disjoint",
+            "type": "implies",
+            "status": "FAIL",
+            "elapsed_seconds": 0.017026999965310097,
+            "raw_sha256": "e7323e8055d688e4e622d15418e0e80ab9319d8d99cdca2617a3bf42d0f12210"
+          },
+          {
+            "name": "non_broker_review_disjoint",
+            "type": "implies",
+            "status": "PASS",
+            "elapsed_seconds": 0.01123291696421802,
+            "raw_sha256": "8c609e53af9f2b85dce8855f3e1d3e4d3611a5b8305f35b72e2d2c0085f3e440"
+          },
+          {
+            "name": "broker_drafter_may_review_low_value_lease",
+            "type": "floor",
+            "status": "PASS",
+            "elapsed_seconds": 0.011107667000032961,
+            "raw_sha256": "23f152990acc0673e20d305f9d5371c07400db2749954629af0c8b24ca6a5272"
+          },
+          {
+            "name": "review_lease_only_broker_independent_unless_large_or_court_order",
+            "type": "implies",
+            "status": "FAIL",
+            "elapsed_seconds": 0.01569829205982387,
+            "raw_sha256": "db94ba003b7d794000d0b9a4c26d03fc6d74ef68851047850f99361394664f59"
+          },
+          {
+            "name": "leasing_agent_may_draft_lease",
+            "type": "floor",
+            "status": "PASS",
+            "elapsed_seconds": 0.01027891703415662,
+            "raw_sha256": "ef83c3d98cdf20728b86dd9b1b4302888fcfa921b9f6c146119e4824a9872547"
+          },
+          {
+            "name": "draft_lease_only_leasing_agent_drafted_state",
+            "type": "implies",
+            "status": "FAIL",
+            "elapsed_seconds": 0.017036624951288104,
+            "raw_sha256": "4d01303f98ba415931449f4a48e4d4868e788cbb2d8d8f8f579aa2e33cfff865"
+          },
+          {
+            "name": "auditor_may_view_audit_log",
+            "type": "floor",
+            "status": "PASS",
+            "elapsed_seconds": 0.008072583004832268,
+            "raw_sha256": "7bc68232b7bd695ce48fd9639f4fb5869cff19d3f0d28257d46a42d4deac1014"
+          },
+          {
+            "name": "view_audit_log_only_auditor",
+            "type": "implies",
+            "status": "PASS",
+            "elapsed_seconds": 0.007490915944799781,
+            "raw_sha256": "95b05c8d2e0e70c7fecca3fc46b377fedacec148a02a21a8bfe601f28b92bf4c"
+          },
+          {
+            "name": "high_value_small_no_court_listing_agent_review_disjoint",
+            "type": "implies",
+            "status": "FAIL",
+            "elapsed_seconds": 0.015102957957424223,
+            "raw_sha256": "6afaeb2b9398ef4ebcf6c7d7a991de2b542ff68391cec8a68e3486c205805d47"
+          },
+          {
+            "name": "broker_listing_agent_may_review_court_order_lease",
+            "type": "floor",
+            "status": "FAIL",
+            "elapsed_seconds": 0.015398084069602191,
+            "raw_sha256": "5d2c565c9d23b8e42c51405427c7115bf234cd5d869fe2f7284e16907878fea0"
+          },
+          {
+            "name": "high_value_independent_broker_review_liveness",
+            "type": "liveness-overlap",
+            "status": "PASS",
+            "elapsed_seconds": 0.012358500040136278,
+            "raw_sha256": "45fb9f4106ac81c36e002423e07a3d0119b9c5a2f4d581fb091c3da7c40e385d"
+          }
+        ],
+        "semantic_check_count": 14,
+        "raw_directory": "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/verifier/eb24c66fa41b70c00d706b7c3935975fe80b200a3380ba6f4befe4ed220b021a",
+        "confirmed_overgrant": true,
+        "confirmed_overdeny": true
+      }
+    },
+    {
+      "task_id": "E2-20261110-manual-manual-19",
+      "scenario_id": "knowledge_base-viewPage-T3-022",
+      "method": "Manual",
+      "generation": {
+        "status": "COMPLETED",
+        "returncode": 0,
+        "turns_started": 1,
+        "turns_completed": 1,
+        "tool_events": 0,
+        "errors": [],
+        "input_tokens": 9539,
+        "cached_input_tokens": 0,
+        "output_tokens": 266,
+        "reasoning_output_tokens": 97,
+        "runtime_warnings": [
+          {
+            "type": "item.completed",
+            "item": {
+              "id": "item_0",
+              "type": "error",
+              "message": "Under-development features enabled: skip_host_skill_discovery. Under-development features are incomplete and may behave unpredictably. To suppress this warning, set `suppress_unstable_features_warning = true` in /Users/liuyuxiang/.codex/config.toml."
+            }
+          }
+        ],
+        "effective_model": null,
+        "underlying_requests": null,
+        "truncated": null,
+        "task_id": "E2-20261110-manual-manual-19",
+        "cache_key": "3b25881a693c87b1752c22d5e9a224bf245721b431d2fb34bfda24ab7b89139d",
+        "elapsed_seconds": 9.423864126205444,
+        "raw_directory": "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/codex/E2-20261110-manual-manual-19",
+        "malformed_event_lines": 0,
+        "final_response": "{\"policy\":\"permit (\\n    principal is User,\\n    action == Action::\\\"viewPage\\\",\\n    resource is Page\\n)\\nwhen {\\n    (\\n        principal.roles.contains(Role::\\\"Reader\\\") ||\\n        principal.roles.contains(Role::\\\"Contributor\\\") ||\\n        principal.roles.contains(Role::\\\"Reviewer\\\") ||\\n        principal.roles.contains(Role::\\\"SpaceAdmin\\\")\\n    ) &&\\n    (\\n        principal.clearance >= resource.classification ||\\n        resource.author == principal\\n    )\\n};\\n\\nforbid (\\n    principal is User,\\n    action == Action::\\\"viewPage\\\",\\n    resource is Page\\n)\\nwhen {\\n    resource.status == \\\"archived\\\"\\n};\"}",
+        "raw_sha256": {
+          "final.txt": "d96fbb7ed539c0d32d4e386471ed5ba7b6194f96e7bbf77df5543f56c3c51f0d",
+          "stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "events.jsonl": "f9a19f4d4b89ec7aa928392a23e8af9effd4ed1e21c4d14a326f4fb56792cb06",
+          "schema.json": "789054a4b0cda04d99b22fd17820b0656a4adf0e70cf17c14b8d37f59560b43a"
+        }
+      },
+      "score": {
+        "scenario_id": "knowledge_base-viewPage-T3-022",
+        "cache_key": "54357e32bef16c0b0419c29ca8fa78c4bb92d104b4b21183f6f4a10cdfb9bb8e",
+        "verifier_version": "f9d67ee8f0a3920a13240774a30ca4c818f964d7b8370f1e8a7fd1e1e38bd5c4",
+        "status": "PASS",
+        "syntax_valid": true,
+        "schema_valid": true,
+        "checks": [
+          {
+            "name": "view_page_role_clearance_or_author_floor",
+            "type": "floor",
+            "status": "PASS",
+            "elapsed_seconds": 0.015552916913293302,
+            "raw_sha256": "2d4293aa78475ed2fa97f281dc926bdc33b86c2538b97edc3ab43ae6fa02df7a"
+          },
+          {
+            "name": "view_page_limited_to_role_clearance_or_author_ceiling",
+            "type": "implies",
+            "status": "PASS",
+            "elapsed_seconds": 0.012106499983929098,
+            "raw_sha256": "232fff3bac33bd479dc7751409bb4865bf0a39d0c6be7c6fd9e1dd23cf00813c"
+          },
+          {
+            "name": "view_page_archived_disjointness",
+            "type": "implies",
+            "status": "PASS",
+            "elapsed_seconds": 0.011820000014267862,
+            "raw_sha256": "9271fbb5f165bd19a60b9421dda8b4abc29329b285a983c30827850a6ffc1973"
+          },
+          {
+            "name": "view_page_reader_non_prohibited_liveness",
+            "type": "liveness-overlap",
+            "status": "PASS",
+            "elapsed_seconds": 0.014551583910360932,
+            "raw_sha256": "2bd4f94cf41ca38c93f6e1e970017245a6e62bf4b41eae1dfd0476a092fc05dc"
+          }
+        ],
+        "semantic_check_count": 4,
+        "raw_directory": "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/verifier/54357e32bef16c0b0419c29ca8fa78c4bb92d104b4b21183f6f4a10cdfb9bb8e",
+        "confirmed_overgrant": false,
+        "confirmed_overdeny": false
+      }
+    }
+  ]
+}

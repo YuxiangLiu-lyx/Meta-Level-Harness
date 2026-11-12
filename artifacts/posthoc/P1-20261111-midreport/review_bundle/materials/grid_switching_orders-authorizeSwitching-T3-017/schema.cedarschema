@@ -1,0 +1,42 @@
+entity Role enum ["Planner", "ShiftSupervisor", "Operator", "ControlRoomOperator", "Auditor"];
+
+entity User {
+    roles: Set<Role>,
+};
+
+entity SwitchingOrder {
+    planner: User,
+    designatedOperator: User,
+    feeder: String,
+    voltageLevel: decimal,
+    circuitCount: Long,
+    status: String,
+    scheduledStart: datetime,
+    scheduledEnd: datetime,
+};
+
+entity LockoutTag {
+    order: SwitchingOrder,
+    appliedBy: User,
+    feeder: String,
+    status: LockoutTagStatus,
+};
+
+entity Feeder;
+
+entity SwitchingOrderStatus;
+
+entity LockoutTagStatus;
+
+action authorizeSwitchingOrder appliesTo {
+    principal: [User],
+    resource: [SwitchingOrder],
+    context: {
+        currentTime: datetime,
+        fromControlSystemNetwork: Bool,
+        lockoutTagoutVerified: Bool,
+        outageEmergencyDeclared: Bool,
+        shiftSupervisorVoltageThreshold: decimal,
+        voltageAboveShiftSupervisorThreshold: Bool,
+    },
+};

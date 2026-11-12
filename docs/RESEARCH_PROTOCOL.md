@@ -8,7 +8,7 @@ Does generating harness-design guidance before a harness improve scenario-level 
 
 ## Methods
 
-- Manual: fixed human-authored instructions/checklist; zero model design stages.
+- Manual: fixed baseline instructions/checklist prepared in the AI-assisted research setup; zero experimental model design stages. Independent human-only authorship is not established (P1 provenance clarification).
 - Direct: one stage produces one harness.
 - Meta: one stage produces guidance, then a fresh session produces a harness from that guidance.
 - Refine: one stage produces a harness, then a fresh session revises it.
@@ -58,3 +58,9 @@ This is a disclosed post-freeze procedural amendment, not preregistered behavior
 During E4, the first Refine attempt for validation position 18 timed out without a response. The subprocess timeout setting was 180 seconds, but time.time-based elapsed recording was 1165.7377 seconds. The cause is not established by the logs; host suspension, scheduling delay, and clock behavior are possibilities, not findings. Do not claim a strict observed wall-clock cap or interpret wall latency as inference compute. Preserve the actual number and null token usage. Its only retry used exactly the same input and completed successfully.
 
 Analysis a2 fixes a prose-only vacuous-pass bug: a schema failure with zero semantic checks must say that semantic checks were not run. All original a1 reports and the generating script are archived; model outputs, actual score statuses, denominators, and paired results are unchanged. No extra model calls or policy resampling occurred for this correction.
+
+## P1 post-hoc analysis and evidence export (2026-11-11)
+
+P1 uses the completed 80 E4 results and preserves all main scores, policies, frozen snapshots, and a1/a2. All four Meta-Refine disagreements are audited from raw responses and verifier logs. A 95% paired percentile bootstrap resamples 20 scenario pairs, with 100000 repetitions, Python random.Random/randrange, seed 20261111, and linear-interpolated quantiles. This is post-hoc and conditional on the saved harnesses/outputs; it omits construction randomness and does not establish equivalence. All type failures remain in the primary denominator.
+
+The portable review interface distinguishes saved-result recomputation from raw-evidence audit. Only allowlisted original events, final responses, relevant diagnostics, verifier outputs/materials, and source records are exported. Relative paths drive all reads; absolute strings inside preserved payloads are inert provenance. No raw text is translated or rewritten. Missing evidence returns INCOMPLETE/UNKNOWN, not a successful zero-tool audit. The expanded audit reveals 61 historical solver-log hash mismatches from reused verifier directories; available later logs are not substitutes for earlier byte-identical records. This is disclosed as a provenance gap without modifying the old experiments. Future verifier fixes must use a new version and separate runs; no rerun is performed in P1.

@@ -1,0 +1,46 @@
+entity Role enum ["Developer", "Reviewer", "Maintainer", "SecurityLead"];
+
+entity User {
+    roles: Set<Role>,
+};
+
+entity Team;
+
+entity Repository {
+    owner: User,
+    team: Team,
+    sensitivity: String,
+    defaultBranchProtected: Bool,
+    topics: Set<String>,
+    status: String,
+};
+
+entity Branch {
+    name: String,
+    protected: Bool,
+};
+
+entity PullRequest {
+    repository: Repository,
+    author: User,
+    approvedBy: Set<User>,
+    targetBranch: Branch,
+    approvalCount: Long,
+    linesChanged: Long,
+    securityReviewRequired: Bool,
+    status: String,
+    designatedRole: Role,
+};
+
+action reviewPullRequest appliesTo {
+    principal: [User],
+    resource: [PullRequest],
+    context: {
+        extraScrutinyLineThreshold: Long,
+    },
+};
+
+action mergePullRequest appliesTo {
+    principal: [User],
+    resource: [PullRequest],
+};

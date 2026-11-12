@@ -1,0 +1,25 @@
+{
+  "status": "COMPLETED",
+  "returncode": 0,
+  "turns_started": 1,
+  "turns_completed": 1,
+  "tool_events": 0,
+  "errors": [],
+  "input_tokens": 8807,
+  "cached_input_tokens": 7552,
+  "output_tokens": 5,
+  "reasoning_output_tokens": 0,
+  "runtime_warnings": [
+    {
+      "type": "item.completed",
+      "item": {
+        "id": "item_0",
+        "type": "error",
+        "message": "Under-development features enabled: skip_host_skill_discovery. Under-development features are incomplete and may behave unpredictably. To suppress this warning, set `suppress_unstable_features_warning = true` in /Users/liuyuxiang/.codex/config.toml."
+      }
+    }
+  ],
+  "effective_model": null,
+  "underlying_requests": null,
+  "truncated": null
+}

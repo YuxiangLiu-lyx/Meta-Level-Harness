@@ -1,0 +1,63 @@
+{
+  "scenario_id": "code_repository-chain2-T4-014",
+  "cache_key": "ee5190a0c926a53a67778c324d58afe3a0aef38ed1b29ddf72b57fc264af6237",
+  "verifier_version": "f9d67ee8f0a3920a13240774a30ca4c818f964d7b8370f1e8a7fd1e1e38bd5c4",
+  "status": "SEMANTIC_FAIL",
+  "syntax_valid": true,
+  "schema_valid": true,
+  "checks": [
+    {
+      "name": "reviewer_must_not_review_own_pull_request",
+      "type": "implies",
+      "status": "FAIL",
+      "elapsed_seconds": 0.020636041997931898,
+      "raw_sha256": "93e3230887602554018449956541bd33926b6b45f6e7fd48e570a135ab9a2f33"
+    },
+    {
+      "name": "merger_must_not_be_pull_request_author",
+      "type": "implies",
+      "status": "PASS",
+      "elapsed_seconds": 0.012296790955588222,
+      "raw_sha256": "67562cf4ab205db199c565aba041a0df23cff9055de630bf1c7cd9bdb9e33de4"
+    },
+    {
+      "name": "dual_role_reviewer_can_review_when_designated",
+      "type": "floor",
+      "status": "PASS",
+      "elapsed_seconds": 0.011511915945447981,
+      "raw_sha256": "f62c27ec4afae2bf94a883ca4ccb8ebabeba48a7023ff1b89758651900a767de"
+    },
+    {
+      "name": "review_requires_designated_role",
+      "type": "implies",
+      "status": "PASS",
+      "elapsed_seconds": 0.011077833012677729,
+      "raw_sha256": "1da90bd51a02bab3b06a11933469d9ec9dc55c2501046e1b1f48f79019c0b8ce"
+    },
+    {
+      "name": "designated_role_holder_can_review_pull_request",
+      "type": "floor",
+      "status": "FAIL",
+      "elapsed_seconds": 0.011585416970774531,
+      "raw_sha256": "77a9c97f23ad27ea3f307e8bd741acd2764bd923e83883da15f5befa44b57ed3"
+    },
+    {
+      "name": "maintainer_can_merge_reviewed_non_authored_pull_request",
+      "type": "floor",
+      "status": "FAIL",
+      "elapsed_seconds": 0.011839458020403981,
+      "raw_sha256": "12ba621f6e36a690cda905843d6901102cbffa12cf1b5a58cbca29b8bed09fb5"
+    },
+    {
+      "name": "merge_requires_maintainer_reviewed_non_authored_pull_request",
+      "type": "implies",
+      "status": "FAIL",
+      "elapsed_seconds": 0.011744542047381401,
+      "raw_sha256": "2adddd1d098a08a56f2b4d4faa32519e9d3f5c85df2bc26f69ecb1d38691a738"
+    }
+  ],
+  "semantic_check_count": 7,
+  "raw_directory": "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/verifier/ee5190a0c926a53a67778c324d58afe3a0aef38ed1b29ddf72b57fc264af6237",
+  "confirmed_overgrant": true,
+  "confirmed_overdeny": true
+}

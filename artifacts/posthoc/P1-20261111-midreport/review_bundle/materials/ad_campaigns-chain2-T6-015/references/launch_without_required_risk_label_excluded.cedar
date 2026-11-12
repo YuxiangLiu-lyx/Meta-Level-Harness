@@ -1,0 +1,1 @@
+permit (principal, action == Action::"launchCampaign", resource) when { !(principal is User && resource is Campaign && !resource.riskLabels.contains(context.requiredRiskLabel)) };

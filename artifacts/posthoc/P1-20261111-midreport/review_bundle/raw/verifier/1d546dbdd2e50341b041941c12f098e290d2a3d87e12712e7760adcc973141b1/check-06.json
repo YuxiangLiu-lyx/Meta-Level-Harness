@@ -1,0 +1,27 @@
+{
+  "command": [
+    "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/dependencies/cedar-policy-cli-experimental-aarch64-apple-darwin/cedar",
+    "symcc",
+    "--cvc5-path",
+    "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/dependencies/cvc5-macOS-arm64-static/bin/cvc5",
+    "--principal-type",
+    "User",
+    "--action",
+    "Action::\"readNamespaceSecret\"",
+    "--resource-type",
+    "NamespaceSecret",
+    "--schema",
+    "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/selected_scenarios/scenarios/kubernetes_rbac-readSecret-T3-033/schema.cedarschema",
+    "--counterexample",
+    "disjoint",
+    "--policies1",
+    "/var/folders/f4/3c2p11sd22b76640b44tvyv80000gn/T/cedar-score-qcye3wvz/candidate.cedar",
+    "--policies2",
+    "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/selected_scenarios/scenarios/kubernetes_rbac-readSecret-T3-033/references/deployer_read_namespace_secret_liveness.cedar"
+  ],
+  "returncode": 0,
+  "stdout": "\u2717 Policy sets are disjoint: DOES NOT HOLD\n  Counterexample found:\nprincipal: User::\"\", action: Action::\"readNamespaceSecret\", resource: NamespaceSecret::\"\"\ncontext: {currentTime: datetime(\"1970-01-01\").offset(duration(\"-2ms\")), emergencyChange: true, mfaUsed: true, serviceAccountToken: ServiceAccountToken::\"\", sourceIp: ip(\"0.0.0.0/0\")}\nentities: [\n  NamespaceSecret::\"\" {\n    namespace: Namespace::\"\",\n    ownerUser: User::\"\",\n    sensitivity: -1,\n    status: \"A\",\n  },\n  Namespace::\"\",\n  Action::\"readNamespaceSecret\",\n  ServiceAccountToken::\"\" {\n    expiresAt: datetime(\"1970-01-01\").offset(duration(\"-1ms\")),\n  },\n  User::\"\" {\n    clearance: -1,\n    grantedScope: \"\",\n    groupMembership: [],\n  },\n]\n",
+  "stderr": "",
+  "elapsed_seconds": 0.018748541013337672,
+  "timeout": false
+}

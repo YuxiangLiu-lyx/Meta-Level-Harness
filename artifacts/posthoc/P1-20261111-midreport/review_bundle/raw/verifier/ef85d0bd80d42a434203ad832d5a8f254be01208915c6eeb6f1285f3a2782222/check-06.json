@@ -1,0 +1,27 @@
+{
+  "command": [
+    "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/dependencies/cedar-policy-cli-experimental-aarch64-apple-darwin/cedar",
+    "symcc",
+    "--cvc5-path",
+    "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/dependencies/cvc5-macOS-arm64-static/bin/cvc5",
+    "--principal-type",
+    "User",
+    "--action",
+    "Action::\"issuePayment\"",
+    "--resource-type",
+    "Payment",
+    "--schema",
+    "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/selected_scenarios/scenarios/invoice_approval-chain2-T3-007/schema.cedarschema",
+    "--counterexample",
+    "implies",
+    "--policies1",
+    "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/selected_scenarios/scenarios/invoice_approval-chain2-T3-007/references/finance_manager_may_issue_non_emergency_split_payment.cedar",
+    "--policies2",
+    "/var/folders/f4/3c2p11sd22b76640b44tvyv80000gn/T/cedar-score-4y9_3mvv/candidate.cedar"
+  ],
+  "returncode": 0,
+  "stdout": "\u2717 Policy set 1 implies policy set 2: DOES NOT HOLD\n  Counterexample found:\nprincipal: User::\"\", action: Action::\"issuePayment\", resource: Payment::\"\"\ncontext: {currentTime: datetime(\"1970-01-01\").offset(duration(\"-1ms\")), emergencyDeclared: false, onCorporateNetwork: true}\nentities: [\n  Invoice::\"\" {\n    amount: decimal(\"-0.0001\"),\n    approver: User::\"A\",\n    costCenter: \"\",\n    creator: User::\"C\",\n    lineItemCount: -1,\n    status: InvoiceStatus::\"approved\",\n    submittedAt: datetime(\"1970-01-01\").offset(duration(\"-1ms\")),\n    surcharge: decimal(\"-0.0001\"),\n  },\n  Role::\"clerk\",\n  Action::\"approveInvoice\",\n  User::\"C\" {\n    roles: [Role::\"financeManager\"],\n  },\n  Action::\"issuePayment\",\n  Payment::\"\" {\n    amount: decimal(\"-0.0001\"),\n    invoice: Invoice::\"\",\n    issuer: User::\"B\",\n  },\n  InvoiceStatus::\"submitted\",\n  Role::\"approver\",\n  Role::\"auditor\",\n  Role::\"financeManager\",\n  User::\"\" {\n    roles: [Role::\"financeManager\"],\n  },\n  InvoiceStatus::\"approved\",\n  User::\"A\" {\n    roles: [Role::\"financeManager\"],\n  },\n  User::\"B\" {\n    roles: [Role::\"financeManager\"],\n  },\n]\n",
+  "stderr": "",
+  "elapsed_seconds": 0.019951250054873526,
+  "timeout": false
+}

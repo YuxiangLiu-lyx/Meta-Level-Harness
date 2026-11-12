@@ -1,0 +1,13 @@
+{
+  "scenario_id": "kubernetes_rbac-readSecret-T3-033",
+  "cache_key": "adbf462a9db777577286c8300ea420096a9c4eeaf0f229d09147c5c6fe2e381c",
+  "verifier_version": "f9d67ee8f0a3920a13240774a30ca4c818f964d7b8370f1e8a7fd1e1e38bd5c4",
+  "status": "SCHEMA_FAIL",
+  "syntax_valid": true,
+  "schema_valid": false,
+  "checks": [],
+  "semantic_check_count": 0,
+  "raw_directory": "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/verifier/adbf462a9db777577286c8300ea420096a9c4eeaf0f229d09147c5c6fe2e381c",
+  "confirmed_overgrant": false,
+  "confirmed_overdeny": false
+}

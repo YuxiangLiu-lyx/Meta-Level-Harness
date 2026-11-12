@@ -1,0 +1,56 @@
+entity User {
+    isNetworkEngineer: Bool,
+    isSeniorEngineer: Bool,
+    isChangeManager: Bool,
+    isCabApprover: Bool,
+    isAuditor: Bool,
+    grantedChangeAuthorityLevel: Long,
+};
+
+entity ChangeStatus enum ["Approved", "NotApproved"];
+
+entity ChangeRequest {
+    requestedBy: User,
+    implementedBy?: User,
+    approvedBy?: User,
+    assessedRisk: Long,
+    affectedNodeCount: Long,
+    rollbackStepCount: Long,
+    estimatedCost: decimal,
+    changeCode: String,
+    isEmergency: Bool,
+    changeCategory: String,
+    currentStatus: ChangeStatus,
+    maintenanceWindowStart: datetime,
+    estimatedCostCents: Long,
+};
+
+entity ImplementationRecord {
+    change: ChangeRequest,
+    carriedOutBy: User,
+    carriedOutAt: datetime,
+};
+
+action approveChange appliesTo {
+    principal: [User],
+    resource: [ChangeRequest],
+    context: {
+        currentTime: datetime,
+        fromManagementNetwork: Bool,
+        changeFreezeWaiverGranted: Bool,
+        majorIncidentDeclared: Bool,
+        cabSignoffCostThreshold: decimal,
+        cabSignoffCostThresholdCents: Long,
+    },
+};
+
+action implementChange appliesTo {
+    principal: [User],
+    resource: [ChangeRequest],
+    context: {
+        currentTime: datetime,
+        fromManagementNetwork: Bool,
+        changeFreezeWaiverGranted: Bool,
+        majorIncidentDeclared: Bool,
+    },
+};

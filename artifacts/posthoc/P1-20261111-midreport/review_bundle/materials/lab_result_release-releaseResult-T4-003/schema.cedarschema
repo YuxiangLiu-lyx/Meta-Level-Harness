@@ -1,0 +1,49 @@
+entity User;
+
+entity Patient;
+
+entity MedicalTechnologist {
+    user: User,
+};
+
+entity Pathologist {
+    user: User,
+};
+
+entity OrderingProvider {
+    user: User,
+};
+
+entity LabDirector {
+    user: User,
+};
+
+entity LabResult {
+    patient: Patient,
+    orderingProvider: OrderingProvider,
+    verifiedBy?: MedicalTechnologist,
+    sensitivityLevel: String,
+    criticalValueFlag: Bool,
+    releasedToPatientPortalAt?: datetime,
+    status: String,
+    isVerified: Bool,
+};
+
+entity LabOrder {
+    patient: Patient,
+    orderingProvider: OrderingProvider,
+    testCode: String,
+    status: String,
+};
+
+action releaseLabResult appliesTo {
+    principal: [Pathologist, OrderingProvider],
+    resource: [LabResult],
+    context: {
+        currentTime: datetime,
+        mfaUsed: Bool,
+        onHospitalNetwork: Bool,
+        emergencyRelease: Bool,
+        coverageAuthorized: Bool,
+    },
+};

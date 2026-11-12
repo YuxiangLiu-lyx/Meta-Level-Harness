@@ -1,0 +1,1 @@
+permit (principal is User, action == Action::"signArtifact", resource is Artifact) when { context.sourceNetworkIsCorporateVpn == true };

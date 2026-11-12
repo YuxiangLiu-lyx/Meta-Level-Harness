@@ -1,0 +1,1 @@
+permit (principal is Person, action == Action::"enterGrade", resource is GradeEntry) when { (principal.roles.contains(Role::"InstructorOfRecord") || principal.roles.contains(Role::"TeachingAssistant")) && resource.status == "draft" };

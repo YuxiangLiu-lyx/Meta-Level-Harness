@@ -1,0 +1,27 @@
+{
+  "command": [
+    "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/dependencies/cedar-policy-cli-experimental-aarch64-apple-darwin/cedar",
+    "symcc",
+    "--cvc5-path",
+    "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/dependencies/cvc5-macOS-arm64-static/bin/cvc5",
+    "--principal-type",
+    "Person",
+    "--action",
+    "Action::\"approveOffer\"",
+    "--resource-type",
+    "Offer",
+    "--schema",
+    "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/selected_scenarios/scenarios/recruiting-approveOffer-T2-046/schema.cedarschema",
+    "--counterexample",
+    "disjoint",
+    "--policies1",
+    "/var/folders/f4/3c2p11sd22b76640b44tvyv80000gn/T/cedar-score-qdq7_evy/candidate.cedar",
+    "--policies2",
+    "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/selected_scenarios/scenarios/recruiting-approveOffer-T2-046/references/approve_offer_success_path_liveness.cedar"
+  ],
+  "returncode": 0,
+  "stdout": "\u2717 Policy sets are disjoint: DOES NOT HOLD\n  Counterexample found:\nprincipal: Person::\"\", action: Action::\"approveOffer\", resource: Offer::\"\"\ncontext: {currentTime: datetime(\"1970-01-01\").offset(duration(\"-1ms\")), hasExecutiveApproval: true, isFromCorporateNetwork: true, isWithinPermittedWindow: true}\nentities: [\n  Action::\"approveOffer\",\n  Role::\"hiringManager\",\n  Person::\"A\" {\n    piiClearance: -1,\n    roles: [Role::\"hiringManager\"],\n  },\n  Role::\"recruiter\",\n  Offer::\"\" {\n    application: Application::\"\",\n    compensation: decimal(\"-0.0001\"),\n    extender: Person::\"A\",\n    signingBonus: decimal(\"-0.0001\"),\n    status: \"\",\n  },\n  Person::\"\" {\n    piiClearance: -1,\n    roles: [Role::\"hiringManager\"],\n  },\n  Role::\"coordinator\",\n  Role::\"interviewer\",\n  Application::\"\" {\n    candidate: Candidate::\"\",\n    hiringTeam: [],\n    piiSensitivity: 0,\n    reqCode: \"\",\n    status: \"\",\n  },\n  Candidate::\"\",\n]\n",
+  "stderr": "",
+  "elapsed_seconds": 0.015421541989780962,
+  "timeout": false
+}

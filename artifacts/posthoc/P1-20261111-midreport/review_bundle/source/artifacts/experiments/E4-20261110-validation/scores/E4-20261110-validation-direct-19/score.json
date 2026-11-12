@@ -1,0 +1,63 @@
+{
+  "scenario_id": "cicd_pipeline-approveDeployment-T3-037",
+  "cache_key": "384b1275b59d54788b44bf2c200e197bf6fab4c461e0f4b61dda8540074d50c7",
+  "verifier_version": "f9d67ee8f0a3920a13240774a30ca4c818f964d7b8370f1e8a7fd1e1e38bd5c4",
+  "status": "PASS",
+  "syntax_valid": true,
+  "schema_valid": true,
+  "checks": [
+    {
+      "name": "committer_approver_overlap_can_approve_safe_deployment",
+      "type": "floor",
+      "status": "PASS",
+      "elapsed_seconds": 0.015695458045229316,
+      "raw_sha256": "65170267c100e2a2ccf68e45b99c69311ac33563964f811754fcfdf9f1858943"
+    },
+    {
+      "name": "approver_release_manager_overlap_can_approve_safe_deployment",
+      "type": "floor",
+      "status": "PASS",
+      "elapsed_seconds": 0.012852458050474524,
+      "raw_sha256": "2570291178919d2e2fad3461cfae8965efe57662e91d4bd17b84d05a0195b7de"
+    },
+    {
+      "name": "approve_deployment_bounded_to_overlap_and_safe_role_slices",
+      "type": "implies",
+      "status": "PASS",
+      "elapsed_seconds": 0.011982334079220891,
+      "raw_sha256": "1241b31a68dfc607ba8d141926640540321b83b7c52b5e32597653474cd53cc0"
+    },
+    {
+      "name": "approver_can_approve_safe_deployment",
+      "type": "floor",
+      "status": "PASS",
+      "elapsed_seconds": 0.01070691691711545,
+      "raw_sha256": "2d24437d7c09a160f32a2e1559e50e1590508193c3e74e900109417e0d404e46"
+    },
+    {
+      "name": "release_manager_can_approve_safe_deployment",
+      "type": "floor",
+      "status": "PASS",
+      "elapsed_seconds": 0.010237375041469932,
+      "raw_sha256": "6bd073d8bb0fa004f83a81e2c30bf078d536cd8006b5d669aeaaf0c2c503288d"
+    },
+    {
+      "name": "deployment_approval_bounded_to_safe_approver_or_release_manager",
+      "type": "implies",
+      "status": "PASS",
+      "elapsed_seconds": 0.00985870894510299,
+      "raw_sha256": "344196f53a6835a22da6bed5ba9f69a488b12e8b8da0dbdf7536a60c360c7c7d"
+    },
+    {
+      "name": "safe_approver_approval_request_remains_possible",
+      "type": "liveness-overlap",
+      "status": "PASS",
+      "elapsed_seconds": 0.01327337499242276,
+      "raw_sha256": "0e899027485c985414e19502a853975631fb9311e9c9bdfe0ad302bc13e263a5"
+    }
+  ],
+  "semantic_check_count": 7,
+  "raw_directory": "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/verifier/384b1275b59d54788b44bf2c200e197bf6fab4c461e0f4b61dda8540074d50c7",
+  "confirmed_overgrant": false,
+  "confirmed_overdeny": false
+}

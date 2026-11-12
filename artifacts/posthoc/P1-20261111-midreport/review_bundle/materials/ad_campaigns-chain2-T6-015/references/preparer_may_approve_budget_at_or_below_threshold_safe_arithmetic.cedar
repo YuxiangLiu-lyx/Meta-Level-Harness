@@ -1,0 +1,5 @@
+permit (principal, action == Action::"approveBudget", resource) when {
+    (principal is User && resource is Campaign && resource.preparedBy == principal && (principal.roles.contains(Role::"AccountManager") || principal.roles.contains(Role::"CampaignDirector")) && resource.budget >= 0 && resource.contingency >= 0 && context.budgetContingencyThreshold >= 0 && resource.contingency <= context.budgetContingencyThreshold && resource.budget <= context.budgetContingencyThreshold - resource.contingency)
+    && !(principal is User && resource is Campaign && resource.preparedBy == principal && (principal.roles.contains(Role::"AccountManager") || principal.roles.contains(Role::"CampaignDirector")) && resource.budget >= 0 && resource.contingency >= 0 && context.budgetContingencyThreshold >= 0 && (resource.contingency > context.budgetContingencyThreshold || (resource.contingency <= context.budgetContingencyThreshold && resource.budget > context.budgetContingencyThreshold - resource.contingency)))
+    && !(principal is User && resource is Campaign && !context.mfaUsed)
+};

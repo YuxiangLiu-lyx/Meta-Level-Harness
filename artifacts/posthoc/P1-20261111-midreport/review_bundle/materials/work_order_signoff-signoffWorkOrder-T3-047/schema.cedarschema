@@ -1,0 +1,79 @@
+entity Role enum ["operator", "inspector", "qualityManager", "productionSupervisor", "auditor"];
+
+entity WorkOrderStatus enum ["created", "inProgress", "signedOff", "released"];
+
+entity Person {
+    roles: Set<Role>,
+};
+
+entity WorkOrder {
+    operator: Person,
+    inspector: Person,
+    partCode: String,
+    defectCount: Long,
+    holdFlag: Bool,
+    status: WorkOrderStatus,
+    station: String,
+    creationTime: datetime,
+    partCodeAcceptable: Bool,
+    acceptanceThreshold: Long,
+};
+
+entity ProductionRelease {
+    workOrder: WorkOrder,
+};
+
+entity QualityLog;
+
+action createWorkOrder appliesTo {
+    principal: [Person],
+    resource: [WorkOrder],
+    context: {
+        currentTime: datetime,
+        fromPlantNetwork: Bool,
+        deviationAuthorized: Bool,
+    },
+};
+
+action startWork appliesTo {
+    principal: [Person],
+    resource: [WorkOrder],
+    context: {
+        currentTime: datetime,
+        fromPlantNetwork: Bool,
+        deviationAuthorized: Bool,
+    },
+};
+
+action signOffWorkOrder appliesTo {
+    principal: [Person],
+    resource: [WorkOrder],
+    context: {
+        currentTime: datetime,
+        fromPlantNetwork: Bool,
+        deviationAuthorized: Bool,
+        partCodeMatches: Bool,
+        hasControlledPartPrefix: Bool,
+        acceptanceThreshold: Long,
+    },
+};
+
+action releaseToProduction appliesTo {
+    principal: [Person],
+    resource: [ProductionRelease],
+    context: {
+        currentTime: datetime,
+        fromPlantNetwork: Bool,
+        deviationAuthorized: Bool,
+    },
+};
+
+action viewQualityLog appliesTo {
+    principal: [Person],
+    resource: [QualityLog],
+    context: {
+        currentTime: datetime,
+        fromPlantNetwork: Bool,
+        deviationAuthorized: Bool,
+    },
+};

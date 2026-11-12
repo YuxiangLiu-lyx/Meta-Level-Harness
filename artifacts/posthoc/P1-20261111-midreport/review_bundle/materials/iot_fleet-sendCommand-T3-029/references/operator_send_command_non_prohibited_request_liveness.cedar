@@ -1,0 +1,1 @@
+permit (principal is User, action == Action::"sendCommand", resource is Command) when { principal.roles.contains(Role::"operator") && context.maintenanceWindow.permitted && context.currentTime >= context.maintenanceWindow.startTime && context.currentTime <= context.maintenanceWindow.endTime && resource.targetDevice.status == DeviceStatus::"active" };

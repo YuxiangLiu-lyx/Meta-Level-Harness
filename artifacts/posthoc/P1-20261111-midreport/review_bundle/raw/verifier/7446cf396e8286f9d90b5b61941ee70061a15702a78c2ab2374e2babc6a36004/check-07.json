@@ -1,0 +1,27 @@
+{
+  "command": [
+    "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/dependencies/cedar-policy-cli-experimental-aarch64-apple-darwin/cedar",
+    "symcc",
+    "--cvc5-path",
+    "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/dependencies/cvc5-macOS-arm64-static/bin/cvc5",
+    "--principal-type",
+    "User",
+    "--action",
+    "Action::\"authorizeSwitchingOrder\"",
+    "--resource-type",
+    "SwitchingOrder",
+    "--schema",
+    "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/selected_scenarios/scenarios/grid_switching_orders-authorizeSwitching-T3-017/schema.cedarschema",
+    "--counterexample",
+    "implies",
+    "--policies1",
+    "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/selected_scenarios/scenarios/grid_switching_orders-authorizeSwitching-T3-017/references/planner_compliant_authorize_floor.cedar",
+    "--policies2",
+    "/var/folders/f4/3c2p11sd22b76640b44tvyv80000gn/T/cedar-score-755h7dax/candidate.cedar"
+  ],
+  "returncode": 0,
+  "stdout": "\u2717 Policy set 1 implies policy set 2: DOES NOT HOLD\n  Counterexample found:\nprincipal: User::\"\", action: Action::\"authorizeSwitchingOrder\", resource: SwitchingOrder::\"\"\ncontext: {currentTime: datetime(\"1970-01-01\").offset(duration(\"-1ms\")), fromControlSystemNetwork: true, lockoutTagoutVerified: true, outageEmergencyDeclared: true, shiftSupervisorVoltageThreshold: decimal(\"-0.0002\"), voltageAboveShiftSupervisorThreshold: false}\nentities: [\n  SwitchingOrder::\"\" {\n    circuitCount: -1,\n    designatedOperator: User::\"A\",\n    feeder: \"A\",\n    planner: User::\"B\",\n    scheduledEnd: datetime(\"1970-01-01\").offset(duration(\"-1ms\")),\n    scheduledStart: datetime(\"1970-01-01\").offset(duration(\"-1ms\")),\n    status: \"planned\",\n    voltageLevel: decimal(\"-0.0001\"),\n  },\n  User::\"\" {\n    roles: [Role::\"Planner\"],\n  },\n  User::\"A\" {\n    roles: [Role::\"Planner\"],\n  },\n  User::\"B\" {\n    roles: [Role::\"Planner\"],\n  },\n  Role::\"ShiftSupervisor\",\n  Action::\"authorizeSwitchingOrder\",\n  Role::\"Auditor\",\n  Role::\"Planner\",\n  Role::\"ControlRoomOperator\",\n  LockoutTagStatus::\"\",\n  Role::\"Operator\",\n]\n",
+  "stderr": "",
+  "elapsed_seconds": 0.01679704210255295,
+  "timeout": false
+}

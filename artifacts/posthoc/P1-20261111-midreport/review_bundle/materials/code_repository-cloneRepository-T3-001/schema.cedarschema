@@ -1,0 +1,42 @@
+entity Role enum ["developer", "reviewer", "maintainer", "securityLead"];
+
+entity ClearanceLevel enum ["public", "internal", "confidential", "restricted"];
+
+entity RepositoryLifecycleStatus enum ["active", "archived"];
+
+entity User {
+    roles: Set<Role>,
+    clearanceLevel: ClearanceLevel,
+};
+
+entity Team;
+
+entity Repository {
+    owner: User,
+    team: Team,
+    sensitivityClassification: ClearanceLevel,
+    defaultBranchProtected: Bool,
+    topicTags: Set<String>,
+    lifecycleStatus: RepositoryLifecycleStatus,
+};
+
+entity Branch {
+    name: String,
+    protected: Bool,
+};
+
+entity PullRequest {
+    repository: Repository,
+    author: User,
+    approvers: Set<User>,
+    targetBranch: Branch,
+    approvalCount: Long,
+    linesChanged: Long,
+    requiresSecurityReview: Bool,
+    status: String,
+};
+
+action cloneRepository appliesTo {
+    principal: [User],
+    resource: [Repository],
+};

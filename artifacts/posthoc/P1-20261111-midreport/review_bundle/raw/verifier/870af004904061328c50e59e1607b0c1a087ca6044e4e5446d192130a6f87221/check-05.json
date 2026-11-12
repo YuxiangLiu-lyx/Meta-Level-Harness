@@ -1,0 +1,27 @@
+{
+  "command": [
+    "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/dependencies/cedar-policy-cli-experimental-aarch64-apple-darwin/cedar",
+    "symcc",
+    "--cvc5-path",
+    "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/dependencies/cvc5-macOS-arm64-static/bin/cvc5",
+    "--principal-type",
+    "Person",
+    "--action",
+    "Action::\"viewMedicalRecord\"",
+    "--resource-type",
+    "MedicalRecord",
+    "--schema",
+    "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/selected_scenarios/scenarios/inpatient_records-viewRecord-T3-082/schema.cedarschema",
+    "--counterexample",
+    "implies",
+    "--policies1",
+    "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/selected_scenarios/scenarios/inpatient_records-viewRecord-T3-082/references/clinical_roles_may_view_unsealed_without_clearance.cedar",
+    "--policies2",
+    "/var/folders/f4/3c2p11sd22b76640b44tvyv80000gn/T/cedar-score-zo60oubp/candidate.cedar"
+  ],
+  "returncode": 0,
+  "stdout": "\u2717 Policy set 1 implies policy set 2: DOES NOT HOLD\n  Counterexample found:\nprincipal: Person::\"\", action: Action::\"viewMedicalRecord\", resource: MedicalRecord::\"\"\ncontext: {currentShift: \"\", emergencyDeclared: false, mfaUsed: false}\nentities: [\n  Person::\"\" {\n    clearedLevel: -1,\n    roles: [Role::\"nurse\"],\n    ward: \"\",\n  },\n  Patient::\"\",\n  Role::\"resident\",\n  Action::\"viewMedicalRecord\",\n  Role::\"nurse\",\n  Role::\"pharmacist\",\n  MedicalRecord::\"\" {\n    careTeam: [],\n    isSealed: false,\n    patient: Patient::\"\",\n    sensitivity: -1,\n    status: \"A\",\n    ward: \"B\",\n  },\n  Role::\"attendingPhysician\",\n]\n",
+  "stderr": "",
+  "elapsed_seconds": 0.012173125054687262,
+  "timeout": false
+}

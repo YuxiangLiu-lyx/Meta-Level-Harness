@@ -4,6 +4,8 @@ This repository implements a small exploratory comparison of editable static tas
 
 ## Current status
 
+The latest deliverable is [P1 offline post-hoc analysis and mid-report preparation](artifacts/posthoc/P1-20261111-midreport/report.md), dated 2026-11-11. It preserves E0-E5 and a1/a2, adds four raw-evidence case audits, a paired bootstrap interval of [-30, +10] percentage points for Meta minus Refine, and a portable review package. Nineteen tests pass. Saved-result recomputation is COMPLETE; expanded historical raw-evidence audit is INCOMPLETE because 61 earlier solver-log hashes across nine outputs no longer match available files. This previously uncovered gap is disclosed without changing scores. Start with the P1 report for current evidence limitations.
+
 E0-E5 are IMPLEMENTED, TESTED, EXECUTED, and ANALYZED, including the failed initial E3 attempt, disclosed v1.1 recovery, and corrected analysis a2. Completed 100/100 final policy outputs, five logical design stages, and three smoke diagnostics. Actual task attempts: 110/120, including two preserved missing-response timeouts and their single retries. No observed tool execution; no unresolved final evaluation; all 375 held-out scenarios remain unopened and unevaluated.
 
 | Method | Validation success | Rate |
@@ -40,16 +42,20 @@ Upstream: https://github.com/Aizhouym/raise at commit 206962d130d2c69d5e15f8103f
 
 ## Reproduce analysis without model calls
 
-Run from the repository root:
+Run from a new clone with Python 3.10+; no Codex/solver installation, authentication, or external raw directory is needed for these commands. Choose new output paths:
 
 ```bash
 PYTHONPATH=src python3 -m unittest discover -s tests -v
+python3 scripts/review_offline.py analyze artifacts/posthoc/P1-20261111-midreport/review_bundle --output /tmp/new-review-metrics
 PYTHONPATH=src python3 scripts/audit_evidence.py
-PYTHONPATH=src python3 scripts/analyze.py E2-20261110-manual
-PYTHONPATH=src python3 scripts/evidence_package.py
+python3 scripts/validate_review_bundle.py artifacts/posthoc/P1-20261111-midreport/review_bundle --output /tmp/new-portability-check.json
 ```
 
-The last command uses the completed E4 evidence. It reads saved generations and scores, never invokes Codex. Original JSONL events and Cedar solver outputs are outside the repository, currently at /Users/liuyuxiang/Documents/USA/599/harness_experiment_raw, with paths and SHA-256 values in repository artifacts. Preserve that directory when moving the project; do not translate or rewrite raw evidence. Missing raw evidence is reported by the audit.
+The audit intentionally returns exit code 2 and INCOMPLETE for the 61 documented historical solver-log gaps. It does not report a complete zero-tool audit when evidence is incomplete: aggregate tool events are null and audit status is UNKNOWN. All 110 original model-attempt streams are available, and all 80 currently available solver decisions agree with the saved scores. [The evidence index](artifacts/posthoc/P1-20261111-midreport/materials/evidence_index.md) distinguishes these facts. Metric recomputation remains available even if the raw directory is removed from a copy of the package.
+
+The [standalone review package](artifacts/posthoc/P1-20261111-midreport/review_bundle/README.md) includes its own `review.py`, relative path index, and byte/hash manifest. It exports only the required model events/final responses/diagnostics, saved E4 verifier outputs, selected verification materials, and source records. Original raw bytes remain unchanged; local paths inside logs are inert provenance. The package is portable but is not an anonymous supplement. The original external store remains at /Users/liuyuxiang/Documents/USA/599/harness_experiment_raw; it is needed only to export again with `python3 scripts/export_review_bundle.py --output /new/package/path`, not for review. Preserve it and never translate or rewrite originals.
+
+Mid-report materials include [tables](artifacts/posthoc/P1-20261111-midreport/materials/tables.md), [two body cases](artifacts/posthoc/P1-20261111-midreport/materials/main_text_cases.md), [limitations](artifacts/posthoc/P1-20261111-midreport/materials/limitations_and_deviations.md), [an anonymous ACL-style outline](artifacts/posthoc/P1-20261111-midreport/materials/acl_midreport_outline.md), and [verified references](artifacts/posthoc/P1-20261111-midreport/materials/references.md). Manual is a fixed baseline prepared in an AI-assisted setup, not verified independent human authorship.
 
 ## Reproduce execution
 

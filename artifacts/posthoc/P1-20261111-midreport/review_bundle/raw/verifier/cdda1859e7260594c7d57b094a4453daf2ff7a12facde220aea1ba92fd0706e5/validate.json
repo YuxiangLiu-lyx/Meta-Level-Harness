@@ -1,0 +1,15 @@
+{
+  "command": [
+    "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/dependencies/cedar-policy-cli-experimental-aarch64-apple-darwin/cedar",
+    "validate",
+    "--schema",
+    "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/selected_scenarios/scenarios/lab_result_release-releaseResult-T4-003/schema.cedarschema",
+    "--policies",
+    "/var/folders/f4/3c2p11sd22b76640b44tvyv80000gn/T/cedar-score-qj5gsrrl/candidate.cedar"
+  ],
+  "returncode": 0,
+  "stdout": "  \u261e policy set validation passed\n  \u2570\u2500\u25b6 no errors or warnings\n\n",
+  "stderr": "",
+  "elapsed_seconds": 0.014299082919023931,
+  "timeout": false
+}

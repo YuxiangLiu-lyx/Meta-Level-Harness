@@ -1,0 +1,1 @@
+permit (principal is OrderingProvider, action == Action::"releaseLabResult", resource is LabResult) when { !(resource.sensitivityLevel == "restricted" && resource.criticalValueFlag == false) };

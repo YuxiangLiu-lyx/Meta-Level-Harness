@@ -1,0 +1,1 @@
+{"policy":"permit (\n    principal is Requester,\n    action == Action::\"revokeServiceAccountToken\",\n    resource is ServiceAccountToken\n)\nwhen {\n    principal.roles.contains(Role::\"clusterOperator\") &&\n    principal.teamGroups.contains(resource.boundNamespace.teamGroup) &&\n    principal == resource.issuer\n};"}

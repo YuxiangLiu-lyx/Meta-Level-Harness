@@ -1,0 +1,15 @@
+{
+  "command": [
+    "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/dependencies/cedar-policy-cli-experimental-aarch64-apple-darwin/cedar",
+    "validate",
+    "--schema",
+    "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/selected_scenarios/scenarios/network_change_approval-chain2-T4-026/schema.cedarschema",
+    "--policies",
+    "/var/folders/f4/3c2p11sd22b76640b44tvyv80000gn/T/cedar-score-s1v29lvg/candidate.cedar"
+  ],
+  "returncode": 3,
+  "stdout": "  \u00d7 policy set validation failed\n  \u2570\u2500\u25b6 for policy `policy3`, unexpected type: expected decimal but saw datetime\n    \u256d\u2500[44:6]\n 43 \u2502     (resource.isEmergency ||\n 44 \u2502      context.currentTime.greaterThanOrEqual(resource.maintenanceWindowStart))\n    \u00b7      \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\n 45 \u2502 };\n    \u2570\u2500\u2500\u2500\u2500\n\nError: \n  \u00d7 for policy `policy3`, unexpected type: expected decimal but saw datetime\n    \u256d\u2500[44:45]\n 43 \u2502     (resource.isEmergency ||\n 44 \u2502      context.currentTime.greaterThanOrEqual(resource.maintenanceWindowStart))\n    \u00b7                                             \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\n 45 \u2502 };\n    \u2570\u2500\u2500\u2500\u2500\n\nError: \n  \u00d7 for policy `policy5`, unexpected type: expected decimal but saw datetime\n    \u256d\u2500[63:34]\n 62 \u2502     !resource.isEmergency &&\n 63 \u2502     context.currentTime.lessThan(resource.maintenanceWindowStart)\n    \u00b7                                  \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\n 64 \u2502 };\n    \u2570\u2500\u2500\u2500\u2500\n\nError: \n  \u00d7 for policy `policy5`, unexpected type: expected decimal but saw datetime\n    \u256d\u2500[63:5]\n 62 \u2502     !resource.isEmergency &&\n 63 \u2502     context.currentTime.lessThan(resource.maintenanceWindowStart)\n    \u00b7     \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\n 64 \u2502 };\n    \u2570\u2500\u2500\u2500\u2500\n\n",
+  "stderr": "",
+  "elapsed_seconds": 0.01469433307647705,
+  "timeout": false
+}

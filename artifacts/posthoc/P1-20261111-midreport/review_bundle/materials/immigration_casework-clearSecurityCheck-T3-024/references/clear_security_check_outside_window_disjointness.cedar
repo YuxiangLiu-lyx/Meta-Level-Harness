@@ -1,0 +1,1 @@
+permit (principal, action == Action::"clearSecurityCheck", resource) when { principal is Person && resource is SecurityCheck && !(context.currentTime < resource.permittedWindowStart || context.currentTime > resource.permittedWindowEnd) };

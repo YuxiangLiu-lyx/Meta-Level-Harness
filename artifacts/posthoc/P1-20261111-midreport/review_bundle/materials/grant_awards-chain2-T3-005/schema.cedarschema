@@ -1,0 +1,44 @@
+entity Role enum ["Reviewer", "ProgramOfficer", "GrantsOfficer", "Applicant"];
+
+entity User {
+    roles: Set<Role>,
+    approvalAuthority: Long,
+};
+
+entity Application {
+    applicant: User,
+    assignedReviewers: Set<User>,
+    fundingTier: Long,
+    requestedAmount: decimal,
+    programCode: String,
+    status: String,
+};
+
+entity Award {
+    application: Application,
+    approvedBy?: User,
+    obligatedBy?: User,
+    amount: decimal,
+    highRisk: Bool,
+    status: String,
+};
+
+action approveAward appliesTo {
+    principal: [User],
+    resource: [Award],
+    context: {
+        currentTime: datetime,
+        fromGovernmentNetwork: Bool,
+        emergencyDeclared: Bool,
+    },
+};
+
+action obligateFunds appliesTo {
+    principal: [User],
+    resource: [Award],
+    context: {
+        currentTime: datetime,
+        fromGovernmentNetwork: Bool,
+        emergencyDeclared: Bool,
+    },
+};

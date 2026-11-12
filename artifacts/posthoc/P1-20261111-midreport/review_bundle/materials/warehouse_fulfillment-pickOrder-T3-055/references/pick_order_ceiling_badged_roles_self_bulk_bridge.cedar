@@ -1,0 +1,1 @@
+permit (principal, action == Action::"pickOrder", resource) when { resource is Order && context.hasBadgedInOnSiteForShift && ((principal is Picker && (resource.requestedBy != principal.user || resource.crossesBulkPickThreshold)) || (principal is ForkliftOperator && (resource.requestedBy != principal.user || resource.crossesBulkPickThreshold))) };

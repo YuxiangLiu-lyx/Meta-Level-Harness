@@ -1,0 +1,27 @@
+{
+  "command": [
+    "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/dependencies/cedar-policy-cli-experimental-aarch64-apple-darwin/cedar",
+    "symcc",
+    "--cvc5-path",
+    "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/dependencies/cvc5-macOS-arm64-static/bin/cvc5",
+    "--principal-type",
+    "User",
+    "--action",
+    "Action::\"approveInvoice\"",
+    "--resource-type",
+    "Invoice",
+    "--schema",
+    "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/selected_scenarios/scenarios/invoice_approval-chain2-T3-007/schema.cedarschema",
+    "--counterexample",
+    "implies",
+    "--policies1",
+    "/var/folders/f4/3c2p11sd22b76640b44tvyv80000gn/T/cedar-score-hyir1by0/candidate.cedar",
+    "--policies2",
+    "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/selected_scenarios/scenarios/invoice_approval-chain2-T3-007/references/no_approval_of_unsubmitted_invoice.cedar"
+  ],
+  "returncode": 0,
+  "stdout": "\u2717 Policy set 1 implies policy set 2: DOES NOT HOLD\n  Counterexample found:\nprincipal: User::\"\", action: Action::\"approveInvoice\", resource: Invoice::\"\"\ncontext: {currentTime: datetime(\"1970-01-01\").offset(duration(\"1ms\")), emergencyDeclared: true, onCorporateNetwork: true}\nentities: [\n  Action::\"issuePayment\",\n  Role::\"financeManager\",\n  Role::\"auditor\",\n  InvoiceStatus::\"submitted\",\n  Role::\"clerk\",\n  Invoice::\"\" {\n    amount: decimal(\"-0.0001\"),\n    costCenter: \"\",\n    creator: User::\"A\",\n    lineItemCount: 0,\n    status: InvoiceStatus::\"approved\",\n    submittedAt: datetime(\"1970-01-01\").offset(duration(\"-1ms\")),\n    surcharge: decimal(\"-0.0001\"),\n  },\n  Role::\"approver\",\n  User::\"A\" {\n    roles: [Role::\"approver\"],\n  },\n  Action::\"approveInvoice\",\n  User::\"\" {\n    roles: [Role::\"approver\"],\n  },\n  InvoiceStatus::\"approved\",\n]\n",
+  "stderr": "",
+  "elapsed_seconds": 0.015040582977235317,
+  "timeout": false
+}

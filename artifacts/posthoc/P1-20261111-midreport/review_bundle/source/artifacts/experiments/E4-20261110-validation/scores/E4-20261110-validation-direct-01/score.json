@@ -1,0 +1,35 @@
+{
+  "scenario_id": "recruiting-approveOffer-T2-046",
+  "cache_key": "0f47c7f40afdf2900ef6c2d1d9fb2a480f4a1d837574f5f5b4b3801b0b3a789b",
+  "verifier_version": "f9d67ee8f0a3920a13240774a30ca4c818f964d7b8370f1e8a7fd1e1e38bd5c4",
+  "status": "PASS",
+  "syntax_valid": true,
+  "schema_valid": true,
+  "checks": [
+    {
+      "name": "hiring_manager_approve_offer_allowed_slice",
+      "type": "floor",
+      "status": "PASS",
+      "elapsed_seconds": 0.01768545899540186,
+      "raw_sha256": "6831fec56ef6f47eb040813fb5232363a366dd45d3c7e67ce9d30bcf1b4cd92c"
+    },
+    {
+      "name": "approve_offer_limited_to_hiring_manager_drafted_or_window",
+      "type": "implies",
+      "status": "PASS",
+      "elapsed_seconds": 0.014038583030924201,
+      "raw_sha256": "863f1b9510543b62de889c5ab8b2288a8a9147d5cac0feebad7f7fd83231a59c"
+    },
+    {
+      "name": "approve_offer_success_path_liveness",
+      "type": "liveness-overlap",
+      "status": "PASS",
+      "elapsed_seconds": 0.02884841593913734,
+      "raw_sha256": "0b4f532497f14a1c037516558412e257c42f2c9fe8df72ad291dc55fbae1c3f1"
+    }
+  ],
+  "semantic_check_count": 3,
+  "raw_directory": "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/verifier/0f47c7f40afdf2900ef6c2d1d9fb2a480f4a1d837574f5f5b4b3801b0b3a789b",
+  "confirmed_overgrant": false,
+  "confirmed_overdeny": false
+}

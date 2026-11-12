@@ -1,0 +1,1 @@
+permit (principal is User, action == Action::"implementChange", resource is ChangeRequest) when { principal.isNetworkEngineer && resource.currentStatus == ChangeStatus::"Approved" && (resource.isEmergency || context.currentTime >= resource.maintenanceWindowStart) };

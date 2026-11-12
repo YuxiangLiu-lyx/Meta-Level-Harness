@@ -1,0 +1,1 @@
+permit (principal, action == Action::"launchCampaign", resource) when { !(principal is User && resource is Campaign && (principal.roles.contains(Role::"AccountManager") || principal.roles.contains(Role::"CampaignDirector")) && resource.advertiser != principal) };

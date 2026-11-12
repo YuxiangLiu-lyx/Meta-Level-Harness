@@ -1,0 +1,1 @@
+permit (principal is Pathologist, action == Action::"releaseLabResult", resource is LabResult) when { resource.isVerified == true && resource.sensitivityLevel != "restricted" && (!(resource has verifiedBy) || (resource has verifiedBy && resource.verifiedBy.user != principal.user)) };

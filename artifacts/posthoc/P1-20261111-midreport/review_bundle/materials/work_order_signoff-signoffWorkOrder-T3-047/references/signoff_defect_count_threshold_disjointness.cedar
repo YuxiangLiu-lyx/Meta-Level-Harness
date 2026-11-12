@@ -1,0 +1,1 @@
+permit (principal is Person, action == Action::"signOffWorkOrder", resource is WorkOrder) when { !((principal.roles.contains(Role::"inspector") || principal.roles.contains(Role::"qualityManager")) && resource.defectCount > resource.acceptanceThreshold) };

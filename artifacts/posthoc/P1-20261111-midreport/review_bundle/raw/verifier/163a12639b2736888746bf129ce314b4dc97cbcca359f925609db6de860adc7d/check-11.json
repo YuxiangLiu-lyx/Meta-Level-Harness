@@ -1,0 +1,27 @@
+{
+  "command": [
+    "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/dependencies/cedar-policy-cli-experimental-aarch64-apple-darwin/cedar",
+    "symcc",
+    "--cvc5-path",
+    "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/dependencies/cvc5-macOS-arm64-static/bin/cvc5",
+    "--principal-type",
+    "User",
+    "--action",
+    "Action::\"launchCampaign\"",
+    "--resource-type",
+    "Campaign",
+    "--schema",
+    "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/selected_scenarios/scenarios/ad_campaigns-chain2-T6-015/schema.cedarschema",
+    "--counterexample",
+    "implies",
+    "--policies1",
+    "/var/folders/f4/3c2p11sd22b76640b44tvyv80000gn/T/cedar-score-00rkc3dl/candidate.cedar",
+    "--policies2",
+    "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/selected_scenarios/scenarios/ad_campaigns-chain2-T6-015/references/launch_without_required_risk_label_excluded.cedar"
+  ],
+  "returncode": 0,
+  "stdout": "\u2713 Policy set 1 implies policy set 2: VERIFIED\n",
+  "stderr": "",
+  "elapsed_seconds": 0.008635457954369485,
+  "timeout": false
+}

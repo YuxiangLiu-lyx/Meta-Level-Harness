@@ -1,0 +1,27 @@
+{
+  "command": [
+    "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/dependencies/cedar-policy-cli-experimental-aarch64-apple-darwin/cedar",
+    "symcc",
+    "--cvc5-path",
+    "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/dependencies/cvc5-macOS-arm64-static/bin/cvc5",
+    "--principal-type",
+    "Person",
+    "--action",
+    "Action::\"createWorkOrder\"",
+    "--resource-type",
+    "WorkOrder",
+    "--schema",
+    "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/selected_scenarios/scenarios/work_order_signoff-signoffWorkOrder-T3-047/schema.cedarschema",
+    "--counterexample",
+    "implies",
+    "--policies1",
+    "/var/folders/f4/3c2p11sd22b76640b44tvyv80000gn/T/cedar-score-2icgnd2y/candidate.cedar",
+    "--policies2",
+    "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/selected_scenarios/scenarios/work_order_signoff-signoffWorkOrder-T3-047/references/operator_create_own_work_order_ceiling.cedar"
+  ],
+  "returncode": 0,
+  "stdout": "\u2717 Policy set 1 implies policy set 2: DOES NOT HOLD\n  Counterexample found:\nprincipal: Person::\"\", action: Action::\"createWorkOrder\", resource: WorkOrder::\"\"\ncontext: {currentTime: datetime(\"1970-01-01\").offset(duration(\"0ms\")), deviationAuthorized: false, fromPlantNetwork: false}\nentities: [\n  Person::\"\" {\n    roles: [Role::\"operator\"],\n  },\n  WorkOrderStatus::\"released\",\n  Role::\"auditor\",\n  Role::\"inspector\",\n  Action::\"startWork\",\n  Action::\"releaseToProduction\",\n  Action::\"signOffWorkOrder\",\n  Person::\"A\" {\n    roles: [Role::\"operator\"],\n  },\n  WorkOrderStatus::\"inProgress\",\n  WorkOrderStatus::\"created\",\n  WorkOrderStatus::\"signedOff\",\n  Action::\"createWorkOrder\",\n  Role::\"operator\",\n  Role::\"productionSupervisor\",\n  Role::\"qualityManager\",\n  Action::\"viewQualityLog\",\n  Person::\"B\" {\n    roles: [Role::\"operator\"],\n  },\n  WorkOrder::\"\" {\n    acceptanceThreshold: 0,\n    creationTime: datetime(\"1970-01-01\").offset(duration(\"-1ms\")),\n    defectCount: 0,\n    holdFlag: true,\n    inspector: Person::\"B\",\n    operator: Person::\"A\",\n    partCode: \"\",\n    partCodeAcceptable: true,\n    station: \"A\",\n    status: WorkOrderStatus::\"created\",\n  },\n]\n",
+  "stderr": "",
+  "elapsed_seconds": 0.010873832972720265,
+  "timeout": false
+}

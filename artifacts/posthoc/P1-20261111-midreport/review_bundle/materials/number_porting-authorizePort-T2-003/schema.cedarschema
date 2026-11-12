@@ -1,0 +1,46 @@
+entity User {
+    isPortingSpecialist: Bool,
+    isPortingSupervisor: Bool,
+    isFraudReviewer: Bool,
+    isLineTechnician: Bool,
+    isAuditor: Bool,
+};
+
+entity PortRequest {
+    initiatedBy: User,
+    authorizedBy?: User,
+    technicianAssignedTo: User,
+    accountNumbers: Set<String>,
+    numberBlockSize: Long,
+    gainingCarrierCode: String,
+    portType: String,
+    subscriberRegion: String,
+    status: String,
+    requestedAt: datetime,
+    includesFlaggedOrHighValueLine: Bool,
+    currentTime: datetime,
+    isFromOwnOperationsNetwork: Bool,
+    portFreezeOverrideDeclared: Bool,
+    regulatorEscalationInEffect: Bool,
+};
+
+entity PortCompletion {
+    request: PortRequest,
+    completedBy: User,
+    portedAt: datetime,
+};
+
+action submitPortRequest appliesTo {
+    principal: [User],
+    resource: [PortRequest],
+};
+
+action authorizePortRequest appliesTo {
+    principal: [User],
+    resource: [PortRequest],
+};
+
+action completeCutover appliesTo {
+    principal: [User],
+    resource: [PortCompletion],
+};

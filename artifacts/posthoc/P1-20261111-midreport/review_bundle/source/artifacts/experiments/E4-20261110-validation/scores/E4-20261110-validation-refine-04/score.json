@@ -1,0 +1,56 @@
+{
+  "scenario_id": "iot_fleet-readTelemetry-T3-012",
+  "cache_key": "2dee39121a6aea264e89f2668c423cc148acb07cd16067df0212e70f48ca2ebf",
+  "verifier_version": "f9d67ee8f0a3920a13240774a30ca4c818f964d7b8370f1e8a7fd1e1e38bd5c4",
+  "status": "SEMANTIC_FAIL",
+  "syntax_valid": true,
+  "schema_valid": true,
+  "checks": [
+    {
+      "name": "read_telemetry_owner_site_group_floor",
+      "type": "floor",
+      "status": "FAIL",
+      "elapsed_seconds": 0.02018654195126146,
+      "raw_sha256": "7454fb15093739b17f5b23c31effefd99377b5b25dd3a88a79880fd7b6ce4d15"
+    },
+    {
+      "name": "read_telemetry_non_owner_clearance_floor",
+      "type": "floor",
+      "status": "FAIL",
+      "elapsed_seconds": 0.01737133297137916,
+      "raw_sha256": "8bea6bbff9fe5e552a7297ed3462832690519b0a1c3e9343b44ac63680046a2c"
+    },
+    {
+      "name": "read_telemetry_operator_admin_allowed_slice_ceiling",
+      "type": "implies",
+      "status": "FAIL",
+      "elapsed_seconds": 0.014440000057220459,
+      "raw_sha256": "32dc6a3855678a59cead575882e54885a218258a43237b39ebc0fcbb51e1afd1"
+    },
+    {
+      "name": "read_telemetry_outside_site_group_disjoint",
+      "type": "implies",
+      "status": "FAIL",
+      "elapsed_seconds": 0.013392249937169254,
+      "raw_sha256": "f94473fe6d06136ce8e4174cea8cd924dc4be74f4243a55636062e7afaf1384a"
+    },
+    {
+      "name": "read_telemetry_non_owner_below_clearance_disjoint",
+      "type": "implies",
+      "status": "PASS",
+      "elapsed_seconds": 0.010332250036299229,
+      "raw_sha256": "baffb4f3c19693dd8a48163a96b627173908ec63d77931e3c8c0a0894f3f2994"
+    },
+    {
+      "name": "read_telemetry_operator_success_liveness",
+      "type": "liveness-overlap",
+      "status": "PASS",
+      "elapsed_seconds": 0.012969208997674286,
+      "raw_sha256": "13960f63b80e838c0e54b819321c7a6f716dea9a1177b7f0d758a04cb953f8c0"
+    }
+  ],
+  "semantic_check_count": 6,
+  "raw_directory": "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/verifier/2dee39121a6aea264e89f2668c423cc148acb07cd16067df0212e70f48ca2ebf",
+  "confirmed_overgrant": true,
+  "confirmed_overdeny": true
+}

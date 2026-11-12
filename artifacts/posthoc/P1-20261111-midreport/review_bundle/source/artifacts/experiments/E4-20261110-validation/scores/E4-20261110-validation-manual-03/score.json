@@ -1,0 +1,119 @@
+{
+  "scenario_id": "network_change_approval-chain2-T4-026",
+  "cache_key": "b69da61158ab671046290c90bb3419af94868a509eb363aeaf2746c1ac337df5",
+  "verifier_version": "f9d67ee8f0a3920a13240774a30ca4c818f964d7b8370f1e8a7fd1e1e38bd5c4",
+  "status": "SEMANTIC_FAIL",
+  "syntax_valid": true,
+  "schema_valid": true,
+  "checks": [
+    {
+      "name": "dual_role_engineer_can_implement_schedule_compliant_approved_change",
+      "type": "floor",
+      "status": "PASS",
+      "elapsed_seconds": 0.07285195798613131,
+      "raw_sha256": "0063e9a1f58f099faa479eb89bcef698953c48219618b2309561893fdc84c4e0"
+    },
+    {
+      "name": "engineers_cannot_implement_unapproved_changes",
+      "type": "implies",
+      "status": "PASS",
+      "elapsed_seconds": 0.011993916006758809,
+      "raw_sha256": "8789652f26fa483174c1592ec8039774b3cc14a4e976cc36ca6d9ed3253f050c"
+    },
+    {
+      "name": "emergency_change_can_be_implemented_before_window",
+      "type": "floor",
+      "status": "PASS",
+      "elapsed_seconds": 0.011423083022236824,
+      "raw_sha256": "6b1388cdcd8c308ff1a99a65aca7a3e75d66f80187dc865ece9c77b759e65821"
+    },
+    {
+      "name": "non_emergency_changes_follow_standard_window",
+      "type": "implies",
+      "status": "PASS",
+      "elapsed_seconds": 0.01122212503105402,
+      "raw_sha256": "ed932280e15994af3e2852d15d897e16a53e17712fb2b4e4740fec41167fd514"
+    },
+    {
+      "name": "cost_aware_authorized_approvers_can_approve_changes",
+      "type": "floor",
+      "status": "FAIL",
+      "elapsed_seconds": 0.02234920801129192,
+      "raw_sha256": "a9768121d1ccaeaf27c7e1ccce043ff9665a9463eeb19e802156c64f6226de23"
+    },
+    {
+      "name": "approval_limited_to_role_and_risk_authority",
+      "type": "implies",
+      "status": "FAIL",
+      "elapsed_seconds": 0.016021208022721112,
+      "raw_sha256": "fe819f97ac7115dea34bccc33d7c64717085cfb11db5431403fa758995410305"
+    },
+    {
+      "name": "changes_cannot_be_implemented_before_approval",
+      "type": "implies",
+      "status": "PASS",
+      "elapsed_seconds": 0.010945958085358143,
+      "raw_sha256": "ce9536bf0722a3e8601d33f7fe2280ed361d68e7344e903cce8df179a741dfc2"
+    },
+    {
+      "name": "high_cost_approvals_require_cab_signoff_cents",
+      "type": "implies",
+      "status": "FAIL",
+      "elapsed_seconds": 0.018666291958652437,
+      "raw_sha256": "5ed0eb5ad525c795f6904e2127829f360cfad4de1c7cf6f0353d71641dc473f7"
+    },
+    {
+      "name": "cost_aware_approval_grant_is_bounded",
+      "type": "implies",
+      "status": "FAIL",
+      "elapsed_seconds": 0.02009050000924617,
+      "raw_sha256": "21bd15cb561745dd376bbf354841d5113a34cf3e343f21fde09ff4ed0b1a0b58"
+    },
+    {
+      "name": "non_emergency_approved_change_can_be_implemented_in_window",
+      "type": "floor",
+      "status": "PASS",
+      "elapsed_seconds": 0.012597250053659081,
+      "raw_sha256": "b6f2396123db6a910ccecd81f75067b70f65161e8000ec379332d7302652a787"
+    },
+    {
+      "name": "implementation_schedule_grant_is_bounded",
+      "type": "implies",
+      "status": "PASS",
+      "elapsed_seconds": 0.011366583057679236,
+      "raw_sha256": "c1e70ba4f217e1c8b2a21812bceb631beb2e8ecbceb933dc262adc5f29869b84"
+    },
+    {
+      "name": "scheduled_implementation_approval_grant_is_bounded",
+      "type": "implies",
+      "status": "FAIL",
+      "elapsed_seconds": 0.019470458035357296,
+      "raw_sha256": "5d0637e21fd0cec8110dd20d3df25a08a43c6e1438e6eac19d87cc062bfac1f4"
+    },
+    {
+      "name": "network_engineer_can_implement_schedule_compliant_approved_change",
+      "type": "floor",
+      "status": "PASS",
+      "elapsed_seconds": 0.011522458982653916,
+      "raw_sha256": "7201c0f86e66d86de914821426d2b937855b25b553e1eb9382de3ed57ebb5ad7"
+    },
+    {
+      "name": "focus_workflow_approval_grant_is_bounded",
+      "type": "implies",
+      "status": "FAIL",
+      "elapsed_seconds": 0.01927179202903062,
+      "raw_sha256": "e0f15d6a308ccc532329fa34d6a4c79f23fd08b96c1ba0d6cbfc9a65505bfe00"
+    },
+    {
+      "name": "focus_workflow_implementation_grant_is_bounded",
+      "type": "implies",
+      "status": "FAIL",
+      "elapsed_seconds": 0.01684829208534211,
+      "raw_sha256": "237485a586b774cd3cd4f1804c3ecda440e44c98af78101f41fe7dafe81699eb"
+    }
+  ],
+  "semantic_check_count": 15,
+  "raw_directory": "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/verifier/b69da61158ab671046290c90bb3419af94868a509eb363aeaf2746c1ac337df5",
+  "confirmed_overgrant": true,
+  "confirmed_overdeny": true
+}

@@ -1,0 +1,27 @@
+{
+  "command": [
+    "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/dependencies/cedar-policy-cli-experimental-aarch64-apple-darwin/cedar",
+    "symcc",
+    "--cvc5-path",
+    "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/dependencies/cvc5-macOS-arm64-static/bin/cvc5",
+    "--principal-type",
+    "User",
+    "--action",
+    "Action::\"approveChange\"",
+    "--resource-type",
+    "ChangeRequest",
+    "--schema",
+    "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/selected_scenarios/scenarios/network_change_approval-chain2-T4-026/schema.cedarschema",
+    "--counterexample",
+    "implies",
+    "--policies1",
+    "/var/folders/f4/3c2p11sd22b76640b44tvyv80000gn/T/cedar-score-5tj7ggcm/candidate.cedar",
+    "--policies2",
+    "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/selected_scenarios/scenarios/network_change_approval-chain2-T4-026/references/focus_workflow_approval_grant_is_bounded.cedar"
+  ],
+  "returncode": 0,
+  "stdout": "\u2717 Policy set 1 implies policy set 2: DOES NOT HOLD\n  Counterexample found:\nprincipal: User::\"\", action: Action::\"approveChange\", resource: ChangeRequest::\"\"\ncontext: {cabSignoffCostThreshold: decimal(\"-0.0001\"), cabSignoffCostThresholdCents: -1, changeFreezeWaiverGranted: true, currentTime: datetime(\"1970-01-01\").offset(duration(\"-1ms\")), fromManagementNetwork: true, majorIncidentDeclared: true}\nentities: [\n  Action::\"approveChange\",\n  Action::\"implementChange\",\n  ChangeStatus::\"Approved\",\n  ChangeStatus::\"NotApproved\",\n  User::\"\" {\n    grantedChangeAuthorityLevel: -2,\n    isAuditor: true,\n    isCabApprover: true,\n    isChangeManager: true,\n    isNetworkEngineer: true,\n    isSeniorEngineer: true,\n  },\n  ChangeRequest::\"\" {\n    affectedNodeCount: -1,\n    assessedRisk: -1,\n    changeCategory: \"\",\n    changeCode: \"A\",\n    currentStatus: ChangeStatus::\"Approved\",\n    estimatedCost: decimal(\"-0.0001\"),\n    estimatedCostCents: -1,\n    implementedBy: User::\"\",\n    isEmergency: true,\n    maintenanceWindowStart: datetime(\"1970-01-01\").offset(duration(\"-1ms\")),\n    requestedBy: User::\"A\",\n    rollbackStepCount: -1,\n  },\n  User::\"A\" {\n    grantedChangeAuthorityLevel: -2,\n    isAuditor: true,\n    isCabApprover: true,\n    isChangeManager: true,\n    isNetworkEngineer: true,\n    isSeniorEngineer: true,\n  },\n]\n",
+  "stderr": "",
+  "elapsed_seconds": 0.01927179202903062,
+  "timeout": false
+}

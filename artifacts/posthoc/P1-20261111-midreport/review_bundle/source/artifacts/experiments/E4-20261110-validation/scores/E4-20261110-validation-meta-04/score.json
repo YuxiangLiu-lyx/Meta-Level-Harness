@@ -1,0 +1,56 @@
+{
+  "scenario_id": "iot_fleet-readTelemetry-T3-012",
+  "cache_key": "3f78ae8cf61eb81c2dcea1c7da362c56591e37101bf054e594276ba06a1c9d58",
+  "verifier_version": "f9d67ee8f0a3920a13240774a30ca4c818f964d7b8370f1e8a7fd1e1e38bd5c4",
+  "status": "SEMANTIC_FAIL",
+  "syntax_valid": true,
+  "schema_valid": true,
+  "checks": [
+    {
+      "name": "read_telemetry_owner_site_group_floor",
+      "type": "floor",
+      "status": "FAIL",
+      "elapsed_seconds": 0.012890332960523665,
+      "raw_sha256": "92d9ad10ab957c7ffff5701b5267d7cb4fe2750441106c64a765fa3321570211"
+    },
+    {
+      "name": "read_telemetry_non_owner_clearance_floor",
+      "type": "floor",
+      "status": "FAIL",
+      "elapsed_seconds": 0.01354791596531868,
+      "raw_sha256": "675849118ba94ca03058786060b9deba5bcbffe5a946149fb6ae550c21c44ec3"
+    },
+    {
+      "name": "read_telemetry_operator_admin_allowed_slice_ceiling",
+      "type": "implies",
+      "status": "FAIL",
+      "elapsed_seconds": 0.013327500084415078,
+      "raw_sha256": "1263d0a293eb260f9b35c7f85367920825b1e29832bacddf99eb4fc6abb2ca59"
+    },
+    {
+      "name": "read_telemetry_outside_site_group_disjoint",
+      "type": "implies",
+      "status": "FAIL",
+      "elapsed_seconds": 0.013472125050611794,
+      "raw_sha256": "2c20e20b73718393cce8e931dcb2d2f918306bf230e6769a4658aa6b1d1ef810"
+    },
+    {
+      "name": "read_telemetry_non_owner_below_clearance_disjoint",
+      "type": "implies",
+      "status": "PASS",
+      "elapsed_seconds": 0.012208292027935386,
+      "raw_sha256": "e47802b6f2e2c44640f2f63af54d96b72a46c426d0c4ff200abc1425191ad283"
+    },
+    {
+      "name": "read_telemetry_operator_success_liveness",
+      "type": "liveness-overlap",
+      "status": "PASS",
+      "elapsed_seconds": 0.014230292057618499,
+      "raw_sha256": "19a20771d0e1a0498cdca5eadfc679db264a0d7f6e8b69850deb04ded6f98a33"
+    }
+  ],
+  "semantic_check_count": 6,
+  "raw_directory": "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/verifier/3f78ae8cf61eb81c2dcea1c7da362c56591e37101bf054e594276ba06a1c9d58",
+  "confirmed_overgrant": true,
+  "confirmed_overdeny": true
+}

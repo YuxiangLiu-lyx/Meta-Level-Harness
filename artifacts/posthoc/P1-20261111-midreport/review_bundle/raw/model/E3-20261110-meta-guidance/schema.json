@@ -1,0 +1,12 @@
+{
+  "type": "object",
+  "properties": {
+    "guidance": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "guidance"
+  ],
+  "additionalProperties": false
+}

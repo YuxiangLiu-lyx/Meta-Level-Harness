@@ -1,0 +1,1 @@
+permit (principal, action, resource) when { principal is User && resource is Payment && action == Action::"issuePayment" && !(resource.invoice has approver && resource.invoice.approver == principal && !context.emergencyDeclared) };

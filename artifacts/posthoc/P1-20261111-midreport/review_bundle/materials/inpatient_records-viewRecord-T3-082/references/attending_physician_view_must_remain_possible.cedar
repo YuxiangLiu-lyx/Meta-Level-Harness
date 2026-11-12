@@ -1,0 +1,1 @@
+permit (principal is Person, action == Action::"viewMedicalRecord", resource is MedicalRecord) when { principal.roles.contains(Role::"attendingPhysician") && (!resource.isSealed || principal.clearedLevel >= resource.sensitivity) };

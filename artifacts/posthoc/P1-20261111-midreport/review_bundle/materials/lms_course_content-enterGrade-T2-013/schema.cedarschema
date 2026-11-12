@@ -1,0 +1,35 @@
+entity Role enum ["InstructorOfRecord", "TeachingAssistant", "Learner", "Coordinator"];
+
+entity Person {
+    roles: Set<Role>,
+    completedLevel: Long,
+};
+
+entity Course;
+
+entity Module {
+    course: Course,
+    instructorOfRecord: Person,
+    roster: Set<Person>,
+    prerequisiteLevel: Long,
+    releaseTime: datetime,
+    locked: Bool,
+    status: String,
+};
+
+entity GradeEntry {
+    learner: Person,
+    module: Module,
+    postedBy: Person,
+    status: String,
+};
+
+action enterGrade appliesTo {
+    principal: [Person],
+    resource: [GradeEntry],
+    context: {
+        currentTime: datetime,
+        onInstitutionNetwork: Bool,
+        previewWindow: { start: datetime, end: datetime },
+    },
+};

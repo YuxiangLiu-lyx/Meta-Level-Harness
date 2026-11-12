@@ -1,0 +1,38 @@
+entity Person {
+    roles: Set<Role>,
+    clearedLevel: Long,
+    ward: String,
+};
+
+entity Role enum ["attendingPhysician", "resident", "nurse", "pharmacist"];
+
+entity Patient;
+
+entity MedicalRecord {
+    patient: Patient,
+    careTeam: Set<Person>,
+    ward: String,
+    sensitivity: Long,
+    status: String,
+    isSealed: Bool,
+};
+
+entity Prescription {
+    patient: Patient,
+    prescriber: Person,
+    status: String,
+};
+
+entity LabOrder {
+    patient: Patient,
+};
+
+action viewMedicalRecord appliesTo {
+    principal: [Person],
+    resource: [MedicalRecord],
+    context: {
+        currentShift: String,
+        emergencyDeclared: Bool,
+        mfaUsed: Bool,
+    },
+};

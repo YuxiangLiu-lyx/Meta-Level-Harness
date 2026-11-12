@@ -1,0 +1,20 @@
+{
+  "status": "PASS",
+  "validation_type": "relocated copy, isolated Python process, audit-hook denied host-user reads/network/subprocess",
+  "original_host_paths_opened": 0,
+  "network_or_model_calls": 0,
+  "saved_result_layer": "COMPLETE",
+  "metrics_without_raw": "IDENTICAL",
+  "full_historical_evidence_layer": "INCOMPLETE",
+  "known_historical_solver_hash_gaps": 61,
+  "all_exported_files_verified": 1529,
+  "event_attempts_checked": 110,
+  "available_solver_decisions_checked": 80,
+  "missing_raw_audit": "INCOMPLETE",
+  "missing_raw_tool_events": null,
+  "bootstrap_interval_pp": [
+    -30.0,
+    10.0
+  ],
+  "temporary_directory": "fresh directory, removed after validation"
+}

@@ -1,0 +1,1 @@
+permit (principal, action == Action::"clearSecurityCheck", resource) when { principal is Person && resource is SecurityCheck && !(Role::"BackgroundInvestigator" in principal.roles && resource.status != "pending") };

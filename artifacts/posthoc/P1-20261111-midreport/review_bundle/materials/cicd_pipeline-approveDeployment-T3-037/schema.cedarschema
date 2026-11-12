@@ -1,0 +1,35 @@
+entity User {
+    isCommitter: Bool,
+    isApprover: Bool,
+    isReleaseManager: Bool,
+    isSre: Bool,
+    deployTier: String,
+};
+
+entity Artifact {
+    builtBy: User,
+    isSigned: Bool,
+    buildTags: Set<String>,
+    status: String,
+};
+
+entity Deployment {
+    committer: User,
+    approver: User,
+    targetEnvironment: String,
+    changeRisk: Long,
+    artifact: Artifact,
+    status: String,
+    submittedForReview: Bool,
+};
+
+action approveDeployment appliesTo {
+    principal: [User],
+    resource: [Deployment],
+    context: {
+        currentTime: datetime,
+        sourceIp: ipaddr,
+        emergencyChange: Bool,
+        extraScrutinyThreshold: Long,
+    },
+};

@@ -1,0 +1,1 @@
+permit (principal is Person, action == Action::"startWork", resource is WorkOrder) when { principal.roles.contains(Role::"operator") && resource.operator == principal };

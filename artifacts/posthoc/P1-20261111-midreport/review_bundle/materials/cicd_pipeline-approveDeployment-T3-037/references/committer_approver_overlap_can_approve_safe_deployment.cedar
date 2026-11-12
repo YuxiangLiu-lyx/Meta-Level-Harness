@@ -1,0 +1,1 @@
+permit (principal is User, action == Action::"approveDeployment", resource is Deployment) when { principal.isCommitter && principal.isApprover && principal != resource.committer && (resource.changeRisk <= context.extraScrutinyThreshold || resource.submittedForReview) };

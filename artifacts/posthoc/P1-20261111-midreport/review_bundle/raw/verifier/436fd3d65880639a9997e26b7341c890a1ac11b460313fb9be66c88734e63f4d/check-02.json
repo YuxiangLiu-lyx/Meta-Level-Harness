@@ -1,0 +1,27 @@
+{
+  "command": [
+    "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/dependencies/cedar-policy-cli-experimental-aarch64-apple-darwin/cedar",
+    "symcc",
+    "--cvc5-path",
+    "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/dependencies/cvc5-macOS-arm64-static/bin/cvc5",
+    "--principal-type",
+    "User",
+    "--action",
+    "Action::\"approveDeployment\"",
+    "--resource-type",
+    "Deployment",
+    "--schema",
+    "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/selected_scenarios/scenarios/cicd_pipeline-approveDeployment-T3-037/schema.cedarschema",
+    "--counterexample",
+    "implies",
+    "--policies1",
+    "/var/folders/f4/3c2p11sd22b76640b44tvyv80000gn/T/cedar-score-c5t5axud/candidate.cedar",
+    "--policies2",
+    "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/selected_scenarios/scenarios/cicd_pipeline-approveDeployment-T3-037/references/approve_deployment_bounded_to_overlap_and_safe_role_slices.cedar"
+  ],
+  "returncode": 0,
+  "stdout": "\u2713 Policy set 1 implies policy set 2: VERIFIED\n",
+  "stderr": "",
+  "elapsed_seconds": 0.01192770793568343,
+  "timeout": false
+}

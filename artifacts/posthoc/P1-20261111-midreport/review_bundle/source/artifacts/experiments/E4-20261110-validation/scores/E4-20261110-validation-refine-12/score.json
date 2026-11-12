@@ -1,0 +1,49 @@
+{
+  "scenario_id": "number_porting-authorizePort-T2-003",
+  "cache_key": "27a832f70a22803676d35e53b3ee82a0020728536d26142aa6087be4b4f41571",
+  "verifier_version": "f9d67ee8f0a3920a13240774a30ca4c818f964d7b8370f1e8a7fd1e1e38bd5c4",
+  "status": "PASS",
+  "syntax_valid": true,
+  "schema_valid": true,
+  "checks": [
+    {
+      "name": "specialist_non_submitter_authorize_floor",
+      "type": "floor",
+      "status": "PASS",
+      "elapsed_seconds": 0.01803158293478191,
+      "raw_sha256": "0e43590e31870dd342a592b33f62a70f3b0e371a9d89e63e107aefefbef3d6ea"
+    },
+    {
+      "name": "specialist_self_authorize_flagged_exception_floor",
+      "type": "floor",
+      "status": "PASS",
+      "elapsed_seconds": 0.013066000072285533,
+      "raw_sha256": "1edbdeebfe885d9264de014b175906f38f6759d58a1ecfca0244fdcc74261552"
+    },
+    {
+      "name": "no_self_authorize_unflagged_request",
+      "type": "implies",
+      "status": "PASS",
+      "elapsed_seconds": 0.011456709005869925,
+      "raw_sha256": "a9bead93b11978ffd6ff7971bd0b6ab058a6fd72a37517062516b6b5418ec5aa"
+    },
+    {
+      "name": "specialist_authorize_approved_slices_ceiling",
+      "type": "implies",
+      "status": "PASS",
+      "elapsed_seconds": 0.010389667004346848,
+      "raw_sha256": "880ed795f4098243cb5ac652fa1bdb33121a8567ef186d36d4c2f6ae76491b91"
+    },
+    {
+      "name": "specialist_authorize_non_submitter_bounded_ceiling",
+      "type": "implies",
+      "status": "PASS",
+      "elapsed_seconds": 0.010033541009761393,
+      "raw_sha256": "ba26066cc215d4a6c7957d48a18a8b77fb457b5a48b9f91b933e1ce9c2f71435"
+    }
+  ],
+  "semantic_check_count": 5,
+  "raw_directory": "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/verifier/27a832f70a22803676d35e53b3ee82a0020728536d26142aa6087be4b4f41571",
+  "confirmed_overgrant": false,
+  "confirmed_overdeny": false
+}

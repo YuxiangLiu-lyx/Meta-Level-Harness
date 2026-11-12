@@ -1,0 +1,25 @@
+{
+  "analysis_version": "a2",
+  "previous_analysis_archive": "artifacts/analysis_revisions/a1",
+  "changes": [
+    "Correct empty semantic-check lists after schema failure: show SCHEMA_FAIL and checks not run, never all checks pass.",
+    "Disclose configured timeout 180 seconds versus observed wall elapsed 1165.7377498149872 seconds for the Refine validation timeout. Cause unknown; elapsed time is not model compute."
+  ],
+  "unchanged": [
+    "all model outputs",
+    "all evaluation scores",
+    "all scenario success counts",
+    "paired comparison",
+    "all raw events",
+    "all frozen generation configurations"
+  ],
+  "additional_model_calls": 0,
+  "additional_policy_generations": 0,
+  "timeout_incident": {
+    "task_id": "E4-20261110-validation-refine-17",
+    "configured_timeout_seconds": 180,
+    "observed_wall_elapsed_seconds": 1165.7377498149872,
+    "cause": null
+  },
+  "old_E4_report_sha256": "987ed3d9f72983a63d4ff0d5f82c77927553809e634fbe6a4c4170d68f213fdf"
+}

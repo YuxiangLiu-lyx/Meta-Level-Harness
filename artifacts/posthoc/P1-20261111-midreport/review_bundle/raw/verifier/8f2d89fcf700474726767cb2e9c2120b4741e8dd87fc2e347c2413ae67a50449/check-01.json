@@ -1,0 +1,27 @@
+{
+  "command": [
+    "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/dependencies/cedar-policy-cli-experimental-aarch64-apple-darwin/cedar",
+    "symcc",
+    "--cvc5-path",
+    "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/dependencies/cvc5-macOS-arm64-static/bin/cvc5",
+    "--principal-type",
+    "User",
+    "--action",
+    "Action::\"mergePullRequest\"",
+    "--resource-type",
+    "PullRequest",
+    "--schema",
+    "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/selected_scenarios/scenarios/code_repository-chain2-T4-014/schema.cedarschema",
+    "--counterexample",
+    "implies",
+    "--policies1",
+    "/var/folders/f4/3c2p11sd22b76640b44tvyv80000gn/T/cedar-score-tggydw52/candidate.cedar",
+    "--policies2",
+    "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/selected_scenarios/scenarios/code_repository-chain2-T4-014/references/merger_must_not_be_pull_request_author.cedar"
+  ],
+  "returncode": 0,
+  "stdout": "\u2713 Policy set 1 implies policy set 2: VERIFIED\n",
+  "stderr": "",
+  "elapsed_seconds": 0.010824666009284556,
+  "timeout": false
+}

@@ -1,0 +1,44 @@
+entity User {
+    roles: Set<Role>,
+};
+
+entity Role enum ["clerk", "approver", "financeManager", "auditor"];
+
+entity InvoiceStatus enum ["submitted", "approved"];
+
+entity Invoice {
+    creator: User,
+    approver?: User,
+    amount: decimal,
+    surcharge: decimal,
+    lineItemCount: Long,
+    status: InvoiceStatus,
+    costCenter: String,
+    submittedAt: datetime,
+};
+
+entity Payment {
+    invoice: Invoice,
+    issuer: User,
+    amount: decimal,
+};
+
+action approveInvoice appliesTo {
+    principal: [User],
+    resource: [Invoice],
+    context: {
+        currentTime: datetime,
+        onCorporateNetwork: Bool,
+        emergencyDeclared: Bool,
+    },
+};
+
+action issuePayment appliesTo {
+    principal: [User],
+    resource: [Payment],
+    context: {
+        currentTime: datetime,
+        onCorporateNetwork: Bool,
+        emergencyDeclared: Bool,
+    },
+};

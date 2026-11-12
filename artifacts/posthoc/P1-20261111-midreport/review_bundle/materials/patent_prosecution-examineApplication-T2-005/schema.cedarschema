@@ -1,0 +1,33 @@
+entity Role enum ["patentAttorney", "docketClerk", "examiner", "inventor"];
+
+entity Person {
+    roles: Set<Role>,
+    clearance: String,
+};
+
+entity Team;
+
+entity PatentApplication {
+    inventor: Person,
+    prosecutingAttorney: Person,
+    assignedExaminer: Person,
+    team: Team,
+    confidentiality: String,
+    barDate: datetime,
+    status: String,
+};
+
+entity OfficeAction;
+
+entity Filing;
+
+action examinePatentApplication appliesTo {
+    principal: [Person],
+    resource: [PatentApplication],
+    context: {
+        currentDate: datetime,
+        onFirmNetwork: Bool,
+        hasCourtOrder: Bool,
+        mfaUsed: Bool,
+    },
+};

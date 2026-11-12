@@ -1,0 +1,63 @@
+{
+  "scenario_id": "kubernetes_rbac-readSecret-T3-033",
+  "cache_key": "b0fb9a00b1e45bde716b6fe72325a02c86f3b2b9ac97be29cb813e13eb7b56f3",
+  "verifier_version": "f9d67ee8f0a3920a13240774a30ca4c818f964d7b8370f1e8a7fd1e1e38bd5c4",
+  "status": "PASS",
+  "syntax_valid": true,
+  "schema_valid": true,
+  "checks": [
+    {
+      "name": "owned_secret_clearance_read_floor",
+      "type": "floor",
+      "status": "PASS",
+      "elapsed_seconds": 0.0703339169267565,
+      "raw_sha256": "d41ee3702b85d080bbf8259a89c2755243badd4d0f5bdd9dffcb40d0ce805f4e"
+    },
+    {
+      "name": "read_secret_requires_sufficient_clearance",
+      "type": "implies",
+      "status": "PASS",
+      "elapsed_seconds": 0.011479082982987165,
+      "raw_sha256": "ec710a48e121a35e4224f45a0f4576254f7f49ef1e7c4fe9e07b93d3473926cc"
+    },
+    {
+      "name": "read_secret_excludes_non_owners",
+      "type": "implies",
+      "status": "PASS",
+      "elapsed_seconds": 0.012016375083476305,
+      "raw_sha256": "3be5a5d1e208d5352569f7f09ba837d1107494b2dfce31593630f66219a8492f"
+    },
+    {
+      "name": "read_secret_excludes_expired_token",
+      "type": "implies",
+      "status": "PASS",
+      "elapsed_seconds": 0.010286667034961283,
+      "raw_sha256": "22e1802e9b4bb896bd712b730986f02ade6bc2762bd9a9691c2e90555478a7d1"
+    },
+    {
+      "name": "owned_secret_unexpired_token_read_floor",
+      "type": "floor",
+      "status": "PASS",
+      "elapsed_seconds": 0.012900166097097099,
+      "raw_sha256": "ec08f5e6302238f3093ebd06f946075a5c5d24b844db2c65dd569f058a78bc01"
+    },
+    {
+      "name": "service_account_read_secret_excludes_expired_token",
+      "type": "implies",
+      "status": "PASS",
+      "elapsed_seconds": 0.010327750002034009,
+      "raw_sha256": "778fef30d01ffccaa8ac8452d2044fb7c3e7f0b694b994527e223c442c779a5c"
+    },
+    {
+      "name": "deployer_read_namespace_secret_liveness",
+      "type": "liveness-overlap",
+      "status": "PASS",
+      "elapsed_seconds": 0.019620500039309263,
+      "raw_sha256": "4f77ae8f3ece429577bd3ed3e5002ce5115425afd928a4e90566b477d3ec320a"
+    }
+  ],
+  "semantic_check_count": 7,
+  "raw_directory": "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/verifier/b0fb9a00b1e45bde716b6fe72325a02c86f3b2b9ac97be29cb813e13eb7b56f3",
+  "confirmed_overgrant": false,
+  "confirmed_overdeny": false
+}

@@ -1,0 +1,27 @@
+{
+  "command": [
+    "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/dependencies/cedar-policy-cli-experimental-aarch64-apple-darwin/cedar",
+    "symcc",
+    "--cvc5-path",
+    "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/dependencies/cvc5-macOS-arm64-static/bin/cvc5",
+    "--principal-type",
+    "Person",
+    "--action",
+    "Action::\"viewMedicalRecord\"",
+    "--resource-type",
+    "MedicalRecord",
+    "--schema",
+    "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/selected_scenarios/scenarios/inpatient_records-viewRecord-T3-082/schema.cedarschema",
+    "--counterexample",
+    "disjoint",
+    "--policies1",
+    "/var/folders/f4/3c2p11sd22b76640b44tvyv80000gn/T/cedar-score-qk2p2fob/candidate.cedar",
+    "--policies2",
+    "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/selected_scenarios/scenarios/inpatient_records-viewRecord-T3-082/references/attending_physician_view_must_remain_possible.cedar"
+  ],
+  "returncode": 0,
+  "stdout": "\u2717 Policy sets are disjoint: DOES NOT HOLD\n  Counterexample found:\nprincipal: Person::\"\", action: Action::\"viewMedicalRecord\", resource: MedicalRecord::\"\"\ncontext: {currentShift: \"\", emergencyDeclared: false, mfaUsed: false}\nentities: [\n  Role::\"attendingPhysician\",\n  Role::\"resident\",\n  Action::\"viewMedicalRecord\",\n  Role::\"nurse\",\n  Patient::\"\",\n  Person::\"\" {\n    clearedLevel: -1,\n    roles: [Role::\"attendingPhysician\"],\n    ward: \"\",\n  },\n  MedicalRecord::\"\" {\n    careTeam: [],\n    isSealed: true,\n    patient: Patient::\"\",\n    sensitivity: -1,\n    status: \"A\",\n    ward: \"B\",\n  },\n  Role::\"pharmacist\",\n]\n",
+  "stderr": "",
+  "elapsed_seconds": 0.013829417061060667,
+  "timeout": false
+}

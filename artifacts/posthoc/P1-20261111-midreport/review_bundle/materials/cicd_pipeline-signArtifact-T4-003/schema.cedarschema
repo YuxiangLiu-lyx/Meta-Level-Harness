@@ -1,0 +1,36 @@
+entity Role enum ["committer", "approver", "releaseManager", "siteReliabilityEngineer"];
+
+entity Team;
+
+entity User {
+    roles: Set<Role>,
+    team: Team,
+};
+
+entity Artifact {
+    builtBy: User,
+    hasBeenSigned: Bool,
+    buildTags: Set<String>,
+    status: String,
+    buildSucceeded: Bool,
+};
+
+entity Deployment {
+    committer: User,
+    approver: User,
+    targetEnvironment: String,
+    changeRiskLevel: String,
+    artifact: Artifact,
+    status: String,
+};
+
+action signArtifact appliesTo {
+    principal: [User],
+    resource: [Artifact],
+    context: {
+        currentTime: datetime,
+        sourceNetworkAddress: ipaddr,
+        isEmergencyChange: Bool,
+        sourceNetworkIsCorporateVpn: Bool,
+    },
+};

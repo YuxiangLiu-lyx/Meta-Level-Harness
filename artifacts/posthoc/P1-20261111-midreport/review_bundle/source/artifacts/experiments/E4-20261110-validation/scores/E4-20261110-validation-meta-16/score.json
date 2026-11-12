@@ -1,0 +1,13 @@
+{
+  "scenario_id": "immigration_casework-clearSecurityCheck-T3-024",
+  "cache_key": "fb7bba924712f641d5b459f1ac3bafb74101ba8eeb604bb9a4df2b2b9b389637",
+  "verifier_version": "f9d67ee8f0a3920a13240774a30ca4c818f964d7b8370f1e8a7fd1e1e38bd5c4",
+  "status": "SCHEMA_FAIL",
+  "syntax_valid": true,
+  "schema_valid": false,
+  "checks": [],
+  "semantic_check_count": 0,
+  "raw_directory": "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/verifier/fb7bba924712f641d5b459f1ac3bafb74101ba8eeb604bb9a4df2b2b9b389637",
+  "confirmed_overgrant": false,
+  "confirmed_overdeny": false
+}

@@ -1,0 +1,27 @@
+{
+  "command": [
+    "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/dependencies/cedar-policy-cli-experimental-aarch64-apple-darwin/cedar",
+    "symcc",
+    "--cvc5-path",
+    "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/dependencies/cvc5-macOS-arm64-static/bin/cvc5",
+    "--principal-type",
+    "Person",
+    "--action",
+    "Action::\"clearSecurityCheck\"",
+    "--resource-type",
+    "SecurityCheck",
+    "--schema",
+    "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/selected_scenarios/scenarios/immigration_casework-clearSecurityCheck-T3-024/schema.cedarschema",
+    "--counterexample",
+    "disjoint",
+    "--policies1",
+    "/var/folders/f4/3c2p11sd22b76640b44tvyv80000gn/T/cedar-score-uboa6521/candidate.cedar",
+    "--policies2",
+    "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/selected_scenarios/scenarios/immigration_casework-clearSecurityCheck-T3-024/references/background_investigator_pending_clear_security_check_liveness.cedar"
+  ],
+  "returncode": 0,
+  "stdout": "\u2717 Policy sets are disjoint: DOES NOT HOLD\n  Counterexample found:\nprincipal: Person::\"\", action: Action::\"clearSecurityCheck\", resource: SecurityCheck::\"\"\ncontext: {currentTime: datetime(\"1970-01-01\").offset(duration(\"-1ms\")), onGovernmentNetwork: true, supervisorApprovalPresent: true}\nentities: [\n  Action::\"clearSecurityCheck\",\n  Role::\"SupervisoryOfficer\",\n  Role::\"AdjudicationOfficer\",\n  Role::\"BackgroundInvestigator\",\n  Role::\"RecordsClerk\",\n  Applicant::\"\",\n  SecurityCheck::\"\" {\n    case: Case::\"\",\n    investigator: Person::\"A\",\n    permittedWindowEnd: datetime(\"1970-01-01\").offset(duration(\"-1ms\")),\n    permittedWindowStart: datetime(\"1970-01-01\").offset(duration(\"-1ms\")),\n    status: \"pending\",\n  },\n  Case::\"\" {\n    applicant: Applicant::\"\",\n    assignedOfficer: Person::\"\",\n    caseTeam: Team::\"\",\n    fieldOffice: FieldOffice::\"\",\n    status: \"\",\n  },\n  FieldOffice::\"\",\n  Person::\"A\" {\n    clearance: \"A\",\n    recusedCases: [],\n    roles: [Role::\"BackgroundInvestigator\", Role::\"SupervisoryOfficer\"],\n  },\n  Team::\"\",\n  Person::\"\" {\n    clearance: \"A\",\n    recusedCases: [],\n    roles: [Role::\"BackgroundInvestigator\", Role::\"SupervisoryOfficer\"],\n  },\n]\n",
+  "stderr": "",
+  "elapsed_seconds": 0.025605832925066352,
+  "timeout": false
+}

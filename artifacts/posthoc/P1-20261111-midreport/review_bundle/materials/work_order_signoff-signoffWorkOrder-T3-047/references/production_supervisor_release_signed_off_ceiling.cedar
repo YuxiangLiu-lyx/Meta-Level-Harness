@@ -1,0 +1,1 @@
+permit (principal is Person, action == Action::"releaseToProduction", resource is ProductionRelease) when { principal.roles.contains(Role::"productionSupervisor") && resource.workOrder.status == WorkOrderStatus::"signedOff" };

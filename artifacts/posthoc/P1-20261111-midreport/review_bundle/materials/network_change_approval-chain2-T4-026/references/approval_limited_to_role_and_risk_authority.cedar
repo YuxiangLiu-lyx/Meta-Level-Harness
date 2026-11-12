@@ -1,0 +1,1 @@
+permit (principal is User, action == Action::"approveChange", resource is ChangeRequest) when { (principal.isChangeManager || principal.isCabApprover) && principal.grantedChangeAuthorityLevel >= resource.assessedRisk };

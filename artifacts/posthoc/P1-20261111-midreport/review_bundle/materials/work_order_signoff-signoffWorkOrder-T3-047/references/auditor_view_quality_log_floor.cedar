@@ -1,0 +1,1 @@
+permit (principal is Person, action == Action::"viewQualityLog", resource is QualityLog) when { principal.roles.contains(Role::"auditor") };

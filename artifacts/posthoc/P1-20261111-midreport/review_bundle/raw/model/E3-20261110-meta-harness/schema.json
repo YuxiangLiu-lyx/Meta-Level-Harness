@@ -1,0 +1,33 @@
+{
+  "type": "object",
+  "properties": {
+    "instruction_blocks": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "input_order": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "requirements",
+          "schema"
+        ]
+      }
+    },
+    "checklist": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "required": [
+    "instruction_blocks",
+    "input_order",
+    "checklist"
+  ],
+  "additionalProperties": false
+}

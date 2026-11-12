@@ -1,0 +1,27 @@
+{
+  "command": [
+    "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/dependencies/cedar-policy-cli-experimental-aarch64-apple-darwin/cedar",
+    "symcc",
+    "--cvc5-path",
+    "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/dependencies/cvc5-macOS-arm64-static/bin/cvc5",
+    "--principal-type",
+    "User",
+    "--action",
+    "Action::\"obligateFunds\"",
+    "--resource-type",
+    "Award",
+    "--schema",
+    "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/selected_scenarios/scenarios/grant_awards-chain2-T3-005/schema.cedarschema",
+    "--counterexample",
+    "implies",
+    "--policies1",
+    "/Users/liuyuxiang/Documents/USA/599/harness_experiment_raw/selected_scenarios/scenarios/grant_awards-chain2-T3-005/references/obligate_funds_grants_officer_different_from_approver_floor.cedar",
+    "--policies2",
+    "/var/folders/f4/3c2p11sd22b76640b44tvyv80000gn/T/cedar-score-37c58rek/candidate.cedar"
+  ],
+  "returncode": 0,
+  "stdout": "\u2717 Policy set 1 implies policy set 2: DOES NOT HOLD\n  Counterexample found:\nprincipal: User::\"\", action: Action::\"obligateFunds\", resource: Award::\"\"\ncontext: {currentTime: datetime(\"1970-01-01\").offset(duration(\"0ms\")), emergencyDeclared: false, fromGovernmentNetwork: false}\nentities: [\n  Role::\"ProgramOfficer\",\n  Role::\"Applicant\",\n  User::\"\" {\n    approvalAuthority: -1,\n    roles: [Role::\"GrantsOfficer\"],\n  },\n  Action::\"obligateFunds\",\n  Award::\"\" {\n    amount: decimal(\"-0.0001\"),\n    application: Application::\"\",\n    approvedBy: User::\"A\",\n    highRisk: true,\n    obligatedBy: User::\"\",\n    status: \"\",\n  },\n  Action::\"approveAward\",\n  Role::\"GrantsOfficer\",\n  User::\"A\" {\n    approvalAuthority: -1,\n    roles: [Role::\"GrantsOfficer\"],\n  },\n  Application::\"\" {\n    applicant: User::\"\",\n    assignedReviewers: [],\n    fundingTier: 0,\n    programCode: \"\",\n    requestedAmount: decimal(\"0.0000\"),\n    status: \"\",\n  },\n  Role::\"Reviewer\",\n]\n",
+  "stderr": "",
+  "elapsed_seconds": 0.013369709020480514,
+  "timeout": false
+}

@@ -1,0 +1,44 @@
+entity User {
+    roles: Set<Role>,
+};
+
+entity Role enum ["Advertiser", "AccountManager", "BrandSafetyReviewer", "CampaignDirector"];
+
+entity CampaignStatus enum ["Draft", "BudgetApproved", "Launched"];
+
+entity Campaign {
+    advertiser: User,
+    preparedBy: User,
+    budget: Long,
+    contingency: Long,
+    budgetTier: String,
+    riskLabels: Set<String>,
+    scheduledStart: datetime,
+    status: CampaignStatus,
+};
+
+entity Creative;
+
+action approveBudget appliesTo {
+    principal: [User],
+    resource: [Campaign],
+    context: {
+        currentTime: datetime,
+        mfaUsed: Bool,
+        trustedDevice: Bool,
+        emergencyLaunchDeclared: Bool,
+        budgetContingencyThreshold: Long,
+    },
+};
+
+action launchCampaign appliesTo {
+    principal: [User],
+    resource: [Campaign],
+    context: {
+        currentTime: datetime,
+        mfaUsed: Bool,
+        trustedDevice: Bool,
+        emergencyLaunchDeclared: Bool,
+        requiredRiskLabel: String,
+    },
+};
