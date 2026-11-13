@@ -1,0 +1,74 @@
+{
+  "metadata" : {
+    "Creator" : "LaTeX with hyperref",
+    "Producer" : "pdfTeX-1.40.27",
+    "Subject" : "Midterm progress report",
+    "Title" : "An Exploratory Comparison of Static Harness Construction for Cedar Policy Synthesis"
+  },
+  "page_count" : 4,
+  "pages" : [
+    {
+      "characters" : 3789,
+      "glyphs_outside_media_box" : 0,
+      "height_pt" : 841.88999999999999,
+      "links" : [
+
+      ],
+      "page" : 1,
+      "render_file" : "page-01.png",
+      "text_file" : "page-01.txt",
+      "width_pt" : 595.27600000000007
+    },
+    {
+      "characters" : 4472,
+      "glyphs_outside_media_box" : 0,
+      "height_pt" : 841.88999999999999,
+      "links" : [
+
+      ],
+      "page" : 2,
+      "render_file" : "page-02.png",
+      "text_file" : "page-02.txt",
+      "width_pt" : 595.27600000000007
+    },
+    {
+      "characters" : 4749,
+      "glyphs_outside_media_box" : 0,
+      "height_pt" : 841.88999999999999,
+      "links" : [
+
+      ],
+      "page" : 3,
+      "render_file" : "page-03.png",
+      "text_file" : "page-03.txt",
+      "width_pt" : 595.27600000000007
+    },
+    {
+      "characters" : 2050,
+      "glyphs_outside_media_box" : 0,
+      "height_pt" : 841.88999999999999,
+      "links" : [
+        "https://doi.org/10.1007/978-3-030-99524-9_24",
+        "https://doi.org/10.1007/978-3-030-99524-9_24",
+        "https://doi.org/10.1007/978-3-030-99524-9_24",
+        "https://doi.org/10.48550/arXiv.2403.04651",
+        "https://doi.org/10.48550/arXiv.2403.04651",
+        "https://doi.org/10.48550/arXiv.2403.04651",
+        "https://aclanthology.org/W04-3250/",
+        "https://aclanthology.org/W04-3250/",
+        "https://aclanthology.org/W04-3250/",
+        "https://proceedings.neurips.cc/paper_files/paper/2023/hash/91edff07232fb1b55a505a9e9f6c0ff3-Abstract-Conference.html",
+        "https://proceedings.neurips.cc/paper_files/paper/2023/hash/91edff07232fb1b55a505a9e9f6c0ff3-Abstract-Conference.html",
+        "https://proceedings.neurips.cc/paper_files/paper/2023/hash/91edff07232fb1b55a505a9e9f6c0ff3-Abstract-Conference.html",
+        "https://proceedings.iclr.cc/paper_files/paper/2024/hash/3339f19c5fcee3ad74502947a32be9e6-Abstract-Conference.html",
+        "https://doi.org/10.48550/arXiv.2609.33796",
+        "https://doi.org/10.48550/arXiv.2609.33796",
+        "https://doi.org/10.48550/arXiv.2609.33796"
+      ],
+      "page" : 4,
+      "render_file" : "page-04.png",
+      "text_file" : "page-04.txt",
+      "width_pt" : 595.27600000000007
+    }
+  ]
+}

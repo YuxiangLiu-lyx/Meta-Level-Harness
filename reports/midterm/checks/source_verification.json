@@ -1,0 +1,41 @@
+{
+  "status": "PASS",
+  "saved_recomputation_equals_P1": true,
+  "performance_equals_E4": true,
+  "preservation": [
+    {
+      "manifest": "artifacts/posthoc/P1-20261111-midreport/analysis_manifest.json",
+      "files": 1563,
+      "mismatches": []
+    },
+    {
+      "manifest": "artifacts/posthoc/P1-20261111-midreport/provenance/original_evidence_preservation.json",
+      "files": 575,
+      "mismatches": []
+    }
+  ],
+  "four_discordances": [
+    {
+      "scenario_id": "kubernetes_rbac-readSecret-T3-033",
+      "category": "refine_only",
+      "original_final_response_and_check_hashes_match": true
+    },
+    {
+      "scenario_id": "grant_awards-chain2-T3-005",
+      "category": "meta_only",
+      "original_final_response_and_check_hashes_match": true
+    },
+    {
+      "scenario_id": "iot_fleet-sendCommand-T3-029",
+      "category": "refine_only",
+      "original_final_response_and_check_hashes_match": true
+    },
+    {
+      "scenario_id": "immigration_casework-clearSecurityCheck-T3-024",
+      "category": "refine_only",
+      "original_final_response_and_check_hashes_match": true
+    }
+  ],
+  "abstract_word_count": 104,
+  "word_count_method": "Whitespace-delimited tokens in the plain-text abstract; numbers and hyphenated terms count as one."
+}

@@ -1,0 +1,24 @@
+test_cache_identity (test_invariants.Invariants.test_cache_identity) ... ok
+test_freeze_detects_mutation (test_invariants.Invariants.test_freeze_detects_mutation) ... ok
+test_input_integrity_and_answer_isolation (test_invariants.Invariants.test_input_integrity_and_answer_isolation) ... ok
+test_pair_statistics (test_invariants.Invariants.test_pair_statistics) ... ok
+test_proved_counterexample_and_inversion (test_invariants.Invariants.test_proved_counterexample_and_inversion) ... ok
+test_retry_is_limited_to_missing_response_transport_failures (test_invariants.Invariants.test_retry_is_limited_to_missing_response_transport_failures) ... ok
+test_unknown_never_becomes_liveness_success (test_invariants.Invariants.test_unknown_never_becomes_liveness_success) ... ok
+test_warning_is_not_tool_use (test_invariants.Invariants.test_warning_is_not_tool_use) ... ok
+test_identical_paired_methods_have_zero_variability (test_portable_review.PairedBootstrap.test_identical_paired_methods_have_zero_variability) ... ok
+test_signed_pair_differences_and_seed_reproduce (test_portable_review.PairedBootstrap.test_signed_pair_differences_and_seed_reproduce) ... ok
+test_changed_score_is_caught_even_if_export_checksum_is_updated (test_portable_review.PortableReview.test_changed_score_is_caught_even_if_export_checksum_is_updated) ... ok
+test_export_refuses_overwrite (test_portable_review.PortableReview.test_export_refuses_overwrite) ... ok
+test_known_historical_hash_gaps_are_not_reported_as_complete (test_portable_review.PortableReview.test_known_historical_hash_gaps_are_not_reported_as_complete) ... ok
+test_package_path_cannot_escape (test_portable_review.PortableReview.test_package_path_cannot_escape) ... ok
+test_saved_metrics_survive_missing_all_raw_evidence (test_portable_review.PortableReview.test_saved_metrics_survive_missing_all_raw_evidence) ... ok
+test_tampered_raw_bytes_fail (test_portable_review.PortableReview.test_tampered_raw_bytes_fail) ... ok
+test_complete_attempt_usage_is_added_once (test_reporting.Reporting.test_complete_attempt_usage_is_added_once) ... ok
+test_csv_export_is_idempotent (test_reporting.Reporting.test_csv_export_is_idempotent) ... ok
+test_unknown_retry_usage_is_not_zero (test_reporting.Reporting.test_unknown_retry_usage_is_not_zero) ... ok
+
+----------------------------------------------------------------------
+Ran 19 tests in 3.691s
+
+OK

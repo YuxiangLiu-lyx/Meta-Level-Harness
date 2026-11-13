@@ -1,0 +1,308 @@
+{
+  "date": "2026-11-11",
+  "status": "FORMAT_AND_EVIDENCE_CHECKED_PENDING_FINAL_STUDENT_REVIEW",
+  "base_commit": "ed06680faa930ff34e3b5a1f0e30c10fca1e8530",
+  "course_requirements": {
+    "source": "Student-supplied table; course_requirements.md",
+    "body_page_range": [
+      2,
+      4
+    ],
+    "references_excluded": true,
+    "abstract_max_exclusive": 250,
+    "anonymous_pdf": true,
+    "template_option": "review",
+    "deadline_date": "2026-11-12",
+    "deadline_time": null,
+    "points": 15,
+    "submission_platform": "OpenReview",
+    "group_submission": "One member uploads and adds the other members",
+    "ai_writing_policy": "Not specified in supplied table; AI assistance disclosed in README"
+  },
+  "format_checks": {
+    "status": "PASS",
+    "total_pdf_pages": 4,
+    "body_pages": 3,
+    "references_start_page": 4,
+    "reference_pages": 1,
+    "abstract_words": 104,
+    "abstract_word_count_method": "Whitespace-delimited tokens in the plain-text abstract; numbers and hyphenated terms count as one.",
+    "official_acl_style_unchanged": true,
+    "style_revision": "d5adc823ff0f80f98c80405ca0ab66c68e684409"
+  },
+  "build": {
+    "status": "PASS",
+    "command": "sh reports/midterm/build.sh",
+    "exit_code": 0,
+    "engine": "pdfTeX 1.40.27 (TeX Live 2025)",
+    "latexmk": "4.86a",
+    "unresolved_citations": 0,
+    "missing_files": 0,
+    "overfull_boxes": 0,
+    "underfull_hbox": 1,
+    "underfull_vbox": 1,
+    "warning_review": "One loose line and one loose column were visually inspected; no clipping or unreadable text. Warnings were not suppressed.",
+    "log": "checks/latex_final.log",
+    "bibtex_log": "checks/bibtex_final.log"
+  },
+  "pdf_review": {
+    "rendered_pages": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "visually_inspected_pages": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "renderer": "macOS PDFKit at approximately 144 dpi",
+    "tables_and_line_wrapping": "PASS",
+    "glyphs_outside_page": 0,
+    "anonymity": {
+      "status": "PASS_WITH_SCOPE_LIMIT",
+      "scope": "Manuscript text, rendered PDF text, link annotations and metadata; internal evidence files excluded",
+      "patterns": [
+        "(?i)liuyuxiang",
+        "(?i)yuxiang\\s+liu",
+        "(?i)yuxiangliu-lyx",
+        "/Users/",
+        "/var/folders/",
+        "(?i)Meta-Level-Harness",
+        "(?i)thread[_-]?id",
+        "(?i)session[_-]?id",
+        "\\b[0-9a-f]{8}-(?:[0-9a-f]{4}-){3}[0-9a-f]{12}\\b"
+      ],
+      "matches": [],
+      "metadata": {
+        "Creator": "LaTeX with hyperref",
+        "Producer": "pdfTeX-1.40.27",
+        "Subject": "Midterm progress report",
+        "Title": "An Exploratory Comparison of Static Harness Construction for Cedar Policy Synthesis"
+      },
+      "note": "No explicit identifying strings were found; this does not rule out attribution from publicly available research content."
+    }
+  },
+  "verification_provenance": {
+    "new_for_this_rewrite": [
+      "Compilation and PDF rendering",
+      "Abstract/page counts and bibliography resolution",
+      "Anonymity inspection",
+      "P1/E4 comparison and historical preservation hash checks",
+      "Four-discordance final-response and semantic-check hash checks"
+    ],
+    "reused_same_day_checks": [
+      "19 software tests passed",
+      "Saved-result recomputation COMPLETE",
+      "Portable review bundle relocation PASS",
+      "Historical raw-evidence audit INCOMPLETE with expected exit 2"
+    ],
+    "reuse_reason": "The preceding preparation performed these offline checks at the same repository commit; only report prose and documentation changed. No implementation or experimental record changed. Retained outputs are labeled, not represented as new test executions."
+  },
+  "evidence_layers": {
+    "saved_result_recomputation": "COMPLETE",
+    "current_exported_logs": {
+      "status": "CONSISTENT_WITH_SAVED_SCORES",
+      "scores_checked": 80,
+      "model_streams_checked": 110,
+      "solver_reexecuted": false
+    },
+    "historical_original_bytes": {
+      "status": "INCOMPLETE",
+      "expected_audit_exit": 2,
+      "semantic_checks": 538,
+      "original_hashes_matching": 477,
+      "original_hash_gaps": 61,
+      "affected_results": 9,
+      "discordant_cases_affected": 0,
+      "aggregate_tool_events": null,
+      "tool_audit_status": "UNKNOWN",
+      "cause": "Repeated verification reused directories without attempt identity and overwrote earlier logs.",
+      "gate_hash_note": "Validator-gate hashes were first captured during export, not execution."
+    }
+  },
+  "performance": [
+    {
+      "method": "Manual",
+      "scenarios": 20,
+      "pass": 12,
+      "success_rate": 0.6,
+      "syntax_failure": 0,
+      "schema_type_failure": 0,
+      "semantic_failure": 8,
+      "output_invalid": 0,
+      "unresolved_or_protocol_failure": 0,
+      "confirmed_overgrant": 8,
+      "confirmed_overdeny": 4
+    },
+    {
+      "method": "Direct",
+      "scenarios": 20,
+      "pass": 10,
+      "success_rate": 0.5,
+      "syntax_failure": 0,
+      "schema_type_failure": 2,
+      "semantic_failure": 8,
+      "output_invalid": 0,
+      "unresolved_or_protocol_failure": 0,
+      "confirmed_overgrant": 7,
+      "confirmed_overdeny": 6
+    },
+    {
+      "method": "Meta",
+      "scenarios": 20,
+      "pass": 9,
+      "success_rate": 0.45,
+      "syntax_failure": 0,
+      "schema_type_failure": 4,
+      "semantic_failure": 7,
+      "output_invalid": 0,
+      "unresolved_or_protocol_failure": 0,
+      "confirmed_overgrant": 6,
+      "confirmed_overdeny": 6
+    },
+    {
+      "method": "Refine",
+      "scenarios": 20,
+      "pass": 11,
+      "success_rate": 0.55,
+      "syntax_failure": 0,
+      "schema_type_failure": 1,
+      "semantic_failure": 8,
+      "output_invalid": 0,
+      "unresolved_or_protocol_failure": 0,
+      "confirmed_overgrant": 7,
+      "confirmed_overdeny": 7
+    }
+  ],
+  "meta_refine_pairs": {
+    "both_pass": 8,
+    "both_fail": 8,
+    "refine_only": 3,
+    "meta_only": 1
+  },
+  "bootstrap": {
+    "analysis_type": "POST_HOC",
+    "estimate_pp": -10.0,
+    "interval_pp": [
+      -30.0,
+      10.0
+    ],
+    "repetitions": 100000,
+    "seed": 20261111,
+    "sampling_unit": "one scenario with both fixed-harness outcomes",
+    "scope": "Conditional on these two generated harnesses and saved policy outputs; construction and generation randomness are not resampled."
+  },
+  "attempt_accounting": {
+    "attempts": 110,
+    "budget": 120,
+    "completed_turn_attempts": 108,
+    "timeouts": 2,
+    "groups": {
+      "connectivity": 3,
+      "development_policy": 20,
+      "construction": 6,
+      "validation_policy": 81
+    }
+  },
+  "source_checks": {
+    "status": "PASS",
+    "saved_recomputation_equals_P1": true,
+    "performance_equals_E4": true,
+    "preservation": [
+      {
+        "manifest": "artifacts/posthoc/P1-20261111-midreport/analysis_manifest.json",
+        "files": 1563,
+        "mismatches": []
+      },
+      {
+        "manifest": "artifacts/posthoc/P1-20261111-midreport/provenance/original_evidence_preservation.json",
+        "files": 575,
+        "mismatches": []
+      }
+    ],
+    "four_discordances": [
+      {
+        "scenario_id": "kubernetes_rbac-readSecret-T3-033",
+        "category": "refine_only",
+        "original_final_response_and_check_hashes_match": true
+      },
+      {
+        "scenario_id": "grant_awards-chain2-T3-005",
+        "category": "meta_only",
+        "original_final_response_and_check_hashes_match": true
+      },
+      {
+        "scenario_id": "iot_fleet-sendCommand-T3-029",
+        "category": "refine_only",
+        "original_final_response_and_check_hashes_match": true
+      },
+      {
+        "scenario_id": "immigration_casework-clearSecurityCheck-T3-024",
+        "category": "refine_only",
+        "original_final_response_and_check_hashes_match": true
+      }
+    ],
+    "abstract_word_count": 104,
+    "word_count_method": "Whitespace-delimited tokens in the plain-text abstract; numbers and hyphenated terms count as one."
+  },
+  "claim_review": {
+    "type_failures_retained": true,
+    "no_80_independent_scenario_claim": true,
+    "bootstrap_conditioning_and_posthoc_status_disclosed": true,
+    "no_superiority_equivalence_or_general_ranking_claim": true,
+    "manual_AI_assistance_disclosed": true,
+    "requested_model_not_serving_model": true,
+    "logical_stages_not_equal_compute": true,
+    "future_experiments_labeled_future": true,
+    "historical_gap_disclosed": true
+  },
+  "actions": {
+    "new_experimental_model_calls": 0,
+    "new_policy_generation": 0,
+    "new_solver_runs": 0,
+    "heldout_content_read": false,
+    "historical_scores_modified": false,
+    "openreview_upload": false,
+    "git_commit": false,
+    "remote_push": false
+  },
+  "remaining_handoff": [
+    "Student reviews manuscript and any separate AI-use requirements.",
+    "One group member uploads the anonymous PDF and adds other members in OpenReview.",
+    "Confirm the exact deadline time from the course or platform if needed; the supplied table does not state one."
+  ],
+  "artifacts_sha256": {
+    "main.pdf": "178a9d4e59ee42f4e62bdd73a2c2db36a20319bb505bd54c154afd3321c2a83d",
+    "main.tex": "54b2f97704a015bcfd8ed6c18b0f7627fcda8b2d3a9e8b7f3928dc1d8f454242",
+    "references.bib": "831ab8443cedec18f6e8fd18ba495848601ec5da0362f2f8ba4fd1416bc216a9",
+    "results_table.tex": "5d18b3944f3cd80116bdc821ad60da3e53220ec891fcb2a12e1ce3b9997c431e",
+    "abstract.txt": "d3708c37f45668c58ce83dde330ca2e2a2c7c8a98a7d7bc56829258d95d11154",
+    "README.md": "a1b004b4d3d59b391b2c970a924ab505e3c3b1e8e9c0708e82f611ade67e53a9",
+    "course_requirements.md": "65b5804834b78620df6851ad8d010ef1f717494faa55514ffb36edaec1fc8d89",
+    "claim_evidence_map.md": "b04fdab534273c0904e1c54a542bc6b5066a67adbb783c899a687be6aff7956b",
+    "acl.sty": "19dfeddc2c0e448f3926a0bef048a9db3f3611b46265b760caabd7ada4f361de",
+    "acl_natbib.bst": "6fbb306202290f4b68e74ac1460a8b27398500cb6dfeb4492e74c457eae7cd1e"
+  },
+  "checks_sha256": {
+    "checks/anonymity.json": "47d43cb3671aa6a31d6a23bd2d6135fa14ccc12abbbf606909ceb87bfa3323c4",
+    "checks/audit.json": "3d23dcc7fb5dcb9822f4ce64c1068ac0f146060aa9b79ad8203356d3dd6d319c",
+    "checks/bibtex_final.log": "9cbc8aeeb8a4be28b730d1b3f42715c6d6baadeb07525dec340be993be5be76d",
+    "checks/build.stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "checks/build.stdout.txt": "cbd294390380e0ad624ccdd57bbdef0bbc7a53d532d10ee0399da6e4231fe9e1",
+    "checks/latex_final.log": "d12aabe90416ec2177438ce035dd6799148651e4bbb2dae312a428d920c093fa",
+    "checks/pdf_inspection.json": "57416118ad840c905a2c355d186dd3304a02cf62aebc25d116e536f318b961dd",
+    "checks/portability.json": "ecaaa1b35a30b751282062cd84960dff853da43810a3056fd7b56e6d29a2cd89",
+    "checks/recomputed/attempts.csv": "8b5333924a354731918281d35457ee5258de081c9c4cc7f9434e8e139e5f1f21",
+    "checks/recomputed/bootstrap.json": "de8da8066011f3e47ac6a3dddcc25d35d38a4075572898945294ed3639b8e9f2",
+    "checks/recomputed/bootstrap_histogram.csv": "3cc9f470d86c33fe2e05bfdff001f090f0b8edc4997bc92c419e50ac8f353b2d",
+    "checks/recomputed/pairs.csv": "95c3c0a45688a93894898d8180e0242507d8cbe86421e40fc59a23905d77cdca",
+    "checks/recomputed/performance.csv": "24104ab732e9627203ef5c35c1313146139890444772d015bf489a37171bd21a",
+    "checks/recomputed/results.json": "9e2d0cae6dbf5b448ede0a7f54275f7e444c1e396f3444e059954dc1a834a7a8",
+    "checks/source_verification.json": "ba03f8b801a8520b55df90b0473c2bc9ff83232278bbf1cca5539ea364b2fb50",
+    "checks/unit_tests.stderr.txt": "a92dee906f7578ba4ed8b1560b91cd348f7b538d909277edcad44b29ca9edc4d",
+    "checks/unit_tests.stdout.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}

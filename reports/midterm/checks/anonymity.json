@@ -1,0 +1,23 @@
+{
+  "status": "PASS_WITH_SCOPE_LIMIT",
+  "scope": "Manuscript text, rendered PDF text, link annotations and metadata; internal evidence files excluded",
+  "patterns": [
+    "(?i)liuyuxiang",
+    "(?i)yuxiang\\s+liu",
+    "(?i)yuxiangliu-lyx",
+    "/Users/",
+    "/var/folders/",
+    "(?i)Meta-Level-Harness",
+    "(?i)thread[_-]?id",
+    "(?i)session[_-]?id",
+    "\\b[0-9a-f]{8}-(?:[0-9a-f]{4}-){3}[0-9a-f]{12}\\b"
+  ],
+  "matches": [],
+  "metadata": {
+    "Creator": "LaTeX with hyperref",
+    "Producer": "pdfTeX-1.40.27",
+    "Subject": "Midterm progress report",
+    "Title": "An Exploratory Comparison of Static Harness Construction for Cedar Policy Synthesis"
+  },
+  "note": "No explicit identifying strings were found; this does not rule out attribution from publicly available research content."
+}
